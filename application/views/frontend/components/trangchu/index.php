@@ -1,11 +1,11 @@
 <section id="menu-slider">
     <div class="slider">
         <div class="container">
-           <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 list-menu pull-left" style="height: 321px;">
+           <!-- <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 list-menu pull-left" style="height: 321px;">
              <img style="width: 100%; height: 160px;" src="public/images/Right-banner.png">
              <img style="width: 100%; height: 160px;" src="public/images/banner2.png">
-         </div>
-         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 slider-main pull-left">
+        	</div> -->
+         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slider-main pull-left">
             <?php
             $this->load->view('frontend/modules/slider');
             ?>

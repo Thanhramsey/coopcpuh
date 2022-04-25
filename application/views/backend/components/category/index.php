@@ -44,9 +44,9 @@
 									<thead>
 										<tr>
 											<th class="text-center">ID</th>
-											<th>Tên loại sản phẩm</th>
-											<th>Danh mục cha</th>
-											<th>Ngày tạo</th>
+											<th class="text-center">Tên loại sản phẩm</th>
+											<!-- <th>Danh mục cha</th> -->
+											<th class="text-center">Ngày tạo</th>
 											<th class="text-center">Trạng thái</th>
 											<th class="text-center" colspan="2">Thao tác</th>
 										</tr>
@@ -55,13 +55,14 @@
 										<?php foreach ($list as $row):?>
 											<tr>
 												<td class="text-center"><?php echo $row['id'] ?></td>
-												<td>
+												<td class="text-center"><?php echo $row['name'] ?></td>
+												<!-- <td>
 													<a href="<?php echo base_url() ?>admin/category/update/<?php echo $row['id'] ?>"><?php echo $row['name'] ?>
 													(<?php $total=$this->Mproduct->product_count_parentid($row['id']); echo $total; ?>)
-												</a>	
-											</td>
-											<td>
-												<?php  
+												</a>
+											</td> -->
+											<!-- <td>
+												<?php
 												$catid = $this->Mcategory->category_parentid($row['id']);
 												$name = $this->Mcategory->category_name_parent($catid);
 												if($catid == 0)
@@ -73,7 +74,7 @@
 													echo $name;
 												}
 												?>
-											</td>
+											</td> -->
 											<td class="text-center">
 												<?php echo $row['created_at'] ?>
 											</td>
@@ -86,7 +87,18 @@
 														<?php endif; ?>
 													</a>
 												</td>
-												<?php
+												<td class="text-center">
+													<?php if($user['role']==1):?>
+														<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/category/update/<?php echo $row['id'] ?>"  role = "button">
+														<span class="glyphicon glyphicon-edit"></span>Sửa
+														</a>
+														<?php else: ?>
+															<span class="glyphicon glyphicon-remove-circle maudo"></span>
+														<?php endif; ?>
+												</td>
+
+
+												<!-- <?php
 												if($user['role']==1){
 													echo '<td class="text-center">
 													<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/category/update/'.$row['id'] .'" role = "button">
@@ -94,8 +106,8 @@
 													</a>
 													</td>';
 												}
-												?>
-												
+												?> -->
+
 												<td class="text-center">
 													<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/category/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa loại sản phẩm này ?')" role = "button">
 														<span class="glyphicon glyphicon-trash"></span>Xóa

@@ -53,7 +53,7 @@
             <ul class="menu-right" style="display: inline-block;">
                 <li class="pull-left"><a href="">Trang chủ</a></li>
                 <li class="pull-left"><a href="san-pham">Sản phẩm</a></li>
-                <?php
+                <!-- <?php
                 $listcat = $this->Mcategory->category_menu(0);
                 $html='';
                 foreach ($listcat as $menu) {
@@ -64,7 +64,7 @@
                     $html.='</li>';
                     echo $html;
                 }
-                ?>
+                ?> -->
                 <li class="pull-left"><a href="tin-tuc/1">Tin tức</a></li>
                 <li class="pull-left"><a href="gioi-thieu">Giới thiệu</a></li>
                 <li class="pull-left"><a href="lien-he">Liên hệ</a></li>
