@@ -18,7 +18,7 @@ class Muser extends CI_Model {
         else
         {
         	return FALSE;
-        }	
+        }
     }
     //index
     public function users_all($limit, $first){
@@ -26,6 +26,14 @@ class Muser extends CI_Model {
         $this->db->where('id !=', 1);
         $this->db->order_by('created', 'desc');
         $query = $this->db->get($this->table, $limit, $first);
+        return $query->result_array();
+    }
+	public function users_banhang(){
+        $this->db->where('trash', 1);
+        $this->db->where('id !=', 1);
+		$this->db->where('role !=', 1);
+        $this->db->order_by('id', 'desc');
+        $query = $this->db->get($this->table);
         return $query->result_array();
     }
     public function users_count(){
@@ -38,7 +46,7 @@ class Muser extends CI_Model {
         $this->db->where('trash', 1);
         $this->db->where('id', $id);
         $query = $this->db->get($this->table);
-        return $query->row_array();   
+        return $query->row_array();
     }
 
     //RECYCLEBIN

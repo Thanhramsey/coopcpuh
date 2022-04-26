@@ -2,7 +2,7 @@
 	<section class="content-header">
 		<h1><i class="glyphicon glyphicon-cd"></i> Danh sách sản phẩm</h1>
 		<div class="breadcrumb">
-			
+
 			<?php
 			if($user['role']==1){
 				echo '<a class="btn btn-primary btn-sm" href="'.base_url().'admin/product/insert" role="button">
@@ -64,7 +64,7 @@
 													</td>
 													<td style="font-size: 16px;"><?php echo $row['name'] ?></td>
 													<td class="text-center"> <?php echo $row['number'] - $row['number_buy'] ?></td>
-													<?php 
+													<?php
 													$namecat = $this->Mcategory->category_name($row['catid']);
 													?>
 													<td><?php echo $namecat ?></td>
@@ -77,7 +77,7 @@
 																<?php endif; ?>
 															</a>
 														</td>
-														<?php  
+														<?php
 														$quyen='';
 														if($user['role']==1){
 															$quyen.='
@@ -98,13 +98,13 @@
 														<?php
 														if($user['role']==1){
 															echo '<td class="text-center">
-															<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/product/update/'.$row['id'].'" role = "button">
+															<a class="btn btn-success btn-xs" href="admin/product/update/'.$row['id'].'" role = "button">
 															<span class="glyphicon glyphicon-edit"></span> Sửa
 															</a>
 															</td>';
 														}
 														?>
-														
+
 														<td class="text-center">
 															<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/product/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa sản phẩm này ?')" role = "button">
 																<span class="glyphicon glyphicon-trash"></span> Xóa

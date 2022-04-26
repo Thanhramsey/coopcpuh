@@ -1,5 +1,5 @@
 <?php echo form_open_multipart('admin/product/update/'.$row['id']); ?>
-<?php  
+<?php
 $list=$this->Mcategory->category_list();
 $option_parentid="";
 foreach ($list as $r) {
@@ -16,6 +16,16 @@ foreach ($listProducer as $r) {
 		$option.="<option selected value='".$r['id']."'>".$r['name']."</option>";
 	}else{
 		$option.="<option value='".$r['id']."'>".$r['name']."</option>";
+	}
+}
+
+$listUser=$this->Muser->users_banhang();
+$optionUs="";
+foreach ($listUser as $r) {
+	if($r['id']==$row['userId']){
+		$optionUs.="<option selected value='".$r['id']."'>".$r['fullname']."</option>";
+	}else{
+		$optionUs.="<option value='".$r['id']."'>".$r['fullname']."</option>";
 	}
 }
 ?>
@@ -47,27 +57,37 @@ foreach ($listProducer as $r) {
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<div class="col-md-6" style="padding-left: 0px;">
+										<div class="col-md-4" style="padding-left: 0px;">
 											<div class="form-group">
 												<label>Loại sản phẩm<span class = "maudo">(*)</span></label>
 												<select name="catid" class="form-control">
 													<option value = "">[--Chọn loại sản phẩm--]</option>
 													<option value = "0">No Parent</option>
-													<?php  
+													<?php
 													echo $option_parentid;
 													?>
 												</select>
 												<div class="error" id="password_error"><?php echo form_error('catid')?></div>
 											</div>
 										</div>
-										<div class="col-md-6" style="padding-right: 0px;">
+										<div class="col-md-4" style="padding-right: 0px;">
 											<div class="form-group">
-												<label>Nhà cung cấp<span class = "maudo">(*)</span></label>
+												<label>Xã<span class = "maudo">(*)</span></label>
 												<select name="producer" class="form-control">
-													<option value = "">[--Chọn nhà cung cấp--]</option>
+													<option value = "">[--Chọn xã--]</option>
 													<?php echo $option;?>
 												</select>
 												<div class="error" id="password_error"><?php echo form_error('catid')?></div>
+											</div>
+										</div>
+										<div class="col-md-4" style="padding-right: 0px;">
+											<div class="form-group">
+												<label>Nhà cung cấp <span class="maudo">(*)</span></label>
+												<select name="userId" class="form-control">
+													<option value = "">[--Chọn nhà cung cấp--]</option>
+													<?php echo $optionUs;?>
+												</select>
+												<div class="error" id="password_error"><?php echo form_error('userId') ?></div>
 											</div>
 										</div>
 									</div>

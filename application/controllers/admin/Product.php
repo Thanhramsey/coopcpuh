@@ -47,16 +47,18 @@ class Product extends CI_Controller {
 		$this->load->library('alias');
 		$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required|is_unique[db_product.name]');
 		$this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
-		$this->form_validation->set_rules('producer', 'Nhà cung cấp', 'required');
+		$this->form_validation->set_rules('producer', 'Xã', 'required');
+		$this->form_validation->set_rules('userId', 'Nhà cung cấp', 'required');
 		$this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
 				'catid'=>$_POST['catid'],
 				'producer'=>$_POST['producer'],
-				'name' =>$_POST['name'], 
+				'userId'=>$_POST['userId'],
+				'name' =>$_POST['name'],
 				'alias' =>$string=$this->alias->str_alias($_POST['name']),
-				'detail'=>$_POST['detail'], 
-				'sortDesc'=>$_POST['sortDesc'], 
+				'detail'=>$_POST['detail'],
+				'sortDesc'=>$_POST['sortDesc'],
 				'number'=>$_POST['number'],
 				'sale'=>$_POST['sale_of'],
 				'price'=>$_POST['price_root'],
@@ -103,7 +105,7 @@ class Product extends CI_Controller {
               		$data = $this->upload->data();
 	                  //in cấu trúc dữ liệu của các file
               		$img .= $data['file_name'].'#';
-              	}     
+              	}
               }
 	        //Lưu nhóm hình ảnh chi tiết
               $img = rtrim($img, '#');
@@ -146,15 +148,17 @@ class Product extends CI_Controller {
          $this->load->library('alias');
          $this->form_validation->set_rules('name', 'Tên sản phẩm', 'required');
          $this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
-         $this->form_validation->set_rules('producer', 'Nhà cung cấp', 'required');
+         $this->form_validation->set_rules('producer', 'Xã', 'required');
+		 $this->form_validation->set_rules('userId', 'Nhà cung cấp', 'required');
          $this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
          if ($this->form_validation->run() == TRUE){
           $mydata= array(
            'catid'=>$_POST['catid'],
            'producer'=>$_POST['producer'],
-           'name' =>$_POST['name'], 
+		   'userId'=>$_POST['userId'],
+           'name' =>$_POST['name'],
            'alias' =>$string=$this->alias->str_alias($_POST['name']),
-           'detail'=>$_POST['detail'], 
+           'detail'=>$_POST['detail'],
            'sortDesc'=>$_POST['sortDesc'],
            'sale'=>$_POST['sale_of'],
            'price'=>$_POST['price_root'],
@@ -166,7 +170,7 @@ class Product extends CI_Controller {
               $this->Mproduct->product_update($mydata, $id);
               $this->session->set_flashdata('success', 'Cập nhật sản phẩm thành công');
               redirect('admin/product','refresh');
-            } 
+            }
             $this->data['view']='update';
             $this->data['title']='Cập nhật sản phẩm';
             $this->load->view('backend/layout', $this->data);
