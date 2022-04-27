@@ -63,7 +63,8 @@
 												<div class="error" id="password_error"><?php echo form_error('producer') ?></div>
 											</div>
 										</div>
-										<div class="col-md-4" style="padding-right: 0px;">
+										<?php if($user['role'] == 1){ ?>
+											<div class="col-md-4" style="padding-right: 0px;">
 											<div class="form-group">
 												<label>Nhà cung cấp <span class="maudo">(*)</span></label>
 												<select name="userId" class="form-control">
@@ -79,7 +80,11 @@
 												</select>
 												<div class="error" id="password_error"><?php echo form_error('userId') ?></div>
 											</div>
-										</div>
+											</div>
+										<?php } else { ?>
+											<div class="col-md-4" style="padding-right: 0px;">
+											</div>
+										<?php } ?>
 									</div>
 								</div>
 								<div class="form-group">

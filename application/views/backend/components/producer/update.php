@@ -2,7 +2,7 @@
 <div class="content-wrapper">
 	<form action="<?php echo base_url() ?>admin/producer/update.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
 		<section class="content-header">
-			<h1><i class="glyphicon glyphicon-text-background"></i> Cập nhật nhà cung cấp</h1>
+			<h1><i class="glyphicon glyphicon-text-background"></i> Cập nhật địa bàn</h1>
 			<div class="breadcrumb">
 				<button type = "submit" class="btn btn-primary btn-sm">
 					<span class="glyphicon glyphicon-floppy-save"></span>
@@ -24,7 +24,7 @@
 								<div class="box-body">
 									<div class="col-md-9">
 										<div class="form-group">
-											<label>Tên nhà cung cấp</label>
+											<label>Tên địa bàn</label>
 											<input type="text" class="form-control" name="name" placeholder="Tên nhà cung cấp" value="<?php echo $row['name'] ?>">
 											<div class="error" id="password_error" style="color: red"><?php echo form_error('name')?></div>
 										</div>

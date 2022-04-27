@@ -13,13 +13,13 @@
   </div>
   <div class="top-footer">
     <div class="container">
-        <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="col-xs-12 col-sm-12 col-md-8">
             <div class="col-xs-12 col-sm-6">
                 <a href="trang-chu">
-                    <img src="public/images/smart-mobi2.png" style="width: 100%;" class="img-fix f-logo" alt="smart-construction">
+                    <img src="public/images/logo.jpg" style="width: 100%;" class="img-fix f-logo" alt="smart-construction">
                 </a>
                 <div class="about-store">
-                 Shop Smart phone. Chất lượng - giá cả hợp lý
+				CHƯƠNG TRÌNH MỖI XÃ MỘT SẢN PHẨM - HUYỆN CHƯPƯH
              </div>
          </div>
          <div class="col-xs-12 col-sm-6">
@@ -28,27 +28,27 @@
                 <ul class="list-unstyled">
                     <li class="clearfix">
                         <i class="fa fa-map-marker"></i>
-                        <span>33 Trần Xuân Soạn, Quận 7, TPHCM</span>
+                        <span>Thị trấn Nhơn Hoà, Huyện Chư Pưh , Tỉnh Gia Lai</span>
                     </li>
                     <li class="clearfix">
                         <i class="fa fa-phone"></i>
-                        <span>0978651616 - 0981.334455</span>
+                        <span>(0269) 3 850 009 - Fax: (0269)3850009</span>
                     </li>
                     <li class="clearfix">
                         <i class="fa fa-envelope"></i>
-                        <span><a href="mailto:vanhiepp1998@gmail.com">vanhiepp1998@gmail.com</a></span>
+                        <span><a href="mailto:vanhiepp1998@gmail.com">ubndchupuh@gialai.gov.vn</a></span>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6">
+    <div class="col-xs-12 col-sm-12 col-md-4">
         <div class="col-xs-12 col-sm-6">
             <h3 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h3>
             <ul class="list-unstyled linklists">
-                <li><a href="chinh-sach">Hướng dẫn thanh toán</a></li>          
+                <li><a href="chinh-sach">Hướng dẫn thanh toán</a></li>
                 <li><a href="chinh-sach">Hướng dẫn đặt hàng</a></li>
-                <li><a href="dieu-khoan">Điều khoản</a></li>                   
+                <li><a href="dieu-khoan">Điều khoản</a></li>
             </ul>
         </div>
         <div class="col-xs-12 col-sm-6">

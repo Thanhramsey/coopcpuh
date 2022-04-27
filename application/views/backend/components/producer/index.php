@@ -1,8 +1,8 @@
 <div class="content-wrapper">
 	<section class="content-header">
-		<h1><i class="fa fa-gift"></i> Danh sách nhà cung cấp</h1>
+		<h1><i class="fa fa-gift"></i> Danh sách địa bàn</h1>
 		<div class="breadcrumb">
-			
+
 			<?php
 			if($user['role']==1){
 				echo '<a class="btn btn-primary btn-sm" href="'.base_url().'admin/producer/insert" role="button">
@@ -76,7 +76,7 @@
 															</td>';
 														}
 														?>
-														
+
 														<td class="text-center">
 															<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/producer/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa Nhà cung cấp này ?')" role = "button">
 																<span class="glyphicon glyphicon-trash"></span>Xóa

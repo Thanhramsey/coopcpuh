@@ -22,24 +22,32 @@ class Product extends CI_Controller {
 		$this->load->library('session');
 		$limit=10;
 		$current=$this->phantrang->PageCurrent();
+		$user_role=$this->session->userdata('sessionadmin');
 		$first=$this->phantrang->PageFirst($limit, $current);
-		$total=$this->Mproduct->product_sanpham_count();
-		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/product');
-		$this->data['list']=$this->Mproduct->product_sanpham($limit,$first);
+		if($user_role['role']==1){
+			$total=$this->Mproduct->product_sanpham_count();
+			$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/product');
+			$this->data['list']=$this->Mproduct->product_sanpham($limit,$first);
+		}else{
+			$userId = $this->session->userdata('id');
+			$total=$this->Mproduct->product_sanpham_byId_count($userId);
+			$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/product');
+			$this->data['list']=$this->Mproduct->product_sanpham_id($limit,$first,$userId);
+		}
 		$this->data['view']='index';
 		$this->data['title']='Danh mục sản phẩm';
 		$this->load->view('backend/layout', $this->data);
 	}
 
 	public function insert(){
-    $user_role=$this->session->userdata('sessionadmin');
-    if($user_role['role']==2){
-      redirect('admin/E403/index','refresh');
-    }
-    $user_role=$this->session->userdata('sessionadmin');
-    if($user_role['role']==2){
-      redirect('admin/E403/index','refresh');
-    }
+		// $user_role=$this->session->userdata('sessionadmin');
+		// if($user_role['role']==2){
+		// redirect('admin/E403/index','refresh');
+		// }
+		// $user_role=$this->session->userdata('sessionadmin');
+		// if($user_role['role']==2){
+		// redirect('admin/E403/index','refresh');
+		// }
 		$d=getdate();
 		$today=$d['year']."/".$d['mon']."/".$d['mday']." ".$d['hours'].":".$d['minutes'].":".$d['seconds'];
 		$this->load->library('form_validation');
@@ -48,13 +56,19 @@ class Product extends CI_Controller {
 		$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required|is_unique[db_product.name]');
 		$this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
 		$this->form_validation->set_rules('producer', 'Xã', 'required');
-		$this->form_validation->set_rules('userId', 'Nhà cung cấp', 'required');
+		// $this->form_validation->set_rules('userId', 'Nhà cung cấp', 'required');
 		$this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
 		if ($this->form_validation->run() == TRUE){
+			$userId = $_POST['userId'];
+			if (empty($userId)) {
+				$userId = $this->session->userdata('id');
+			  } else {
+				$userId = $_POST['userId'];
+			  }
 			$mydata= array(
 				'catid'=>$_POST['catid'],
 				'producer'=>$_POST['producer'],
-				'userId'=>$_POST['userId'],
+				'userId'=>$userId,
 				'name' =>$_POST['name'],
 				'alias' =>$string=$this->alias->str_alias($_POST['name']),
 				'detail'=>$_POST['detail'],
@@ -76,12 +90,12 @@ class Product extends CI_Controller {
 	         //Định dạng file được phép tải
 			$config['allowed_types'] = 'jpg|png|gif';
 	         //Dung lượng tối đa
-			$config['max_size']      = '500';
+			$config['max_size'] = 2000;
 			$config['encrypt_name'] = TRUE;
 	         //Chiều rộng tối đa
-			$config['max_width']     = '1028';
-	         //Chiều cao tối đa
-			$config['max_height']    = '768';
+			// $config['max_width']     = 1028;
+	        //  //Chiều cao tối đa
+			// $config['max_height']    = 768;
 	         //load thư viện upload
 	         //bien chua cac ten file upload
 			$name_array = array();
@@ -136,10 +150,10 @@ class Product extends CI_Controller {
         }
 
         public function update($id){
-          $user_role=$this->session->userdata('sessionadmin');
-    if($user_role['role']==2){
-      redirect('admin/E403/index','refresh');
-    }
+    //       $user_role=$this->session->userdata('sessionadmin');
+    // if($user_role['role']==2){
+    //   redirect('admin/E403/index','refresh');
+    // }
          $this->data['row']=$this->Mproduct->product_detail($id);
          $d=getdate();
          $today=$d['year']."/".$d['mon']."/".$d['mday']." ".$d['hours'].":".$d['minutes'].":".$d['seconds'];
@@ -149,13 +163,19 @@ class Product extends CI_Controller {
          $this->form_validation->set_rules('name', 'Tên sản phẩm', 'required');
          $this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
          $this->form_validation->set_rules('producer', 'Xã', 'required');
-		 $this->form_validation->set_rules('userId', 'Nhà cung cấp', 'required');
+		//  $this->form_validation->set_rules('userId', 'Nhà cung cấp', 'required');
          $this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
+		 $userId = $_POST['userId'];
+		if (empty($userId)) {
+			$userId = $this->session->userdata('id');
+		} else {
+			$userId = $_POST['userId'];
+		}
          if ($this->form_validation->run() == TRUE){
           $mydata= array(
            'catid'=>$_POST['catid'],
            'producer'=>$_POST['producer'],
-		   'userId'=>$_POST['userId'],
+		   'userId'=>$userId,
            'name' =>$_POST['name'],
            'alias' =>$string=$this->alias->str_alias($_POST['name']),
            'detail'=>$_POST['detail'],
@@ -219,7 +239,7 @@ class Product extends CI_Controller {
 
        public function delete($id){
          $this->load->helper('file');
-         $row = $this->Mproduct->product_delete_detail($id);
+         $row = $this->Mproduct->product_detail($id);
          delete_files(base_url("public/images/products" . $row['img']));
          $this->Mproduct->product_delete($id);
          $this->session->set_flashdata('success', 'Xóa sản phẩm thành công');

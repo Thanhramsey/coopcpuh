@@ -1,6 +1,6 @@
 <div class="content-wrapper">
 	<section class="content-header">
-		<h1><i class="glyphicon glyphicon-text-background"></i> Thùng rác nhà cung cấp</h1>
+		<h1><i class="glyphicon glyphicon-text-background"></i> Thùng rác địa bàn</h1>
 		<div class="breadcrumb">
 			<a class="btn btn-primary btn-sm" href="admin/producer" role="button">
 				<span class="glyphicon glyphicon-remove do_nos"></span> Thoát
@@ -30,7 +30,7 @@
 									<thead>
 										<tr>
 											<th class="text-center">ID</th>
-											<th>Tên nhà cung cấp</th>
+											<th>Tên địa bàn</th>
 											<th>Ngày đăng</th>
 											<th>Người đăng</th>
 											<th class="text-center">Khôi phục</th>
@@ -42,7 +42,7 @@
 										<tr>
 											<td class="text-center"><?php echo $val['id'] ?></td>
 											<td>
-												<a href="<?php echo base_url() ?>admin/producer/update/<?php echo $val['id'] ?>"><?php echo $val['name'] ?></a>	
+												<a href="<?php echo base_url() ?>admin/producer/update/<?php echo $val['id'] ?>"><?php echo $val['name'] ?></a>
 											</td>
 											<td><?php echo $val['created_at'] ?></td>
 											<td><?php $name=$this->Muser->user_name($val['created_by']); echo $name; ?></td>
@@ -51,7 +51,7 @@
 													<span class="glyphicon glyphicon-edit"></span>Khôi phục
 												</a>
 											</td>
-											<?php  
+											<?php
 												$cpnDel='';
 												if($user['role']==1){
 													$cpnDel.='

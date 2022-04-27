@@ -22,13 +22,30 @@ class Mproduct extends CI_Model {
         $query = $this->db->get($this->table, $limit,$first);
         return $query->result_array();
     }
+
+	public function product_sanpham_id($limit,$first,$userId)
+    {
+        $this->db->where('trash', 1);
+		$this->db->where('userId', $userId);
+        $this->db->order_by('id', 'desc');
+        $query = $this->db->get($this->table, $limit,$first);
+        return $query->result_array();
+    }
+	public function product_sanpham_byId_count($userId)
+    {
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+		$this->db->where('userId', $userId);
+        $query = $this->db->get($this->table);
+        return count($query->result_array());
+    }
     //detail
 	public function product_detail($id)
     {
         $this->db->where('trash', 1);
         $this->db->where('id', $id);
         $query = $this->db->get($this->table);
-        return $query->row_array();   
+        return $query->row_array();
     }
 
     //RECYCLEBIN
