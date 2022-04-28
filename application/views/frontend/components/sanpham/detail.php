@@ -62,21 +62,19 @@
 										<div class="fk-sales">
 											</ul>
 											<ul>
-												<li>Tặng PMH Phụ Kiện 2,000,000đ (khi phiếu mua hàng trên 100,000,000 đ)</li>
+												<li>Đặt online giao tận nhà ĐÚNG GIỜ </li>
 											</ul>
 											<ul>
-												<li>Tặng Flip Cover chính hãng Samsung (Áp dụng đến 26/05) <a href="#" target="_blank">Xem chi tiết</a>
-												</li>
+												<li>Đổi, trả sản phẩm trong 72 giờ</li>
 											</ul>
 											<ul>
-												<li>Giảm thêm 900,000đ khi mua combo sức khỏe - thời trang (Điện thoại + Samsung Watch + Samsung Buds) <a href="#" target="_blank">Xem chi tiết</a>
-												</li>
+												<li>Khuyến mãi chỉ áp dụng mua Online</li>
 											</ul>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div style="margin-top: 20px;">
+							<!-- <div style="margin-top: 20px;">
 								<b>Tình trạng</b>
 								<br>
 								<span>Nguyên hộp. Đầy đủ phụ kiện từ nhà sản xuất, gồm: Sạc, cáp, tai nghe, que lấy SIM, sách hướng dẫn</span>
@@ -85,7 +83,7 @@
 								<b>Bảo hành</b>
 								<br>
 								<span>Bảo hành 12 tháng tại trung tâm bảo hành Chính hãng. 1 đổi 1 trong 30 ngày nếu có lỗi nhà sản xuất.</span><a href="#" style="color:red"> (Chi tiết)</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<div class="product-v-desc col-md-10 col-12 col-xs-12">
@@ -94,16 +92,165 @@
 					</div>
 					<div class="product-comment product-v-desc">
 						<h3>Bình luận</h3>
-						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+						<div class="col-sm-12 col-xs-12 col-md-4 col-lg-4">
+						<div class="row">
+							<div class="side">
+								<div class="star-col">5 ★</div>
+							</div>
+							<div class="middle">
+								<div class="bar-container">
+								<div class="bar-5"></div>
+								</div>
+							</div>
+							<div class="side right-ct">
+								<div>150</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="side">
+								<div class="star-col">4 ★</div>
+							</div>
+							<div class="middle">
+								<div class="bar-container">
+								<div class="bar-4"></div>
+								</div>
+							</div>
+							<div class="side right-ct">
+								<div>63</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="side">
+								<div class="star-col"> 3 ★</div>
+							</div>
+							<div class="middle">
+								<div class="bar-container">
+								<div class="bar-3"></div>
+								</div>
+							</div>
+							<div class="side right-ct">
+								<div>15</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="side">
+								<div class="star-col">2 ★</div>
+							</div>
+							<div class="middle">
+								<div class="bar-container">
+								<div class="bar-2"></div>
+								</div>
+							</div>
+							<div class="side right-ct">
+								<div>6</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="side">
+								<div class="star-col">1 ★</div>
+							</div>
+							<div class="middle">
+								<div class="bar-container">
+								<div class="bar-1"></div>
+								</div>
+							</div>
+							<div class="side right-ct">
+								<div>20</div>
+							</div>
+						</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 rating">
+						<label>
+							<input type="radio" name="stars" value="1" />
+							<span class="icon">★</span>
+						</label>
+						<label>
+							<input type="radio" name="stars" value="2" />
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+						</label>
+						<label>
+							<input type="radio" name="stars" value="3" />
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+						</label>
+						<label>
+							<input type="radio" name="stars" value="4" />
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+						</label>
+						<label>
+							<input type="radio" name="stars" value="5" />
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+						</label>
+						</div>
 
-							<div class="fb-comments" data-href="<?php echo base_url() ?><?php echo $row['alias'] ?>" data-numposts="5"></div>
+						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 mg-sp">
+							<textarea class="textarea-sp" placeholder="Mời bạn đánh giá về sản phẩm..."></textarea>
+						</div>
+
+						<div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 mg-sp">
+							<input type="text" class="form-control" placeholder="Nhập tên">
+						</div>
+
+						<div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 mg-sp" style="margin-left:20px">
+							<input type="text" class="form-control" placeholder="Nhập Số điện thoại">
+						</div>
+
+						<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 mg-sp">
+							<button class="btn btn-primary">Gửi</button>
+						</div>
+
+						<!-- Hiện comment tại đây -->
+						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+							<div class="fb-comments" data-href="<?php echo base_url() ?><?php echo $row['alias'] ?>" data-numposts="5">
+							<?php $list_comment=$this->Mevaluate->comment_productid($row['id']); ?>
+							<?php
+							if(count($list_comment)>0):?>
+								<?php foreach ($list_comment as $comment) :?>
+									<div class="col-12 col-md-12 comment-item" style="border-top: 2px solid #e6e6e6; margin-top:10px">
+										<h4><?php echo $comment['user_name'] ?>
+										&nbsp; &nbsp;
+										<span class="<?php if ($comment['star'] >= 1) {
+											echo 'fa fa-star';
+										}else{ echo 'fa fa-star no';} ?>"></span>
+										<span class="<?php if ($comment['star'] >=2) {
+											echo 'fa fa-star';
+										}else{ echo 'fa fa-star no'; } ?>" ></span>
+										<span class="<?php if ($comment['star'] >=3) {
+											echo 'fa fa-star';
+										}else{ echo 'fa fa-star no';} ?>"></span>
+										<span class="<?php if ($comment['star'] >=4) {
+											echo 'fa fa-star';
+										}else{ echo 'fa fa-star no'; } ?>" ></span>
+										<span class="<?php if ($comment['star'] >=5) {
+											echo 'fa fa-star';
+										}else{ echo 'fa fa-star no'; } ?>"></span>
+										<input type="hidden" name="whatever1" class="rating-value" value="2.56"></h4>
+									</div>
+									<div class="col-12 col-md-12" style="margin-bottom: 10px;">
+									<span><?php echo $comment['content'] ?> &nbsp; &nbsp; <?php echo $comment['comment_time'] ?></span>
+									</div>
+								<?php endforeach; ?>
+							<?php else: ?>
+							<h4>Chưa có bình luận về sản phẩm</h4>
+							<?php endif; ?>
+							</div>
 						</div>
 					</div>
 					<div class="product-comment product-v-desc product">
 						<h3>Sản phẩm liên quan</h3>
 						<?php
 						$list_spcungloai = $this->Mproduct->product_cungloai($row['catid'], $row['id'], 5);?>
-						<?php 
+						<?php
 						if(count($list_spcungloai)>0):?>
 							<div class="product-container">
 								<div class="owl-carousel-product owl-carousel owl-theme">
@@ -154,7 +301,7 @@
 										<h4>Chưa có sản phẩm cùng loại</h4>
 									<?php endif; ?>
 								</div>
-							<?php endif; ?>	
+							<?php endif; ?>
 						</form>
 
 					</div>
@@ -175,4 +322,8 @@
 						}
 					});
 				}
+
+				$(':radio').change(function() {
+				console.log('New star rating: ' + this.value);
+				});
 			</script>

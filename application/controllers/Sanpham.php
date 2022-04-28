@@ -6,11 +6,12 @@ class Sanpham extends CI_Controller {
         parent::__construct();
         $this->load->model('frontend/Mproduct');
         $this->load->model('frontend/Mcategory');
+		$this->load->model('frontend/Mevaluate');
         $this->data['com']='sanpham';
         $this->load->library('session');
         $this->load->library('phantrang');
     }
-    
+
     public function index(){
         if(isset($_POST['sapxep'])){
             $dksx=$_POST['sapxep'];
@@ -69,7 +70,7 @@ class Sanpham extends CI_Controller {
         $catid=$this->Mcategory->category_id($link);
         $listcat=$this->Mcategory->category_listcat($catid);
         $this->data['categoryname']=$this->Mcategory->category_name($catid);
-        
+
         $this->load->library('phantrang');
         $limit=12;
         $current=$this->phantrang->PageCurrent();
@@ -77,7 +78,7 @@ class Sanpham extends CI_Controller {
         $total=$this->Mproduct->product_chude_count($listcat);
         $this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='san-pham/'.$link);
         $this->data['list']=$this->Mproduct->product_list_cat_limit($listcat, $limit,$first,$f,$od);
-        $this->data['title']='Smart Store - Sản phẩm theo từng danh mục';  
+        $this->data['title']='Smart Store - Sản phẩm theo từng danh mục';
         $this->data['view']='category';
         if(isset($_POST['sapxep-category'])){
 
@@ -85,15 +86,15 @@ class Sanpham extends CI_Controller {
             // echo json_encode($result);
             $html='<script>document.location.reload(true);</script>';
             echo json_encode($html);
-            
+
         }else{
             $this->load->view('frontend/layout',$this->data);
         }
     }
-    public function detail($link){   
+    public function detail($link){
         $row = $this->Mproduct->product_detail($link);
         $this->data['row']=$row;
-        $this->data['title']='Smart Store - '.$row['name'];  
+        $this->data['title']='Smart Store - '.$row['name'];
         $this->data['view']='detail';
         $this->load->view('frontend/layout',$this->data);
     }

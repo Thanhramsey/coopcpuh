@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2022 at 06:00 AM
+-- Generation Time: Apr 28, 2022 at 12:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -923,6 +923,32 @@ INSERT INTO `db_district` (`id`, `name`, `type`, `provinceid`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `db_evaluate`
+--
+
+CREATE TABLE `db_evaluate` (
+  `id` int(10) NOT NULL,
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `sdt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `comment_time` datetime NOT NULL,
+  `comment_by` int(11) NOT NULL,
+  `star` int(11) NOT NULL DEFAULT 1,
+  `trash` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `db_evaluate`
+--
+
+INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `comment_time`, `comment_by`, `star`, `trash`) VALUES
+(1, 'Sản phẩm quá tuyệt vời', 30, 'Chương Châu', '0969124469', '2022-04-28 09:28:55', 4, 4, 1),
+(2, 'Không mua thì hơi phí', 30, 'Thành côn', '0898124432', '2022-04-28 10:05:26', 4, 5, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `db_order`
 --
 
@@ -1061,8 +1087,9 @@ INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sort
 (34, 3, 'BỘT MỦ TRÔM', 'bot-mu-trom', '13.jpg', '13.jpg', 'Giúp cơ thể sảng khoái, thanh nhiệt, ngủ ngon và giảm stress. Giúp mau lành vết thương hở và cho bạn làn da tươi đẹp. Uống thường xuyên rất tốt cho hệ bài tiết. Đặc biệt, vào những lúc tiết trời mùa hè nóng nực thì mủ Trôm là một loại thức uống giải khát không thể thiếu Một ly mủ Trôm lạnh có thể giúp cho chúng ta sảng khoái, sẽ có một giấc ngủ ngon hơn.', '<h1><span style=\"font-size:12px\"><strong>Website:&nbsp;<a href=\"https://mutromngoctai.vn/\">https://mutromngoctai.vn</a><br />\r\nC&Acirc;U CHUYỆN SẢN PHẨM</strong><br />\r\n<strong>&quot;</strong><strong>BỘT MỦ TR&Ocirc;M NGỌC TẠI&quot;</strong><br />\r\nX&atilde; Ia Le, Huyện Chư Pưh, Tỉnh Gia Lai, đ&acirc;y l&agrave; qu&ecirc; hương thứ hai m&agrave; gia đ&igrave;nh bố mẹ v&agrave; anh em ch&uacute;ng t&ocirc;i đến đ&acirc;y lập nghiệp&nbsp;l&agrave; v&ugrave;ng đất m&agrave;u mỡ, kh&iacute; hậu rất thuận lợi cho sự ph&aacute;t triển c&aacute;c loại c&acirc;y trồng, từ những năm 2000 đến năm 2001 c&acirc;y tr&ocirc;m chỉ l&agrave;m trụ cho c&acirc;y hồ ti&ecirc;u b&ograve; m&agrave; th&ocirc;i l&uacute;c n&agrave;y chưa ai biết l&agrave; c&acirc;y g&igrave; cả. M&atilde;i đến năm 2012.T&ocirc;i t&igrave;nh cờ dừng ch&acirc;n tại Phan Thiết, Tỉnh B&igrave;nh Thuận chơi th&igrave; bất ngờ gặp một loại c&acirc;y đ&oacute; l&agrave; c&acirc;y tr&ocirc;m th&acirc;n thẳng. T&ocirc;i đ&atilde; mua về l&agrave;m trụ sống như người d&acirc;n trồng ti&ecirc;u thường gọi.<br />\r\nSau nhiều năm trồng v&agrave; chăm s&oacute;c th&igrave; t&ocirc;i đ&atilde; biết được đ&acirc;y l&agrave; c&acirc;y trồng c&oacute; gi&aacute; trị kinh tế đặc biệt chăm s&oacute;c sức khỏe cho con người. Đến năm thứ năm,&nbsp;thứ s&aacute;u th&igrave; bắt đầu thu hoạch&nbsp;mủ tr&ocirc;m hay c&ograve;n gọi l&agrave; nhựa tr&ocirc;m, l&agrave; dịch tiết ra từ c&acirc;y tr&ocirc;m khi phơi kh&ocirc; mũ tr&ocirc;m h&igrave;nh dạng cục d&agrave;i, m&agrave;u v&agrave;ng nhạt, k&iacute;ch thước đều, kh&ocirc;ng m&ugrave;i, vị nhạt. mủ tr&ocirc;m chứa nhiều kho&aacute;ng chất v&agrave; c&aacute;c nguy&ecirc;n tố vi lượng hết sức cần thiết cho cơ thể. Bao gồm sắt, kẽm, canxi, kali, magie, natri. B&ecirc;n cạnh đ&oacute; c&ograve;n c&oacute; c&aacute;c loại axit amin như: lysine, leucine, phenylalanine, isoleucine, valine, threonine &hellip; Ch&iacute;nh v&igrave; thế mủ tr&ocirc;m l&agrave; nguy&ecirc;n liệu ch&iacute;nh l&agrave;m nước giải kh&aacute;t c&oacute; lợi cho sức khỏe.<br />\r\nMủ tr&ocirc;m c&oacute; vai tr&ograve; như một thực phẩm chức năng tốt cho sức khỏe con người m&agrave; rất nhiều người kh&ocirc;ng biết đến.<br />\r\nDo vậy, bản th&acirc;n t&ocirc;i hiểu r&otilde; được sự nhọc nhằn của người n&ocirc;ng d&acirc;n một nắng hai sương, vất vả l&agrave;m ra sản phẩm nhưng kh&ocirc;ng thể thương mại, hoặc c&oacute; thể b&aacute;n th&ocirc; nhưng vớ&nbsp;i gi&aacute; trị cực k&igrave; thấp. Từ đ&oacute; t&ocirc;i nảy sinh &yacute; tưởng sẽ tạo ra những sản phẩm chất lượng, từ nguồn nguy&ecirc;n liệu dồi d&agrave;o của v&ugrave;ng đất qu&ecirc; m&igrave;nh, tạo th&agrave;nh sản phẩm đặc trưng của địa phương m&igrave;nh.<br />\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ch&uacute;ng t&ocirc;i tin tưởng rằng, cơ sở ch&uacute;ng t&ocirc;i sẽ tạo thương hiệu cho sản phẩm Bột Mủ Tr&ocirc;m Ngọc Tại&nbsp; nh&acirc;n rộng, g&oacute;p phần đưa gi&aacute; trị bột mủ tr&ocirc;m tr&ecirc;n địa b&agrave;n x&atilde; Ia Le n&oacute;i ri&ecirc;ng v&agrave; huyện Chư Pưh n&oacute;i chung n&acirc;ng cao gi&aacute; trị sản phẩm, trồng đi theo hướng hữu cơ bền vững sẽ x&acirc;y dựng n&ecirc;n thương hiệu Bột Mủ Tr&ocirc;m Ngọc Tại&nbsp; tr&ecirc;n địa b&agrave;n x&atilde; Ia Le, huyện Chư Pưh, tỉnh Gia Lai đứng vững tr&ecirc;n trị trường được người ti&ecirc;u d&ugrave;ng trong v&agrave; ngo&agrave;i nước sử dụng v&agrave; ưa chuộng, g&oacute;p phần&nbsp;đem lại ph&aacute;t triển kinh tế cho c&aacute;c hộ tham gia v&agrave;o cơ sở của ch&uacute;ng t&ocirc;i hướng đến việc n&acirc;ng cao chất lượng sản phẩm trong tương lai.</span></h1>\r\n', 6, 320, 3, 0, 20000, 20000, '2022-04-26 15:01:50', '1', '2022-04-26 15:06:56', '1', 1, 1, 10),
 (35, 4, 'Vải Chưpuh', 'vai-chupuh', '13.jpg', '13.jpg', '', '<p>Vải l&agrave; một loại vật liệu bao gồm c&aacute;c lưới&nbsp;<em><strong>sợi tổng hợp</strong></em>&nbsp;hoặc l&agrave;&nbsp;<em><strong>sợi tự nhi&ecirc;n</strong></em>. Những sợi n&agrave;y thường được gọi l&agrave; sợi chỉ. Sợi tự nhi&ecirc;n l&agrave; loại sợi được l&agrave;m từ một số loại c&acirc;y như b&ocirc;ng, lanh, dầu gai hoặc l&agrave; được tạo ra từ k&eacute;n tằm, l&ocirc;ng động vật. Sợi c&oacute; t&iacute;nh chất mềm, đều sợi c&oacute; khả năng thấm h&uacute;t cao. C&aacute;c loại sợi tự nhi&ecirc;n thường rất th&acirc;n thiện với da người, kh&ocirc;ng g&acirc;y dị ứng, trừ một số người c&oacute; tiền sử dị ứng với động vật, th&igrave; c&oacute; thể sử dụng&nbsp;<em><strong>c&aacute;c loại vải</strong>&nbsp;</em>l&agrave;m từ sơ c&aacute;c loại c&acirc;y. Gi&aacute; b&aacute;n c&aacute;c loại vải may mặc n&agrave;y thường sẽ dao động từ 30,000 VNĐ cho đến 100,000 VNĐ. T&ugrave;y theo từng tiểu thường v&agrave;&nbsp;<u><a href=\"https://aothunnhatban.vn/top-5-cho-vai-sai-gon\" target=\"_blank\">c&aacute;c khu chơ vải</a>.</u></p>\r\n\r\n<p>Hầu hết c&aacute;c sợi tự nhi&ecirc;n kh&ocirc;ng h&ograve;a tan trong nước, đặc điểm ch&iacute;nh của loại sợi n&agrave;y bề với Kiềm nhưng dễ bị ăn m&ograve;n bởi Acid. Kh&ocirc;ng bị mối mọt ăn m&ograve;n. Sợi tổng hợp l&agrave; loại sợi sau khi khai th&aacute;c kho&aacute;ng sản dầu mỏ về xử l&yacute;, sau đ&oacute; chứng cất&hellip; k&eacute;o sợi rồi tạo th&agrave;nh. Đặc điểm của loại sợi n&agrave;y ch&iacute;nh l&agrave; khả năng thấm h&uacute;t k&eacute;m, nhưng giữ ấm tốt v&agrave;o m&ugrave;a đ&ocirc;ng. B&ecirc;n ngo&agrave;i trơn b&oacute;ng mềm v&agrave; mịn. Bạn c&oacute; thể t&igrave;m hiểu th&ecirc;m về sợi tổng hợp th&ocirc;ng qua b&agrave;i viết&nbsp;<strong>sợi tổng hợp l&agrave; g&igrave;</strong>&nbsp;? B&acirc;y giờ cung Atlan t&igrave;m hiểu&nbsp;<strong><em>c&aacute;c loại vải tr&ecirc;n thị trường phổ biến nhất&nbsp; hiện nay&nbsp;</em></strong>th&ocirc;i n&agrave;o</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n', 2, 30, 0, 5, 500000, 475000, '2022-04-26 16:11:13', '1', '2022-04-26 16:11:13', '1', 1, 1, 11),
 (37, 3, 'VIÊN TINH NGHỆ ĐỎ, MẬT ONG - SỮA ONG CHÚA AGILA', 'vien-tinh-nghe-do-mat-ong-sua-ong-chua-agila', 'ffce39427bbaadae8b19a7ca6c420780.jpg', 'f5016ed732f62d97917eb3e5a5f34912.jpg', '', '', 7, 35, 1, 0, 35000, 35000, '2022-04-27 13:46:03', '1', '2022-04-27 13:46:03', '1', 1, 1, 10),
-(38, 3, 'Sữa chua ba vì ', 'sua-chua-ba-vi', 'dc43e37716ff0993f4914984815ec50c.jpg', 'f008d8f1e9dfe186d039d7cc650c5a2b.jpg', '', '', 8, 1, 2, 0, 35000, 35000, '2022-04-27 13:47:46', '1', '2022-04-27 13:47:46', '1', 1, 1, 10),
-(40, 5, 'Tượng Quan Vũ', 'tuong-quan-vu', 'd5c0222f650f3457d335aabf2a2c614b.jpg', '3107f492548109215080d95bc310feca.jpg', '', '', 1, 1, 0, 0, 9000000, 9000000, '2022-04-27 13:52:26', '10', '2022-04-27 14:35:08', '1', 1, 1, 10);
+(38, 3, 'Sữa chua ba vì ', 'sua-chua-ba-vi', '853cd42897e1d8dc8c3595f0274e4c7a.jpg', '78bee9ac32a4b2d1a0dc0a9033e33191.jpg', '', '', 8, 11, 2, 0, 30000, 30000, '2022-04-27 13:47:46', '1', '2022-04-28 13:42:55', '1', 1, 1, 10),
+(40, 5, 'Tượng Quan Vũ', 'tuong-quan-vu', '840e6961bb5f8eee261816c3de22425d.jpg', 'f304c3873875d4945706123e18a65a56.jpg', '', '', 1, 4, 0, 0, 9000000, 9000000, '2022-04-27 13:52:26', '10', '2022-04-28 13:43:32', '1', 1, 1, 10),
+(43, 5, 'Trái tim bên lề', 'trai-tim-ben-le', '2dbda1d3f62b317d9a251d032b7cb2fc.jpg', '8d5aa4c06af814f5953b64788b13a0a7.jpg', 'Trái tim bên lề', '<p>Tr&aacute;i tim b&ecirc;n lề</p>\r\n', 1, 3, 0, 0, 5000, 5000, '2022-04-28 13:46:44', '1', '2022-04-28 13:46:44', '1', 1, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -1282,6 +1309,12 @@ ALTER TABLE `db_district`
   ADD KEY `matp` (`provinceid`);
 
 --
+-- Indexes for table `db_evaluate`
+--
+ALTER TABLE `db_evaluate`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `db_order`
 --
 ALTER TABLE `db_order`
@@ -1403,7 +1436,7 @@ ALTER TABLE `db_producer`
 -- AUTO_INCREMENT for table `db_product`
 --
 ALTER TABLE `db_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `db_slider`
