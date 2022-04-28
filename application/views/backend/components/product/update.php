@@ -80,7 +80,9 @@ foreach ($listUser as $r) {
 												<div class="error" id="password_error"><?php echo form_error('catid')?></div>
 											</div>
 										</div>
-										<div class="col-md-4" style="padding-right: 0px;">
+
+										<?php if($user['role'] == 1){ ?>
+											<div class="col-md-4" style="padding-right: 0px;">
 											<div class="form-group">
 												<label>Nhà cung cấp <span class="maudo">(*)</span></label>
 												<select name="userId" class="form-control">
@@ -89,7 +91,11 @@ foreach ($listUser as $r) {
 												</select>
 												<div class="error" id="password_error"><?php echo form_error('userId') ?></div>
 											</div>
-										</div>
+											</div>
+										<?php } else { ?>
+											<div class="col-md-4" style="padding-right: 0px;">
+											</div>
+										<?php } ?>
 									</div>
 								</div>
 								<div class="form-group">
@@ -123,6 +129,14 @@ foreach ($listUser as $r) {
 								<div class="form-group">
 									<label>Số lượng đã bán</label>
 									<input name="number" class="form-control" type="number" value="<?php echo $row['number_buy'] ?>" min="1" step="1" max="1000" disabled>
+								</div>
+								<div class="form-group">
+									<label>Hình đại diện</label>
+									<input type="file" id="image_list" name="img" required style="width: 100%">
+								</div>
+								<div class="form-group">
+									<label>Hình ảnh sản phẩm</label>
+									<input type="file" id="image_list" name="image_list[]" multiple required>
 								</div>
 								<div class="form-group">
 									<label>Trạng thái</label>

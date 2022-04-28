@@ -2,11 +2,11 @@
 $d=getdate();
 $year=$d['year'];
 $total = 0; $cost = 0;
-for ($i=1; $i <= 12 ; $i++) 
-{   
+for ($i=1; $i <= 12 ; $i++)
+{
   $list_orrders = $this->Morders->order_follow_month($year, $i);
   $sum = 0;
-  foreach ($list_orrders as $row_orrder) 
+  foreach ($list_orrders as $row_orrder)
   {
     $order_detail = $this->Morderdetail->orderdetail_orderid($row_orrder['id']);
     foreach ($order_detail as $value) {
@@ -116,17 +116,17 @@ for ($i=1; $i <= 12 ; $i++)
             <?php
           $d=getdate();
           $year=$d['year'];
-          for ($i=1; $i <= 12 ; $i++) 
-          {   
+          for ($i=1; $i <= 12 ; $i++)
+          {
             $list_orrders = $this->Morders->order_follow_month($year, $i);
             $total_month = 0;
-            foreach ($list_orrders as $row_orrder) 
+            foreach ($list_orrders as $row_orrder)
             {
               $total_month += $row_orrder['money'];
             }
             echo '<div class="col-sm-4 col-xs-6">
                 <div class="description-block border-right" style="display: inline-flex;">
-                  <span class="description-text">Doanh thu tháng '.$i.' :  </span> 
+                  <span class="description-text">Doanh thu tháng '.$i.' :  </span>
                   <h5 class="description-header" style="color: #e90000;padding-left: 10px;">'.number_format($total_month).' VNĐ</h5>
                 </div>
                 <!-- /.description-block -->
@@ -137,7 +137,7 @@ for ($i=1; $i <= 12 ; $i++)
           </div>
           <!-- /.box-body -->
         </div>
-      </div> 
+      </div>
     </section>
     <!-- /.content -->
   </div>
@@ -152,11 +152,11 @@ for ($i=1; $i <= 12 ; $i++)
      <?php
      $d=getdate();
      $year=$d['year'];
-     for ($i=1; $i <= 12 ; $i++) 
-     {   
+     for ($i=1; $i <= 12 ; $i++)
+     {
       $list_orrders = $this->Morders->order_follow_month($year, $i);
       $sum = 0;
-      foreach ($list_orrders as $row_orrder) 
+      foreach ($list_orrders as $row_orrder)
       {
         $order_detail = $this->Morderdetail->orderdetail_orderid($row_orrder['id']);
         foreach ($order_detail as $value) {
@@ -177,11 +177,11 @@ for ($i=1; $i <= 12 ; $i++)
     ]);
 
     var options = {
-      title: 'Số lượng bán ra từ 01/2019 - 12/2019',
+      title: 'Số lượng bán ra từ 01/2022 - 12/2022',
       seriesType: 'bars'
     };
 
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
     chart.draw(data, options);
-  } 
+  }
 </script>

@@ -13,7 +13,7 @@ class Morders extends CI_Model {
         $this->db->order_by('orderdate', 'desc');
         $query = $this->db->get($this->table, $limit, $first);
         return $query->result_array();
-    } 
+    }
     public function orders_count()
     {
         $this->db->where('trash', 1);
@@ -29,7 +29,7 @@ class Morders extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->row_array();
     }
-    // chi itet don haang da luu 
+    // chi itet don haang da luu
     public function orders_detail_save($id)
     {
         $this->db->where('id',$id);
@@ -111,7 +111,7 @@ class Morders extends CI_Model {
         $this->db->limit(1);
         $query = $this->db->get('db_product');
         $row=$query->row_array();
-        return $row['number_buy']; 
+        return $row['number_buy'];
     }
 
     //header tb don hang

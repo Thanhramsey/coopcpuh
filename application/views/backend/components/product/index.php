@@ -87,7 +87,7 @@
 														</td>
 													<?php else : ?>
 													<?php endif; ?>
-
+													<!--
 													<?php
 													$quyen = '';
 													if ($user['role'] == 1) {
@@ -105,15 +105,25 @@
 													}
 													echo $quyen;
 													?>
-													<?php
-													if ($user['role'] == 1) {
-														echo '<td class="text-center">
+													 <?php
+															if ($user['role'] == 1) {
+																echo '<td class="text-center">
 															<a class="btn btn-success btn-xs" href="admin/product/update/' . $row['id'] . '" role = "button">
 															<span class="glyphicon glyphicon-edit"></span> Sửa
 															</a>
 															</td>';
-													}
-													?>
+															}
+															?> -->
+
+													<td class="text-center"><a class="btn btn-info btn-xs" href="admin/product/import/<?php echo $row['id'] ?>" role="button">
+															<span class="glyphicon glyphicon-trash"></span>Nhập hàng
+														</a>
+													</td>
+													<td class="text-center">
+														<a class="btn btn-success btn-xs" href="admin/product/update/<?php echo $row['id'] ?>" role="button">
+															<span class="glyphicon glyphicon-edit"></span> Sửa
+														</a>
+													</td>
 
 													<td class="text-center">
 														<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/product/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa sản phẩm này ?')" role="button">
