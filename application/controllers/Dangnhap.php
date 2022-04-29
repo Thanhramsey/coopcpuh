@@ -40,7 +40,7 @@ class Dangnhap extends CI_Controller {
             $this->data['title']='Smart store - Đăng nhập tài khoản';
             $this->data['view']='dangnhap';
             $this->load->view('frontend/layout',$this->data);
-        }     
+        }
     }
 
     public function dangxuat(){
@@ -66,12 +66,12 @@ class Dangnhap extends CI_Controller {
             $this->form_validation->set_rules('email', 'Email', 'required|is_unique[db_customer.email]');
         }
         $this->form_validation->set_rules('re_password', 'Nhập lại mật khẩu', 'required|matches[password]');
-        
+
         $this->form_validation->set_rules('phone', 'Số điện thoại', 'required|min_length[6]|numeric|is_unique[db_customer.phone]|max_length[11]');
-        
+
         if($this->form_validation->run() ==TRUE){
             $data = array(
-                'username'     => $this->input->post('username'),   
+                'username'     => $this->input->post('username'),
                 'fullname'     => $this->input->post('name'),
                 'email'    => $this->input->post('email'),
                 'phone'    => $this->input->post('phone'),
@@ -107,26 +107,26 @@ class Dangnhap extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'sale.smart.store.2019@gmail.com';
-            $config['smtp_pass']    = 'cqfmfmrtudhcmahw';
+            $config['smtp_user']    = 'occpchupuhgli@gmail.com';
+            $config['smtp_pass']    = 'chupuh123456';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html';
-            $config['validation'] = TRUE;   
+            $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('sale.smart.store.2019@gmail.com', 'Smart Store');
+            $this->email->from('occpchupuhgli@gmail.com', 'Hệ thống COOP UBND Chư pưh');
             $this->email->to($email);
-            $this->email->subject('Hệ thống Smart Store - Quà thành viên mới');
-            $this->email->message('Bạn đã trở thành thành viên mới của cửa hàng Smart Store, Cửa hàng tặng bạn 1 mã giảm giá giảm 100.000 đ : '.$tempcoupon.' , Mã này có giá trị tới ngày '.$tempdatelimit.'
+            $this->email->subject('Hệ thống Hệ thống COOP UBND Chư pưh - Quà thành viên mới');
+            $this->email->message('Bạn đã trở thành thành viên mới của cửa hàng Hệ thống COOP UBND Chư pưh, Cửa hàng tặng bạn 1 mã giảm giá giảm 100.000 đ : '.$tempcoupon.' , Mã này có giá trị tới ngày '.$tempdatelimit.'
                 Hãy sử dụng tài khoản để mua hàng để tích lũy nhận thêm nhiều ưu đãi !!!!');
             $this->email->send();
             $this->data['success']='Đăng ký thành công! Bạn đã nhận được 1 mã giảm giá cho thành viên mới, vui lòng kiểm tra email !!';
 
-        }  
-        $this->data['title']='Smart store - Đăng ký tài khoản';   
+        }
+        $this->data['title']='Smart store - Đăng ký tài khoản';
         $this->data['view']='dangky';
-        $this->load->view('frontend/layout',$this->data);  
+        $this->load->view('frontend/layout',$this->data);
     }
     function check_username(){
         $username = $this->input->post('username');
@@ -161,24 +161,24 @@ class Dangnhap extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'sale.smart.store.2019@gmail.com';
-            $config['smtp_pass']    = 'cqfmfmrtudhcmahw';
+            $config['smtp_user']    = 'occpchupuhgli@gmail.com';
+            $config['smtp_pass']    = 'chupuh123456';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html';
-            $config['validation'] = TRUE;   
+            $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('sale.smart.store.2019@gmail.com', 'Smart Store');
+            $this->email->from('occpchupuhgli@gmail.com', 'Hệ thống COOP UBND Chư pưh');
             $this->email->to($list['email']);
-            $this->email->subject('Hệ thống Smart Store - Lấy lại mật khẩu');
-            $this->email->message('Vui lòng truy cập đường dẫn để lấy lại mật khẩu <button class="btn"><a href="'.base_url().'dangnhap/reset_password_new/'.$list['id'].'">Lấy lại mật khẩu</a></button>'); 
+            $this->email->subject('Hệ thống COOP UBND Chư pưh - Lấy lại mật khẩu');
+            $this->email->message('Vui lòng truy cập đường dẫn để lấy lại mật khẩu <button class="btn"><a href="'.base_url().'dangnhap/reset_password_new/'.$list['id'].'">Lấy lại mật khẩu</a></button>');
             $this->email->send();
-            $this->data['success']='Bạn vui lòng kiểm tra mail để lấy lại mật khẩu!';   
-        }  
-        $this->data['title']='Smart store - Quên mật khẩu';   
+            $this->data['success']='Bạn vui lòng kiểm tra mail để lấy lại mật khẩu!';
+        }
+        $this->data['title']='Hệ thống COOP UBND Chư pưh - Quên mật khẩu';
         $this->data['view']='forget_password';
-        $this->load->view('frontend/layout',$this->data);  
+        $this->load->view('frontend/layout',$this->data);
     }
     // Kiêm tra email lấy lại mk có đúng
     function check_mail_forget(){
@@ -196,13 +196,13 @@ class Dangnhap extends CI_Controller {
 
     public function reset_password_new($id){
         $list = $this->Mcustomer->customer_detail_id($id);
-        
+
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[6]|max_length[32]');
         $this->form_validation->set_rules('re_password', 'Nhập lại mật khẩu', 'required|matches[password]');
-        
-        if($this->form_validation->run() ==TRUE){ 
+
+        if($this->form_validation->run() ==TRUE){
            $email = $_POST['email'];
            if($this->Mcustomer->customer_check_id_email($id, $email)!=FALSE){
                $password_new = md5($_POST['re_password']);
@@ -214,13 +214,13 @@ class Dangnhap extends CI_Controller {
            }
            else{
             $this->data['error']='Email không đúng, vui lòng nhập đúng email cần lấy lại mật khẩu !';
-            $this->data['title']='Smart Store - Cập nhật mật khẩu mới';
+            $this->data['title']='Hệ thống COOP UBND Chư pưh - Cập nhật mật khẩu mới';
             $this->data['view']='reset_password_new';
             $this->load->view('frontend/layout',$this->data);
         }
 
     }
-    $this->data['title']='Smart Store - Cập nhật mật khẩu mới';
+    $this->data['title']='Hệ thống COOP UBND Chư pưh - Cập nhật mật khẩu mới';
     $this->data['view']='reset_password_new';
     $this->load->view('frontend/layout',$this->data);
 }
