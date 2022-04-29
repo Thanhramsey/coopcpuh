@@ -142,4 +142,26 @@ class Sanpham extends CI_Controller {
         echo json_encode( $cart );
 
     }
+
+
+	public function insertCmt(){
+		$d=getdate();
+		$today=$d['year']."/".$d['mon']."/".$d['mday']." ".$d['hours'].":".$d['minutes'].":".$d['seconds'];
+		$id=$_POST['id'];
+		$comment=$_POST['comment'];
+		$userComment=$_POST['userComment'];
+		$sdt=$_POST['sdt'];
+		$star=$_POST['star'];
+		$mydata= array(
+					'product_id' =>$id,
+					'content' =>$comment,
+					'user_name' =>$userComment,
+					'sdt' =>$sdt,
+					'star' =>$star,
+					'comment_time' =>$today,
+					'trash'=>1
+				);
+		$this->Mevaluate->comment_insert($mydata);
+		echo json_encode( $mydata );
+	}
 }

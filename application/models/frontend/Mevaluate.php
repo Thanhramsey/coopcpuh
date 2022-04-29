@@ -13,4 +13,9 @@ class Mevaluate extends CI_Model {
                 $query = $this->db->get($this->table);
                 return $query->result_array();
         }
+		public function comment_insert($mydata)
+        {
+                $this->db->insert($this->table,$mydata);
+        }
+
 }

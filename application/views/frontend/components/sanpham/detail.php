@@ -194,19 +194,19 @@
 						</div>
 
 						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 mg-sp">
-							<textarea class="textarea-sp" placeholder="Mời bạn đánh giá về sản phẩm..."></textarea>
+							<textarea class="textarea-sp" id="commentContent" placeholder="Mời bạn đánh giá về sản phẩm..."></textarea>
 						</div>
 
 						<div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 mg-sp">
-							<input type="text" class="form-control" placeholder="Nhập tên">
+							<input type="text" id="nguoi_gui" class="form-control" placeholder="Nhập tên">
 						</div>
 
 						<div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 mg-sp" style="margin-left:20px">
-							<input type="text" class="form-control" placeholder="Nhập Số điện thoại">
+							<input type="text" id="sdt" class="form-control" placeholder="Nhập Số điện thoại">
 						</div>
 
 						<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 mg-sp">
-							<button class="btn btn-primary">Gửi</button>
+							<button class="btn btn-primary" type="button" onclick="submitComment(<?php echo $row['id'] ?>)">Gửi</button>
 						</div>
 
 						<!-- Hiện comment tại đây -->
@@ -322,8 +322,35 @@
 						}
 					});
 				}
-
-				$(':radio').change(function() {
-				console.log('New star rating: ' + this.value);
-				});
+				function submitComment(id){
+					var strurl="<?php echo base_url();?>"+'sanpham/insertCmt';
+					var comment = $("#commentContent").val();
+					var userComment = $("#nguoi_gui").val();
+					var sdt = $("#sdt").val();
+					var star = $("input[name='stars']:checked").val();
+					var validate = false;
+					if(comment ==="" ||  userComment == ""){
+						if(comment == ""){
+							$("#commentContent").focus();
+						}else if(userComment == ""){
+							$("#nguoi_gui").focus();
+						}
+					}else{
+						validate = true;
+					}
+					if(validate){
+						if(star !="1" && star!="5"){
+							star = 4;
+						}
+						jQuery.ajax({
+						url: strurl,
+						type: 'POST',
+						dataType: 'json',
+						data: {id: id,comment:comment,userComment:userComment,sdt:sdt,star:star},
+						success: function(data) {
+							document.location.reload(true);
+						}
+					});
+					}
+				};
 			</script>
