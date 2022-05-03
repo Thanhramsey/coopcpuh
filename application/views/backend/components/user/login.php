@@ -13,7 +13,7 @@
     <body>
         <div class="container khung">
             <div class="title">
-                <h2 class="text-center" style="color:#337ab7">Smart Store</h2>
+                <h2 class="text-center" style="color:#337ab7">OCOP ADMIN </h2>
             </div>
             <hr>
             <div class="myform">
@@ -45,13 +45,18 @@
                             </div>
                         </div>
                     <?php  endif;?>
+                    <div class="col_full nobottommargin">
+						<ul class="pull-left" style="padding-left:15px">
+							<li><a href="gianhang/forgotpassword" class="fright">Quên mật khẩu?</a></li>
+							<li><a href="gianhang/insert" class="fright">Người dùng mới? Đăng ký tài khoản</a></li>
+						</ul>
+					</div>
                 </form>
             </div>
-            <hr>
         </div>
         <nav class="navbar navbar-fixed-bottom" role="navigation">
             <div class="container">
-               <h5 class="text-center">Copyright © 2017 <a href="#" style="color:red">Smart-Store</a>. All rights reserved.</h5>
+               <h5 class="text-center">Copyright © 2022 <a href="#" style="color:red">COOP CHƯPƯH</a>. All rights reserved.</h5>
             </div>
         </nav>
         <!-- jQuery -->

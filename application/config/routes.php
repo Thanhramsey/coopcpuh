@@ -118,6 +118,8 @@ $route['admin/useradmin']='admin/useradmin/index';
 $route['admin/useradmin/(:num)'] ='admin/useradmin/index/$1';
 $route['useradmin/insert']='admin/useradmin/insert';
 
+$route['gianhang/insert']='admin/user/insert';
+$route['gianhang/forgotpassword']='admin/user/forgotpassword';
 //ql liên hệ
 $route['admin/contact'] ='admin/contact/index';
 $route['admin/contact/detail/(:num)'] ='admin/contact/detail/$1';

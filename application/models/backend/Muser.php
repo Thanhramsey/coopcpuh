@@ -99,4 +99,38 @@ class Muser extends CI_Model {
         return $query->result_array();
     }
 
+
+    function user_detail_email($email){
+        $this->db->where('email', $email);
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $query = $this->db->get($this->table);
+        return $query->row_array();
+    }
+
+    function user_detail_id_fg($id){
+        $this->db->where('id', $id);
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $query = $this->db->get($this->table);
+        return $query->row_array();
+    }
+
+    // kiểm tra id cần lấy lại có đúng với mail ko
+    function user_check_id_email($id, $email){
+        $this->db->where('id', $id);
+        $this->db->where('email', $email);
+        $query = $this->db->get($this->table);
+        if(count($query->result_array())==1){
+            return $query->row_array();
+        }else{
+            return FALSE;
+        }   
+    }
+
+    public function user_update_fg($data,$id){
+        $this->db->where('id',$id);
+        $this->db->update($this->table, $data);
+    }
+
 }
