@@ -61,13 +61,13 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[5]|max_length[32]');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
-				'fullname' =>$_POST['fullname'], 
-				'phone' =>$_POST['phone'], 
-				'address' =>$_POST['address'], 
-				'email' =>$_POST['email'], 
-				'username' =>$_POST['username'], 
-				'password' =>sha1($_POST['password']), 
-				'role' => 2, 
+				'fullname' =>$_POST['fullname'],
+				'phone' =>$_POST['phone'],
+				'address' =>$_POST['address'],
+				'email' =>$_POST['email'],
+				'username' =>$_POST['username'],
+				'password' =>sha1($_POST['password']),
+				'role' => 2,
 				'status' => 1,  // 1 : active , 2: chua active
 				'created' =>$today,
 				'trash'=>1
@@ -86,7 +86,7 @@ class User extends CI_Controller {
 			$this->Muser->user_insert($mydata);
 			$this->session->set_flashdata('success', 'Thêm tài khoản thành công');
 			redirect('admin/useradmin','refresh');
-		} 
+		}
 		else{
 			$this->data['view']='insert';
 			$this->data['title']='Thêm mới tài khoản';

@@ -23,7 +23,7 @@ class Mproduct extends CI_Model {
     }
     // Sản phẩm
     public function product_sanpham($limit,$first,$f,$od)
-    {       
+    {
         $this->db->where('trash', 1);
         $this->db->order_by($f, $od);
         $query = $this->db->get($this->table, $limit,$first);
@@ -66,7 +66,7 @@ class Mproduct extends CI_Model {
             }
             else
             {
-                   $this->db->or_where('catid', $value); 
+                   $this->db->or_where('catid', $value);
             }
             $dem++;
         }
@@ -97,12 +97,12 @@ class Mproduct extends CI_Model {
     }
     // Trang chi tiết sp
     public function product_detail($link)
-    {     
+    {
         $this->db->where('trash', 1);
         $this->db->where('alias', $link);
         $this->db->limit(1);
         $query = $this->db->get($this->table);
-        return $query->row_array();   
+        return $query->row_array();
     }
 
     public function product_cungloai($catid, $id, $limit)
@@ -115,6 +115,18 @@ class Mproduct extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result_array();
     }
+
+	public function product_cungnhasx($producer, $id)
+    {
+        $this->db->where('producer', $producer);
+        $this->db->where('id !=', $id);
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
+
+
     // Trang tìm kiếm
     public function product_search($name,$limit,$first){
         $this->db->like('name', $name);
@@ -134,17 +146,17 @@ class Mproduct extends CI_Model {
     }
     // icon giỏ hàng
     public function product_detail_id($id)
-    { 
+    {
         $this->db->where('status', 1);
         $this->db->where('trash', 1);
         $this->db->where('id', $id);
         $this->db->limit(1);
         $query = $this->db->get($this->table);
-        return $query->row_array();   
+        return $query->row_array();
     }
     //zend_search
     public function get_product()
-    { 
+    {
         $this->db->where('status', 1);
         $this->db->where('trash', 1);
         $query = $this->db->get($this->table);

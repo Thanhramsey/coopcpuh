@@ -28,9 +28,9 @@ class Dashboard extends CI_Controller {
 		$this->data['total4']=$this->Morders->orders_count();
 
 		//Thống kê - vẽ biểu đồ
-		
+
 		$this->data['view']='index';
-		$this->data['title']='Hệ thống quản lý cơ sở dữ liệu';
+		$this->data['title']='Hệ thống quản lý OCCP- CHƯPƯH';
 		$this->load->view('backend/layout', $this->data);
 	}
 

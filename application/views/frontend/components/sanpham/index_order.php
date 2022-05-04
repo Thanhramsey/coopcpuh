@@ -17,9 +17,6 @@
                                             <span class="text-giam-percent">Giảm <?php echo $sp['sale'] ?>%</span>
                                         </div>
                                     <?php endif; ?>
-                                    <div class="tra-gop-0">
-                                        <span class="text-tra-gop-0">Trả góp 0%</span>
-                                    </div>
                                 </div>
 
                                 <div class="lt-product-group-info">
@@ -45,7 +42,7 @@
                                         <?php endif;?>
                                     </div>
                                     <div class="clear"></div>
-                                </div>
+								</div>
                             </div>
                         </div>
                     <?php endforeach; ?>

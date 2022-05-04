@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hệ thống quản lý cơ sở dữ liệu</title>
+        <title>Hệ thống quản lý OCCP- CHƯPƯH</title>
         <link rel="shortcut icon" href="public/images/templates/favicon.png" />
 		<link rel="stylesheet" href="public/css/bootstrap.css">
 		<link rel="stylesheet" href="public/css/login.css">
@@ -18,7 +18,7 @@
             </div>
             <hr>
             <div class="myform">
-            <form action="<?php echo base_url() ?>admin/user/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">            
+            <form action="<?php echo base_url() ?>admin/user/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
         <!-- Main content -->
         <section class="content">
             <div class="row">
@@ -88,6 +88,6 @@
         <!-- jQuery -->
         <script src="public/js/jquery-2.2.3.min.js"></script>
 		<script src="public/js/bootstrap.js"></script>
-    
+
 	</body>
 </html>

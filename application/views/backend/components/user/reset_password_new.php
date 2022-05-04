@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hệ thống quản lý cơ sở dữ liệu</title>
+        <title>Hệ thống quản lý OCCP- CHƯPƯH</title>
         <link rel="shortcut icon" href="public/images/templates/favicon.png" />
 		<link rel="stylesheet" href="public/css/bootstrap.css">
 		<link rel="stylesheet" href="public/css/login.css">
@@ -19,12 +19,12 @@
             <hr>
             <div class="myform">
                 <form action="" accept-charset="UTF-8" action="" id="reset_password" method="post">
-                    <div id="login">                               
-                        <?php 
+                    <div id="login">
+                        <?php
                         if(isset($success))
                             echo '<h4 style="color:green;">'.$success.'</h4>';
                         ?>
-						<?php 
+						<?php
 						if(isset($error))
 							echo '<h4 style="color:red;">'.$error.'</h4>';
 						?>
@@ -57,10 +57,10 @@
                <h5 class="text-center">Copyright © 2022 <a href="#" style="color:red">COOP CHƯPƯH</a>. All rights reserved.</h5>
             </div>
         </nav>
-        
+
         <script src="public/js/jquery-2.2.3.min.js"></script>
 		<script src="public/js/bootstrap.js"></script>
-    
+
 	</body>
 </html>
 
@@ -73,11 +73,11 @@
 			<form action="" accept-charset="UTF-8" action="" id="reset_password" method="post">
 				<div id="login">
 					<div class="acctitle acctitlec">Lấy lại mật khẩu</div>
-					<?php 
+					<?php
 					if(isset($success))
 						echo '<h4 style="color:green;">Đổi mật khẩu thành công </h4>';
 					?>
-					<?php 
+					<?php
 					if(isset($error))
 						echo '<h4 style="color:red;">'.$error.'</h4>';
 					?>

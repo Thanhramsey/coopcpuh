@@ -1,5 +1,5 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed'); 
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <section id="checkout-cart">
     <div class="container">
@@ -7,8 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="wrapper overflow-hidden">
                 <div class="checkout-content">
                     <div class="tks-header">
-                        <h3 class="fa fa-check-circle"> Thông tin đơn hàng đã được gửi đến 
-                            <?php 
+                        <h3 class="fa fa-check-circle"> Thông tin đơn hàng đã được gửi đến
+                            <?php
                             if($this->session->userdata('info-customer')){
                                 $data=$this->session->userdata('info-customer');
                                 echo $data['email'];
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="tks-content" style="min-height: 1px;
                     overflow: hidden;">
-                    <div class="col-xs-12 col-sm-12 col-md-7 col-login-checkout" style="margin-bottom: 20px">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-login-checkout" style="margin-bottom: 20px">
                         <table class="table tks-tabele-info-cus">
                             <thead>
                                 <tr>
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-5 products-detail">
+                    <!-- <div class="col-xs-12 col-sm-12 col-md-5 products-detail">
                         <div class="no-margin-table" style="width: 95%; float: right;">
                             <table class="table" style="color: #333;">
                                 <thead>
@@ -66,14 +66,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <?php
                                     $data=$this->Morderdetail->orderdetail_order($get['id']);
                                     $money=0;
-                                    $total2=0;                                   
+                                    $total2=0;
                                     foreach ($data as $value) :
                                         $row = $this->Mproduct->product_detail_id($value['productid']);
                                         ?>
                                         <tr>
                                             <td><?php echo $row['name']; ?></td>
                                             <td class="text-center"><?php echo $value['count']; ?></td>
-                                            <td class="text-center">    
+                                            <td class="text-center">
                                                 <?php echo number_format($value['price']);?>
                                             </td>
                                             <td><?php echo number_format($value['count'] * $value['price']); ?> VNĐ</td>
@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <tr style="background: #fafafa">
                                         <td colspan="3">Tổng cộng :</td>
                                         <td class="text-center">
-                                            <?php 
+                                            <?php
                                             echo number_format($total2);
                                             ?> VNĐ
                                         </td>
@@ -94,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <td colspan="3">Vận chuyển</td>
                                         <td class="text-center"><?php echo number_format($get['price_ship']).' VNĐ'; ?></td>
                                     </tr>
-                                    <?php 
+                                    <?php
                                     if($get['coupon'] != 0){
                                         echo '<tr style="background: #fafafa">
                                         <td colspan="3">Voucher</td>
@@ -109,7 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="btn-tks clearfix">
                     <button type="button" onclick="window.location.href='<?php echo base_url() ?>trang-chu'" class="btn-next-checkout pull-left">Tiếp tục mua hàng</button>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2022 at 12:00 PM
+-- Generation Time: May 04, 2022 at 12:16 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -75,7 +75,7 @@ CREATE TABLE `db_config` (
 --
 
 INSERT INTO `db_config` (`id`, `mail_smtp`, `mail_smtp_password`, `mail_noreply`, `priceShip`, `title`, `description`) VALUES
-(1, 'sale.smart.store.2019@gmail.com', '123456', 'vanhiepp1998@gmail.com', '30000', 'Web site bán hàng Demo', '');
+(1, 'occpchupuhgli@gmail.com', 'chupuh123456', 'thanhwilshere96@gmail.com', '0', 'OCOP CHUPUH', '');
 
 -- --------------------------------------------------------
 
@@ -156,8 +156,10 @@ CREATE TABLE `db_customer` (
 --
 
 INSERT INTO `db_customer` (`id`, `fullname`, `username`, `password`, `address`, `phone`, `email`, `created`, `trash`, `status`) VALUES
-(1, 'Thành', 'thanh1996', 'e10adc3949ba59abbe56e057f20f883e', '', '0969124469', 'thanhwilshere96@gmail.com', '2021-04-24 22:10:08', 1, 1),
-(67, '<div style=', '', '', '', '<div style=', '', '2022-04-27 09:06:55', 0, 1);
+(1, 'Thành', 'thanh1996', 'fcea920f7412b5da7be0cf42b8c93759', '', '0969124469', 'thanhwilshere96@gmail.com', '2021-04-24 22:10:08', 1, 1),
+(67, '<div style=', '', '', '', '<div style=', '', '2022-04-27 09:06:55', 0, 1),
+(68, 'Tempo', '', '', '', '0987678543', 'tempo@gmail.com', '2022-05-04 14:41:26', 1, 1),
+(69, 'tuấn', '', '', '', '0123913123', '', '2022-05-04 14:43:40', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -933,9 +935,9 @@ CREATE TABLE `db_evaluate` (
   `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `sdt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `comment_time` datetime NOT NULL,
-  `comment_by` int(11) NOT NULL,
+  `comment_by` int(11) DEFAULT NULL,
   `star` int(11) NOT NULL DEFAULT 1,
-  `trash` int(11) NOT NULL DEFAULT 1
+  `trash` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -943,8 +945,13 @@ CREATE TABLE `db_evaluate` (
 --
 
 INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `comment_time`, `comment_by`, `star`, `trash`) VALUES
-(1, 'Sản phẩm quá tuyệt vời', 30, 'Chương Châu', '0969124469', '2022-04-28 09:28:55', 4, 4, 1),
-(2, 'Không mua thì hơi phí', 30, 'Thành côn', '0898124432', '2022-04-28 10:05:26', 4, 5, 1);
+(1, 'Tuấn', 30, 'Sản phẩm rất chất lượng !!!', '0982403335', '2022-04-29 10:19:14', NULL, 4, 1),
+(2, 'Sản phẩm quá tuyệt vời', 30, 'Chương Châu', '0969124469', '2022-04-28 09:28:55', 4, 4, 1),
+(3, 'Không mua thì hơi phí', 30, 'Thành côn', '0898124432', '2022-04-28 10:05:26', 4, 5, 1),
+(4, 'Linh', 43, 'Sản phẩm không giống quảng cáo', '0989786543', '2022-04-29 10:28:55', NULL, 1, 1),
+(5, 'Thành', 43, 'Sản phẩm khá tốt', '0989765421', '2022-04-29 10:29:23', NULL, 3, 1),
+(6, 'Sản phẩm khá tốt !', 34, 'Thạch', '', '2022-04-29 11:08:21', NULL, 4, 1),
+(7, 'Sản phẩm đúng miêu tả!!1', 34, 'Bích', '0989765456', '2022-04-29 11:08:55', NULL, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -966,19 +973,28 @@ CREATE TABLE `db_order` (
   `district` int(5) NOT NULL,
   `address` varchar(255) CHARACTER SET utf8 NOT NULL,
   `trash` int(1) NOT NULL DEFAULT 1,
-  `status` int(1) NOT NULL DEFAULT 1
+  `status` int(1) NOT NULL DEFAULT 1,
+  `orderDes` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `db_order`
 --
 
-INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`, `phone`, `money`, `price_ship`, `coupon`, `province`, `district`, `address`, `trash`, `status`) VALUES
-(76, 'yw0beUY9', 1, '2022-04-26 10:54:26', 'Thành', '0969124469', 240000, 30000, 0, 64, 622, '69 hùng vương', 0, 3),
-(77, 'DlbsGNHd', 67, '2022-04-27 09:06:55', '<div style=', '<div style=', 505000, 30000, 0, 96, 969, '\r\n<h4>A PHP Error was encountered</h4>\r\n\r\n<p>Severity: Notice</p>\r\n<p>Message:  Trying to access array offset on value of type null</p>\r\n<p>Filename: giohang/info-order.php</p>\r\n<p>Line Number: 76</p>\r\n\r\n\r\n	<p>Backtrace:</p>\r\n	\r\n		\r\n	\r\n		\r\n	\r\n		\r\n			<p st', 1, 4),
-(78, 'qHQ26z5X', 1, '2022-04-28 09:08:23', 'Thành', '0969124469', 125000, 30000, 0, 64, 622, '69 Hùng Vương', 1, 2),
-(79, 'qHauRk15', 1, '2022-04-28 09:11:15', 'Thành', '0969124469', 130000, 30000, 0, 64, 622, '69 Hùng Vương', 1, 2),
-(80, 'KwCd6pSz', 1, '2022-04-28 09:54:13', 'Thành', '0969124469', 185000, 30000, 0, 64, 622, '69 hùng vương', 1, 0);
+INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`, `phone`, `money`, `price_ship`, `coupon`, `province`, `district`, `address`, `trash`, `status`, `orderDes`) VALUES
+(98, 'xBW5z6r0', 1, '2022-05-04 16:33:21', 'Thành', '0969124469', 5000, 0, 0, 64, 622, '40 võ văn kiệt ', 1, 0, NULL),
+(99, 'ZT4Pdgl7', 1, '2022-05-04 16:33:21', 'Thành', '0969124469', 30000, 0, 0, 64, 622, '40 võ văn kiệt ', 1, 0, NULL),
+(100, 'eYjrsyiv', 1, '2022-05-04 16:33:21', 'Thành', '0969124469', 120000, 0, 0, 64, 622, '40 võ văn kiệt ', 1, 0, NULL),
+(101, 'PWmEY4nF', 1, '2022-05-04 17:02:07', 'Thành', '0969124469', 20000, 0, 0, 31, 318, 'tttt', 1, 0, '12022541727'),
+(102, 'HznNxOMZ', 1, '2022-05-04 17:02:07', 'Thành', '0969124469', 35000, 0, 0, 31, 318, 'tttt', 1, 0, '12022541727'),
+(103, 'tPJeYFT6', 1, '2022-05-04 17:04:55', 'Thành', '0969124469', 20000, 0, 0, 48, 492, 'kkkk', 1, 0, '120225417455'),
+(104, 'mbwlSGaN', 1, '2022-05-04 17:04:55', 'Thành', '0969124469', 35000, 0, 0, 48, 492, 'kkkk', 1, 0, '120225417455'),
+(105, 'CufMbwr1', 1, '2022-05-04 17:07:25', 'Thành', '0969124469', 9000000, 0, 0, 4, 43, 'aaaa', 1, 0, '120225417725'),
+(106, 'fvg8kmU2', 1, '2022-05-04 17:07:25', 'Thành', '0969124469', 30000, 0, 0, 4, 43, 'aaaa', 1, 0, '120225417725'),
+(107, '3eyKoYqM', 1, '2022-05-04 17:07:25', 'Thành', '0969124469', 190000, 0, 0, 4, 43, 'aaaa', 1, 0, '120225417725'),
+(108, '2j6rxfuO', 1, '2022-05-04 17:09:51', 'Thành', '0969124469', 9000000, 0, 0, 4, 46, 'ggg', 1, 0, '120225417951'),
+(109, '9m2kM1wg', 1, '2022-05-04 17:09:51', 'Thành', '0969124469', 30000, 0, 0, 4, 46, 'ggg', 1, 0, '120225417951'),
+(110, 'G4O07IQJ', 1, '2022-05-04 17:09:51', 'Thành', '0969124469', 190000, 0, 0, 4, 46, 'ggg', 1, 0, '120225417951');
 
 -- --------------------------------------------------------
 
@@ -1001,15 +1017,22 @@ CREATE TABLE `db_orderdetail` (
 --
 
 INSERT INTO `db_orderdetail` (`id`, `orderid`, `productid`, `count`, `price`, `trash`, `status`) VALUES
-(101, 76, 31, 2, 45000, 1, 1),
-(102, 76, 30, 1, 120000, 1, 1),
-(103, 77, 35, 1, 475000, 1, 1),
-(104, 78, 37, 1, 35000, 1, 1),
-(105, 78, 34, 3, 20000, 1, 1),
-(106, 79, 38, 2, 35000, 1, 1),
-(107, 79, 33, 1, 30000, 1, 1),
-(108, 80, 37, 1, 35000, 1, 1),
-(109, 80, 30, 1, 120000, 1, 1);
+(140, 95, 38, 3, 30000, 1, 1),
+(141, 96, 32, 1, 190000, 1, 1),
+(142, 97, 31, 1, 45000, 1, 1),
+(143, 98, 43, 1, 5000, 1, 1),
+(144, 99, 33, 1, 30000, 1, 1),
+(145, 100, 30, 1, 120000, 1, 1),
+(146, 101, 34, 1, 20000, 1, 1),
+(147, 102, 37, 1, 35000, 1, 1),
+(148, 103, 34, 1, 20000, 1, 1),
+(149, 104, 37, 1, 35000, 1, 1),
+(150, 105, 40, 1, 9000000, 1, 1),
+(151, 106, 33, 1, 30000, 1, 1),
+(152, 107, 32, 1, 190000, 1, 1),
+(153, 108, 40, 1, 9000000, 1, 1),
+(154, 109, 33, 1, 30000, 1, 1),
+(155, 110, 32, 1, 190000, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1233,7 +1256,8 @@ INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`
 (1, 'Trịnh Tấn Thành', 'thanh1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'thanhwilshere96@gmail.com', 0, '981643651', 'Gò vấp', 'default.png', '2022-04-13 22:30:03', 1, 1),
 (2, 'Công ty giải trí cây đa', 'thanh19961', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'thanhwilshere96@gmail.com', 0, '', 'Lê đức thọ 2', 'default.png', '2022-04-13 22:59:14', 1, 1),
 (10, 'Công ty TNHH Tấn Thành MTP', 'mtp1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'mtp@gmail.com', 0, '0958569633', '876 Lý Thường Kiệt, Chupuh, Gia Lai', '07403ad8be5947f1e93fc6e6f9b086db.jpg', '2022-04-26 13:55:36', 1, 1),
-(11, 'Công ty may mặc MTP', 'ptm1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'ptm@gmail.com', 0, '0989098765', 'Chupuh, Pleiku,Gia Lai', '71b403bd0622e76486e728c5fff0c370.jpg', '2022-04-26 16:07:19', 1, 1);
+(11, 'Công ty may mặc MTP', 'ptm1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'ptm@gmail.com', 0, '0989098765', 'Chupuh, Pleiku,Gia Lai', '71b403bd0622e76486e728c5fff0c370.jpg', '2022-04-26 16:07:19', 1, 1),
+(12, 'Lê Văn Tiến', 'tien9x', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 2, '14520851@gm.uit.edu.vn', 0, '0969878909', '90 nguyễn văn trối ', 'default.png', '2022-05-04 08:02:15', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1406,7 +1430,7 @@ ALTER TABLE `db_content`
 -- AUTO_INCREMENT for table `db_customer`
 --
 ALTER TABLE `db_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `db_discount`
@@ -1415,16 +1439,22 @@ ALTER TABLE `db_discount`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=18;
 
 --
+-- AUTO_INCREMENT for table `db_evaluate`
+--
+ALTER TABLE `db_evaluate`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `db_order`
 --
 ALTER TABLE `db_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `db_producer`
@@ -1448,7 +1478,7 @@ ALTER TABLE `db_slider`
 -- AUTO_INCREMENT for table `db_user`
 --
 ALTER TABLE `db_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `db_usergroup`

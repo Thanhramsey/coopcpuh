@@ -77,7 +77,7 @@ class Orders extends CI_Controller {
         //Lấy lên sl number_buy của sp để cộng thêm sl sp đó của đơn hàng
         $number_buy = $this->Morders->product_number_buy($idproduct);
         $mydata= array(
-          'number_buy'=> $number_buy+$countproduct, 
+          'number_buy'=> $number_buy+$countproduct,
         );
         $this->Morders->orders_update_number_product($mydata, $idproduct);
         $this->session->set_flashdata('success', 'Cập nhật đơn hàng '.$row['orderCode'].' thành công !!');
@@ -91,7 +91,7 @@ class Orders extends CI_Controller {
       $this->session->set_flashdata('error', 'Đơn hàng đã giao và thanh toán, không thể chỉnh sửa !');
       redirect('admin/orders','refresh');
     }
-    
+
   }
 
   public function recyclebin()

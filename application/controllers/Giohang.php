@@ -15,7 +15,7 @@ class Giohang extends CI_Controller {
         $this->load->model('frontend/Mprovince');
         $this->data['com']='giohang';
     }
-    
+
     public function index(){
         $this->data['title']='Smart store - Giỏ hàng của bạn';
         $this->data['view']='index';
@@ -37,6 +37,7 @@ class Giohang extends CI_Controller {
         $this->load->library('form_validation');
         $d=getdate();
         $today=$d['year']."/".$d['mon']."/".$d['mday']." ".$d['hours'].":".$d['minutes'].":".$d['seconds'];
+		$todayDes = $d['year'].$d['mon'].$d['mday'].$d['hours'].$d['minutes'].$d['seconds'];
         if(!$this->session->userdata('sessionKhachHang'))
         {
             $this->form_validation->set_rules('email', 'Địa chỉ email', 'required|is_unique[db_customer.email]');
@@ -50,6 +51,7 @@ class Giohang extends CI_Controller {
         if($this->form_validation->run() == TRUE){
             //Tinh tien don hang
             $money=0;
+			$idCustomer=null;
             if($this->session->userdata('cart')){
                 $data=$this->session->userdata('cart');
                 foreach ($data as $key => $value) {
@@ -61,99 +63,120 @@ class Giohang extends CI_Controller {
                         $total=$row['price'] * $value;
                     }
                     $money+=$total;
+					if($this->session->userdata('sessionKhachHang')){
+						$emailtemp = $this->session->userdata('email');
+						$info=$this->session->userdata('sessionKhachHang');
+						$idCustomer=$info['id'];
+					}else{
+						$emailtemp = $_POST['email'];
+					}
+					if(!$this->session->userdata('sessionKhachHang')){
+						$datacustomer= array(
+							'fullname'=>$_POST['name'],
+							'phone'=> $_POST['phone'],
+							'email'=> $emailtemp,
+							'created' =>$today,
+							'status'=>1,
+							'trash'=>1
+						);
+						$this->Mcustomer->customer_insert($datacustomer);
+						$row=$this->Mcustomer->customer_detail_email($_POST['email']);
+						$this->session->set_userdata('info-customer',$row);
+						$info=$this->session->userdata('info-customer');
+						if($info['id']){
+							$idCustomer=$info['id'];
+							$this->session->set_userdata('id-info-customer',$idCustomer);
+						}
+					}
+					//kt ma giam gia
+					if($this->session->userdata('coupon_price'))
+					{
+						$coupon =$this->session->userdata('coupon_price');
+						$idcoupon =$this->session->userdata('id_coupon_price');
+						$amount_number_used = $this->Mconfig->get_amount_number_used($idcoupon);
+						$mycoupon=array(
+							'number_used' => $amount_number_used+1,
+						);
+						$this->Mconfig->coupon_update($mycoupon, $idcoupon);
+					}
+					else{
+						$coupon = 0;
+					}
+
+					$provinceId = $_POST['city'];
+					$districtId = $_POST['DistrictId'];
+					$orderCode = random_string('alnum', 8);
+					$orderDes = $idCustomer.$todayDes;
+					$mydata=array(
+						'orderCode' => $orderCode,
+						'customerid' => $idCustomer,
+						'orderdate' => $today,
+						'fullname' => $_POST['name'],
+						'phone' => $_POST['phone'],
+						'address' => $_POST['address'],
+						'money' => $total + $priceShip -$coupon,
+						'price_ship' => $priceShip,
+						'coupon' => $coupon,
+						'province' => $provinceId,
+						'district' => $districtId,
+						'trash' => 1,
+						'status' => 0,
+						'orderDes'=> $orderDes
+					);
+
+					//Insert to db_order
+					$this->Morder->order_insert($mydata);
+
+
+					// lưu tt đơn hàng và xóa session coupon
+					$this->session->set_userdata('orderDes',$orderDes);
+					$this->session->unset_userdata('id_coupon_price');
+					$this->session->unset_userdata('coupon_price');
+
+					$order_detail = $this->Morder->order_detail_customerid_orderCode($idCustomer,$orderCode);
+					$orderid = $order_detail['id'];
+					$data=[];
+					if($row['price_sale'] > 0){
+						$price = $row['price_sale'];
+					}else{
+						$price = $row['price'];
+					}
+					$data = array(
+						'orderid' => $orderid,
+						'productid' => $key,
+						'price' => $price,
+						'count' => $value,
+						'trash' => 1,
+						'status' => 1
+					);
+					$this->Morderdetail->orderdetail_insert($data);
+					// $this->Morderdetail->orderdetail_insert($data);
+					// if($this->session->userdata('cart')){
+					// 	$val = $this->session->userdata('cart');
+					// 	foreach ($val as $key => $value){
+					// 		$row = $this->Mproduct->product_detail_id($key);
+					// 		if($row['price_sale'] > 0){
+					// 			$price = $row['price_sale'];
+					// 		}else{
+					// 			$price = $row['price'];
+					// 		}
+					// 		$data = array(
+					// 			'orderid' => $orderid,
+					// 			'productid' => $key,
+					// 			'price' => $price,
+					// 			'count' => $value,
+					// 			'trash' => 1,
+					// 			'status' => 1
+					// 		);
+					// 		$this->Morderdetail->orderdetail_insert($data);
+					// 	}
+					// }
                 }
             }
-            $idCustomer=null;
-            if($this->session->userdata('sessionKhachHang')){
-                $emailtemp = $this->session->userdata('email');
-                $info=$this->session->userdata('sessionKhachHang');
-                $idCustomer=$info['id'];
-            }else{
-                $emailtemp = $_POST['email'];
-            }
-            if(!$this->session->userdata('sessionKhachHang')){
-                $datacustomer= array(
-                    'fullname'=>$_POST['name'],
-                    'phone'=> $_POST['phone'],
-                    'email'=> $emailtemp,
-                    'created' =>$today,
-                    'status'=>1,
-                    'trash'=>1
-                );
-                $this->Mcustomer->customer_insert($datacustomer);
-                $row=$this->Mcustomer->customer_detail_email($_POST['email']);
-                $this->session->set_userdata('info-customer',$row);
-                $info=$this->session->userdata('info-customer');
-                if($info['id']){
-                    $idCustomer=$info['id'];
-                    $this->session->set_userdata('id-info-customer',$idCustomer);
-                }
-            }
-            //kt ma giam gia
-            if($this->session->userdata('coupon_price'))
-            {
-                $coupon =$this->session->userdata('coupon_price');
-                $idcoupon =$this->session->userdata('id_coupon_price');
-                $amount_number_used = $this->Mconfig->get_amount_number_used($idcoupon);
-                $mycoupon=array(
-                    'number_used' => $amount_number_used+1,
-                );
-                $this->Mconfig->coupon_update($mycoupon, $idcoupon);
-            }
-            else{
-                $coupon = 0;
-            }
 
-            $provinceId = $_POST['city'];
-            $districtId = $_POST['DistrictId'];
-            $mydata=array(
-                'orderCode' => random_string('alnum', 8),
-                'customerid' => $idCustomer,
-                'orderdate' => $today,
-                'fullname' => $_POST['name'],
-                'phone' => $_POST['phone'],
-                'address' => $_POST['address'],
-                'money' => $money + $priceShip -$coupon,
-                'price_ship' => $priceShip,
-                'coupon' => $coupon,
-                'province' => $provinceId,
-                'district' => $districtId,
-                'trash' => 1,
-                'status' => 0
-            );
-
-            //Insert to db_order
-            $this->Morder->order_insert($mydata);
-
-
-            // lưu tt đơn hàng và xóa session coupon
-            $this->session->unset_userdata('id_coupon_price');
-            $this->session->unset_userdata('coupon_price');
 
             //Insert to db_orderdetail
-            $order_detail = $this->Morder->order_detail_customerid($idCustomer);
-            $orderid = $order_detail['id'];
-            $data=[];
-            if($this->session->userdata('cart')){
-                $val = $this->session->userdata('cart');
-                foreach ($val as $key => $value){
-                    $row = $this->Mproduct->product_detail_id($key);
-                    if($row['price_sale'] > 0){
-                        $price = $row['price_sale'];
-                    }else{
-                        $price = $row['price'];
-                    }
-                    $data = array(
-                        'orderid' => $orderid,
-                        'productid' => $key,
-                        'price' => $price,
-                        'count' => $value,
-                        'trash' => 1,
-                        'status' => 1
-                    );
-                    $this->Morderdetail->orderdetail_insert($data);
-                }
-            }
+
             $array_items = array('cart');
             $this->session->unset_userdata($array_items);
             redirect('/thankyou','refresh');
@@ -172,7 +195,12 @@ class Giohang extends CI_Controller {
             }else{
                 $val = $this->session->userdata('info-customer');
             }
-            $list = $this->Morder->order_detail_customerid($val['id']);
+
+			$orderDes = $this->session->userdata('orderDes');
+			//TODO CHECK
+			//xem tiep cho nay ->  lay het snh sach dua vao mail
+            $list = $this->Morder->order_detail_orderDes($orderDes);
+
             $data = array(
                 'order' => $list,
                 'customer' => $val,
@@ -181,7 +209,6 @@ class Giohang extends CI_Controller {
                 'district' => $this->Mdistrict->district_name($list['district']),
                 'priceShip' => $this->Mconfig->config_price_ship(),
                 'coupon' => $list['coupon'],
-
             );
             $this->data['customer']=$val;
             $this->data['get']=$list;
@@ -192,29 +219,29 @@ class Giohang extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'sale.smart.store.2019@gmail.com';
-            $config['smtp_pass']    = 'cqfmfmrtudhcmahw';
+            $config['smtp_user']    = 'occpchupuhgli@gmail.com';
+            $config['smtp_pass']    = 'chupuh123456';
             // mk trên la mat khau dung dung cua gmail, có thể dùng gmail hoac mat khau. Tao mat khau ung dung de bao mat tai khoan
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html';
-            $config['validation'] = TRUE;   
+            $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('sale.smart.store.2019@gmail.com', 'Smart Store');
+            $this->email->from('occpchupuhgli@gmail.com', 'OCOP CHƯPƯH');
             $list = array($val['email']);
             $this->email->to($list);
-            $this->email->subject('Hệ thống Smart Store');
+            $this->email->subject('Hệ thống OCOP CHƯPƯH');
             $body = $this->load->view('frontend/modules/email',$data,TRUE);
-            $this->email->message($body); 
+            $this->email->message($body);
             $this->email->send();
 
             $datax = array('email' => '');
             $idx= $this->session->userdata('id-info-customer');
             $this->Mcustomer->customer_update($datax,$idx);
             $this->session->unset_userdata('id-info-customer','money_check_coupon');
-        }   
-        $this->data['title']='Smart Store.vn - Kết quả đơn hàng';
+        }
+        $this->data['title']='OCOP CHƯPƯH - Kết quả đơn hàng';
         $this->data['view']='thankyou';
         $this->load->view('frontend/layout',$this->data);
     }
@@ -224,7 +251,7 @@ class Giohang extends CI_Controller {
         $id=$_POST['provinceid'];
         $list = $this->Mdistrict->district_provinceid($id);
         $html="<option value =''>--- Chọn quận huyện ---</option>";
-        foreach ($list as $row) 
+        foreach ($list as $row)
         {
             $html.='<option value = '.$row["id"].'>'.$row["name"].'</option>';
         }
