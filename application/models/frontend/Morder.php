@@ -51,4 +51,12 @@ class Morder extends CI_Model {
                 $this->db->where('id',$id);
                 $this->db->update($this->table, $mydata);
         }
+        public function order_order_join_product($orderDes){
+                $this->db->select('*,or.price as priceorder');
+                $this->db->from('db_order as or');
+                $this->db->where('or.orderDes',$orderDes);
+                $this->db->join('db_product as pr','pr.id = or.productid');
+                $query = $this->db->get();
+                return $query->result_array();
+        }
 }

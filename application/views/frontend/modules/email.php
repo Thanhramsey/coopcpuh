@@ -63,7 +63,7 @@
 						<tr style="border:1px solid #d7d7d7">
 							<td><?php echo $value['name']; ?></td>
 							<td style="text-align:center;padding:5px 10px"><?php echo $value['count'] ?></td>
-							<td style="padding:5px 10px;text-align:center;"><?php echo number_format($value['priceorder']) ?> VNĐ</td>
+							<td style="padding:5px 10px;text-align:center;"><?php echo number_format($value['price']) ?> VNĐ</td>
 							<td style="padding:5px 10px;text-align:right">
 								<?php
 								$price = $value['priceorder'] * $value['count'];
@@ -93,7 +93,7 @@
 									</tr>
 									<tr>
 										<td><strong>Tổng thành tiền</strong></td>
-										<td style="text-align:right color: red; font-size: 19px;"><?php echo number_format($order['money']) ?> VNĐ</td>
+										<td style="text-align:right color: red; font-size: 19px;"><?php echo number_format($total+$priceShip-$coupon) ?> VNĐ</td>
 									</tr>
 								</tbody>
 							</table>

@@ -107,6 +107,11 @@ class Giohang extends CI_Controller {
 					$districtId = $_POST['DistrictId'];
 					$orderCode = random_string('alnum', 8);
 					$orderDes = $idCustomer.$todayDes;
+                    if($row['price_sale'] > 0){
+						$price = $row['price_sale'];
+					}else{
+						$price = $row['price'];
+					}
 					$mydata=array(
 						'orderCode' => $orderCode,
 						'customerid' => $idCustomer,
@@ -121,7 +126,10 @@ class Giohang extends CI_Controller {
 						'district' => $districtId,
 						'trash' => 1,
 						'status' => 0,
-						'orderDes'=> $orderDes
+						'orderDes'=> $orderDes,
+                        'productid' => $key,
+						'price' => $price,
+						'count' => $value,
 					);
 
 					//Insert to db_order
@@ -132,15 +140,10 @@ class Giohang extends CI_Controller {
 					$this->session->set_userdata('orderDes',$orderDes);
 					$this->session->unset_userdata('id_coupon_price');
 					$this->session->unset_userdata('coupon_price');
-
+                     //Insert to db_orderdetail
 					$order_detail = $this->Morder->order_detail_customerid_orderCode($idCustomer,$orderCode);
 					$orderid = $order_detail['id'];
 					$data=[];
-					if($row['price_sale'] > 0){
-						$price = $row['price_sale'];
-					}else{
-						$price = $row['price'];
-					}
 					$data = array(
 						'orderid' => $orderid,
 						'productid' => $key,
@@ -150,32 +153,8 @@ class Giohang extends CI_Controller {
 						'status' => 1
 					);
 					$this->Morderdetail->orderdetail_insert($data);
-					// $this->Morderdetail->orderdetail_insert($data);
-					// if($this->session->userdata('cart')){
-					// 	$val = $this->session->userdata('cart');
-					// 	foreach ($val as $key => $value){
-					// 		$row = $this->Mproduct->product_detail_id($key);
-					// 		if($row['price_sale'] > 0){
-					// 			$price = $row['price_sale'];
-					// 		}else{
-					// 			$price = $row['price'];
-					// 		}
-					// 		$data = array(
-					// 			'orderid' => $orderid,
-					// 			'productid' => $key,
-					// 			'price' => $price,
-					// 			'count' => $value,
-					// 			'trash' => 1,
-					// 			'status' => 1
-					// 		);
-					// 		$this->Morderdetail->orderdetail_insert($data);
-					// 	}
-					// }
                 }
             }
-
-
-            //Insert to db_orderdetail
 
             $array_items = array('cart');
             $this->session->unset_userdata($array_items);
@@ -204,7 +183,7 @@ class Giohang extends CI_Controller {
             $data = array(
                 'order' => $list,
                 'customer' => $val,
-                'orderDetail' => $this->Morderdetail->orderdetail_order_join_product($list['id']),
+                'orderDetail' => $this->Morder->order_order_join_product($orderDes),
                 'province' => $this->Mprovince->province_name($list['province']),
                 'district' => $this->Mdistrict->district_name($list['district']),
                 'priceShip' => $this->Mconfig->config_price_ship(),

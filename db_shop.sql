@@ -2,10 +2,10 @@
 -- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 04, 2022 at 12:16 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.28
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 04, 2022 lúc 06:28 PM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_shop`
+-- Cơ sở dữ liệu: `db_shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_category`
+-- Cấu trúc bảng cho bảng `db_category`
 --
 
 CREATE TABLE `db_category` (
@@ -43,7 +43,7 @@ CREATE TABLE `db_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_category`
+-- Đang đổ dữ liệu cho bảng `db_category`
 --
 
 INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, `created_at`, `created_by`, `updated_at`, `updated_by`, `trash`, `status`) VALUES
@@ -57,7 +57,7 @@ INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_config`
+-- Cấu trúc bảng cho bảng `db_config`
 --
 
 CREATE TABLE `db_config` (
@@ -71,7 +71,7 @@ CREATE TABLE `db_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_config`
+-- Đang đổ dữ liệu cho bảng `db_config`
 --
 
 INSERT INTO `db_config` (`id`, `mail_smtp`, `mail_smtp_password`, `mail_noreply`, `priceShip`, `title`, `description`) VALUES
@@ -80,7 +80,7 @@ INSERT INTO `db_config` (`id`, `mail_smtp`, `mail_smtp_password`, `mail_noreply`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_contact`
+-- Cấu trúc bảng cho bảng `db_contact`
 --
 
 CREATE TABLE `db_contact` (
@@ -96,7 +96,7 @@ CREATE TABLE `db_contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_contact`
+-- Đang đổ dữ liệu cho bảng `db_contact`
 --
 
 INSERT INTO `db_contact` (`id`, `title`, `phone`, `email`, `content`, `created_at`, `status`, `trash`, `fullname`) VALUES
@@ -107,7 +107,7 @@ INSERT INTO `db_contact` (`id`, `title`, `phone`, `email`, `content`, `created_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_content`
+-- Cấu trúc bảng cho bảng `db_content`
 --
 
 CREATE TABLE `db_content` (
@@ -126,7 +126,7 @@ CREATE TABLE `db_content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_content`
+-- Đang đổ dữ liệu cho bảng `db_content`
 --
 
 INSERT INTO `db_content` (`id`, `title`, `alias`, `introtext`, `fulltext`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
@@ -135,7 +135,7 @@ INSERT INTO `db_content` (`id`, `title`, `alias`, `introtext`, `fulltext`, `img`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_customer`
+-- Cấu trúc bảng cho bảng `db_customer`
 --
 
 CREATE TABLE `db_customer` (
@@ -152,7 +152,7 @@ CREATE TABLE `db_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_customer`
+-- Đang đổ dữ liệu cho bảng `db_customer`
 --
 
 INSERT INTO `db_customer` (`id`, `fullname`, `username`, `password`, `address`, `phone`, `email`, `created`, `trash`, `status`) VALUES
@@ -164,7 +164,7 @@ INSERT INTO `db_customer` (`id`, `fullname`, `username`, `password`, `address`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_discount`
+-- Cấu trúc bảng cho bảng `db_discount`
 --
 
 CREATE TABLE `db_discount` (
@@ -183,7 +183,7 @@ CREATE TABLE `db_discount` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_discount`
+-- Đang đổ dữ liệu cho bảng `db_discount`
 --
 
 INSERT INTO `db_discount` (`id`, `code`, `discount`, `limit_number`, `number_used`, `expiration_date`, `payment_limit`, `description`, `created`, `orders`, `trash`, `status`) VALUES
@@ -193,7 +193,7 @@ INSERT INTO `db_discount` (`id`, `code`, `discount`, `limit_number`, `number_use
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_district`
+-- Cấu trúc bảng cho bảng `db_district`
 --
 
 CREATE TABLE `db_district` (
@@ -204,7 +204,7 @@ CREATE TABLE `db_district` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_district`
+-- Đang đổ dữ liệu cho bảng `db_district`
 --
 
 INSERT INTO `db_district` (`id`, `name`, `type`, `provinceid`) VALUES
@@ -925,7 +925,7 @@ INSERT INTO `db_district` (`id`, `name`, `type`, `provinceid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_evaluate`
+-- Cấu trúc bảng cho bảng `db_evaluate`
 --
 
 CREATE TABLE `db_evaluate` (
@@ -941,7 +941,7 @@ CREATE TABLE `db_evaluate` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_evaluate`
+-- Đang đổ dữ liệu cho bảng `db_evaluate`
 --
 
 INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `comment_time`, `comment_by`, `star`, `trash`) VALUES
@@ -956,7 +956,7 @@ INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_order`
+-- Cấu trúc bảng cho bảng `db_order`
 --
 
 CREATE TABLE `db_order` (
@@ -974,32 +974,26 @@ CREATE TABLE `db_order` (
   `address` varchar(255) CHARACTER SET utf8 NOT NULL,
   `trash` int(1) NOT NULL DEFAULT 1,
   `status` int(1) NOT NULL DEFAULT 1,
-  `orderDes` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
+  `orderDes` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `productid` int(11) DEFAULT NULL,
+  `count` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_order`
+-- Đang đổ dữ liệu cho bảng `db_order`
 --
 
-INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`, `phone`, `money`, `price_ship`, `coupon`, `province`, `district`, `address`, `trash`, `status`, `orderDes`) VALUES
-(98, 'xBW5z6r0', 1, '2022-05-04 16:33:21', 'Thành', '0969124469', 5000, 0, 0, 64, 622, '40 võ văn kiệt ', 1, 0, NULL),
-(99, 'ZT4Pdgl7', 1, '2022-05-04 16:33:21', 'Thành', '0969124469', 30000, 0, 0, 64, 622, '40 võ văn kiệt ', 1, 0, NULL),
-(100, 'eYjrsyiv', 1, '2022-05-04 16:33:21', 'Thành', '0969124469', 120000, 0, 0, 64, 622, '40 võ văn kiệt ', 1, 0, NULL),
-(101, 'PWmEY4nF', 1, '2022-05-04 17:02:07', 'Thành', '0969124469', 20000, 0, 0, 31, 318, 'tttt', 1, 0, '12022541727'),
-(102, 'HznNxOMZ', 1, '2022-05-04 17:02:07', 'Thành', '0969124469', 35000, 0, 0, 31, 318, 'tttt', 1, 0, '12022541727'),
-(103, 'tPJeYFT6', 1, '2022-05-04 17:04:55', 'Thành', '0969124469', 20000, 0, 0, 48, 492, 'kkkk', 1, 0, '120225417455'),
-(104, 'mbwlSGaN', 1, '2022-05-04 17:04:55', 'Thành', '0969124469', 35000, 0, 0, 48, 492, 'kkkk', 1, 0, '120225417455'),
-(105, 'CufMbwr1', 1, '2022-05-04 17:07:25', 'Thành', '0969124469', 9000000, 0, 0, 4, 43, 'aaaa', 1, 0, '120225417725'),
-(106, 'fvg8kmU2', 1, '2022-05-04 17:07:25', 'Thành', '0969124469', 30000, 0, 0, 4, 43, 'aaaa', 1, 0, '120225417725'),
-(107, '3eyKoYqM', 1, '2022-05-04 17:07:25', 'Thành', '0969124469', 190000, 0, 0, 4, 43, 'aaaa', 1, 0, '120225417725'),
-(108, '2j6rxfuO', 1, '2022-05-04 17:09:51', 'Thành', '0969124469', 9000000, 0, 0, 4, 46, 'ggg', 1, 0, '120225417951'),
-(109, '9m2kM1wg', 1, '2022-05-04 17:09:51', 'Thành', '0969124469', 30000, 0, 0, 4, 46, 'ggg', 1, 0, '120225417951'),
-(110, 'G4O07IQJ', 1, '2022-05-04 17:09:51', 'Thành', '0969124469', 190000, 0, 0, 4, 46, 'ggg', 1, 0, '120225417951');
+INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`, `phone`, `money`, `price_ship`, `coupon`, `province`, `district`, `address`, `trash`, `status`, `orderDes`, `productid`, `count`, `price`) VALUES
+(115, 'f7AYTmau', 1, '2022-05-04 23:15:16', 'Thành', '0969124469', 60000, 0, 0, 92, 925, 'hhh', 1, 0, '1202254231516', 33, 2, 30000),
+(116, 'ueqNIC7A', 1, '2022-05-04 23:15:16', 'Thành', '0969124469', 35000, 0, 0, 92, 925, 'hhh', 1, 0, '1202254231516', 37, 1, 35000),
+(117, 'rYkuGd1h', 1, '2022-05-04 23:21:02', 'Thành', '0969124469', 240000, 0, 0, 46, 476, 'aaa', 1, 0, '120225423212', 30, 2, 120000),
+(118, 'qLfSnmB1', 1, '2022-05-04 23:21:02', 'Thành', '0969124469', 475000, 0, 0, 46, 476, 'aaa', 1, 0, '120225423212', 35, 1, 475000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_orderdetail`
+-- Cấu trúc bảng cho bảng `db_orderdetail`
 --
 
 CREATE TABLE `db_orderdetail` (
@@ -1013,31 +1007,19 @@ CREATE TABLE `db_orderdetail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_orderdetail`
+-- Đang đổ dữ liệu cho bảng `db_orderdetail`
 --
 
 INSERT INTO `db_orderdetail` (`id`, `orderid`, `productid`, `count`, `price`, `trash`, `status`) VALUES
-(140, 95, 38, 3, 30000, 1, 1),
-(141, 96, 32, 1, 190000, 1, 1),
-(142, 97, 31, 1, 45000, 1, 1),
-(143, 98, 43, 1, 5000, 1, 1),
-(144, 99, 33, 1, 30000, 1, 1),
-(145, 100, 30, 1, 120000, 1, 1),
-(146, 101, 34, 1, 20000, 1, 1),
-(147, 102, 37, 1, 35000, 1, 1),
-(148, 103, 34, 1, 20000, 1, 1),
-(149, 104, 37, 1, 35000, 1, 1),
-(150, 105, 40, 1, 9000000, 1, 1),
-(151, 106, 33, 1, 30000, 1, 1),
-(152, 107, 32, 1, 190000, 1, 1),
-(153, 108, 40, 1, 9000000, 1, 1),
-(154, 109, 33, 1, 30000, 1, 1),
-(155, 110, 32, 1, 190000, 1, 1);
+(160, 115, 33, 2, 30000, 1, 1),
+(161, 116, 37, 1, 35000, 1, 1),
+(162, 117, 30, 2, 120000, 1, 1),
+(163, 118, 35, 1, 475000, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_producer`
+-- Cấu trúc bảng cho bảng `db_producer`
 --
 
 CREATE TABLE `db_producer` (
@@ -1054,7 +1036,7 @@ CREATE TABLE `db_producer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_producer`
+-- Đang đổ dữ liệu cho bảng `db_producer`
 --
 
 INSERT INTO `db_producer` (`id`, `name`, `code`, `keyword`, `created_at`, `created_by`, `modified`, `modified_by`, `status`, `trash`) VALUES
@@ -1071,7 +1053,7 @@ INSERT INTO `db_producer` (`id`, `name`, `code`, `keyword`, `created_at`, `creat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_product`
+-- Cấu trúc bảng cho bảng `db_product`
 --
 
 CREATE TABLE `db_product` (
@@ -1099,7 +1081,7 @@ CREATE TABLE `db_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_product`
+-- Đang đổ dữ liệu cho bảng `db_product`
 --
 
 INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sortDesc`, `detail`, `producer`, `number`, `number_buy`, `sale`, `price`, `price_sale`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`, `userId`) VALUES
@@ -1117,7 +1099,7 @@ INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sort
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_province`
+-- Cấu trúc bảng cho bảng `db_province`
 --
 
 CREATE TABLE `db_province` (
@@ -1127,7 +1109,7 @@ CREATE TABLE `db_province` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `db_province`
+-- Đang đổ dữ liệu cho bảng `db_province`
 --
 
 INSERT INTO `db_province` (`id`, `name`, `type`) VALUES
@@ -1198,7 +1180,7 @@ INSERT INTO `db_province` (`id`, `name`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_slider`
+-- Cấu trúc bảng cho bảng `db_slider`
 --
 
 CREATE TABLE `db_slider` (
@@ -1215,7 +1197,7 @@ CREATE TABLE `db_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_slider`
+-- Đang đổ dữ liệu cho bảng `db_slider`
 --
 
 INSERT INTO `db_slider` (`id`, `name`, `link`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
@@ -1229,7 +1211,7 @@ INSERT INTO `db_slider` (`id`, `name`, `link`, `img`, `created`, `created_by`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_user`
+-- Cấu trúc bảng cho bảng `db_user`
 --
 
 CREATE TABLE `db_user` (
@@ -1249,7 +1231,7 @@ CREATE TABLE `db_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_user`
+-- Đang đổ dữ liệu cho bảng `db_user`
 --
 
 INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`, `gender`, `phone`, `address`, `img`, `created`, `trash`, `status`) VALUES
@@ -1262,7 +1244,7 @@ INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_usergroup`
+-- Cấu trúc bảng cho bảng `db_usergroup`
 --
 
 CREATE TABLE `db_usergroup` (
@@ -1278,7 +1260,7 @@ CREATE TABLE `db_usergroup` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `db_usergroup`
+-- Đang đổ dữ liệu cho bảng `db_usergroup`
 --
 
 INSERT INTO `db_usergroup` (`id`, `name`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `access`, `status`) VALUES
@@ -1286,60 +1268,60 @@ INSERT INTO `db_usergroup` (`id`, `name`, `created`, `created_by`, `modified`, `
 (2, 'Người bán hàng', '2021-05-14 23:29:21', 1, '2021-05-14 23:29:21', 4, 1, 1, 1);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `db_category`
+-- Chỉ mục cho bảng `db_category`
 --
 ALTER TABLE `db_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_config`
+-- Chỉ mục cho bảng `db_config`
 --
 ALTER TABLE `db_config`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_contact`
+-- Chỉ mục cho bảng `db_contact`
 --
 ALTER TABLE `db_contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_content`
+-- Chỉ mục cho bảng `db_content`
 --
 ALTER TABLE `db_content`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_customer`
+-- Chỉ mục cho bảng `db_customer`
 --
 ALTER TABLE `db_customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_discount`
+-- Chỉ mục cho bảng `db_discount`
 --
 ALTER TABLE `db_discount`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_district`
+-- Chỉ mục cho bảng `db_district`
 --
 ALTER TABLE `db_district`
   ADD PRIMARY KEY (`id`),
   ADD KEY `matp` (`provinceid`);
 
 --
--- Indexes for table `db_evaluate`
+-- Chỉ mục cho bảng `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_order`
+-- Chỉ mục cho bảng `db_order`
 --
 ALTER TABLE `db_order`
   ADD PRIMARY KEY (`id`),
@@ -1352,7 +1334,7 @@ ALTER TABLE `db_order`
   ADD KEY `district_3` (`district`);
 
 --
--- Indexes for table `db_orderdetail`
+-- Chỉ mục cho bảng `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
   ADD PRIMARY KEY (`id`),
@@ -1360,13 +1342,13 @@ ALTER TABLE `db_orderdetail`
   ADD KEY `orderid` (`orderid`);
 
 --
--- Indexes for table `db_producer`
+-- Chỉ mục cho bảng `db_producer`
 --
 ALTER TABLE `db_producer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_product`
+-- Chỉ mục cho bảng `db_product`
 --
 ALTER TABLE `db_product`
   ADD PRIMARY KEY (`id`),
@@ -1374,130 +1356,130 @@ ALTER TABLE `db_product`
   ADD KEY `catid` (`catid`);
 
 --
--- Indexes for table `db_province`
+-- Chỉ mục cho bảng `db_province`
 --
 ALTER TABLE `db_province`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_slider`
+-- Chỉ mục cho bảng `db_slider`
 --
 ALTER TABLE `db_slider`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_user`
+-- Chỉ mục cho bảng `db_user`
 --
 ALTER TABLE `db_user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `role` (`role`);
 
 --
--- Indexes for table `db_usergroup`
+-- Chỉ mục cho bảng `db_usergroup`
 --
 ALTER TABLE `db_usergroup`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `db_category`
+-- AUTO_INCREMENT cho bảng `db_category`
 --
 ALTER TABLE `db_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `db_config`
+-- AUTO_INCREMENT cho bảng `db_config`
 --
 ALTER TABLE `db_config`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `db_contact`
+-- AUTO_INCREMENT cho bảng `db_contact`
 --
 ALTER TABLE `db_contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `db_content`
+-- AUTO_INCREMENT cho bảng `db_content`
 --
 ALTER TABLE `db_content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `db_customer`
+-- AUTO_INCREMENT cho bảng `db_customer`
 --
 ALTER TABLE `db_customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
--- AUTO_INCREMENT for table `db_discount`
+-- AUTO_INCREMENT cho bảng `db_discount`
 --
 ALTER TABLE `db_discount`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `db_evaluate`
+-- AUTO_INCREMENT cho bảng `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `db_order`
+-- AUTO_INCREMENT cho bảng `db_order`
 --
 ALTER TABLE `db_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
--- AUTO_INCREMENT for table `db_orderdetail`
+-- AUTO_INCREMENT cho bảng `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
--- AUTO_INCREMENT for table `db_producer`
+-- AUTO_INCREMENT cho bảng `db_producer`
 --
 ALTER TABLE `db_producer`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `db_product`
+-- AUTO_INCREMENT cho bảng `db_product`
 --
 ALTER TABLE `db_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT for table `db_slider`
+-- AUTO_INCREMENT cho bảng `db_slider`
 --
 ALTER TABLE `db_slider`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `db_user`
+-- AUTO_INCREMENT cho bảng `db_user`
 --
 ALTER TABLE `db_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `db_usergroup`
+-- AUTO_INCREMENT cho bảng `db_usergroup`
 --
 ALTER TABLE `db_usergroup`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `db_district`
+-- Các ràng buộc cho bảng `db_district`
 --
 ALTER TABLE `db_district`
   ADD CONSTRAINT `db_district_ibfk_1` FOREIGN KEY (`provinceid`) REFERENCES `db_province` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `db_order`
+-- Các ràng buộc cho bảng `db_order`
 --
 ALTER TABLE `db_order`
   ADD CONSTRAINT `db_order_ibfk_2` FOREIGN KEY (`province`) REFERENCES `db_province` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
