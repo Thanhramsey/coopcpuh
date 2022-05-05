@@ -1,5 +1,5 @@
 
-<section id="header"">
+<section id="header">
 	<nav class="navbar" style="z-index: 9999">
 		<div class="container">
 			<div class="col-md-12 col-lg-12">
@@ -30,7 +30,7 @@
                 		<li><a href="tin-tuc/1">Tin tức</a></li>
                 		<li><a href="gioi-thieu">Giới thiệu</a></li>
                 		<li><a href="lien-he">Liên hệ</a></li>
-                		<li><a href="thong-tin-tai-khoan">Tài khoản</a></li>
+                		<!-- <li><a href="thong-tin-tai-khoan">Tài khoản</a></li> -->
                 		<?php
                 		if($this->session->userdata('sessionKhachHang')){
                 			echo "<li><a href='dang-xuat'>Thoát</a></li>";
