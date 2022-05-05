@@ -50,6 +50,7 @@
 											<?php foreach ($list as $val):
 												$name = $this->Mcustomer->customer_detail($val['customerid']);
 												?>
+
 												<tr>
 													<td class="text-center"><?php echo $val['orderCode'] ?></td>
 													<td><?php echo $val['fullname']; ?></td>
@@ -99,7 +100,7 @@
 													<td class="text-center">
 														<!-- /Xem -->
 														<a class="btn btn-info btn-xs" href="<?php echo base_url() ?>admin/orders/detail/<?php echo $val['id'] ?>" role = "button">
-															<span class="glyphicon glyphicon-eye-open"></span> Xem 
+															<span class="glyphicon glyphicon-eye-open"></span> Xem
 														</a>
 														<!-- /Xóa -->
 														<a class="btn bg-olive btn-xs" href="<?php echo base_url() ?>admin/orders/trash/<?php echo $val['id'] ?>"  onclick="return confirm('Xác nhận lưu đơn hàng này ?')" role = "button">

@@ -21,6 +21,52 @@ class Morders extends CI_Model {
         return count($query->result_array());
     }
 
+	public function orders_listorders_byId($limit, $first,$producerId)
+	{
+		$this->db->select('or.*');
+		$this->db->from('db_order or');
+		$this->db->join('db_product b', 'or.productid=b.id', 'left');
+		$this->db->join('db_user u', 'u.id = b.userId', 'left');
+		$this->db->where('u.id',$producerId);
+		$this->db->order_by('or.orderdate','desc');
+		$query = $this->db->get();
+		if($query->num_rows() != 0)
+		{
+			return $query->result_array();
+		}
+		else
+		{
+			return false;
+		}
+	}
+	public function orders_listorders_byId_count($producerId)
+    {
+		$this->db->select('or.*');
+		$this->db->from('db_order or');
+		$this->db->join('db_product b', 'or.productid = b.id', 'left');
+		$this->db->join('db_user u', 'u.id=b.userId', 'left');
+		$this->db->where('u.id',$producerId);
+		$this->db->order_by('or.orderdate','desc');
+		$query = $this->db->get();
+		if($query->num_rows() != 0)
+		{
+
+			return count($query->result_array());
+		}
+		else
+		{
+			return false;
+		}
+    }
+
+    public function orders_count_byId($producerId)
+    {
+        $this->db->where('trash', 1);
+        $query = $this->db->get($this->table);
+        return count($query->result_array());
+    }
+
+
     // chi itet don haang chua luu
     public function orders_detail($id)
     {
@@ -99,6 +145,28 @@ class Morders extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result_array();
     }
+
+	public function order_follow_month_byId($year, $month,$producerId)
+	{
+		$this->db->select('or.*');
+		$this->db->from('db_order or');
+		$this->db->join('db_product b', 'or.productid=b.id', 'left');
+		$this->db->join('db_user u', 'u.id = b.userId', 'left');
+		$this->db->where('u.id',$producerId);
+		$this->db->where('or.status', 2);
+        $this->db->where('or.trash', 1);
+        $this->db->where('YEAR(orderdate)', $year);
+        $this->db->where('MONTH(orderdate)', $month);
+		$query = $this->db->get();
+		if($query->num_rows() != 0)
+		{
+			return $query->result_array();
+		}
+		else
+		{
+			return false;
+		}
+	}
 
     public function orders_update_number_product($mydata,$id)
     {

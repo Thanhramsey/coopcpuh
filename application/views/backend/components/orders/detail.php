@@ -17,7 +17,6 @@
 						<div id="view">
 							<form action="admin/orders/detail/<?php echo $id; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 								<?php
-
 								$order = $this->Morders->orders_detail($id);
 								$customer = $this->Mcustomer->customer_detail($order['customerid']);
 								$data = $this->Morderdetail->orderdetail_orderid($id);

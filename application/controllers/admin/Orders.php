@@ -25,11 +25,21 @@ class Orders extends CI_Controller {
   {
     $this->load->library('phantrang');
     $limit=10;
+	$user_role = $this->session->userdata('sessionadmin');
     $current=$this->phantrang->PageCurrent();
     $first=$this->phantrang->PageFirst($limit, $current);
-    $total=$this->Morders->orders_count();
-    $this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/orders');
-    $this->data['list']=$this->Morders->orders_listorders($limit,$first);
+	if ($user_role['role'] == 1) {
+		$total = $this->Morders->orders_count();
+		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/orders');
+   		$this->data['list']=$this->Morders->orders_listorders($limit,$first);
+	} else {
+		$userId = $user_role['id'];
+		$total = $this->Morders->orders_listorders_byId_count($userId);
+		$this->data['strphantrang'] = $this->phantrang->PagePer($total, $current, $limit, $url = 'admin/orders');
+		$this->data['list'] = $this->Morders->orders_listorders_byId($limit, $first, $userId);
+
+	}
+
     $this->data['view']='index';
     $this->data['title']='Danh sách đơn hàng';
     $this->load->view('backend/layout', $this->data);

@@ -22,10 +22,19 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$this->data['total1']=$this->Mproduct->product_sanpham_count();
-		$this->data['total2']=$this->Mcontent->content_count();
-		$this->data['total3']=$this->Mcustomer->customer_count();
-		$this->data['total4']=$this->Morders->orders_count();
+		$user_role = $this->session->userdata('sessionadmin');
+		$userId = $this->session->userdata('id');
+		if ($user_role['role'] == 1) {
+			$this->data['total1']=$this->Mproduct->product_sanpham_count();
+			$this->data['total2']=$this->Mcontent->content_count();
+			$this->data['total3']=$this->Mcustomer->customer_count();
+			$this->data['total4']=$this->Morders->orders_count();
+		} else {
+			$this->data['total1']=$this->Mproduct->product_sanpham_byId_count($userId);
+			$this->data['total2']=$this->Mcontent->content_count();
+			$this->data['total3']=$this->Mcustomer->customer_count();
+			$this->data['total4']=$this->Morders->orders_listorders_byId_count($userId);
+		}
 
 		//Thống kê - vẽ biểu đồ
 

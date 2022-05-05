@@ -49,7 +49,7 @@
 			</table>
 			<table style="width:100%;border-collapse:collapse">
 				<thead>
-					<tr style="border:1px solid #d7d7d7;background-color:#f8f8f8">
+					<tr style="border:1px solid #d7d7d7; background: #0f9ed8;">
 						<th style="text-align:left;padding:5px 10px"><strong>Sản phẩm</strong></th>
 						<th style="text-align:center;padding:5px 10px"><strong>Số lượng</strong></th>
 						<th style="text-align:center;padding:5px 10px"><strong>Đơn giá</strong></th>
