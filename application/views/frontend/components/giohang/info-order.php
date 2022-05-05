@@ -13,111 +13,120 @@ if (!$this->session->userdata('cart')) {
 				<form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8" name='info-order' novalidate>
 					<?php
 					if (!$this->session->userdata('sessionKhachHang')) {
-						echo ' <div style="font-size: 16px; padding-top: 10px; color: #ccc;">
-                     Bạn có tài khoản?
-                     <a href="dang-nhap" style="color: ">Ấn vào đây để đăng nhập</a>
+						echo ' <div style="font-size: 14px; padding-top: 10px; color: #000;">
+                     Bạn đã có tài khoản?
+                     <a href="dang-nhap" style="color:#3c8dbc ;font-size: 16px; ">Ấn vào đây để đăng nhập</a>
+                     </div>
+					 <div style="font-size: 14px; padding-top: 10px; color: #000;">
+                     Bạn chưa có tài khoản?
+                     <a href="dang-ky" style="color:#3c8dbc;font-size: 16px; ">Ấn vào đây để đăng ký</a>
                      </div>';
 					}
 					?>
-					<div class="checkout-content">
-						<div class="col-xs-12 col-sm-12 col-md-8 col-login-checkout" style="margin-bottom: 20px">
+					<?php if ($this->session->userdata('sessionKhachHang')) : ?>
+						<div class="checkout-content">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-login-checkout" style="margin-bottom: 20px">
 
-							<p class="text-center">Địa chỉ giao hàng của quý khách</p>
-							<div class="wrap-info" style="width: 100%; min-height: 1px; overflow: hidden; padding: 10px;">
-								<table class="table tinfo" style="width: 80%;">
-									<tbody>
-										<tr>
-											<td class="width30 text-right td-right-order">Khách hàng: <span class="require_symbol">* </span></td>
-											<td>
-												<input type="text" class="form-control" placeholder="Họ và tên" name="name" value="<?php if (empty($user['fullname'])) {
-																																		echo "";
-																																	} else {
-																																		echo $user['fullname'];
-																																	} ?>" <?php if ($this->session->userdata('sessionKhachHang')) echo 'readonly' ?>>
-												<div class="error"><?php echo form_error('name') ?></div>
-											</td>
-										</tr>
-										<tr>
-											<td class="width30 text-right td-right-order">Email: <span class="require_symbol">* </span></td>
-											<td>
-												<input type="text" class="form-control" name="<?php if ($this->session->userdata('sessionKhachHang')) echo 'tv';
-																								else echo 'email' ?>" value="<?php if (empty($user['email'])) {
+								<p class="text-center">Địa chỉ giao hàng của quý khách</p>
+								<div class="wrap-info" style="width: 100%; min-height: 1px; overflow: hidden; padding: 10px;">
+									<table class="table tinfo" style="width: 80%;">
+										<tbody>
+											<tr>
+												<td class="width30 text-right td-right-order">Khách hàng: <span class="require_symbol">* </span></td>
+												<td>
+													<input type="text" class="form-control" placeholder="Họ và tên" name="name" value="<?php if (empty($user['fullname'])) {
+																																			echo "";
+																																		} else {
+																																			echo $user['fullname'];
+																																		} ?>" <?php if ($this->session->userdata('sessionKhachHang')) echo 'readonly' ?>>
+													<div class="error"><?php echo form_error('name') ?></div>
+												</td>
+											</tr>
+											<tr>
+												<td class="width30 text-right td-right-order">Email: <span class="require_symbol">* </span></td>
+												<td>
+													<input type="text" class="form-control" name="<?php if ($this->session->userdata('sessionKhachHang')) echo 'tv';
+																									else echo 'email' ?>" value="<?php if (empty($user['email'])) {
 																																	echo "";
 																																} else {
 																																	echo $user['email'];
 																																} ?>" placeholder="Email" <?php if ($this->session->userdata('sessionKhachHang')) echo 'readonly' ?>>
-												<div class="error"><?php echo form_error('email') ?></div>
-											</td>
-										</tr>
+													<div class="error"><?php echo form_error('email') ?></div>
+												</td>
+											</tr>
 
-										<tr>
-											<td class="width30 text-right td-right-order">Số điện thoại: <span class="require_symbol">* </span></td>
-											<td>
-												<input type="text" class="form-control" placeholder="Số điện thoại" name="phone" value="<?php if (empty($user['phone'])) {
-																																			echo "";
-																																		} else {
-																																			echo $user['phone'];
-																																		} ?>" <?php if ($this->session->userdata('sessionKhachHang')) echo 'readonly' ?>>
-												<div class="error"><?php echo form_error('phone') ?></div>
-											</td>
-										</tr>
-										<tr>
-											<td class="width30 text-right td-right-order">Tỉnh/Thành phố: <span class="require_symbol">* </span></td>
-											<td>
-												<select name="city" id="province" onchange="renderDistrict()" class="form-control next-select">
-													<option value="">--- Chọn tỉnh thành ---</option>
-													<?php $list = $this->Mprovince->province_all();
-													foreach ($list as $row) : ?>
-														<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-													<?php endforeach; ?>
-												</select>
-												<div class="error"><?php echo form_error('city') ?></div>
-											</td>
-										</tr>
-										<tr>
-											<td class="width30 text-right td-right-order">Quận/Huyện: <span class="require_symbol">* </span></td>
-											<td>
-												<select name="DistrictId" id="district" class="form-control next-select">
-													<option value="">--- Chọn quận huyện ---</option>
-												</select>
-												<div class="error"><?php echo form_error('DistrictId') ?></div>
-											</td>
-										</tr>
-										<tr>
-											<td class="width30 text-right td-right-order">Địa chỉ giao hàng: <span class="require_symbol">* </span></td>
-											<td>
-												<textarea name="address" placeholder="Địa chỉ giao hàng:" class="form-control" rows="4"="" style="height: auto !important;" value="<?php if (empty($user['address'])) {
-																																														echo "";
-																																													} else {
-																																														echo $user['address'];
-																																													} ?>"></textarea>
-												<div class="error"><?php echo form_error('address') ?></div>
-											</td>
-										</tr>
+											<tr>
+												<td class="width30 text-right td-right-order">Số điện thoại: <span class="require_symbol">* </span></td>
+												<td>
+													<input type="text" class="form-control" placeholder="Số điện thoại" name="phone" value="<?php if (empty($user['phone'])) {
+																																				echo "";
+																																			} else {
+																																				echo $user['phone'];
+																																			} ?>" <?php if ($this->session->userdata('sessionKhachHang')) echo 'readonly' ?>>
+													<div class="error"><?php echo form_error('phone') ?></div>
+												</td>
+											</tr>
+											<tr>
+												<td class="width30 text-right td-right-order">Tỉnh/Thành phố: <span class="require_symbol">* </span></td>
+												<td>
+													<select name="city" id="province" onchange="renderDistrict()" class="form-control next-select">
+														<option value="">--- Chọn tỉnh thành ---</option>
+														<?php $list = $this->Mprovince->province_all();
+														foreach ($list as $row) : ?>
+															<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+														<?php endforeach; ?>
+													</select>
+													<div class="error"><?php echo form_error('city') ?></div>
+												</td>
+											</tr>
+											<tr>
+												<td class="width30 text-right td-right-order">Quận/Huyện: <span class="require_symbol">* </span></td>
+												<td>
+													<select name="DistrictId" id="district" class="form-control next-select">
+														<option value="">--- Chọn quận huyện ---</option>
+													</select>
+													<div class="error"><?php echo form_error('DistrictId') ?></div>
+												</td>
+											</tr>
+											<tr>
+												<td class="width30 text-right td-right-order">Địa chỉ giao hàng: <span class="require_symbol">* </span></td>
+												<td>
+													<textarea name="address" placeholder="Địa chỉ giao hàng:" class="form-control" rows="4"="" style="height: auto !important;" value="<?php if (empty($user['address'])) {
+																																															echo "";
+																																														} else {
+																																															echo $user['address'];
+																																														} ?>"></textarea>
+													<div class="error"><?php echo form_error('address') ?></div>
+												</td>
+											</tr>
 
-										<tr>
-											<td class="width30 text-right td-right-order">Mã giảm giá (nếu có):</td>
-											<td>
-												<input id="coupon" style="border-radius: 5px; border-color: #0f9ed8;" type="text" class="form-control" placeholder="Mã giảm giá" name="coupon">
-												<div class="error" id="result_coupon"></div>
-											</td>
-											<td colspan="1">
-												<a class="check-coupon" title="mã giảm giá" onclick="checkCoupon()">Sử dụng</a>
-											</td>
-										</tr>
-										<tr>
-											<td style="border: none;"></td>
-											<td style="border: none;">
-												<div class="btn-checkout frame-100-1 overflow-hidden border-pri" style="float: right;">
-													<button type="submit" style="width: 300px" class="bg-pri border-pri col-fff" name="dathang">Đặt hàng</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+											<tr>
+												<td class="width30 text-right td-right-order">Mã giảm giá (nếu có):</td>
+												<td>
+													<input id="coupon" style="border-radius: 5px; border-color: #0f9ed8;" type="text" class="form-control" placeholder="Mã giảm giá" name="coupon">
+													<div class="error" id="result_coupon"></div>
+												</td>
+												<td colspan="1">
+													<a class="check-coupon" title="mã giảm giá" onclick="checkCoupon()">Sử dụng</a>
+												</td>
+											</tr>
+											<tr>
+												<td style="border: none;"></td>
+												<td style="border: none;">
+													<div class="btn-checkout frame-100-1 overflow-hidden border-pri" style="float: right;">
+														<button type="submit" style="width: 300px" class="bg-pri border-pri col-fff" name="dathang">Đặt hàng</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
 							</div>
-
 						</div>
-					</div>
+
+					<?php else : ?>
+					<?php endif; ?>
+
 					<div class="col-xs-12 col-sm-12 col-md-4 products-detail">
 						<div class="no-margin-table col-login-checkout" style="width: 95%;">
 							<p>Thông tin đơn hàng</p>

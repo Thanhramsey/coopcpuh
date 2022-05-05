@@ -75,13 +75,15 @@ class Giohang extends CI_Controller {
 							'fullname'=>$_POST['name'],
 							'phone'=> $_POST['phone'],
 							'email'=> $emailtemp,
+							'username'=>$emailtemp,
+							'password'=>md5('123456'),
 							'created' =>$today,
 							'status'=>1,
 							'trash'=>1
 						);
 						$this->Mcustomer->customer_insert($datacustomer);
-						$row=$this->Mcustomer->customer_detail_email($_POST['email']);
-						$this->session->set_userdata('info-customer',$row);
+						$rowdta=$this->Mcustomer->customer_detail_email($_POST['email']);
+						$this->session->set_userdata('info-customer',$rowdta);
 						$info=$this->session->userdata('info-customer');
 						if($info['id']){
 							$idCustomer=$info['id'];
@@ -107,6 +109,7 @@ class Giohang extends CI_Controller {
 					$districtId = $_POST['DistrictId'];
 					$orderCode = random_string('alnum', 8);
 					$orderDes = $idCustomer.$todayDes;
+					echo "<pre>---PLIST---\n".print_r($row)."\n---PLIST END---\n\n</pre>";
                     if($row['price_sale'] > 0){
 						$price = $row['price_sale'];
 					}else{
