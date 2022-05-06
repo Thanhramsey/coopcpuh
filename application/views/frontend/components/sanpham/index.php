@@ -22,7 +22,7 @@
                       <label class="left hidden-xs" for="sort-select">Sắp xếp theo: </label>
                       <form class="form-inline form-viewpro">
                         <div class="form-group">
-                            <?php 
+                            <?php
                             $html_list="";
                             $html_list.='<select id ="sortControl" class = "sort-by form-control input-sm" onchange="sortby(this.value)">';
                             if($this->session->userdata('sortby')){
@@ -88,8 +88,10 @@
                                     <div class="col-md-3 col-lg-3 col-xs-6 col-6">
                                         <div class="product-lt">
                                             <div class="lt-product-group-image">
-                                                <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" >
+                                                <a id = "zoomOut" href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" >
+												<figure>
                                                     <img class="img-p"src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
+												</figure>
                                                 </a>
 
                                                 <?php if($sp['sale'] > 0) :?>

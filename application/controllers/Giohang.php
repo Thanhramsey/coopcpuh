@@ -14,6 +14,7 @@ class Giohang extends CI_Controller {
         $this->load->model('frontend/Mdistrict');
         $this->load->model('frontend/Mprovince');
 		$this->load->model('frontend/Mproducer');
+		$this->load->model('backend/Muser');
         $this->data['com']='giohang';
     }
 

@@ -2447,3 +2447,14 @@ a.fright {
 	  display: block;
 	}
   }
+
+#zoomOut img {
+	-webkit-transform: scale(0.85);
+	transform: scale(0.85);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#zoomOut:hover img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}

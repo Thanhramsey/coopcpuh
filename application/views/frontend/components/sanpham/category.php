@@ -90,8 +90,10 @@
                                  <div class="col-md-3 col-lg-3 col-xs-6 col-6">
                                     <div class="product-lt">
                                         <div class="lt-product-group-image">
-                                            <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" >
+                                            <a id="zoomOut" href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" >
+											<figure>
                                                 <img class="img-p"src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
+											</figure>
                                             </a>
 
                                             <?php if($sp['sale'] > 0) :?>

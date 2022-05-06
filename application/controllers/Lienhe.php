@@ -11,6 +11,7 @@ class Lienhe extends CI_Controller {
 		$this->load->model('frontend/Mproduct');
 		$this->load->model('frontend/Mcontact');
 		$this->load->model('frontend/Mproducer');
+		$this->load->model('backend/Muser');
 
 	}
 

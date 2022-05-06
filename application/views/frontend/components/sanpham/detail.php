@@ -36,6 +36,12 @@
 									</div>
 								<?php endif; ?>
 							</div>
+							<div class="product-status" style="margin-top:0 !important;height: 22px;">
+								<div class="pull-left">
+									<span class="price-label">Doanh nghiệp sản xuất:</span>
+									<a href="<?php echo base_url() ?>san-pham/<?php $producer = $this->Muser->user_detail_id_fg($row['userId']); echo $producer['id'] ?>" title=""><?php $producer = $this->Muser->user_detail_id_fg($row['userId']); echo $producer['fullname'] ?></a>
+								</div>
+							</div>
 							<div class="product-status">
 								<p style=" float: left;margin-right: 10px;">Thương hiệu: <?php $name=$this->Mcategory->category_name($row['catid']); echo $name; ?></p>
 								<p>| Tình trạng: <?php if($row['number'] - $row['number_buy']==0 || $row['status'] == 0) echo 'Hết hàng'; else echo 'Còn hàng' ?></p>

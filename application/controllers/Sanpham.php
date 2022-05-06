@@ -8,6 +8,7 @@ class Sanpham extends CI_Controller {
 		$this->load->model('frontend/Mproducer');
         $this->load->model('frontend/Mcategory');
 		$this->load->model('frontend/Mevaluate');
+		$this->load->model('backend/Muser');
         $this->data['com']='sanpham';
         $this->load->library('session');
         $this->load->library('phantrang');
