@@ -54,6 +54,16 @@
 
 	.logo-search{
 		margin-top: 9px !important;
+		display: none;
+	}
+	#header{
+		background-color: #0f9ed8;
+	}
+	#header .icon-bar{
+		background-color: #fff;
+	}
+	#menu-bar {
+		height: 0 !important;
 	}
 
 	.navbar-toggle{/* padding-right: 0 !important;  */padding-left: 20px !important}
@@ -408,6 +418,7 @@
 	height: 44px;
 	float: right;
 	position: relative;
+	text-align: end;
 }
 .cart-info{
 	margin: 50px;
@@ -426,16 +437,13 @@
 	width: 26px;
 }
 
-.icon-cart-mobile span {
-	position: absolute;
+.icon-cart-mobile span{
 	color: #ccc;
-	top: 5px;
-	left: 10px;
 	background: #0f9ed8;
-	padding: 0 7px;
 	border-radius: 50%;
 	color: #fff;
 	line-height: 21px;
+	font-size: 9px;
 }
 
 /* Phần LOGO - SEARCH - CART */
@@ -456,7 +464,7 @@
 }
 .logo-search{
 	width: 100%;
-	height: 94px;
+	/* height: 94px; */
 	margin-top: -2px;
 	background: #fff;
 }
@@ -527,6 +535,10 @@
 	min-height: 50px;
 	clear: both;
 	overflow: hidden;
+}
+#menu-bar {
+	width: 100%;
+	height: 50px;
 }
 
 .menu-pri{
@@ -644,6 +656,39 @@
 	color: #fff;
 	background-color: #62caf5;
 }
+.menu-right li.sub-link {
+	list-style: none;
+	height: 100%;
+	line-height: 50px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #e8e6e2;
+	padding:2px;
+}
+
+.menu-right li.sub-link a{
+	width: 100%;
+	text-decoration: none;
+	display: block;
+	color: black;
+	padding: 0 15px;
+	font-weight: 400;
+	font-size: 17px;
+}
+
+.menu-right li.sub-link a:hover{
+	color: #0f9ed8;
+	background-color: #fff;
+}
+.menu-right li.sub-link:hover {
+
+	border-bottom: 1px solid #0f9ed8;
+}
+
+
+.dropdown-menu{
+	padding: 10px;
+}
 
 
 /* LIST CATEGOTY */
@@ -738,9 +783,9 @@
 /* SERVICES */
 /*Service*/
 #service_home .service_item{
-	-moz-box-shadow: 0px 1px 5px 2px #f1f1f1;
-	-webkit-box-shadow: 0px 1px 5px 2px #f1f1f1;
-	box-shadow: 0px 1px 5px 2px #f1f1f1;
+	-moz-box-shadow: 0px 1px 5px 2px #8f90b7;
+	-webkit-box-shadow: 0px 1px 5px 2px #8f90b7;
+	box-shadow: 0px 1px 5px 2px #8f90b7;
 	text-align: center;
 	padding: 40px 0;
 	width: 97%;
@@ -1121,9 +1166,9 @@ a {
 	min-height: 100px;
 	overflow: hidden;
 	padding: 10px;
-	padding-top: 0 !important;
-	margin-top: 50px;
+	margin-top: 0px;
 	padding-bottom: 0px;
+	border: 1px solid #3c8dbc;
 }
 
 .list-header-z{
@@ -2395,4 +2440,10 @@ a.fright {
 	background-color: #f8f8f8;
 	font-size: 16px;
 	resize: none;
+  }
+
+  @media only screen and (min-width: 768px) {
+	.dropdown:hover .dropdown-menu {
+	  display: block;
+	}
   }

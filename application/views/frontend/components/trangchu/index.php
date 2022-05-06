@@ -132,10 +132,11 @@
             $listCatId=$this->Mcategory->category_listcat($catId);
             // list dt ss, apple
             $listProducts=$this->Mproduct->product_home_limit($listCatId,10);
-            if((count($listProducts) >= 3)):?>
-                <div class="list-product">
-                    <div class="list-header-z">
-                        <h2><a href="<?php echo  $rowCategory['link']?>"><?php echo  $rowCategory['name']?> nổi bật</a></h2>
+            if((count($listProducts) >= 2)):?>
+                    <div class="sale-title">
+                        <!-- <span><a href="<?php echo  $rowCategory['link']?>"><?php echo  $rowCategory['name']?> nổi bật</a></span> -->
+						<span><?php echo  $rowCategory['name']?> nổi bật</span>
+						<!-- <?php if((count($subCategory) >= 0)):?>
                         <ul class="sub-category">
                             <?php foreach ($subCategory as $rowSubCategory) :?>
                                 <li>
@@ -148,7 +149,9 @@
                                 </li>
                             <?php endforeach; ?>
                         </ul>
+						<?php endif;?> -->
                     </div>
+					<div class="list-product" style="margin-bottom:20px">
                     <div class="product-container">
                         <?php foreach ($listProducts as $sp) :?>
                             <div class="p-box-5">
@@ -203,7 +206,7 @@
     <div class="container">
         <div class="row-p">
             <div class="text-center">
-                <h2 class="sectin-title title title-blue">Tin tức công nghệ</h2>
+                <h2 class="sectin-title title title-blue">Tin tức</h2>
             </div>
         </div>
         <div class="blog-content">
@@ -216,7 +219,7 @@
                             <div class="tempvideo">
                                 <img width="98%" src="public/images/posts/<?php echo $rowPost['img'] ?>">
                             </div>
-                            <h3 style="color: #999;"><?php echo $rowPost['title'] ?></h3>
+                            <h4 style="color: #999;"><?php echo $rowPost['title'] ?></h4>
                         </a>
                     </div>
                 </div>
@@ -239,7 +242,7 @@
                                     Miễn phí giao hàng
                                 </span>
                                 <span class="small-text">
-                                    Cho hóa đơn từ 100,000,000 đ
+                                    Cho hóa đơn từ 1,000,000 đ
                                 </span>
                             </div>
                         </div>
@@ -251,7 +254,7 @@
                             </div>
                             <div class="description_icon">
                                 <span class="large-text">
-                                    Giao hàng trong ngày
+                                    Giao hàng trong tuần
                                 </span>
                                 <span class="small-text">
                                     Với tất cả đơn hàng

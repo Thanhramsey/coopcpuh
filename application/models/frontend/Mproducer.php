@@ -14,6 +14,14 @@ class Mproducer extends CI_Model {
         return $query->result_array();
     }
 
+	//index
+    public function producer_allin(){
+        $this->db->where('trash', 1);
+        $this->db->order_by('created_at', 'desc');
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
+
     public function producer_count(){
         $this->db->where('status', 1);
         $this->db->where('trash', 1);

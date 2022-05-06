@@ -5,6 +5,7 @@ class Sanpham extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('frontend/Mproduct');
+		$this->load->model('frontend/Mproducer');
         $this->load->model('frontend/Mcategory');
 		$this->load->model('frontend/Mevaluate');
         $this->data['com']='sanpham';
@@ -37,7 +38,7 @@ class Sanpham extends CI_Controller {
         $total=$this->Mproduct->product_sanpham_count();
         $this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='san-pham');
         $this->data['list']=$this->Mproduct->product_sanpham($limit,$first,$f,$od);
-        $this->data['title']='Smart Store - Tất cả sản phẩm';
+        $this->data['title']='OCOP CHƯPƯH - Tất cả sản phẩm';
         $this->data['view']='index';
         if(isset($_POST['sapxep'])){
             $result=$this->load->view('frontend/components/sanpham/index_order',$this->data,true);
@@ -78,7 +79,7 @@ class Sanpham extends CI_Controller {
         $total=$this->Mproduct->product_chude_count($listcat);
         $this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='san-pham/'.$link);
         $this->data['list']=$this->Mproduct->product_list_cat_limit($listcat, $limit,$first,$f,$od);
-        $this->data['title']='Smart Store - Sản phẩm theo từng danh mục';
+        $this->data['title']='OCOP CHƯPƯH - Sản phẩm theo từng danh mục';
         $this->data['view']='category';
         if(isset($_POST['sapxep-category'])){
 
@@ -94,7 +95,7 @@ class Sanpham extends CI_Controller {
     public function detail($link){
         $row = $this->Mproduct->product_detail($link);
         $this->data['row']=$row;
-        $this->data['title']='Smart Store - '.$row['name'];
+        $this->data['title']='OCOP CHƯPƯH - '.$row['name'];
         $this->data['view']='detail';
         $this->load->view('frontend/layout',$this->data);
     }

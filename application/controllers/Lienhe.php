@@ -12,9 +12,9 @@ class Lienhe extends CI_Controller {
 		$this->load->model('frontend/Mcontact');
 
 	}
-	
+
 	public function index()
-	{	
+	{
 		$d=getdate();
 		$today=$d['year']."/".$d['mon']."/".$d['mday'];
 		$this->load->library('form_validation');
@@ -35,11 +35,11 @@ class Lienhe extends CI_Controller {
 			$this->Mcontact->contact_insert($mydata);
 			echo '<script>alert("Tin nhắn của bạn đã gửi đi thành công !")</script>';
 		}
-		$this->data['title']="Smart Store - Liên hệ";
+		$this->data['title']="OCOP CHƯPƯH - Liên hệ";
 		$this->data['view']='index';
 		$this->load->view('frontend/layout',$this->data);
 	}
-	
-	
+
+
 }
 

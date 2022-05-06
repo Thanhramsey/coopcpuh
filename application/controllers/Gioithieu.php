@@ -9,9 +9,9 @@ class Gioithieu extends CI_Controller {
         $this->load->model('frontend/Mcategory');
         $this->load->model('frontend/Mproduct');
     }
-    
+
 	public function index(){
-        $this->data['title']='Smart Store - Giới thiệu';
+        $this->data['title']='OCOP CHƯPƯH - Giới thiệu';
         $this->data['view']='index';
 		$this->load->view('frontend/layout',$this->data);
 	}

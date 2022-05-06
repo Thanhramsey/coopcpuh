@@ -41,7 +41,24 @@
           js = d.createElement(s); js.id = id;
           js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
           fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        }(document, 'script', 'facebook-jssdk'));
+
+		$('.dropdown-toggle').click(function(e) {
+		alert('vô');
+		if ($(document).width() > 768) {
+			e.preventDefault();
+
+			var url = $(this).attr('href');
+
+
+			if (url !== '#') {
+
+			window.location.href = url;
+			}
+
+		}
+		});
+		</script>
         <!-- TOPBAR -->
         <?php
             $this->load->view('frontend/modules/topbar');
@@ -53,7 +70,7 @@
         <!-- <?php
             $this->load->view('frontend/modules/category');
         ?> -->
-        <section id="menu-slider">
+        <section id="menu-bar">
             <?php
                 $this->load->view('frontend/modules/panel-left');
             ?>

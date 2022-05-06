@@ -10,12 +10,13 @@ class Trangchu extends CI_Controller {
         $this->load->model('frontend/Mslider');
         $this->load->model('frontend/Mcontent');
         $this->load->model('frontend/Mslider');
+		$this->load->model('frontend/Mproducer');
         $this->data['com']='trangchu';
     }
-    
+
 	public function index()
 	{
-        $this->data['title']='Smart Store - Điện thoại, Laptop, Link kiện chính hãng';
+        $this->data['title']='OCOP CHƯPƯH';
         $this->data['view']='index';
 		$this->load->view('frontend/layout',$this->data);
 	}
