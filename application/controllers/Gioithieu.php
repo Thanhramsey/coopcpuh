@@ -8,6 +8,7 @@ class Gioithieu extends CI_Controller {
         $this->data['com']='gioithieu';
         $this->load->model('frontend/Mcategory');
         $this->load->model('frontend/Mproduct');
+		$this->load->model('frontend/Mproducer');
     }
 
 	public function index(){

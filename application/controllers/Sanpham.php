@@ -82,6 +82,50 @@ class Sanpham extends CI_Controller {
         $this->data['title']='OCOP CHƯPƯH - Sản phẩm theo từng danh mục';
         $this->data['view']='category';
         if(isset($_POST['sapxep-category'])){
+			$result=$this->load->view('frontend/components/sanpham/index_order',$this->data,true);
+            echo json_encode($result);
+            // $html='<script>document.location.reload(true);</script>';
+            // echo json_encode($html);
+
+        }else{
+            $this->load->view('frontend/layout',$this->data);
+        }
+    }
+
+	public function diaban(){
+        if(isset($_POST['sapxep-diaban'])){
+            $dksx=$_POST['sapxep-diaban'];
+            $char = explode('-', $dksx);
+            $f=$char[0];
+            $od=$char[1];
+            $data = array('0' => $f, '1' =>$od);
+            $this->session->set_userdata('sortby-diaban', $data);
+        }else{
+            if($this->session->userdata('sortby-diaban')){
+                $data = $this->session->userdata('sortby-diaban');
+                $f=$data[0];
+                $od=$data[1];
+            }else{
+                $f='created';
+                $od='desc';
+            }
+        }
+        $aurl= explode('/',uri_string());
+        $link=$aurl[2];
+        $catid=$this->Mproducer->diaban_id($link);
+        $listcat=$this->Mproducer->diaban_listcat($catid);
+        $this->data['categoryname']=$this->Mproducer->diaban_name($catid);
+
+        $this->load->library('phantrang');
+        $limit=12;
+        $current=$this->phantrang->PageCurrent();
+        $first=$this->phantrang->PageFirst($limit, $current);
+        $total=$this->Mproduct->product_diban_count($listcat);
+        $this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='san-pham/db/'.$link);
+        $this->data['list']=$this->Mproduct->product_list_diaban_limit($listcat, $limit,$first,$f,$od);
+        $this->data['title']='OCOP CHƯPƯH - Sản phẩm theo từng danh mục';
+        $this->data['view']='category';
+        if(isset($_POST['sapxep-diaban'])){
 
             // $result=$this->load->view('frontend/components/sanpham/index_order2',$this->data,true);
             // echo json_encode($result);

@@ -14,12 +14,43 @@ class Mproducer extends CI_Model {
         return $query->result_array();
     }
 
-	//index
-    public function producer_allin(){
+	public function diaban_id($diaban)
+    {
+        $this->db->where('code', $diaban);
+        $this->db->where('status', 1);
         $this->db->where('trash', 1);
-        $this->db->order_by('created_at', 'desc');
+        $this->db->limit(1);
         $query = $this->db->get($this->table);
-        return $query->result_array();
+        $row=$query->row_array();
+        return $row['id'];
+    }
+
+	public function diaban_listcat($parentid)
+    {
+        $this->db->where('id', $parentid);
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $query = $this->db->get($this->table);
+        $a[]=$parentid;
+        if(count($query->result_array()))
+        {
+            $list=$query->result_array();
+            foreach ($list as $row) {
+                $a[]=$row['id'];
+            }
+        }
+        return $a;
+    }
+
+	public function diaban_name($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $this->db->limit(1);
+        $query = $this->db->get($this->table);
+        $row=$query->row_array();
+        return $row['name'];
     }
 
     public function producer_count(){

@@ -6,6 +6,7 @@ $route['trang-chu'] = 'trangchu/index';
 $route['tin-tuc'] = 'tintuc/index';
 $route['san-pham/(:num)'] = 'sanpham/index/$1';
 $route['san-pham/(:any)'] = 'sanpham/category';
+$route['san-pham/db/(:any)'] = 'sanpham/diaban';
 $route['san-pham/(:any)/(:num)'] = 'sanpham/category/$1';
 
 $route['tin-tuc/(:num)'] = 'tintuc/index/$1';

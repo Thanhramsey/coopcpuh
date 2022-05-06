@@ -15,6 +15,7 @@ class Thongtin extends CI_Controller {
         $this->load->model('frontend/Mprovince');
         $this->load->model('frontend/Mdistrict');
         $this->load->model('frontend/Mconfig');
+		$this->load->model('frontend/Mproducer');
         if(!$this->session->userdata('sessionKhachHang')){
             redirect('dang-nhap','refresh');
         }

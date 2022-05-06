@@ -43,9 +43,21 @@ class Mproduct extends CI_Model {
     {
         $this->db->where('trash', 1);
         $this->db->group_start();
-        //$d=0;
         foreach ($listcat as $value) {
             $this->db->or_where('catid', $value);
+        }
+        $this->db->group_end();
+        $this->db->order_by($f, $od);
+        $query = $this->db->get($this->table, $limit,$first);
+        return $query->result_array();
+    }
+	public function product_list_diaban_limit($listcat, $limit,$first,$f,$od)
+    {
+        $this->db->where('trash', 1);
+        $this->db->group_start();
+        //$d=0;
+        foreach ($listcat as $value) {
+            $this->db->or_where('producer', $value);
         }
         $this->db->group_end();
         $this->db->order_by($f, $od);
@@ -67,6 +79,25 @@ class Mproduct extends CI_Model {
             else
             {
                    $this->db->or_where('catid', $value);
+            }
+            $dem++;
+        }
+        $query = $this->db->get($this->table);
+        return count($query->result_array());
+    }
+	public function product_diban_count($listcat)
+    {
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $dem=0;
+        foreach ($listcat as $value) {
+            if($dem==0)
+            {
+                    $this->db->where('producer', $value);
+            }
+            else
+            {
+                   $this->db->or_where('producer', $value);
             }
             $dem++;
         }

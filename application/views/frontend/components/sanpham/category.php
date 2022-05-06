@@ -19,10 +19,11 @@
                  <div class="collection__title">
                      <h1><span><?php echo $categoryname ?></span></h1>
                     <div id="sort-by" class="hidden-xs">
-                      <label class="left hidden-xs" for="sort-select">Sắp xếp theo: </label>
+                      <!-- <label class="left hidden-xs" for="sort-select">Sắp xếp theo: </label> -->
                       <form class="form-inline form-viewpro">
+						  <!-- TODO CHECK SORT -->
                         <div class="form-group">
-                            <?php 
+                            <!-- <?php
                             $html_list="";
                             $html_list.='<select id ="sortControl" class = "form-control input-sm" onchange="sortby(this.value)">';
                             if($this->session->userdata('sortby-category')){
@@ -71,11 +72,11 @@
                                 $html_list.='<option value="price-desc">Giá giảm dần</option>';
                                 $html_list.='<option value="created-desc">Hàng mới nhất</option>';
                                 $html_list.='<option value="created-asc">Hàng cũ nhất</option>';
-                                
+
                             }
                             $html_list.='</select>';
                             echo $html_list;
-                            ?>
+                            ?> -->
                         </div>
                     </form>
                 </div>
@@ -144,7 +145,7 @@
 </section>
 <script type="text/javascript">
     function sortby(option){
-        var strurl="<?php echo base_url();?>"+'/sanpham/category';
+        var strurl="<?php echo base_url();?>"+'sanpham/category';
         jQuery.ajax({
             url: strurl,
             type: 'POST',

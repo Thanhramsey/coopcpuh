@@ -9,6 +9,7 @@ class Dangnhap extends CI_Controller {
         $this->load->model('frontend/Mcustomer');
         $this->load->model('frontend/Mcoupon');
         $this->load->model("frontend/Mproduct");
+		$this->load->model('frontend/Mproducer');
         $this->data['com']='dangnhap';
     }
 

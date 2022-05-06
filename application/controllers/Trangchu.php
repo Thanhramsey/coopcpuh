@@ -11,6 +11,7 @@ class Trangchu extends CI_Controller {
         $this->load->model('frontend/Mcontent');
         $this->load->model('frontend/Mslider');
 		$this->load->model('frontend/Mproducer');
+		$this->load->model('frontend/Mproducer');
         $this->data['com']='trangchu';
     }
 

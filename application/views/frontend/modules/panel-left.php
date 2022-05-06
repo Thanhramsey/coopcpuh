@@ -59,7 +59,7 @@
 						$html='';
 						foreach ($listXa as $xa) {
 							$html= "<li  class='sub-link'>";
-							$html.="<a href='san-pham/".$xa['code']." '>";
+							$html.="<a href='san-pham/db/".$xa['code']." '>";
 							$html.=$xa['name'];
 							$html.="</a>";
 							$html.='</li>';

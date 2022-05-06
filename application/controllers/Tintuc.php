@@ -8,9 +8,10 @@ class Tintuc extends CI_Controller {
         $this->load->model('frontend/Mproduct');
         $this->load->model('frontend/Mcategory');
         $this->load->model('frontend/Mcontent');
+		$this->load->model('frontend/Mproducer');
         $this->data['com']='tintuc';
     }
-    
+
 	public function index(){
         $aurl= explode('/',uri_string());
 		$catlink=$aurl[0];
@@ -21,7 +22,7 @@ class Tintuc extends CI_Controller {
 		$total=$this->Mcontent->content_count();
 		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='tin-tuc');
         $this->data['list']=$this->Mcontent->content_list_home($limit,$first);
-        $this->data['title']='TMĐT - Tin tức';  
+        $this->data['title']='TMĐT - Tin tức';
 		$this->data['view']='index';
 		$this->load->view('frontend/layout',$this->data);
 	}

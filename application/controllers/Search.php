@@ -7,6 +7,7 @@ class Search extends CI_Controller {
 		$this->load->model('frontend/Mcontent');
 		$this->load->model('frontend/Mcategory');
 		$this->load->model("frontend/Mproduct");
+		$this->load->model('frontend/Mproducer');
 		$this->data['com']='search';
 	}
 	public function index(){
