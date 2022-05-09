@@ -760,7 +760,7 @@
 
 .slider-main img{
 	width: 100%;
-	max-height:400px !important;
+	max-height:500px !important;
 }
 
 /* ADS */
@@ -920,7 +920,8 @@ span.small-text {font-size: 14px;color: #888;}
 .img-p{
 	display: block;
 	margin: 17px auto;
-	width: 90%;
+	width: 90% !important;
+	height:140px !important;
 	max-height: 150px;
 	transition: all ease 200ms;
 	background-size: cover !important;
@@ -1167,7 +1168,7 @@ a {
 	overflow: hidden;
 	padding: 10px;
 	margin-top: 0px;
-	padding-bottom: 0px;
+	/* padding-bottom: 0px; */
 	border: 1px solid #3c8dbc;
 }
 
@@ -1363,7 +1364,8 @@ a {
 	padding: 10px 0;
 }
 .latest .tempvideo {
-	height: 140px;
+	height: 240px;
+	box-shadow: 0px 1px 5px 4px #8f90b7;
 }
 .tempvideo img {
 	display: block;
@@ -1552,6 +1554,8 @@ a {
 }
 .banner-product img{
 	max-width: 100%;
+    width: 100%;
+    max-height: 133px;
 }
 #product-all .list-menu{
 	border-top: 1px solid #e8e6e2;
@@ -2457,4 +2461,15 @@ a.fright {
 #zoomOut:hover img {
 	-webkit-transform: scale(1);
 	transform: scale(1);
+}
+
+.blog-content{
+	width: 100%;
+    padding: 20px;
+    overflow: hidden;
+	/* border: 1px solid #3c8dbc; */
+}
+
+.nav > li > a.logi:hover{
+	background-color: transparent
 }

@@ -1,16 +1,16 @@
 <script>
-<!-- //FlexSlider-->
+//FlexSlider-->
 $(window).load(function() {
   $('.flexslider').flexslider({
     animation: "slide",
     controlNav: "thumbnails"
 });
-});            
+});
 </script>
 
 <div class="flexslider">
   <ul class="slides">
-   <?php 
+   <?php
    $img = $row['img'];
    $mang = explode('#', $img);
    foreach ($mang as $value) :?>

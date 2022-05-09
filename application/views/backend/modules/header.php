@@ -1,6 +1,7 @@
 <header class="main-header">
     <a href="<?php echo base_url()?>admin" class="logo">
         <span class="logo-lg">Quản trị hệ thống</span>
+		<i class="glyphicon glyphicon-grain"></i>
     </a>
     <nav class="navbar navbar-static-top" style="height: 52px">
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -12,10 +13,17 @@
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <i class="glyphicon glyphicon-bell"></i>
-                      <span class="label label-warning">
+                      <span class="label" style="background-color:red">
                           <?php
-                          $approved = $this->Morders->orders_count_header();
-                          $not_approved = $this->Morders->orders_count_header_not();
+						  $user_role = $this->session->userdata('sessionadmin');
+						  if ($user_role['role'] == 1) {
+							$not_approved = $this->Morders->orders_count_header_not();
+							$approved = $this->Morders->orders_count_header();
+						  } else {
+							$userId = $user_role['id'];
+							$approved =  $this->Morders->orders_count_header_count_not($userId);
+							$not_approved = $this->Morders->orders_listorders_byId_count($userId);
+						  }
                           echo  $approved+$not_approved;
                           ?>
                       </span>
@@ -26,7 +34,15 @@
                           <li>
                             <a href="admin/orders">
                               <i class="glyphicon glyphicon-flash"></i>
-                              <?php echo $this->Morders->orders_count_header_not();?>
+                              <?php
+							 	$user_role = $this->session->userdata('sessionadmin');
+								if ($user_role['role'] == 1) {
+									echo $this->Morders->orders_count_header_not();
+								} else {
+									$userId = $user_role['id'];
+									echo $this->Morders->orders_listorders_byId_count($userId);
+								}
+							 ?>
                               Đơn hàng chưa duyệt
                           </a>
                       </li>
@@ -37,7 +53,15 @@
                   <li>
                     <a href='admin/orders'>
                       <i class="glyphicon glyphicon-plane"></i>
-                      <?php echo $this->Morders->orders_count_header();?>
+                      <?php
+					  $user_role = $this->session->userdata('sessionadmin');
+						if ($user_role['role'] == 1) {
+							echo $this->Morders->orders_count_header();
+						} else {
+							$userId = $user_role['id'];
+							echo $this->Morders->orders_count_header_count_not($userId);
+						}
+					  ?>
                       Đơn hàng đang giao
                   </a>
               </li>

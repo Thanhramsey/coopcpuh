@@ -1,6 +1,6 @@
 
 <section id="header">
-	<nav class="navbar" style="z-index: 9999">
+	<nav class="navbar" style="z-index: 9999; background:#0f9ed8">
 		<div class="container">
 			<div class="col-md-12 col-lg-12">
 				<div class="navbar-header">
@@ -41,14 +41,15 @@
                 		?>
                 	</ul>
                 	<ul class="nav navbar navbar-nav pull-right" id="nav2">
+					<li><a class='logi' style='color:#fff' href='#'><i style='margin-right:6px' class='glyphicon glyphicon-earphone'></i>Hot line:  (0269) 3 850 009</a></li>
                 		<?php
                 		if($this->session->userdata('sessionKhachHang')){
                 			$name=$this->session->userdata('sessionKhachHang_name');
-                			echo "<li><a href='#'>Xin chào: $name</a></li>";
-                			echo "<li><a href='dang-xuat'>Thoát</a></li>";
+                			echo "<li><a class='logi' style='color:#fff' href='#'>Xin chào: $name</a></li>";
+                			echo "<li><a class='logi' style='color:#fff' href='dang-xuat'><i style='margin-right:6px' class='glyphicon glyphicon-log-out'></i><span>Thoát</span></a></a></li>";
                 		}else{
-                			echo "<li><a href='dang-ky'>Đăng ký</a></li>";
-                			echo "<li><a href='dang-nhap'>Đăng nhập</a></li>";
+                			echo "<li><a class='logi' style='color:#fff' href='dang-ky'><i style='margin-right:6px' class='glyphicon glyphicon-log-in'></i><span>Đăng ký</span></a></li>";
+                			echo "<li><a class='logi' style='color:#fff' href='dang-nhap'><i style='margin-right:6px' class='glyphicon glyphicon-user'></i><span>Đăng nhập</span></a></li>";
                 		}
                 		?>
                 	</ul>

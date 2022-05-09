@@ -9,7 +9,7 @@ $('.owl-carousel-slider').owlCarousel({
     dots: true
 })
 $('.owl-carousel-product').owlCarousel({
-    loop: false,
+    loop: true,
     margin: 10,
     autoplay: true,
     nav: false,

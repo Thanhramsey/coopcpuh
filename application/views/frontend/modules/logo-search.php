@@ -5,12 +5,12 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 search">
       <div class="contact-row">
-        <div class="phone inline">
+        <!-- <div class="phone inline">
           <i class="icon fa fa-phone"></i> (0269) 3 850 009
         </div>
         <div class="contact inline">
           <i class="icon fa fa-envelope"></i> ubndchupuh@gialai.gov.vn
-        </div>
+        </div> -->
       </div>
       <form action="search" method="get" role="form">
         <div class="input-search">
@@ -31,7 +31,7 @@
           </div>
         </form>
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 hidden-xs" style="padding: 24px;">
+      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 hidden-xs" style="margin-top: 6px;">
        <!-- Cart -->
        <div class="cart_header">
         <a href="gio-hang" title="Giỏ hàng">

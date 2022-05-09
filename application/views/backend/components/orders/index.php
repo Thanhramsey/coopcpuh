@@ -81,18 +81,18 @@
 													<td style="text-align: center;">
 														<?php if($val['status']==1):?>
 															<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/orders/status/<?php echo $val['id'] ?>"  onclick="return confirm('Xác nhận đơn hàng đã giao và thanh toán thành công ?')" role = "button">
-																<i class="fa  fa-thumbs-o-up"></i> Xác nhận thanh toán
+																<i class="glyphicon glyphicon-ok"></i> Xác nhận thanh toán
 															</a>
 														</div>
 														<?php  elseif ($val['status']==0):?>
 															<a class="btn btn-default btn-xs" href="<?php echo base_url() ?>admin/orders/status/<?php echo $val['id'] ?>"  onclick="return confirm('Xác nhận gói hàng và chuẩn bị giao hàng ?')" role = "button">
-																<i class="fa fa-check-square-o"></i> Duyệt đơn đặt hàng
+																<i class="glyphicon glyphicon-flash"></i> Duyệt đơn đặt hàng
 															</a>
 														<?php endif; ?>
 														<td>
 															<?php if($val['status'] ==0 || $val['status'] ==1): ?>
 																<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/orders/cancelorder/<?php echo $val['id'] ?>"  onclick="return confirm('Xác nhận hủy đơn hàng này ?')" role = "button">
-																	<i class="fa fa-save"></i> Hủy đơn
+																	<i class="glyphicon glyphicon-remove"></i> Hủy đơn
 																</a>
 															<?php endif;?>
 														</td>
@@ -103,8 +103,8 @@
 															<span class="glyphicon glyphicon-eye-open"></span> Xem
 														</a>
 														<!-- /Xóa -->
-														<a class="btn bg-olive btn-xs" href="<?php echo base_url() ?>admin/orders/trash/<?php echo $val['id'] ?>"  onclick="return confirm('Xác nhận lưu đơn hàng này ?')" role = "button">
-															<i class="fa fa-save"></i> Lưu đơn
+														<a class="btn bg-olive btn-info btn-xs" href="<?php echo base_url() ?>admin/orders/trash/<?php echo $val['id'] ?>"  onclick="return confirm('Xác nhận lưu đơn hàng này ?')" role = "button">
+															<i class="glyphicon glyphicon-saved"></i> Lưu đơn
 														</a>
 													</td>
 												</tr>

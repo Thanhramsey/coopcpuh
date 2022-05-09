@@ -68,7 +68,7 @@
 										<div class="fk-sales">
 											</ul>
 											<ul>
-												<li>Đặt online giao tận nhà ĐÚNG GIỜ </li>
+												<li>Đặt online giao tận nhà <strong>ĐÚNG GIỜ </strong></li>
 											</ul>
 											<ul>
 												<li>Đổi, trả sản phẩm trong 72 giờ</li>

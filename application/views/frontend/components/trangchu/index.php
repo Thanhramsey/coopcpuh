@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class="container" style="margin-bottom: 20px;">
-    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8;">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 0px 10px">
         <?php
         $product_sale = $this->Mproduct->product_sale(10);
         foreach ($product_sale as $row) :?>
@@ -71,7 +71,7 @@
     </div>
 </div>
 <div class="container" style="margin-bottom: 20px;">
-    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8;">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 0px 10px">
         <?php
         $product_sale = $this->Mproduct->product_selling(10);
         foreach ($product_sale as $row) :?>
@@ -160,7 +160,6 @@
                                         <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" >
                                             <img class="img-p"src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
                                         </a>
-
                                         <?php if($sp['sale'] > 0) :?>
                                             <div class="giam-percent">
                                                 <span class="text-giam-percent">Giảm <?php echo $sp['sale'] ?>%</span>
@@ -219,7 +218,7 @@
                             <div class="tempvideo">
                                 <img width="98%" src="public/images/posts/<?php echo $rowPost['img'] ?>">
                             </div>
-                            <h4 style="color: #999;"><?php echo $rowPost['title'] ?></h4>
+                            <h4 style="color: cornflowerblue;"><?php echo $rowPost['title'] ?></h4>
                         </a>
                     </div>
                 </div>
