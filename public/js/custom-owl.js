@@ -4,7 +4,7 @@ $('.owl-carousel-slider').owlCarousel({
     autoplay: true,
     nav: false,
     navigation: false,
-    autoplayTimeout: 500,
+    autoplayTimeout: 3000,
     items: 1,
     dots: true
 })

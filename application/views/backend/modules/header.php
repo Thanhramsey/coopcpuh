@@ -4,13 +4,14 @@
     </a>
     <nav class="navbar navbar-static-top" style="height: 52px">
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
+			<i class="glyphicon glyphicon-list"></i>
+            <!-- <span class="sr-only">Toggle navigation</span> -->
         </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav" style="height: 52px;  padding: 1px">
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-bell-o"></i>
+                      <i class="glyphicon glyphicon-bell"></i>
                       <span class="label label-warning">
                           <?php
                           $approved = $this->Morders->orders_count_header();
@@ -23,9 +24,9 @@
                       <li>
                         <ul class="menu">
                           <li>
-                            <a href="#">
-                              <i class="fa fa-users text-aqua"></i>
-                              <?php echo $this->Morders->orders_count_header_not();?> 
+                            <a href="admin/orders">
+                              <i class="glyphicon glyphicon-flash"></i>
+                              <?php echo $this->Morders->orders_count_header_not();?>
                               Đơn hàng chưa duyệt
                           </a>
                       </li>
@@ -34,9 +35,9 @@
               <li>
                 <ul class="menu">
                   <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 
-                      <?php echo $this->Morders->orders_count_header();?> 
+                    <a href='admin/orders'>
+                      <i class="glyphicon glyphicon-plane"></i>
+                      <?php echo $this->Morders->orders_count_header();?>
                       Đơn hàng đang giao
                   </a>
               </li>
@@ -51,7 +52,7 @@
         <span>Website</span>
     </a>
 </li>
-<?php 
+<?php
 $image='';
 if($user['img']){
     $image=$user['img'];

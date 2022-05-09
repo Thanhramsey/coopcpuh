@@ -1,6 +1,6 @@
 /*!
  * AdminLTE v2.4.12
- * 
+ *
  *   Author:  Colorlib
  *   Support: <https://github.com/ColorlibHQ/AdminLTE/issues>
  *   Repository: git://github.com/ColorlibHQ/AdminLTE.git
@@ -253,9 +253,9 @@ a:focus {
   padding: 15px 15px;
   font-family: fontAwesome;
 }
-.main-header .sidebar-toggle:before {
+/* .main-header .sidebar-toggle:before {
   content: "\f0c9";
-}
+} */
 .main-header .sidebar-toggle:hover {
   color: #fff;
 }

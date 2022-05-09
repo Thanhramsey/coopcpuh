@@ -10,19 +10,20 @@
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="public/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="public/css/font-awesome.css">
+  <link rel="stylesheet" href="public/css/fontawesome.css">
+  <link rel="stylesheet" href="public/css/fontawesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="public/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="public/css/AdminLTE.css">
   <link rel="stylesheet" href="public/css/ionicons.min.css">
   <meta property="fb:app_id" content="659513967881060">
-  
+
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="public/css/_all-skins.min.css">
 
-  
+
    <script src="public/js/loader.js"></script>
    <script src="public/ckeditor/ckeditor.js"></script>
    <style>
@@ -42,7 +43,7 @@
 
     <!-- ./Vung Header -->
     <?php $this->load->view('backend/modules/menu'); ?>
-    <?php 
+    <?php
     if(isset($com, $view))
     {
       $this->load->view('backend/components/'.$com.'/'.$view);

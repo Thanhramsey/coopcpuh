@@ -4,7 +4,7 @@
 		<ul class="sidebar-menu">
 			<li class="treeview">
 				<a href="admin">
-					<i class="fa fa-bar-chart"></i> <span>Thống kê</span>
+					<i class="glyphicon glyphicon-signal"></i> <span>Thống kê</span>
 				</a>
 			</li>
 			<li class="header">QUẢN LÝ CỬA HÀNG</li>
@@ -19,14 +19,14 @@
 			?>
 			<li class="treeview">
 				<a href="admin/product">
-					<i class="fa fa-leaf"></i><span>Sản phẩm</span>
+					<i class="glyphicon glyphicon-apple"></i><span>Sản phẩm</span>
 				</a>
 			</li>
 			<?php
 			if ($user['role'] == 1) {
 				echo '<li class="treeview">
                 <a href="admin/category">
-                    <i class="fa fa-indent"></i><span>Loại sản phẩm</span>
+                    <i class="glyphicon glyphicon-leaf"></i><span>Loại sản phẩm</span>
                 </a>
             	</li>';
 			}
@@ -36,7 +36,7 @@
 			if ($user['role'] == 1) {
 				echo '<li class="treeview">
                 <a href="admin/producer">
-                    <i class="fa fa-gift"></i><span>Địa bàn</span>
+                    <i class="glyphicon glyphicon-globe"></i><span>Địa bàn</span>
                 </a>
             </li>';
 			}
@@ -45,14 +45,14 @@
 			if ($user['role'] == 1) {
 				echo '	<li>
 				<a href="admin/useradmin">
-					<i class="fa fa-users"></i> Cơ sở kinh doanh
+					<i class="glyphicon glyphicon-briefcase"></i><span> Cơ sở kinh doanh</span>
 				 </a></li>';
 			}
 			?>
 
 			<li class="treeview">
 				<a href="admin/orders">
-					<i class="fa fa-shopping-cart"></i> <span>Đơn hàng</span>
+					<i class="glyphicon glyphicon-shopping-cart"></i> <span>Đơn hàng</span>
 				</a>
 			</li>
 			<?php
@@ -60,22 +60,22 @@
 				echo '<li class="header">QUẢN LÝ BÁN HÀNG</li>
 				<li class="treeview">
 					<a href="admin/coupon">
-						<i class="fa fa-diamond"></i> <span>Mã giảm giá</span>
+						<i class="glyphicon glyphicon-piggy-bank"></i> <span>Mã giảm giá</span>
 					</a>
 				</li>
 				<li class="treeview">
 					<a href="admin/contact">
-						<i class="fa fa-envelope"></i> <span>Liên hệ</span>
+						<i class="glyphicon glyphicon-earphone"></i> <span>Liên hệ</span>
 					</a>
 				</li>
 				<li class="treeview">
 					<a href="admin/customer">
-						<i class="fa fa-user"></i><span>Khách hàng</span>
+						<i class="glyphicon glyphicon-user"></i><span>Khách hàng</span>
 					</a>
 				</li>
 				<li class="treeview">
 					<a href="admin/sliders">
-						<i class="fa fa-cogs"></i> <span>Giao diện</span>
+						<i class="glyphicon glyphicon-picture"></i> <span>Giao diện</span>
 					</a>
 				</li>';
 			}
@@ -90,13 +90,13 @@
 				<a href="#">
 					<i class="glyphicon glyphicon-cog"></i><span>Hệ thống</span>
 					<span class="pull-right-container">
-						<i class="fa fa-angle-left pull-right"></i>
+						<i class="glyphicon glyphicon-chevron-down"></i>
 					</span>
 				</a>
 				<ul class="treeview-menu">
 					<li class="active">
 						<a href="admin/configuration/update">
-							<i class="fa fa-cogs"></i> Cấu hình
+							<i class="glyphicon glyphicon-cog"></i> Cấu hình
 						</a>
 					</li>
 				</ul>
@@ -105,7 +105,7 @@
 			?>
 
 
-			<li><a href="admin/user/logout.html"><i class="fa fa-sign-out text-red"></i> <span>Thoát</span></a></li>
+			<li><a href="admin/user/logout.html"><i class="glyphicon glyphicon-off"></i> <span>Thoát</span></a></li>
 		</ul>
 	</section>
 	<!-- /.sidebar -->

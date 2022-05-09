@@ -37,7 +37,6 @@ class Orders extends CI_Controller {
 		$total = $this->Morders->orders_listorders_byId_count($userId);
 		$this->data['strphantrang'] = $this->phantrang->PagePer($total, $current, $limit, $url = 'admin/orders');
 		$this->data['list'] = $this->Morders->orders_listorders_byId($limit, $first, $userId);
-
 	}
 
     $this->data['view']='index';
