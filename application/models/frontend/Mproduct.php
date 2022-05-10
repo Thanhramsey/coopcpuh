@@ -193,4 +193,33 @@ class Mproduct extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result_array();
     }
+
+	// public function product_sanpham_id($userId)
+    // {
+    //     $this->db->where('trash', 1);
+	// 	$this->db->where('userId', $userId);
+    //     $this->db->order_by('id', 'desc');
+    //     $query = $this->db->get($this->table);
+    //     return $query->result_array();
+    // }
+
+	  // Sản phẩm
+	  public function product_sanpham_id($limit,$first,$userId)
+	  {
+		  $this->db->where('trash', 1);
+		  $this->db->where('userId', $userId);
+		  $this->db->order_by('id', 'desc');
+		  $query = $this->db->get($this->table, $limit,$first);
+		  return $query->result_array();
+	  }
+
+	  public function product_sanpham_id_count($userId)
+	  {
+		  $this->db->where('status', 1);
+		  $this->db->where('userId', $userId);
+		  $this->db->where('trash', 1);
+		  $query = $this->db->get($this->table);
+		  return count($query->result_array());
+	  }
+
 }

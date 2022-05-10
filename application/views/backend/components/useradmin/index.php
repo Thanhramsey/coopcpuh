@@ -2,12 +2,12 @@
 	<section class="content-header">
 		<h1><i class="glyphicon glyphicon-cd"></i> Danh sách tài khoản cửa hàng</h1>
 		<div class="breadcrumb">
-			<?php  
+			<?php
 				$QuyenThem='';
 				if($user['role']==1){
 					$QuyenThem.="
 						<a class='btn btn-primary btn-sm' href='".base_url()."admin/useradmin/insert' role='button'>
-							<span class='fa fa-user-plus'></span> Thêm mới
+							<span class='glyphicon glyphicon-plus glyphicon'></span> Thêm mới
 						</a>";
 				}
 				echo $QuyenThem;
@@ -77,7 +77,7 @@
 													<?php endif; ?>
 												</a>
 											</td>
-											<?php  
+											<?php
 												$quyen='';
 												if($user['role']==1){
 													$quyen.='

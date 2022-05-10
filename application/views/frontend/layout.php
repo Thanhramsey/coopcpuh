@@ -21,7 +21,7 @@
     <link href="public/css/lte.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="public/css/owl.carousel.min.css" rel="stylesheet">
-    <link href="public/css/AdminLTE.css" rel="stylesheet">
+    <!-- <link href="public/css/AdminLTE.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="public/css/style-jc.css">
     <link href="public/css/menu-tab.css" rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">

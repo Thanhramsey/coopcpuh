@@ -23,7 +23,7 @@ foreach ($listcat as $menu) {
         foreach ($submenu as $menu1){
             $html_menu.='<li>';
             $html_menu.="<a href='san-pham/".$menu1['link']." ' title=' ".$menu1['name']." '> ".$menu1['name']."</a>";
-            $html_menu.="</li>";    
+            $html_menu.="</li>";
         }
         $html_menu.="</ul>";
     }
@@ -31,4 +31,4 @@ foreach ($listcat as $menu) {
 }
 $html_menu.="</ul>";
 echo $html_menu;
-?>  
+?>

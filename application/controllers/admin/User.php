@@ -108,7 +108,7 @@ class User extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'occpchupuhgli@gmail.com';
+            $config['smtp_user']    = 'ocopchupuhgl@gmail.com';
             $config['smtp_pass']    = 'chupuh123456';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
@@ -116,7 +116,7 @@ class User extends CI_Controller {
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('occpchupuhgli@gmail.com', 'Hệ thống COOP UBND Chư pưh');
+            $this->email->from('ocopchupuhgl@gmail.com', 'Hệ thống COOP UBND Chư pưh');
             $this->email->to($list['email']);
             $this->email->subject('Hệ thống COOP UBND Chư pưh - Lấy lại mật khẩu');
             $this->email->message('Vui lòng truy cập đường dẫn để lấy lại mật khẩu <button class="btn"><a href="'.base_url().'admin/user/reset_password_new/'.$list['id'].'">Lấy lại mật khẩu</a></button>');

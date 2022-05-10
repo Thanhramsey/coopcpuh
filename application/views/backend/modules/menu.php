@@ -72,7 +72,7 @@
 				echo '<li class="header">CÀI ĐẶT</li>
 					<li class="active">
 						<a href="admin/configuration/update">
-							<i class="glyphicon glyphicon-cog"></i> Cấu hình
+							<i class="glyphicon glyphicon-cog"></i><span> Cấu hình</span>
 						</a>
 					</li>
 					<li class="treeview">

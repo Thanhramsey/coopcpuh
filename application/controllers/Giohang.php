@@ -203,7 +203,7 @@ class Giohang extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'occpchupuhgli@gmail.com';
+            $config['smtp_user']    = 'ocopchupuhgl@gmail.com';
             $config['smtp_pass']    = 'chupuh123456';
             // mk trên la mat khau dung dung cua gmail, có thể dùng gmail hoac mat khau. Tao mat khau ung dung de bao mat tai khoan
             $config['charset']    = 'utf-8';
@@ -212,7 +212,7 @@ class Giohang extends CI_Controller {
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('occpchupuhgli@gmail.com', 'OCOP CHƯPƯH');
+            $this->email->from('ocopchupuhgl@gmail.com', 'OCOP CHƯPƯH');
             $list = array($val['email']);
             $this->email->to($list);
             $this->email->subject('Hệ thống OCOP CHƯPƯH');

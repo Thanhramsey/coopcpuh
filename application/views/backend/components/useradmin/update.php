@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <form action="<?php echo base_url() ?>admin/useradmin/update.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
         <section class="content-header">
-            <h1><i class="fa fa-user-plus"></i> Sửa thành viên</h1>
+            <h1><i class="glyphicon glyphicon-plus glyphicon"></i> Sửa thành viên</h1>
             <div class="breadcrumb">
                 <button type = "submit" class="btn btn-primary btn-sm">
                     <span class="glyphicon glyphicon-floppy-save"></span>
@@ -22,32 +22,37 @@
                             <div class="col-md-9">
                                 <div class="form-group">
                                     <label>Họ và tên <span class = "maudo">(*)</span></label>
-                                    <input type="text" class="form-control" name="fullname"" value="<?php echo $row['fullname'] ?>" >
+                                    <input type="text" class="form-control" name="fullname" value="<?php echo $row['fullname'] ?>" >
                                     <div class="error" id="password_error"  style="color: red;"><?php echo form_error('fullname')?></div>
                                 </div>
                                 <div class="form-group">
                                     <label>Email <span class = "maudo">(*)</span></label>
-                                    <input type="email" class="form-control" name="email"" value="<?php echo $row['email'] ?>" disabled>
+                                    <input type="email" class="form-control" name="email" value="<?php echo $row['email'] ?>" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label>Tên đăng nhập <span class = "maudo">(*)</span></label>
-                                    <input type="text" class="form-control" name="username"" value="<?php echo $row['username']?>" disabled>
+                                    <input type="text" class="form-control" name="username" value="<?php echo $row['username']?>" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label>Mật khẩu <span class = "maudo">(*)</span></label>
-                                    <input type="password" class="form-control" name="password"">
+                                    <input type="password" class="form-control" name="password">
                                     <div class="error" id="password_error"  style="color: red;"><?php echo form_error('password')?></div>
                                 </div>
                                 <div class="form-group">
                                     <label>Điện thoại <span class = "maudo">(*)</span></label>
-                                    <input type="text" class="form-control" name="phone"" value="<?php echo $row['phone'] ?>" disabled>
+                                    <input type="text" class="form-control" name="phone" value="<?php echo $row['phone'] ?>" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label>Địa chỉ <span class = "maudo">(*)</span></label>
-                                    <input type="text" class="form-control" name="address"" value="<?php echo $row['address'] ?>" >
+                                    <input type="text" class="form-control" name="address" value="<?php echo $row['address'] ?>" >
                                     <div class="error" id="password_error" style="color: red;"><?php echo form_error('address')?></div>
                                 </div>
-                                
+								<div class="form-group">
+									<label>Chi tiết doanh nghiệp</label>
+									<textarea name="detail" id="detail" class="form-control"><?php echo $row['detail'] ?></textarea>
+									<script>CKEDITOR.replace('detail');</script>
+								</div>
+
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">

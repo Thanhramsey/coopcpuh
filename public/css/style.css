@@ -405,7 +405,12 @@
 	display: block;
 	padding: 10px 15px;
 	font-size: 0.9em;
-	color: #685e52; !important;
+	/* color: #685e52 !important; */
+}
+.dn-detail>li>a {
+	background-color: #E5E5E5;
+	margin-right: 3px;
+	/* color: #685e52 !important; */
 }
 
 .nav>li>a:hover{
@@ -649,7 +654,7 @@
 	color: #fff;
 	padding: 0 15px;
 	font-weight: 400;
-	font-size: 17px;
+	font-size: 16px;
 }
 
 .menu-right li a:hover{
@@ -670,15 +675,16 @@
 	width: 100%;
 	text-decoration: none;
 	display: block;
-	color: black;
+	color: #333;
 	padding: 0 15px;
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 17px;
 }
 
 .menu-right li.sub-link a:hover{
 	color: #0f9ed8;
 	background-color: #fff;
+	font-weight: 550;
 }
 .menu-right li.sub-link:hover {
 
@@ -1298,10 +1304,9 @@ a {
 .scroll {
 	position:absolute;
 	right:20px;
-	bottom:20px;
-	background:#b2b2b2;
+	bottom:50px;
 	background:#0f9ed8;
-	padding:15px;
+	padding:15px 18px;
 	text-align: center;
 	margin: 0 0 0 0;
 	cursor:pointer;
@@ -1309,6 +1314,7 @@ a {
 	-moz-transition: 0.5s;
 	-webkit-transition: 0.5s;
 	-o-transition: 0.5s;
+	border-radius: 8px;
 }
 .scroll:hover {
 	background: #62caf5;
@@ -1430,7 +1436,7 @@ a {
 
 #footer .news-social {
 	padding: 10px 0;
-	background: #f7f7f7;
+	background: #0f9ed8;
 	border-bottom: solid 1px #e7e7e7;
 }
 
@@ -1447,7 +1453,7 @@ a {
 	font-size: 16px;
 	text-align: center;
 	border: solid 1px #e7e7e7;
-	color: rgba(142, 142, 142, 1);
+	color: #fff;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -1459,7 +1465,7 @@ a {
 }
 
 #footer .social a:hover, #footer a:hover{
-	color: #0f9ed8;
+	color: inherit;
 }
 
 #footer .top-footer {
@@ -2472,4 +2478,25 @@ a.fright {
 
 .nav > li > a.logi:hover{
 	background-color: transparent
+}
+
+.detail-dn{
+	width:80%;
+	padding: 20px;
+	font-size: 18px;
+	border: 1px solid #e8e6e2;
+}
+
+.tintuc-sp {
+	font-size: 18px;
+    font-weight: bold;
+    color: #252525;
+    display: inline-block;
+    text-transform: uppercase;
+    line-height: normal;
+    padding: 14px 0px;
+    border-bottom: 3px solid #0f9ed8;
+    margin-bottom: -2px;
+    position: relative;
+    margin: 0px;
 }

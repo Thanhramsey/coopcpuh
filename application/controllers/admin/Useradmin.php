@@ -48,15 +48,16 @@ class Useradmin extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[5]|max_length[32]');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
-				'fullname' =>$_POST['fullname'], 
-				'phone' =>$_POST['phone'], 
-				'address' =>$_POST['address'], 
-				'email' =>$_POST['email'], 
-				'username' =>$_POST['username'], 
-				'password' =>sha1($_POST['password']), 
-				'role' =>$_POST['role'], 
+				'fullname' =>$_POST['fullname'],
+				'phone' =>$_POST['phone'],
+				'address' =>$_POST['address'],
+				'email' =>$_POST['email'],
+				'username' =>$_POST['username'],
+				'password' =>sha1($_POST['password']),
+				'role' =>$_POST['role'],
 				'status' =>$_POST['status'],
 				'created' =>$today,
+				'detail'=>$_POST['detail'],
 				'trash'=>1
 			);
 			$config['upload_path']          = './public/images/admin/';
@@ -73,7 +74,7 @@ class Useradmin extends CI_Controller {
 			$this->Muser->user_insert($mydata);
 			$this->session->set_flashdata('success', 'Thêm tài khoản thành công');
 			redirect('admin/useradmin','refresh');
-		} 
+		}
 		else{
 			$this->data['view']='insert';
 			$this->data['title']='Thêm mới tài khoản';
@@ -95,13 +96,14 @@ class Useradmin extends CI_Controller {
 		$this->form_validation->set_rules('fullname', 'Họ và tên', 'required');
 		$this->form_validation->set_rules('address', 'Địa chỉ', 'required');
 		$this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[5]|max_length[32]');
-		if ($this->form_validation->run() == TRUE) 
+		if ($this->form_validation->run() == TRUE)
 		{
 			$mydata= array(
-				'fullname' =>$_POST['fullname'], 
-				'address' =>$_POST['address'], 
-				'password' =>sha1($_POST['password']), 
-				'gender'=>$_POST['gender']
+				'fullname' =>$_POST['fullname'],
+				'address' =>$_POST['address'],
+				'password' =>sha1($_POST['password']),
+				'gender'=>$_POST['gender'],
+				'detail'=>$_POST['detail'],
 			);
          	$config = array();
 	         $config['upload_path']   = './public/images/admin/';
@@ -118,7 +120,7 @@ class Useradmin extends CI_Controller {
 			$this->Muser->user_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật tài khoản thành công');
 			redirect('admin/useradmin/','refresh');
-		} 
+		}
 		$this->data['view']='update';
 		$this->data['title']='Cập nhật tài khoản';
 		$this->load->view('backend/layout', $this->data);

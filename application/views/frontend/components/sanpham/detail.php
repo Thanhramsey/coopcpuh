@@ -39,7 +39,7 @@
 							<div class="product-status" style="margin-top:0 !important;height: 22px;">
 								<div class="pull-left">
 									<span class="price-label">Doanh nghiệp sản xuất:</span>
-									<a href="<?php echo base_url() ?>san-pham/<?php $producer = $this->Muser->user_detail_id_fg($row['userId']); echo $producer['id'] ?>" title=""><?php $producer = $this->Muser->user_detail_id_fg($row['userId']); echo $producer['fullname'] ?></a>
+									<a href="<?php echo base_url() ?>doanhngiep/detail/<?php $producer = $this->Muser->user_detail_id_fg($row['userId']); echo $producer['id'] ?>" title=""><strong><span style="color:red"><?php $producer = $this->Muser->user_detail_id_fg($row['userId']); echo $producer['fullname'] ?></span></strong></a>
 								</div>
 							</div>
 							<div class="product-status">

@@ -2,10 +2,10 @@
 -- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 04, 2022 lúc 06:28 PM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 7.4.29
+-- Host: 127.0.0.1
+-- Generation Time: May 10, 2022 at 10:35 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `db_shop`
+-- Database: `db_shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_category`
+-- Table structure for table `db_category`
 --
 
 CREATE TABLE `db_category` (
@@ -43,7 +43,7 @@ CREATE TABLE `db_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_category`
+-- Dumping data for table `db_category`
 --
 
 INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, `created_at`, `created_by`, `updated_at`, `updated_by`, `trash`, `status`) VALUES
@@ -57,7 +57,7 @@ INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_config`
+-- Table structure for table `db_config`
 --
 
 CREATE TABLE `db_config` (
@@ -71,16 +71,16 @@ CREATE TABLE `db_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_config`
+-- Dumping data for table `db_config`
 --
 
 INSERT INTO `db_config` (`id`, `mail_smtp`, `mail_smtp_password`, `mail_noreply`, `priceShip`, `title`, `description`) VALUES
-(1, 'occpchupuhgli@gmail.com', 'chupuh123456', 'thanhwilshere96@gmail.com', '0', 'OCOP CHUPUH', '');
+(1, 'ocopchupuhgl@gmail.com', 'chupuh123456', 'thanhwilshere96@gmail.com', '0', 'OCOP CHUPUH', '');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_contact`
+-- Table structure for table `db_contact`
 --
 
 CREATE TABLE `db_contact` (
@@ -96,7 +96,7 @@ CREATE TABLE `db_contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_contact`
+-- Dumping data for table `db_contact`
 --
 
 INSERT INTO `db_contact` (`id`, `title`, `phone`, `email`, `content`, `created_at`, `status`, `trash`, `fullname`) VALUES
@@ -107,7 +107,7 @@ INSERT INTO `db_contact` (`id`, `title`, `phone`, `email`, `content`, `created_a
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_content`
+-- Table structure for table `db_content`
 --
 
 CREATE TABLE `db_content` (
@@ -126,16 +126,17 @@ CREATE TABLE `db_content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_content`
+-- Dumping data for table `db_content`
 --
 
 INSERT INTO `db_content` (`id`, `title`, `alias`, `introtext`, `fulltext`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
-(4, 'Từ năm 2021, tỉnh Gia Lai phấn đấu mỗi năm có thêm 50 sản phẩm đạt chuẩn OCOP 3 đến 4 sao cấp tỉnh', 'tu-nam-2021-tinh-gia-lai-phan-dau-moi-nam-co-them-50-san-pham-dat-chuan-ocop-3-den-4-sao-cap-tinh', '', '<h2><span style=\"font-size:12px\">&nbsp; Thực tế cho thấy, thấy được lợi &iacute;ch của Chương tr&igrave;nh OCOP n&ecirc;n thời gian qua, c&aacute;c doanh nghiệp, hợp t&aacute;c x&atilde;, tổ hợp t&aacute;c v&agrave; cơ sở sản xuất kinh doanh tr&ecirc;n địa b&agrave;n tỉnh đ&atilde; t&iacute;ch cực tham gia; c&aacute;c sản phẩm tham gia Chương tr&igrave;nh OCOP ở c&aacute;c huyện, thị x&atilde;, th&agrave;nh phố c&oacute; chiều hướng tăng l&ecirc;n. Với mục ti&ecirc;u đặt ra, trước mắt trong năm 2021 n&agrave;y, c&aacute;c huyện, thị x&atilde;, th&agrave;nh phố trong tỉnh đăng k&yacute; 148 sản phẩm phấn đấu đạt chuẩn OCOP. Trong đ&oacute;, n&acirc;ng cấp sao (từ 3 sao l&ecirc;n 4 sao v&agrave; từ 4 sao l&ecirc;n 5 sao) đối với 7 sản phẩm; v&agrave; x&acirc;y dựng, ph&aacute;t triển mới 141 sản phẩm. Dự kiến kinh ph&iacute; đề xuất vốn để thực hiện chương tr&igrave;nh n&agrave;y trong năm 2021 l&agrave; hơn 22,2 tỷ đồng. Tr&ecirc;n cơ sở những sản phẩm đạt chuẩn OCOP cấp huyện sẽ tiếp tục đăng k&yacute; để thẩm định đ&aacute;nh gi&aacute; xếp hạng đạt chuẩn OCOP cấp tỉnh./.</span></h2>\r\n\r\n<p>&nbsp;</p>\r\n', '837de6db3cbdcde394ac.jpg', '2019-05-26 23:18:02', '1', '2022-04-26 14:13:09', '10', 1, 1);
+(4, 'Từ năm 2021, tỉnh Gia Lai phấn đấu mỗi năm có thêm 50 sản phẩm đạt chuẩn OCOP 3 đến 4 sao cấp tỉnh', 'tu-nam-2021-tinh-gia-lai-phan-dau-moi-nam-co-them-50-san-pham-dat-chuan-ocop-3-den-4-sao-cap-tinh', '', '<h2><span style=\"font-size:12px\">&nbsp; Thực tế cho thấy, thấy được lợi &iacute;ch của Chương tr&igrave;nh OCOP n&ecirc;n thời gian qua, c&aacute;c doanh nghiệp, hợp t&aacute;c x&atilde;, tổ hợp t&aacute;c v&agrave; cơ sở sản xuất kinh doanh tr&ecirc;n địa b&agrave;n tỉnh đ&atilde; t&iacute;ch cực tham gia; c&aacute;c sản phẩm tham gia Chương tr&igrave;nh OCOP ở c&aacute;c huyện, thị x&atilde;, th&agrave;nh phố c&oacute; chiều hướng tăng l&ecirc;n. Với mục ti&ecirc;u đặt ra, trước mắt trong năm 2021 n&agrave;y, c&aacute;c huyện, thị x&atilde;, th&agrave;nh phố trong tỉnh đăng k&yacute; 148 sản phẩm phấn đấu đạt chuẩn OCOP. Trong đ&oacute;, n&acirc;ng cấp sao (từ 3 sao l&ecirc;n 4 sao v&agrave; từ 4 sao l&ecirc;n 5 sao) đối với 7 sản phẩm; v&agrave; x&acirc;y dựng, ph&aacute;t triển mới 141 sản phẩm. Dự kiến kinh ph&iacute; đề xuất vốn để thực hiện chương tr&igrave;nh n&agrave;y trong năm 2021 l&agrave; hơn 22,2 tỷ đồng. Tr&ecirc;n cơ sở những sản phẩm đạt chuẩn OCOP cấp huyện sẽ tiếp tục đăng k&yacute; để thẩm định đ&aacute;nh gi&aacute; xếp hạng đạt chuẩn OCOP cấp tỉnh./.</span></h2>\r\n\r\n<p>&nbsp;</p>\r\n', '837de6db3cbdcde394ac.jpg', '2019-05-26 23:18:02', '1', '2022-04-26 14:13:09', '10', 1, 1),
+(7, 'Anh Chương trúng vé số trị giá 20.000.000 vnđ', 'anh-chuong-trung-ve-so-tri-gia-20-000-000-vnd', '', '<p>V&eacute; số truyền thống với mệnh gi&aacute; 10.000 đ c&oacute; tất cả 18 l&ocirc; tr&uacute;ng: 9 giải thưởng, 9 giải phụ đặc biệt, 45 giải khuyến kh&iacute;ch trong đ&oacute;:</p>\r\n\r\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\">\r\n	<tbody>\r\n		<tr>\r\n			<td><strong>Giải thưởng&nbsp;</strong></td>\r\n			<td><strong>Số lượng giải</strong></td>\r\n			<td><strong>Số lần quay</strong></td>\r\n			<td><strong>Số</strong></td>\r\n			<td><strong>Gi&aacute; trị giải thưởng</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải ĐB</td>\r\n			<td>1</td>\r\n			<td>1</td>\r\n			<td>6 số</td>\r\n			<td><strong>2.000.000.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải nhất</td>\r\n			<td>10</td>\r\n			<td>1</td>\r\n			<td>5 số</td>\r\n			<td><strong>30.000.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải nh&igrave;</td>\r\n			<td>10</td>\r\n			<td>1</td>\r\n			<td>5 số</td>\r\n			<td><strong>15.000.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải ba</td>\r\n			<td>20</td>\r\n			<td>2</td>\r\n			<td>5 số</td>\r\n			<td><strong>10.000.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải tư</td>\r\n			<td>70</td>\r\n			<td>7</td>\r\n			<td>5 số</td>\r\n			<td><strong>3.000.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải năm</td>\r\n			<td>100</td>\r\n			<td>1</td>\r\n			<td>4 số</td>\r\n			<td><strong>1.000.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải s&aacute;u</td>\r\n			<td>300</td>\r\n			<td>3</td>\r\n			<td>4 số</td>\r\n			<td><strong>400.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải bảy</td>\r\n			<td>1.000</td>\r\n			<td>1</td>\r\n			<td>3 số</td>\r\n			<td><strong>200.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải t&aacute;m</td>\r\n			<td>10.000</td>\r\n			<td>1</td>\r\n			<td>2 số</td>\r\n			<td><strong>100.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải phụ ĐB</td>\r\n			<td>9</td>\r\n			<td>&nbsp;</td>\r\n			<td>5 số</td>\r\n			<td><strong>50.000.000đ</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Giải khuyến kh&iacute;ch</td>\r\n			<td>45</td>\r\n			<td>&nbsp;</td>\r\n			<td>5 số</td>\r\n			<td><strong>6.000.000đ</strong></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&ndash;&nbsp;<strong>Giải phụ đặc biệt</strong>: cho những v&eacute; tr&uacute;ng 5 chữ số cuối c&ugrave;ng li&ecirc;n tiếp theo h&agrave;ng thứ tự của giải đặc biệt.<br />\r\nVD: Giải ĐB l&agrave;&nbsp;<strong>467828</strong>, số của bạn l&agrave;&nbsp;<strong><u>3</u></strong><strong>67828</strong>&nbsp;th&igrave; tr&uacute;ng giải phụ đặc biệt trị gi&aacute; l&agrave;&nbsp;<strong>50.000.000đ&nbsp;</strong>mỗi giải.<br />\r\n&ndash;&nbsp;<strong>Giải khuyến kh&iacute;ch</strong>: cho những v&eacute; chỉ sai một số bất kỳ h&agrave;ng n&agrave;o so với giải đặc biệt 6 số (ngoại trừ sai số ở h&agrave;ng trăm ng&agrave;n).<br />\r\nVD: Giải ĐB l&agrave;&nbsp;<strong>467828</strong>, số của bạn l&agrave;&nbsp;<strong>46782<u>9</u></strong>&nbsp;hay&nbsp;<strong>4678<u>3</u>8</strong>&nbsp;th&igrave; tr&uacute;ng giải khuyến kh&iacute;ch trị gi&aacute;&nbsp;<strong>6.000.000đ</strong>&nbsp;mỗi giải.</p>\r\n', '119870856_173895514272166_4397835810628693118_n.jpg', '2022-05-10 15:23:05', '1', '2022-05-10 15:23:05', '1', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_customer`
+-- Table structure for table `db_customer`
 --
 
 CREATE TABLE `db_customer` (
@@ -152,19 +153,25 @@ CREATE TABLE `db_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_customer`
+-- Dumping data for table `db_customer`
 --
 
 INSERT INTO `db_customer` (`id`, `fullname`, `username`, `password`, `address`, `phone`, `email`, `created`, `trash`, `status`) VALUES
-(1, 'Thành', 'thanh1996', 'fcea920f7412b5da7be0cf42b8c93759', '', '0969124469', 'thanhwilshere96@gmail.com', '2021-04-24 22:10:08', 1, 1),
+(1, 'Thành', 'thanh1996', 'fcea920f7412b5da7be0cf42b8c93759', '', '0969124469', 'thanhwilshere97@gmail.com', '2021-04-24 22:10:08', 1, 1),
 (67, '<div style=', '', '', '', '<div style=', '', '2022-04-27 09:06:55', 0, 1),
 (68, 'Tempo', '', '', '', '0987678543', 'tempo@gmail.com', '2022-05-04 14:41:26', 1, 1),
-(69, 'tuấn', '', '', '', '0123913123', '', '2022-05-04 14:43:40', 1, 1);
+(69, 'tuấn', '', '', '', '0123913123', '', '2022-05-04 14:43:40', 1, 1),
+(70, 'Thiệu', 'tempomusic0403@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '', '0349303368', 'tempomusic0403@gmail.com', '2022-05-05 15:13:06', 1, 1),
+(71, 'tempo111', '', '', '', '122312312312', '', '2022-05-05 15:16:54', 1, 1),
+(72, 'Chường', 'chương@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '012391239', '', '2022-05-05 15:39:30', 1, 1),
+(73, 'trịnh tấn côn', 'thanh1234567', 'e10adc3949ba59abbe56e057f20f883e', '', '0969123345', 'thanhwilshere9x@gmail.com', '2022-05-10 00:00:00', 1, 1),
+(74, 'tấn côn xxx', 'thanhcute1996', 'e10adc3949ba59abbe56e057f20f883e', '', '0989111234', 'thanhwilshere96@gmail.com', '2022-05-10 00:00:00', 1, 1),
+(75, 'châu chương', 'anh chương', 'e10adc3949ba59abbe56e057f20f883e', '', '0912329394', 'thanhchuongnl@gmail.com', '2022-05-10 00:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_discount`
+-- Table structure for table `db_discount`
 --
 
 CREATE TABLE `db_discount` (
@@ -183,17 +190,20 @@ CREATE TABLE `db_discount` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_discount`
+-- Dumping data for table `db_discount`
 --
 
 INSERT INTO `db_discount` (`id`, `code`, `discount`, `limit_number`, `number_used`, `expiration_date`, `payment_limit`, `description`, `created`, `orders`, `trash`, `status`) VALUES
 (1, 'MAHETLUOT', 100000, 30, 30, '2019-09-29', 500000, 'Giam 100000', '2019-06-10', 1, 1, 1),
-(2, 'VANHIEP', 200000, 20, 3, '2019-06-12', 500000, 'Giam 200k', '2019-06-10', 1, 0, 1);
+(2, 'VANHIEP', 200000, 20, 3, '2019-06-12', 500000, 'Giam 200k', '2019-06-10', 1, 0, 1),
+(18, 'BQOGZJFUR1EM', 100000, 1, 0, '2022-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2022-05-10', 0, 1, 1),
+(19, '1VZWAFHN4WQF', 100000, 1, 0, '2022-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2022-05-10', 0, 1, 1),
+(20, 'IOICQXMTZDLR', 100000, 1, 0, '2022-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2022-05-10', 0, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_district`
+-- Table structure for table `db_district`
 --
 
 CREATE TABLE `db_district` (
@@ -204,7 +214,7 @@ CREATE TABLE `db_district` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_district`
+-- Dumping data for table `db_district`
 --
 
 INSERT INTO `db_district` (`id`, `name`, `type`, `provinceid`) VALUES
@@ -925,7 +935,7 @@ INSERT INTO `db_district` (`id`, `name`, `type`, `provinceid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_evaluate`
+-- Table structure for table `db_evaluate`
 --
 
 CREATE TABLE `db_evaluate` (
@@ -941,7 +951,7 @@ CREATE TABLE `db_evaluate` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_evaluate`
+-- Dumping data for table `db_evaluate`
 --
 
 INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `comment_time`, `comment_by`, `star`, `trash`) VALUES
@@ -951,12 +961,13 @@ INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `c
 (4, 'Linh', 43, 'Sản phẩm không giống quảng cáo', '0989786543', '2022-04-29 10:28:55', NULL, 1, 1),
 (5, 'Thành', 43, 'Sản phẩm khá tốt', '0989765421', '2022-04-29 10:29:23', NULL, 3, 1),
 (6, 'Sản phẩm khá tốt !', 34, 'Thạch', '', '2022-04-29 11:08:21', NULL, 4, 1),
-(7, 'Sản phẩm đúng miêu tả!!1', 34, 'Bích', '0989765456', '2022-04-29 11:08:55', NULL, 5, 1);
+(7, 'Sản phẩm đúng miêu tả!!1', 34, 'Bích', '0989765456', '2022-04-29 11:08:55', NULL, 5, 1),
+(8, 'Đỉnh thế nhờ', 30, 'Thành', '09691234469', '2022-05-06 10:29:12', NULL, 4, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_order`
+-- Table structure for table `db_order`
 --
 
 CREATE TABLE `db_order` (
@@ -981,19 +992,25 @@ CREATE TABLE `db_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_order`
+-- Dumping data for table `db_order`
 --
 
 INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`, `phone`, `money`, `price_ship`, `coupon`, `province`, `district`, `address`, `trash`, `status`, `orderDes`, `productid`, `count`, `price`) VALUES
-(115, 'f7AYTmau', 1, '2022-05-04 23:15:16', 'Thành', '0969124469', 60000, 0, 0, 92, 925, 'hhh', 1, 0, '1202254231516', 33, 2, 30000),
-(116, 'ueqNIC7A', 1, '2022-05-04 23:15:16', 'Thành', '0969124469', 35000, 0, 0, 92, 925, 'hhh', 1, 0, '1202254231516', 37, 1, 35000),
-(117, 'rYkuGd1h', 1, '2022-05-04 23:21:02', 'Thành', '0969124469', 240000, 0, 0, 46, 476, 'aaa', 1, 0, '120225423212', 30, 2, 120000),
-(118, 'qLfSnmB1', 1, '2022-05-04 23:21:02', 'Thành', '0969124469', 475000, 0, 0, 46, 476, 'aaa', 1, 0, '120225423212', 35, 1, 475000);
+(119, 'BcdNfoJ8', 1, '2022-05-05 08:29:54', 'Thành', '0969124469', 9000000, 0, 0, 64, 632, '40 võ văn chuột', 1, 2, '120225582954', 40, 1, 9000000),
+(120, 'yKS9EdQV', 1, '2022-05-05 08:29:54', 'Thành', '0969124469', 60000, 0, 0, 64, 632, '40 võ văn chuột', 1, 2, '120225582954', 33, 2, 30000),
+(121, 'oNSVuXOh', 1, '2022-05-05 08:29:54', 'Thành', '0969124469', 45000, 0, 0, 64, 632, '40 võ văn chuột', 1, 2, '120225582954', 31, 1, 45000),
+(122, 'zp7Xm5BM', 1, '2022-05-05 08:32:55', 'Thành', '0969124469', 50000, 0, 0, 64, 624, 'ồ dé ', 1, 2, '120225583255', 43, 10, 5000),
+(123, 'fRizQ6Op', 1, '2022-05-05 08:47:57', 'Thành', '0969124469', 20000, 0, 0, 64, 623, 'ggg', 1, 2, '120225584757', 34, 1, 20000),
+(124, '9xYqKhBm', 1, '2022-05-05 10:48:40', 'Thành', '0969124469', 950000, 0, 0, 52, 542, 'aaaa', 1, 2, '1202255104840', 35, 2, 475000),
+(125, 'QTGwYmEW', 70, '2022-05-05 15:13:06', 'Thiệu', '0349303368', 9000000, 0, 0, 64, 622, '112 Phan Đình Phùng , Pleiku, Gia Lai', 1, 1, '7020225515136', 40, 1, NULL),
+(126, 'fZpSij98', 71, '2022-05-05 15:16:54', 'tempo111', '122312312312', 9000000, 0, 0, 96, 970, 'aaaaaaaaaa', 1, 0, '71202255151654', 40, 1, NULL),
+(127, 'G4Egytba', 70, '2022-05-05 15:22:22', 'Thiệu', '0349303368', 9000000, 0, 0, 64, 622, '112 PHAN ĐÌNH PHÙNG', 1, 0, '70202255152222', 40, 1, 9000000),
+(128, 'bweHqu2D', 72, '2022-05-05 15:39:30', 'Chường', '012391239', 35000, 0, 0, 64, 624, 'aaaaaaaaaaa', 1, 0, '72202255153930', 37, 1, 35000);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_orderdetail`
+-- Table structure for table `db_orderdetail`
 --
 
 CREATE TABLE `db_orderdetail` (
@@ -1007,19 +1024,23 @@ CREATE TABLE `db_orderdetail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_orderdetail`
+-- Dumping data for table `db_orderdetail`
 --
 
 INSERT INTO `db_orderdetail` (`id`, `orderid`, `productid`, `count`, `price`, `trash`, `status`) VALUES
-(160, 115, 33, 2, 30000, 1, 1),
-(161, 116, 37, 1, 35000, 1, 1),
-(162, 117, 30, 2, 120000, 1, 1),
-(163, 118, 35, 1, 475000, 1, 1);
+(164, 119, 40, 1, 9000000, 1, 1),
+(165, 120, 33, 2, 30000, 1, 1),
+(166, 121, 31, 1, 45000, 1, 1),
+(167, 122, 43, 10, 5000, 1, 1),
+(168, 123, 34, 1, 20000, 1, 1),
+(169, 124, 35, 2, 475000, 1, 1),
+(170, 127, 40, 1, 9000000, 1, 1),
+(171, 128, 37, 1, 35000, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_producer`
+-- Table structure for table `db_producer`
 --
 
 CREATE TABLE `db_producer` (
@@ -1036,7 +1057,7 @@ CREATE TABLE `db_producer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_producer`
+-- Dumping data for table `db_producer`
 --
 
 INSERT INTO `db_producer` (`id`, `name`, `code`, `keyword`, `created_at`, `created_by`, `modified`, `modified_by`, `status`, `trash`) VALUES
@@ -1053,7 +1074,7 @@ INSERT INTO `db_producer` (`id`, `name`, `code`, `keyword`, `created_at`, `creat
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_product`
+-- Table structure for table `db_product`
 --
 
 CREATE TABLE `db_product` (
@@ -1081,25 +1102,25 @@ CREATE TABLE `db_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_product`
+-- Dumping data for table `db_product`
 --
 
 INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sortDesc`, `detail`, `producer`, `number`, `number_buy`, `sale`, `price`, `price_sale`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`, `userId`) VALUES
 (30, 3, 'Nấm Linh Chi', 'nam-linh-chi', 'nam.jpg', 'nam.jpg', '', '<p>HỢP T&Aacute;C X&Atilde; N&Ocirc;NG NGHIỆP 81 FARM</p>\r\n\r\n<p>Địa chỉ: H&ograve;a Hiệp, Nhơn h&ograve;a, Chư pưh, Gia lai</p>\r\n\r\n<p>Hotline:&nbsp; 590 109 7652</p>\r\n\r\n<p>Email: 81farm.vn@gmail.com</p>\r\n\r\n<p>Website:&nbsp;<a href=\"https://81farm.vn/\">https://81farm.vn/</a></p>\r\n', 1, 100, 0, 0, 120000, 120000, '2022-04-26 10:41:21', '8', '2022-04-26 10:41:21', '10', 1, 1, 2),
-(31, 1, ' Trà túi lọc Măng Tây', 'tra-tui-loc-mang-tay', '17.jpg', '17.jpg', 'HTX NÔNG NGHIỆP HỮU CƠ AN TOÀN FAOS\r\nĐC: XÃ IARONG HUYỆN CHƯ PƯH TỈNH GIA LAI\r\nMST: 5901096747 ĐT: 02693506789 - 0949059222 Email: htxfaos.agri@gmail.com\r\nWebsite: www.faos.vn\r\nHotline bán hàng: 0975.00.11.97 (Ms.Nhung)', '<p>Đối với nam giới: hồi phục sinh lực, giải độc rượu, bia nhanh ch&oacute;ng,.. Đối với phụ nữ: điều h&ograve;a kinh nguyệt, giảm đau khi phụ nữ đang c&oacute; kinh, thư gi&atilde;n cho c&aacute;c thần kinh gi&uacute;p giảm stress,&hellip; Đối với phụ nữ c&oacute; thai: tr&agrave; măng t&acirc;y gi&uacute;p tăng tiết sữa để người mẹ dễ nu&ocirc;i con v&agrave; gi&uacute;p tăng kh&aacute;ng thể cho trẻ sơ sinh. Đối với người cao tuổi: điều h&ograve;a huyết &aacute;p gi&uacute;p ngủ s&acirc;u giấc, ph&ograve;ng chống tiểu đường, giảm mỡ m&aacute;u, lợi tiểu,&hellip;</p>\r\n', 8, 150, 0, 10, 50000, 45000, '2022-04-26 10:47:07', '8', '2022-04-26 10:47:07', '8', 1, 1, 2),
+(31, 1, ' Trà túi lọc Măng Tây', 'tra-tui-loc-mang-tay', '17.jpg', '17.jpg', 'HTX NÔNG NGHIỆP HỮU CƠ AN TOÀN FAOS\r\nĐC: XÃ IARONG HUYỆN CHƯ PƯH TỈNH GIA LAI\r\nMST: 5901096747 ĐT: 02693506789 - 0949059222 Email: htxfaos.agri@gmail.com\r\nWebsite: www.faos.vn\r\nHotline bán hàng: 0975.00.11.97 (Ms.Nhung)', '<p>Đối với nam giới: hồi phục sinh lực, giải độc rượu, bia nhanh ch&oacute;ng,.. Đối với phụ nữ: điều h&ograve;a kinh nguyệt, giảm đau khi phụ nữ đang c&oacute; kinh, thư gi&atilde;n cho c&aacute;c thần kinh gi&uacute;p giảm stress,&hellip; Đối với phụ nữ c&oacute; thai: tr&agrave; măng t&acirc;y gi&uacute;p tăng tiết sữa để người mẹ dễ nu&ocirc;i con v&agrave; gi&uacute;p tăng kh&aacute;ng thể cho trẻ sơ sinh. Đối với người cao tuổi: điều h&ograve;a huyết &aacute;p gi&uacute;p ngủ s&acirc;u giấc, ph&ograve;ng chống tiểu đường, giảm mỡ m&aacute;u, lợi tiểu,&hellip;</p>\r\n', 8, 150, 1, 10, 50000, 45000, '2022-04-26 10:47:07', '8', '2022-04-26 10:47:07', '8', 1, 1, 2),
 (32, 1, 'Rượu Ngâm Đinh Lăng', 'ruou-ngam-dinh-lang', 'ruoudl.jpg', 'ruoudl.jpg', 'Rượu Đinh Lăng là loại rượu được ngâm từ rễ cây Đinh Lăng và rượu trắng. Cây Đinh Lăng có nguồn gốc từ Nhân Sâm, là loại thảo dược tốt, thông thường, người ta sử dụng rễ cây để làm các vị thuốc. ', '<p><strong>Website:&nbsp;<a href=\"https://ruoudinhlangdangkhoi.vn/\">https://ruoudinhlangdangkhoi.vn/</a><br />\r\nC&Acirc;U CHUYỆN SẢN PHẨM</strong><br />\r\n<strong>&quot;Rượu đinh lăng&quot;</strong><br />\r\n<br />\r\nTừ xa xưa, y học cổ truyền đ&atilde; d&ugrave;ng Đinh Lăng dưới dạng thuốc sắc hay Đinh Lăng ng&acirc;m rượu v&igrave; n&oacute; c&oacute; t&aacute;c dụng như nh&acirc;n s&acirc;m, chữa được rất nhiều bệnh v&agrave; rất tốt cho sức khỏe. Danh y Hải Thượng L&atilde;n &Ocirc;ng đ&atilde; gọi Đinh Lăng&nbsp;l&agrave; &ldquo;c&acirc;y s&acirc;m của người ngh&egrave;o&rdquo;.<br />\r\nV&igrave; thế, v&agrave;o năm 2010 sau khi nghi&ecirc;n cứu v&agrave; t&igrave;m hiểu về lĩnh vực c&acirc;y dược liệu, T&ocirc;i quyết định mạnh dạn trồng c&acirc;y dược liệu, trong đ&oacute; c&acirc;y đinh lăng được t&ocirc;i quan t&acirc;m nhiều nhất. Kết quả sau 6 năm theo d&otilde;i v&agrave; chăm s&oacute;c c&acirc;y đinh lăng ngay tr&ecirc;n mảnh đất của m&igrave;nh, c&acirc;y sinh trưởng v&agrave; ph&aacute;t triển tốt, kh&ocirc;ng bị s&acirc;u hại v&agrave; dịch bệnh, từ đ&oacute; T&ocirc;i tiếp tục sản xuất v&agrave; chế biến ra Rượu đinh lăng, nhằm phục vụ cho sức khỏe con người.<br />\r\nC&acirc;y Đinh Lăng c&oacute; hai loại: c&acirc;y l&aacute; to v&agrave; c&acirc;y l&aacute; nhỏ. Tuy nhi&ecirc;n, để ng&acirc;m rượu v&agrave; l&agrave;m thuốc th&igrave; n&ecirc;n d&ugrave;ng c&acirc;y l&aacute; nhỏ &ndash; loại c&acirc;y n&agrave;y kh&ocirc;ng gai, th&acirc;n nhẵn chiều cao th&ocirc;ng thường từ 0,8-2 m&eacute;t, l&aacute; giống như c&aacute;i l&ocirc;ng chim xẻ l&agrave;m ba d&agrave;i đầu nhọn.<br />\r\nTại sao ở c&acirc;y Đinh Lăng lại chỉ d&ugrave;ng rễ (củ) để ng&acirc;m rượu l&agrave;<br />\r\nv&igrave; rễ (củ) Đinh Lăng kh&aacute; mềm, c&oacute; nhiều hoạt chất do trong qu&aacute; tr&igrave;nh hanh kh&ocirc; diễn ra c&aacute;c dưỡng chất được t&iacute;ch tụ v&agrave;o phần rễ l&agrave; chủ yếu gi&uacute;p c&acirc;y c&oacute; thể chống chọi qua m&ugrave;a đ&ocirc;ng k&eacute;o d&agrave;i.&nbsp;Trong rễ Đinh Lăng c&oacute; chứa nhiều Saponin c&oacute; t&aacute;c dụng như Nh&acirc;n s&acirc;m, nhiều sinh tố B1, ngo&agrave;i ra c&ograve;n chứa khoảng 13 loại axit amin cần thiết cho cơ thể nhờ đ&oacute; m&agrave; Đinh lăng c&ograve;n gi&uacute;p cho tăng tr&iacute; nhớ n&ecirc;n rất tốt cho người lao động bằng tr&iacute; &oacute;c hoặc c&aacute;c sĩ tử trong m&ugrave;a thi. Rễ Đinh Lăng c&oacute; t&aacute;c dụng tăng lực, bồi bổ cơ thể, bổ thận tr&aacute;ng dương, chữa sốt l&acirc;u ng&agrave;y, nhức đầu, h&aacute;o kh&aacute;t, đau tức ngực, nước tiểu v&agrave;ng, thiếu m&aacute;u&hellip;&nbsp;sử dụng&nbsp;rất tốt cho người suy hược cơ thể, vi&ecirc;m gan m&atilde;n t&iacute;nh, liệt dương, yếu sinh l&yacute;.&nbsp;Ngo&agrave;i c&ocirc;ng dụng tr&ecirc;n, rễ Đinh Lăng thường được d&ugrave;ng để trị ho ra m&aacute;u, chữa tắc tia sữa, l&agrave;m m&aacute;t huyết, lợi tiểu, chữa mẩn ngứa.<br />\r\nTừ đ&oacute; T&ocirc;i quyết định đầu tư v&agrave; mở rộng quy m&ocirc; sản xuất đầu tư m&aacute;y m&oacute;c, nguy&ecirc;n vật liệu để v&agrave;o sản xuất, hơn nữa sản phẩm của C&ocirc;ng ty đ&atilde; được Sở Y tế tỉnh Gia Lai, Chi cục An to&agrave;n vệ sinh thực phẩm cấp số 01/2018/YTGL-XNCB về quy định an to&agrave;n thực phẩm cấp ng&agrave;y 3/01/2018.<br />\r\nVới sản phẩm chất lượng v&agrave; thiết thực trong cuộc sống C&ocirc;ng ty ch&uacute;ng t&ocirc;i đ&atilde; c&oacute; nhiều đối t&aacute;c v&agrave; kh&aacute;ch h&agrave;ng quan t&acirc;m. Với kh&aacute;t khao n&acirc;ng tầm sản phẩm Rượu ng&acirc;m đinh lăng của địa phương ph&aacute;t triển để vươn ra to&agrave;n cầu n&ecirc;n khi biết đến Chương tr&igrave;nh mỗi x&atilde; một sản phẩm, t&ocirc;i thấy rằng đ&acirc;y l&agrave; cơ hội tốt để b&agrave;n b&egrave; trong v&agrave; ngo&agrave;i nước biết đến c&aacute;c sản phẩm&nbsp;<strong>&quot;Rượu đinh lăng&quot;</strong>&nbsp;của C&ocirc;ng Ty TNHH MTV Ngọc Thạch Kh&ocirc;i./. &nbsp;&nbsp;&nbsp;</p>\r\n', 1, 50, 0, 5, 200000, 190000, '2022-04-26 13:41:40', '1', '2022-04-26 13:41:40', '1', 1, 1, 2),
-(33, 3, 'Gạo Kê Lau', 'gao-ke-lau', 'f471d7856624edf97161acfdaa7101b1.jpg', '7f0386999665b7265d1674f2dcb4dc0a.jpg', 'HỢP TÁC XÃ NÔNG LÂM NGHIỆP IA HRÚ\r\nĐịa chỉ : Tao Chor – Ia Hrú – Chư Pưh – Gia Lai       .\r\nEmail : htxnlniahru@gmail.com - Website : hoptacxaiahru.vn\r\nMã số thuế : 5901070788\r\nWebsite: www.htxnlniahru.com.vn', '<p>Th&agrave;nh phần dinh dưỡng cao với c&aacute;c chất dinh dưỡng v&agrave; vi kho&aacute;ng chất thiết yếu, hạt k&ecirc; g&oacute;p phần gi&uacute;p cho n&atilde;o bộ hoạt động tốt hơn. Nguy&ecirc;n tố vi lượng methionine c&oacute; trong hạt k&ecirc; c&oacute; t&aacute;c dụng tốt đối với việc duy tr&igrave; sự minh mẫn, tế b&agrave;o n&atilde;o lu&ocirc;n khỏe mạnh. Đồng thời tăng cường tr&iacute; nhớ v&agrave; l&agrave;m chậm qu&aacute; tr&igrave;nh l&atilde;o h&oacute;a.</p>\r\n', 5, 100, 1, 0, 30000, 30000, '2022-04-26 13:57:36', '1', '2022-04-26 13:57:36', '1', 1, 1, 2),
-(34, 3, 'BỘT MỦ TRÔM', 'bot-mu-trom', '13.jpg', '13.jpg', 'Giúp cơ thể sảng khoái, thanh nhiệt, ngủ ngon và giảm stress. Giúp mau lành vết thương hở và cho bạn làn da tươi đẹp. Uống thường xuyên rất tốt cho hệ bài tiết. Đặc biệt, vào những lúc tiết trời mùa hè nóng nực thì mủ Trôm là một loại thức uống giải khát không thể thiếu Một ly mủ Trôm lạnh có thể giúp cho chúng ta sảng khoái, sẽ có một giấc ngủ ngon hơn.', '<h1><span style=\"font-size:12px\"><strong>Website:&nbsp;<a href=\"https://mutromngoctai.vn/\">https://mutromngoctai.vn</a><br />\r\nC&Acirc;U CHUYỆN SẢN PHẨM</strong><br />\r\n<strong>&quot;</strong><strong>BỘT MỦ TR&Ocirc;M NGỌC TẠI&quot;</strong><br />\r\nX&atilde; Ia Le, Huyện Chư Pưh, Tỉnh Gia Lai, đ&acirc;y l&agrave; qu&ecirc; hương thứ hai m&agrave; gia đ&igrave;nh bố mẹ v&agrave; anh em ch&uacute;ng t&ocirc;i đến đ&acirc;y lập nghiệp&nbsp;l&agrave; v&ugrave;ng đất m&agrave;u mỡ, kh&iacute; hậu rất thuận lợi cho sự ph&aacute;t triển c&aacute;c loại c&acirc;y trồng, từ những năm 2000 đến năm 2001 c&acirc;y tr&ocirc;m chỉ l&agrave;m trụ cho c&acirc;y hồ ti&ecirc;u b&ograve; m&agrave; th&ocirc;i l&uacute;c n&agrave;y chưa ai biết l&agrave; c&acirc;y g&igrave; cả. M&atilde;i đến năm 2012.T&ocirc;i t&igrave;nh cờ dừng ch&acirc;n tại Phan Thiết, Tỉnh B&igrave;nh Thuận chơi th&igrave; bất ngờ gặp một loại c&acirc;y đ&oacute; l&agrave; c&acirc;y tr&ocirc;m th&acirc;n thẳng. T&ocirc;i đ&atilde; mua về l&agrave;m trụ sống như người d&acirc;n trồng ti&ecirc;u thường gọi.<br />\r\nSau nhiều năm trồng v&agrave; chăm s&oacute;c th&igrave; t&ocirc;i đ&atilde; biết được đ&acirc;y l&agrave; c&acirc;y trồng c&oacute; gi&aacute; trị kinh tế đặc biệt chăm s&oacute;c sức khỏe cho con người. Đến năm thứ năm,&nbsp;thứ s&aacute;u th&igrave; bắt đầu thu hoạch&nbsp;mủ tr&ocirc;m hay c&ograve;n gọi l&agrave; nhựa tr&ocirc;m, l&agrave; dịch tiết ra từ c&acirc;y tr&ocirc;m khi phơi kh&ocirc; mũ tr&ocirc;m h&igrave;nh dạng cục d&agrave;i, m&agrave;u v&agrave;ng nhạt, k&iacute;ch thước đều, kh&ocirc;ng m&ugrave;i, vị nhạt. mủ tr&ocirc;m chứa nhiều kho&aacute;ng chất v&agrave; c&aacute;c nguy&ecirc;n tố vi lượng hết sức cần thiết cho cơ thể. Bao gồm sắt, kẽm, canxi, kali, magie, natri. B&ecirc;n cạnh đ&oacute; c&ograve;n c&oacute; c&aacute;c loại axit amin như: lysine, leucine, phenylalanine, isoleucine, valine, threonine &hellip; Ch&iacute;nh v&igrave; thế mủ tr&ocirc;m l&agrave; nguy&ecirc;n liệu ch&iacute;nh l&agrave;m nước giải kh&aacute;t c&oacute; lợi cho sức khỏe.<br />\r\nMủ tr&ocirc;m c&oacute; vai tr&ograve; như một thực phẩm chức năng tốt cho sức khỏe con người m&agrave; rất nhiều người kh&ocirc;ng biết đến.<br />\r\nDo vậy, bản th&acirc;n t&ocirc;i hiểu r&otilde; được sự nhọc nhằn của người n&ocirc;ng d&acirc;n một nắng hai sương, vất vả l&agrave;m ra sản phẩm nhưng kh&ocirc;ng thể thương mại, hoặc c&oacute; thể b&aacute;n th&ocirc; nhưng vớ&nbsp;i gi&aacute; trị cực k&igrave; thấp. Từ đ&oacute; t&ocirc;i nảy sinh &yacute; tưởng sẽ tạo ra những sản phẩm chất lượng, từ nguồn nguy&ecirc;n liệu dồi d&agrave;o của v&ugrave;ng đất qu&ecirc; m&igrave;nh, tạo th&agrave;nh sản phẩm đặc trưng của địa phương m&igrave;nh.<br />\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ch&uacute;ng t&ocirc;i tin tưởng rằng, cơ sở ch&uacute;ng t&ocirc;i sẽ tạo thương hiệu cho sản phẩm Bột Mủ Tr&ocirc;m Ngọc Tại&nbsp; nh&acirc;n rộng, g&oacute;p phần đưa gi&aacute; trị bột mủ tr&ocirc;m tr&ecirc;n địa b&agrave;n x&atilde; Ia Le n&oacute;i ri&ecirc;ng v&agrave; huyện Chư Pưh n&oacute;i chung n&acirc;ng cao gi&aacute; trị sản phẩm, trồng đi theo hướng hữu cơ bền vững sẽ x&acirc;y dựng n&ecirc;n thương hiệu Bột Mủ Tr&ocirc;m Ngọc Tại&nbsp; tr&ecirc;n địa b&agrave;n x&atilde; Ia Le, huyện Chư Pưh, tỉnh Gia Lai đứng vững tr&ecirc;n trị trường được người ti&ecirc;u d&ugrave;ng trong v&agrave; ngo&agrave;i nước sử dụng v&agrave; ưa chuộng, g&oacute;p phần&nbsp;đem lại ph&aacute;t triển kinh tế cho c&aacute;c hộ tham gia v&agrave;o cơ sở của ch&uacute;ng t&ocirc;i hướng đến việc n&acirc;ng cao chất lượng sản phẩm trong tương lai.</span></h1>\r\n', 6, 320, 3, 0, 20000, 20000, '2022-04-26 15:01:50', '1', '2022-04-26 15:06:56', '1', 1, 1, 10),
+(33, 3, 'Gạo Kê Lau', 'gao-ke-lau', 'f471d7856624edf97161acfdaa7101b1.jpg', '7f0386999665b7265d1674f2dcb4dc0a.jpg', 'HỢP TÁC XÃ NÔNG LÂM NGHIỆP IA HRÚ\r\nĐịa chỉ : Tao Chor – Ia Hrú – Chư Pưh – Gia Lai       .\r\nEmail : htxnlniahru@gmail.com - Website : hoptacxaiahru.vn\r\nMã số thuế : 5901070788\r\nWebsite: www.htxnlniahru.com.vn', '<p>Th&agrave;nh phần dinh dưỡng cao với c&aacute;c chất dinh dưỡng v&agrave; vi kho&aacute;ng chất thiết yếu, hạt k&ecirc; g&oacute;p phần gi&uacute;p cho n&atilde;o bộ hoạt động tốt hơn. Nguy&ecirc;n tố vi lượng methionine c&oacute; trong hạt k&ecirc; c&oacute; t&aacute;c dụng tốt đối với việc duy tr&igrave; sự minh mẫn, tế b&agrave;o n&atilde;o lu&ocirc;n khỏe mạnh. Đồng thời tăng cường tr&iacute; nhớ v&agrave; l&agrave;m chậm qu&aacute; tr&igrave;nh l&atilde;o h&oacute;a.</p>\r\n', 5, 100, 3, 0, 30000, 30000, '2022-04-26 13:57:36', '1', '2022-04-26 13:57:36', '1', 1, 1, 2),
+(34, 3, 'BỘT MỦ TRÔM', 'bot-mu-trom', '13.jpg', '13.jpg', 'Giúp cơ thể sảng khoái, thanh nhiệt, ngủ ngon và giảm stress. Giúp mau lành vết thương hở và cho bạn làn da tươi đẹp. Uống thường xuyên rất tốt cho hệ bài tiết. Đặc biệt, vào những lúc tiết trời mùa hè nóng nực thì mủ Trôm là một loại thức uống giải khát không thể thiếu Một ly mủ Trôm lạnh có thể giúp cho chúng ta sảng khoái, sẽ có một giấc ngủ ngon hơn.', '<h1><span style=\"font-size:12px\"><strong>Website:&nbsp;<a href=\"https://mutromngoctai.vn/\">https://mutromngoctai.vn</a><br />\r\nC&Acirc;U CHUYỆN SẢN PHẨM</strong><br />\r\n<strong>&quot;</strong><strong>BỘT MỦ TR&Ocirc;M NGỌC TẠI&quot;</strong><br />\r\nX&atilde; Ia Le, Huyện Chư Pưh, Tỉnh Gia Lai, đ&acirc;y l&agrave; qu&ecirc; hương thứ hai m&agrave; gia đ&igrave;nh bố mẹ v&agrave; anh em ch&uacute;ng t&ocirc;i đến đ&acirc;y lập nghiệp&nbsp;l&agrave; v&ugrave;ng đất m&agrave;u mỡ, kh&iacute; hậu rất thuận lợi cho sự ph&aacute;t triển c&aacute;c loại c&acirc;y trồng, từ những năm 2000 đến năm 2001 c&acirc;y tr&ocirc;m chỉ l&agrave;m trụ cho c&acirc;y hồ ti&ecirc;u b&ograve; m&agrave; th&ocirc;i l&uacute;c n&agrave;y chưa ai biết l&agrave; c&acirc;y g&igrave; cả. M&atilde;i đến năm 2012.T&ocirc;i t&igrave;nh cờ dừng ch&acirc;n tại Phan Thiết, Tỉnh B&igrave;nh Thuận chơi th&igrave; bất ngờ gặp một loại c&acirc;y đ&oacute; l&agrave; c&acirc;y tr&ocirc;m th&acirc;n thẳng. T&ocirc;i đ&atilde; mua về l&agrave;m trụ sống như người d&acirc;n trồng ti&ecirc;u thường gọi.<br />\r\nSau nhiều năm trồng v&agrave; chăm s&oacute;c th&igrave; t&ocirc;i đ&atilde; biết được đ&acirc;y l&agrave; c&acirc;y trồng c&oacute; gi&aacute; trị kinh tế đặc biệt chăm s&oacute;c sức khỏe cho con người. Đến năm thứ năm,&nbsp;thứ s&aacute;u th&igrave; bắt đầu thu hoạch&nbsp;mủ tr&ocirc;m hay c&ograve;n gọi l&agrave; nhựa tr&ocirc;m, l&agrave; dịch tiết ra từ c&acirc;y tr&ocirc;m khi phơi kh&ocirc; mũ tr&ocirc;m h&igrave;nh dạng cục d&agrave;i, m&agrave;u v&agrave;ng nhạt, k&iacute;ch thước đều, kh&ocirc;ng m&ugrave;i, vị nhạt. mủ tr&ocirc;m chứa nhiều kho&aacute;ng chất v&agrave; c&aacute;c nguy&ecirc;n tố vi lượng hết sức cần thiết cho cơ thể. Bao gồm sắt, kẽm, canxi, kali, magie, natri. B&ecirc;n cạnh đ&oacute; c&ograve;n c&oacute; c&aacute;c loại axit amin như: lysine, leucine, phenylalanine, isoleucine, valine, threonine &hellip; Ch&iacute;nh v&igrave; thế mủ tr&ocirc;m l&agrave; nguy&ecirc;n liệu ch&iacute;nh l&agrave;m nước giải kh&aacute;t c&oacute; lợi cho sức khỏe.<br />\r\nMủ tr&ocirc;m c&oacute; vai tr&ograve; như một thực phẩm chức năng tốt cho sức khỏe con người m&agrave; rất nhiều người kh&ocirc;ng biết đến.<br />\r\nDo vậy, bản th&acirc;n t&ocirc;i hiểu r&otilde; được sự nhọc nhằn của người n&ocirc;ng d&acirc;n một nắng hai sương, vất vả l&agrave;m ra sản phẩm nhưng kh&ocirc;ng thể thương mại, hoặc c&oacute; thể b&aacute;n th&ocirc; nhưng vớ&nbsp;i gi&aacute; trị cực k&igrave; thấp. Từ đ&oacute; t&ocirc;i nảy sinh &yacute; tưởng sẽ tạo ra những sản phẩm chất lượng, từ nguồn nguy&ecirc;n liệu dồi d&agrave;o của v&ugrave;ng đất qu&ecirc; m&igrave;nh, tạo th&agrave;nh sản phẩm đặc trưng của địa phương m&igrave;nh.<br />\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ch&uacute;ng t&ocirc;i tin tưởng rằng, cơ sở ch&uacute;ng t&ocirc;i sẽ tạo thương hiệu cho sản phẩm Bột Mủ Tr&ocirc;m Ngọc Tại&nbsp; nh&acirc;n rộng, g&oacute;p phần đưa gi&aacute; trị bột mủ tr&ocirc;m tr&ecirc;n địa b&agrave;n x&atilde; Ia Le n&oacute;i ri&ecirc;ng v&agrave; huyện Chư Pưh n&oacute;i chung n&acirc;ng cao gi&aacute; trị sản phẩm, trồng đi theo hướng hữu cơ bền vững sẽ x&acirc;y dựng n&ecirc;n thương hiệu Bột Mủ Tr&ocirc;m Ngọc Tại&nbsp; tr&ecirc;n địa b&agrave;n x&atilde; Ia Le, huyện Chư Pưh, tỉnh Gia Lai đứng vững tr&ecirc;n trị trường được người ti&ecirc;u d&ugrave;ng trong v&agrave; ngo&agrave;i nước sử dụng v&agrave; ưa chuộng, g&oacute;p phần&nbsp;đem lại ph&aacute;t triển kinh tế cho c&aacute;c hộ tham gia v&agrave;o cơ sở của ch&uacute;ng t&ocirc;i hướng đến việc n&acirc;ng cao chất lượng sản phẩm trong tương lai.</span></h1>\r\n', 6, 320, 4, 0, 20000, 20000, '2022-04-26 15:01:50', '1', '2022-04-26 15:06:56', '1', 1, 1, 10),
 (35, 4, 'Vải Chưpuh', 'vai-chupuh', '13.jpg', '13.jpg', '', '<p>Vải l&agrave; một loại vật liệu bao gồm c&aacute;c lưới&nbsp;<em><strong>sợi tổng hợp</strong></em>&nbsp;hoặc l&agrave;&nbsp;<em><strong>sợi tự nhi&ecirc;n</strong></em>. Những sợi n&agrave;y thường được gọi l&agrave; sợi chỉ. Sợi tự nhi&ecirc;n l&agrave; loại sợi được l&agrave;m từ một số loại c&acirc;y như b&ocirc;ng, lanh, dầu gai hoặc l&agrave; được tạo ra từ k&eacute;n tằm, l&ocirc;ng động vật. Sợi c&oacute; t&iacute;nh chất mềm, đều sợi c&oacute; khả năng thấm h&uacute;t cao. C&aacute;c loại sợi tự nhi&ecirc;n thường rất th&acirc;n thiện với da người, kh&ocirc;ng g&acirc;y dị ứng, trừ một số người c&oacute; tiền sử dị ứng với động vật, th&igrave; c&oacute; thể sử dụng&nbsp;<em><strong>c&aacute;c loại vải</strong>&nbsp;</em>l&agrave;m từ sơ c&aacute;c loại c&acirc;y. Gi&aacute; b&aacute;n c&aacute;c loại vải may mặc n&agrave;y thường sẽ dao động từ 30,000 VNĐ cho đến 100,000 VNĐ. T&ugrave;y theo từng tiểu thường v&agrave;&nbsp;<u><a href=\"https://aothunnhatban.vn/top-5-cho-vai-sai-gon\" target=\"_blank\">c&aacute;c khu chơ vải</a>.</u></p>\r\n\r\n<p>Hầu hết c&aacute;c sợi tự nhi&ecirc;n kh&ocirc;ng h&ograve;a tan trong nước, đặc điểm ch&iacute;nh của loại sợi n&agrave;y bề với Kiềm nhưng dễ bị ăn m&ograve;n bởi Acid. Kh&ocirc;ng bị mối mọt ăn m&ograve;n. Sợi tổng hợp l&agrave; loại sợi sau khi khai th&aacute;c kho&aacute;ng sản dầu mỏ về xử l&yacute;, sau đ&oacute; chứng cất&hellip; k&eacute;o sợi rồi tạo th&agrave;nh. Đặc điểm của loại sợi n&agrave;y ch&iacute;nh l&agrave; khả năng thấm h&uacute;t k&eacute;m, nhưng giữ ấm tốt v&agrave;o m&ugrave;a đ&ocirc;ng. B&ecirc;n ngo&agrave;i trơn b&oacute;ng mềm v&agrave; mịn. Bạn c&oacute; thể t&igrave;m hiểu th&ecirc;m về sợi tổng hợp th&ocirc;ng qua b&agrave;i viết&nbsp;<strong>sợi tổng hợp l&agrave; g&igrave;</strong>&nbsp;? B&acirc;y giờ cung Atlan t&igrave;m hiểu&nbsp;<strong><em>c&aacute;c loại vải tr&ecirc;n thị trường phổ biến nhất&nbsp; hiện nay&nbsp;</em></strong>th&ocirc;i n&agrave;o</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n', 2, 30, 0, 5, 500000, 475000, '2022-04-26 16:11:13', '1', '2022-04-26 16:11:13', '1', 1, 1, 11),
 (37, 3, 'VIÊN TINH NGHỆ ĐỎ, MẬT ONG - SỮA ONG CHÚA AGILA', 'vien-tinh-nghe-do-mat-ong-sua-ong-chua-agila', 'ffce39427bbaadae8b19a7ca6c420780.jpg', 'f5016ed732f62d97917eb3e5a5f34912.jpg', '', '', 7, 35, 1, 0, 35000, 35000, '2022-04-27 13:46:03', '1', '2022-04-27 13:46:03', '1', 1, 1, 10),
 (38, 3, 'Sữa chua ba vì ', 'sua-chua-ba-vi', '853cd42897e1d8dc8c3595f0274e4c7a.jpg', '78bee9ac32a4b2d1a0dc0a9033e33191.jpg', '', '', 8, 11, 2, 0, 30000, 30000, '2022-04-27 13:47:46', '1', '2022-04-28 13:42:55', '1', 1, 1, 10),
-(40, 5, 'Tượng Quan Vũ', 'tuong-quan-vu', '840e6961bb5f8eee261816c3de22425d.jpg', 'f304c3873875d4945706123e18a65a56.jpg', '', '', 1, 4, 0, 0, 9000000, 9000000, '2022-04-27 13:52:26', '10', '2022-04-28 13:43:32', '1', 1, 1, 10),
-(43, 5, 'Trái tim bên lề', 'trai-tim-ben-le', '2dbda1d3f62b317d9a251d032b7cb2fc.jpg', '8d5aa4c06af814f5953b64788b13a0a7.jpg', 'Trái tim bên lề', '<p>Tr&aacute;i tim b&ecirc;n lề</p>\r\n', 1, 3, 0, 0, 5000, 5000, '2022-04-28 13:46:44', '1', '2022-04-28 13:46:44', '1', 1, 1, 10);
+(40, 5, 'Tượng Quan Vũ', 'tuong-quan-vu', '840e6961bb5f8eee261816c3de22425d.jpg', 'f304c3873875d4945706123e18a65a56.jpg', '', '', 1, 4, 1, 0, 9000000, 9000000, '2022-04-27 13:52:26', '10', '2022-04-28 13:43:32', '1', 1, 1, 10),
+(43, 5, 'Trái tim bên lề', 'trai-tim-ben-le', '2dbda1d3f62b317d9a251d032b7cb2fc.jpg', '8d5aa4c06af814f5953b64788b13a0a7.jpg', 'Trái tim bên lề', '<p>Tr&aacute;i tim b&ecirc;n lề</p>\r\n', 1, 10, 10, 0, 5000, 5000, '2022-04-28 13:46:44', '1', '2022-05-06 16:11:00', '1', 1, 1, 10);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_province`
+-- Table structure for table `db_province`
 --
 
 CREATE TABLE `db_province` (
@@ -1109,7 +1130,7 @@ CREATE TABLE `db_province` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Đang đổ dữ liệu cho bảng `db_province`
+-- Dumping data for table `db_province`
 --
 
 INSERT INTO `db_province` (`id`, `name`, `type`) VALUES
@@ -1180,7 +1201,7 @@ INSERT INTO `db_province` (`id`, `name`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_slider`
+-- Table structure for table `db_slider`
 --
 
 CREATE TABLE `db_slider` (
@@ -1197,21 +1218,21 @@ CREATE TABLE `db_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_slider`
+-- Dumping data for table `db_slider`
 --
 
 INSERT INTO `db_slider` (`id`, `name`, `link`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
 (1, 'Banner1', 'banner-1', '2.jpg', '2019-06-13 21:27:24', '1', '2019-06-13 23:42:42', '', 0, 1),
 (2, 'Banner 2', 'Banner-2', 'default.png', '2019-06-13 23:45:04', '1', '2019-06-13 23:45:44', '', 0, 1),
-(3, 'trang chu 1', 'trang-chu', 'ocop1.jpg', '2019-07-03 17:05:52', '1', '2022-04-26 11:04:48', '', 1, 1),
-(4, 'slider trang chu 2', 'slider-trang-chu-2', 'san-pham-chu-luc1.jpg', '2019-07-03 17:06:38', '1', '2022-04-26 11:04:37', '', 1, 1),
+(3, 'trang chu 1', 'trang-chu', 'san-pham-chu-luc1.jpg', '2019-07-03 17:05:52', '1', '2022-04-26 11:04:48', '', 1, 1),
+(4, 'slider trang chu 2', 'slider-trang-chu-2', 'ocop1.jpg', '2019-07-03 17:06:38', '1', '2022-04-26 11:04:37', '', 1, 1),
 (5, 'slider trang chu 3', 'slider-trang-chu-3', '17683f26daf72fa976e61.jpg', '2019-07-03 17:06:58', '1', '2022-04-26 11:04:22', '', 1, 1),
 (6, 'ss', 'ss', 'icon_142e7.png', '2019-07-03 17:08:07', '1', '2019-07-03 17:08:07', '1', 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_user`
+-- Table structure for table `db_user`
 --
 
 CREATE TABLE `db_user` (
@@ -1227,24 +1248,25 @@ CREATE TABLE `db_user` (
   `img` varchar(255) CHARACTER SET utf8 NOT NULL,
   `created` datetime NOT NULL,
   `trash` int(1) NOT NULL DEFAULT 1,
-  `status` int(1) NOT NULL DEFAULT 1
+  `status` int(1) NOT NULL DEFAULT 1,
+  `detail` text COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_user`
+-- Dumping data for table `db_user`
 --
 
-INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`, `gender`, `phone`, `address`, `img`, `created`, `trash`, `status`) VALUES
-(1, 'Trịnh Tấn Thành', 'thanh1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'thanhwilshere96@gmail.com', 0, '981643651', 'Gò vấp', 'default.png', '2022-04-13 22:30:03', 1, 1),
-(2, 'Công ty giải trí cây đa', 'thanh19961', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'thanhwilshere96@gmail.com', 0, '', 'Lê đức thọ 2', 'default.png', '2022-04-13 22:59:14', 1, 1),
-(10, 'Công ty TNHH Tấn Thành MTP', 'mtp1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'mtp@gmail.com', 0, '0958569633', '876 Lý Thường Kiệt, Chupuh, Gia Lai', '07403ad8be5947f1e93fc6e6f9b086db.jpg', '2022-04-26 13:55:36', 1, 1),
-(11, 'Công ty may mặc MTP', 'ptm1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'ptm@gmail.com', 0, '0989098765', 'Chupuh, Pleiku,Gia Lai', '71b403bd0622e76486e728c5fff0c370.jpg', '2022-04-26 16:07:19', 1, 1),
-(12, 'Lê Văn Tiến', 'tien9x', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 2, '14520851@gm.uit.edu.vn', 0, '0969878909', '90 nguyễn văn trối ', 'default.png', '2022-05-04 08:02:15', 1, 1);
+INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`, `gender`, `phone`, `address`, `img`, `created`, `trash`, `status`, `detail`) VALUES
+(1, 'Trịnh Tấn Thành', 'thanh1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'thanhwilshere96@gmail.com', 0, '981643651', 'Gò vấp', 'default.png', '2022-04-13 22:30:03', 1, 1, 'Cơ sở sản xuất bánh gai đạt chất lượng, tiêu chuẩn, thơm ngon:\n\n?Nem chua :\n- Loại 1 : 5000₫/cái\n- Loại 2 : 3000₫/cái\n- Loại 3 : 2500₫/cái\n- Loại 4 : 2000₫/cái\n\n?? Ngoài ra bên mình còn chuyên sản xuất Giò Hấp uy tín , chất lượng. Với công nghệ chế biến Giò Hấp hàng trăm năm của cơ sở , kèm theo một chút đổi mới của các chuyên gia đã tạo thêm cho Giò Hấp một hương vị đặc trưng thơm ngon hấp dẫn quý khách , với mẫu mã đẹp nhất , chúng tôi đảm bảo mang đến cho người tiêu dùng chất lượng giò tốt nhất mà giá cả lại hợp lý...\n\n? Giò Bò ( Me ) :\n- Loại 1kg: 200.000₫\n- Loại 0,5kg: 100.000₫\n\n?Giò Đà điểu :\n\n- Loại 1kg: 240.000₫\n- Loại 0,5kg:120.000₫\n\n??Còn chần chờ gì nữa , hãy nhấc máy lên và đặt Hàng đi nào....\n\n⛔️ ĐẶC BIỆT SIÊU KHUYẾN MÃI CHO KHÁCH HÀNH NHANH TAY COMMENT VÀ ĐẶT HÀNG VỚI SỐ LƯỢNG LỚN....\n\n??‍♀️ Free ship toàn quốc.\n\n☎️ Sỉ và lẻ liên hệ: 0961415896\n☎️ Zalo, Viber: 01663403496'),
+(2, 'Công ty giải trí cây đa', 'thanh19961', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'thanhwilshere96@gmail.com', 0, '0989555555', 'Lê đức thọ 2', 'default.png', '2022-04-13 22:59:14', 1, 1, 'Cơ sở sản xuất bánh gai đạt chất lượng, tiêu chuẩn, thơm ngon:\n\n?Nem chua :\n- Loại 1 : 5000₫/cái\n- Loại 2 : 3000₫/cái\n- Loại 3 : 2500₫/cái\n- Loại 4 : 2000₫/cái\n\n?? Ngoài ra bên mình còn chuyên sản xuất Giò Hấp uy tín , chất lượng. Với công nghệ chế biến Giò Hấp hàng trăm năm của cơ sở , kèm theo một chút đổi mới của các chuyên gia đã tạo thêm cho Giò Hấp một hương vị đặc trưng thơm ngon hấp dẫn quý khách , với mẫu mã đẹp nhất , chúng tôi đảm bảo mang đến cho người tiêu dùng chất lượng giò tốt nhất mà giá cả lại hợp lý...\n\n? Giò Bò ( Me ) :\n- Loại 1kg: 200.000₫\n- Loại 0,5kg: 100.000₫\n\n?Giò Đà điểu :\n\n- Loại 1kg: 240.000₫\n- Loại 0,5kg:120.000₫\n\n??Còn chần chờ gì nữa , hãy nhấc máy lên và đặt Hàng đi nào....\n\n⛔️ ĐẶC BIỆT SIÊU KHUYẾN MÃI CHO KHÁCH HÀNH NHANH TAY COMMENT VÀ ĐẶT HÀNG VỚI SỐ LƯỢNG LỚN....\n\n??‍♀️ Free ship toàn quốc.\n\n☎️ Sỉ và lẻ liên hệ: 0961415896\n☎️ Zalo, Viber: 01663403496'),
+(10, 'Công ty TNHH Tấn Thành MTP', 'mtp1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'mtp@gmail.com', 0, '0958569633', '876 Lý Thường Kiệt, Chupuh, Gia Lai', '07403ad8be5947f1e93fc6e6f9b086db.jpg', '2022-04-26 13:55:36', 1, 1, 'Cơ sở sản xuất bánh gai đạt chất lượng, tiêu chuẩn, thơm ngon:\n\n?Nem chua :\n- Loại 1 : 5000₫/cái\n- Loại 2 : 3000₫/cái\n- Loại 3 : 2500₫/cái\n- Loại 4 : 2000₫/cái\n\n?? Ngoài ra bên mình còn chuyên sản xuất Giò Hấp uy tín , chất lượng. Với công nghệ chế biến Giò Hấp hàng trăm năm của cơ sở , kèm theo một chút đổi mới của các chuyên gia đã tạo thêm cho Giò Hấp một hương vị đặc trưng thơm ngon hấp dẫn quý khách , với mẫu mã đẹp nhất , chúng tôi đảm bảo mang đến cho người tiêu dùng chất lượng giò tốt nhất mà giá cả lại hợp lý...\n\n? Giò Bò ( Me ) :\n- Loại 1kg: 200.000₫\n- Loại 0,5kg: 100.000₫\n\n?Giò Đà điểu :\n\n- Loại 1kg: 240.000₫\n- Loại 0,5kg:120.000₫\n\n??Còn chần chờ gì nữa , hãy nhấc máy lên và đặt Hàng đi nào....\n\n⛔️ ĐẶC BIỆT SIÊU KHUYẾN MÃI CHO KHÁCH HÀNH NHANH TAY COMMENT VÀ ĐẶT HÀNG VỚI SỐ LƯỢNG LỚN....\n\n??‍♀️ Free ship toàn quốc.\n\n☎️ Sỉ và lẻ liên hệ: 0961415896\n☎️ Zalo, Viber: 01663403496'),
+(11, 'Công ty may mặc MTP', 'ptm1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'ptm@gmail.com', 0, '0989098765', 'Chupuh, Pleiku,Gia Lai', '71b403bd0622e76486e728c5fff0c370.jpg', '2022-04-26 16:07:19', 1, 1, '<p><strong>Cơ sở sản xuất b&aacute;nh gai đạt chất lượng, ti&ecirc;u chuẩn, thơm ngon</strong></p>\r\n'),
+(12, 'Lê Văn Tiến', 'tien9x', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 2, '14520851@gm.uit.edu.vn', 0, '0969878909', '90 nguyễn văn trối ', 'default.png', '2022-05-04 08:02:15', 1, 1, 'Cơ sở sản xuất bánh gai đạt chất lượng, tiêu chuẩn, thơm ngon:\n\n?Nem chua :\n- Loại 1 : 5000₫/cái\n- Loại 2 : 3000₫/cái\n- Loại 3 : 2500₫/cái\n- Loại 4 : 2000₫/cái\n\n?? Ngoài ra bên mình còn chuyên sản xuất Giò Hấp uy tín , chất lượng. Với công nghệ chế biến Giò Hấp hàng trăm năm của cơ sở , kèm theo một chút đổi mới của các chuyên gia đã tạo thêm cho Giò Hấp một hương vị đặc trưng thơm ngon hấp dẫn quý khách , với mẫu mã đẹp nhất , chúng tôi đảm bảo mang đến cho người tiêu dùng chất lượng giò tốt nhất mà giá cả lại hợp lý...\n\n? Giò Bò ( Me ) :\n- Loại 1kg: 200.000₫\n- Loại 0,5kg: 100.000₫\n\n?Giò Đà điểu :\n\n- Loại 1kg: 240.000₫\n- Loại 0,5kg:120.000₫\n\n??Còn chần chờ gì nữa , hãy nhấc máy lên và đặt Hàng đi nào....\n\n⛔️ ĐẶC BIỆT SIÊU KHUYẾN MÃI CHO KHÁCH HÀNH NHANH TAY COMMENT VÀ ĐẶT HÀNG VỚI SỐ LƯỢNG LỚN....\n\n??‍♀️ Free ship toàn quốc.\n\n☎️ Sỉ và lẻ liên hệ: 0961415896\n☎️ Zalo, Viber: 01663403496');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `db_usergroup`
+-- Table structure for table `db_usergroup`
 --
 
 CREATE TABLE `db_usergroup` (
@@ -1260,7 +1282,7 @@ CREATE TABLE `db_usergroup` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `db_usergroup`
+-- Dumping data for table `db_usergroup`
 --
 
 INSERT INTO `db_usergroup` (`id`, `name`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `access`, `status`) VALUES
@@ -1268,60 +1290,60 @@ INSERT INTO `db_usergroup` (`id`, `name`, `created`, `created_by`, `modified`, `
 (2, 'Người bán hàng', '2021-05-14 23:29:21', 1, '2021-05-14 23:29:21', 4, 1, 1, 1);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `db_category`
+-- Indexes for table `db_category`
 --
 ALTER TABLE `db_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_config`
+-- Indexes for table `db_config`
 --
 ALTER TABLE `db_config`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_contact`
+-- Indexes for table `db_contact`
 --
 ALTER TABLE `db_contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_content`
+-- Indexes for table `db_content`
 --
 ALTER TABLE `db_content`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_customer`
+-- Indexes for table `db_customer`
 --
 ALTER TABLE `db_customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_discount`
+-- Indexes for table `db_discount`
 --
 ALTER TABLE `db_discount`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_district`
+-- Indexes for table `db_district`
 --
 ALTER TABLE `db_district`
   ADD PRIMARY KEY (`id`),
   ADD KEY `matp` (`provinceid`);
 
 --
--- Chỉ mục cho bảng `db_evaluate`
+-- Indexes for table `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_order`
+-- Indexes for table `db_order`
 --
 ALTER TABLE `db_order`
   ADD PRIMARY KEY (`id`),
@@ -1334,7 +1356,7 @@ ALTER TABLE `db_order`
   ADD KEY `district_3` (`district`);
 
 --
--- Chỉ mục cho bảng `db_orderdetail`
+-- Indexes for table `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
   ADD PRIMARY KEY (`id`),
@@ -1342,13 +1364,13 @@ ALTER TABLE `db_orderdetail`
   ADD KEY `orderid` (`orderid`);
 
 --
--- Chỉ mục cho bảng `db_producer`
+-- Indexes for table `db_producer`
 --
 ALTER TABLE `db_producer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_product`
+-- Indexes for table `db_product`
 --
 ALTER TABLE `db_product`
   ADD PRIMARY KEY (`id`),
@@ -1356,130 +1378,130 @@ ALTER TABLE `db_product`
   ADD KEY `catid` (`catid`);
 
 --
--- Chỉ mục cho bảng `db_province`
+-- Indexes for table `db_province`
 --
 ALTER TABLE `db_province`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_slider`
+-- Indexes for table `db_slider`
 --
 ALTER TABLE `db_slider`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `db_user`
+-- Indexes for table `db_user`
 --
 ALTER TABLE `db_user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `role` (`role`);
 
 --
--- Chỉ mục cho bảng `db_usergroup`
+-- Indexes for table `db_usergroup`
 --
 ALTER TABLE `db_usergroup`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `db_category`
+-- AUTO_INCREMENT for table `db_category`
 --
 ALTER TABLE `db_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `db_config`
+-- AUTO_INCREMENT for table `db_config`
 --
 ALTER TABLE `db_config`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `db_contact`
+-- AUTO_INCREMENT for table `db_contact`
 --
 ALTER TABLE `db_contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `db_content`
+-- AUTO_INCREMENT for table `db_content`
 --
 ALTER TABLE `db_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `db_customer`
+-- AUTO_INCREMENT for table `db_customer`
 --
 ALTER TABLE `db_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
--- AUTO_INCREMENT cho bảng `db_discount`
+-- AUTO_INCREMENT for table `db_discount`
 --
 ALTER TABLE `db_discount`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT cho bảng `db_evaluate`
+-- AUTO_INCREMENT for table `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `db_order`
+-- AUTO_INCREMENT for table `db_order`
 --
 ALTER TABLE `db_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT cho bảng `db_orderdetail`
+-- AUTO_INCREMENT for table `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 
 --
--- AUTO_INCREMENT cho bảng `db_producer`
+-- AUTO_INCREMENT for table `db_producer`
 --
 ALTER TABLE `db_producer`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `db_product`
+-- AUTO_INCREMENT for table `db_product`
 --
 ALTER TABLE `db_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT cho bảng `db_slider`
+-- AUTO_INCREMENT for table `db_slider`
 --
 ALTER TABLE `db_slider`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `db_user`
+-- AUTO_INCREMENT for table `db_user`
 --
 ALTER TABLE `db_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `db_usergroup`
+-- AUTO_INCREMENT for table `db_usergroup`
 --
 ALTER TABLE `db_usergroup`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `db_district`
+-- Constraints for table `db_district`
 --
 ALTER TABLE `db_district`
   ADD CONSTRAINT `db_district_ibfk_1` FOREIGN KEY (`provinceid`) REFERENCES `db_province` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `db_order`
+-- Constraints for table `db_order`
 --
 ALTER TABLE `db_order`
   ADD CONSTRAINT `db_order_ibfk_2` FOREIGN KEY (`province`) REFERENCES `db_province` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,

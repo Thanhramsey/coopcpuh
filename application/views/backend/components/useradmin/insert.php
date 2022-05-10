@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <form action="<?php echo base_url() ?>admin/useradmin/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
         <section class="content-header">
-            <h1><i class="fa fa-user-plus"></i> Thêm thành viên</h1>
+            <h1><i class="glyphicon glyphicon-plus glyphicon"></i> Thêm thành viên</h1>
             <div class="breadcrumb">
                 <button type = "submit" class="btn btn-primary btn-sm">
                     <span class="glyphicon glyphicon-floppy-save"></span>
@@ -50,14 +50,21 @@
                                     <input type="text" class="form-control" name="address" >
                                     <div class="error" id="password_error" style="color: red;"><?php echo form_error('address')?></div>
                                 </div>
-                                
+								<div class="form-group">
+									<label>Chi tiết Doanh nghiệp</label>
+									<textarea name="detail" id="detail" class="form-control"></textarea>
+									<script>
+										CKEDITOR.replace('detail');
+									</script>
+								</div>
+
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Quyền<span class = "maudo">(*)</span></label>
                                     <select name="role" class="form-control">
                                         <option value = "">[--Chọn danh mục--]</option>
-                                            <?php  
+                                            <?php
                                                 $list=$this->Muser->groupadmin_list();
                                                 $option_parentid="";
                                                 foreach ($list as $row) {
