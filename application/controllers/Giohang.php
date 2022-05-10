@@ -111,7 +111,6 @@ class Giohang extends CI_Controller {
 					$districtId = $_POST['DistrictId'];
 					$orderCode = random_string('alnum', 8);
 					$orderDes = $idCustomer.$todayDes;
-					echo "<pre>---PLIST---\n".print_r($row)."\n---PLIST END---\n\n</pre>";
                     if($row['price_sale'] > 0){
 						$price = $row['price_sale'];
 					}else{

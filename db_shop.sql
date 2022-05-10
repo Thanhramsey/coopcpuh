@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2022 at 10:35 AM
+-- Generation Time: May 10, 2022 at 11:58 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -1115,7 +1115,8 @@ INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sort
 (37, 3, 'VIÊN TINH NGHỆ ĐỎ, MẬT ONG - SỮA ONG CHÚA AGILA', 'vien-tinh-nghe-do-mat-ong-sua-ong-chua-agila', 'ffce39427bbaadae8b19a7ca6c420780.jpg', 'f5016ed732f62d97917eb3e5a5f34912.jpg', '', '', 7, 35, 1, 0, 35000, 35000, '2022-04-27 13:46:03', '1', '2022-04-27 13:46:03', '1', 1, 1, 10),
 (38, 3, 'Sữa chua ba vì ', 'sua-chua-ba-vi', '853cd42897e1d8dc8c3595f0274e4c7a.jpg', '78bee9ac32a4b2d1a0dc0a9033e33191.jpg', '', '', 8, 11, 2, 0, 30000, 30000, '2022-04-27 13:47:46', '1', '2022-04-28 13:42:55', '1', 1, 1, 10),
 (40, 5, 'Tượng Quan Vũ', 'tuong-quan-vu', '840e6961bb5f8eee261816c3de22425d.jpg', 'f304c3873875d4945706123e18a65a56.jpg', '', '', 1, 4, 1, 0, 9000000, 9000000, '2022-04-27 13:52:26', '10', '2022-04-28 13:43:32', '1', 1, 1, 10),
-(43, 5, 'Trái tim bên lề', 'trai-tim-ben-le', '2dbda1d3f62b317d9a251d032b7cb2fc.jpg', '8d5aa4c06af814f5953b64788b13a0a7.jpg', 'Trái tim bên lề', '<p>Tr&aacute;i tim b&ecirc;n lề</p>\r\n', 1, 10, 10, 0, 5000, 5000, '2022-04-28 13:46:44', '1', '2022-05-06 16:11:00', '1', 1, 1, 10);
+(43, 5, 'Trái tim bên lề', 'trai-tim-ben-le', '0c4b6d1a25e9bd74448122e111774f4e.jpg', '0c4b6d1a25e9bd74448122e111774f4e.jpg', 'Trái tim bên lề', '<p>Tr&aacute;i tim b&ecirc;n lề</p>\r\n', 1, 1010, 10, 0, 10000, 10000, '2022-04-28 13:46:44', '1', '2022-05-10 16:57:09', '1', 1, 1, 10),
+(44, 2, 'hehehe', 'hehehe', '73c7df43779c8fcaf47416e754ea2f49.jpg', '73c7df43779c8fcaf47416e754ea2f49.jpg', 'addasdasd', '<p>10000</p>\r\n', 1, 1, 0, 0, 10000, 10000, '2022-05-10 16:50:24', '1', '2022-05-10 16:57:02', '1', 1, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -1470,7 +1471,7 @@ ALTER TABLE `db_producer`
 -- AUTO_INCREMENT for table `db_product`
 --
 ALTER TABLE `db_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `db_slider`

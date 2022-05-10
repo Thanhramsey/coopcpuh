@@ -20,7 +20,7 @@ class Thongtin extends CI_Controller {
         if(!$this->session->userdata('sessionKhachHang')){
             redirect('dang-nhap','refresh');
         }
-        $this->data['info']=$this->Minfocustomer->customer_detail_id($this->session->userdata('id'));
+        $this->data['info']=$this->Minfocustomer->customer_detail_id($this->session->userdata('sessionKhachHang')['id']);
     }
 
     public function index(){

@@ -601,7 +601,7 @@
 	position: relative;
 }
 .user_login a,.cart_header a{display: block;}
-.user_login{margin-right: 30px;}
+.cart_header{margin-right: 30px;}
 .user_login a:hover, .cart_header a:hover{color: #333;}
 .user_login_icon{
 	color: #000;

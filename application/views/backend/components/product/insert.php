@@ -118,13 +118,13 @@
 									<input name="number" class="form-control" type="number" value="1" min="1" step="1" max="1000">
 								</div>
 								<div class="form-group">
-									<label>Hình đại diện</label>
+									<label>Hình ảnh sản phẩm</label>
 									<input type="file" id="image_list" name="img" required style="width: 100%">
 								</div>
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label>Hình ảnh sản phẩm</label>
 									<input type="file" id="image_list" name="image_list[]" multiple required>
-								</div>
+								</div> -->
 								<div class="form-group">
 									<label>Trạng thái</label>
 									<select name="status" class="form-control">

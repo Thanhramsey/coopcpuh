@@ -93,7 +93,7 @@
 													if ($user['role'] == 1) {
 														$quyen .= '
 															<td class="text-center"><a class="btn btn-info btn-xs" href="admin/product/import/' . $row['id'] . '" role = "button">
-															<span class="glyphicon glyphicon-trash"></span>Nhập hàng
+															<span class="glyphicon glyphicon-share-alt"></span>Nhập hàng
 															</a>
 															</td>
 															';
@@ -116,7 +116,7 @@
 															?> -->
 
 													<td class="text-center"><a class="btn btn-info btn-xs" href="admin/product/import/<?php echo $row['id'] ?>" role="button">
-															<span class="glyphicon glyphicon-trash"></span>Nhập hàng
+															<span class="glyphicon glyphicon-share-alt"></span>Nhập hàng
 														</a>
 													</td>
 													<td class="text-center">
