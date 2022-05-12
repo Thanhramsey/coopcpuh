@@ -95,7 +95,9 @@
         <script src="public/js/jquery.flexslider.js"></script>
 		<script src="public/js/owl.carousel.min.js"></script>
 		<script src="public/js/custom-owl.js"></script>
-        <div class='scrolltop'>
+		<script src="public/js/jquery.zoom.js"></script>
+		<script src="public/js/jquery.zoom.min.js"></script>
+		<div class='scrolltop'>
         <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
         </div>
     </body>

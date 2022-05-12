@@ -95,9 +95,13 @@ if($user['img']){
             <p><?php echo $user['fullname'] ?><small><?php echo $user['phone'] ?></small></p>
         </li>
         <li class="user-footer">
-            <div class="pull-left">
-                <a href="<?php echo base_url()?>admin/useradmin/update/<?php echo $user['id'] ?>" class="btn btn-default btn-flat">Chi tiết</a>
-            </div>
+			<?php
+			$user_role = $this->session->userdata('sessionadmin');
+			if ($user_role['role'] == 1) : ?>
+				<div class="pull-left">
+                	<a href="<?php echo base_url()?>admin/useradmin/update/<?php echo $user['id'] ?>" class="btn btn-default btn-flat">Chi tiết</a>
+            	</div>
+			<?php endif; ?>
             <div class="pull-right">
                 <a href="admin/user/logout.html" class="btn btn-default btn-flat">Thoát</a>
             </div>

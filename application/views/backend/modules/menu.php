@@ -70,7 +70,7 @@
 			<?php
 			if ($user['role'] == 1) {
 				echo '<li class="header">CÀI ĐẶT</li>
-					<li class="active">
+					<li class="treeview">
 						<a href="admin/configuration/update">
 							<i class="glyphicon glyphicon-cog"></i><span> Cấu hình</span>
 						</a>

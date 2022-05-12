@@ -16,16 +16,6 @@
 				<div class="input-search">
 					<input type="text" class="form-control" id="search_text" name="search" placeholder="Nhập từ khóa để tìm kiếm...">
 					<button>
-						<!--  <ul class="search-quick">
-                <li>
-                  <a href="">
-                    <img src="https://cdn.tgdd.vn/Products/Images/42/196963/samsung-galaxy-a50-black-16-200x200.jpg">
-                    <h3>Samsung Galaxy A50 64GB</h3>
-                    <span class="price">6.990.000₫</span>
-                    <cite style="font-style: normal; text-decoration: line-through"></cite>
-                  </a>
-                </li>
-              </ul> -->
 						<i class="fa fa-search"></i>
 					</button>
 				</div>
@@ -102,37 +92,3 @@
 		</div>
 	</div>
 </section>
-<!-- <script>
-  $(document).ready(function(){
-
-   load_data();
-   var strurl="<?php echo base_url(); ?>"+'/search/quick';
-   function load_data(query)
-   {
-    $.ajax({
-      url: strurl,
-      method:"POST",
-      data:{query:query},
-      success:function(data){
-        if(data){
-          $('#result').html(data);
-        }else{
-          $('#result').html(data);
-        }
-      }
-    })
-  }
-
-  $('#search_text').keyup(function(){
-    var search = $(this).val();
-    if(search != '')
-    {
-     load_data(search);
-   }
-   else
-   {
-     load_data();
-   }
- });
-});
-</script> -->
