@@ -65,6 +65,65 @@
     </div>
 </div>
 
+<!-- Sản phẩm tiềm năng -->
+<?php
+ $product_tiemnang = $this->Mproduct->product_tiemnang(10);
+ if(count($product_tiemnang) > 0) :?>
+<div class="container" style="margin-top: 20px;">
+    <div class="sale-title">
+        <span>SẢN PHẨM TIỀM NĂNG </span>
+    </div>
+</div>
+<div class="container" style="margin-bottom: 20px;">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 0px 10px">
+        <?php
+        $product_tiemnang = $this->Mproduct->product_tiemnang(10);
+        foreach ($product_tiemnang as $row) :?>
+            <div class="item" style="margin: 0px;">
+                <div class="products-sale">
+                    <div class="lt-product-group-image">
+                        <a href="<?php echo $row['alias'] ?>" title="<?php echo $row['name'] ?>" >
+                            <img class="img-p"src="public/images/products/<?php echo $row['avatar'] ?>" alt="">
+                        </a>
+
+                        <?php if($row['sale'] > 0) :?>
+                            <div class="giam-percent">
+                                <span class="text-giam-percent">Giảm <?php echo $row['sale'] ?>%</span>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="lt-product-group-info">
+                        <a href="<?php echo $row['alias'] ?>" title="<?php echo $row['name'] ?>" style="text-align: left;">
+                            <h3><?php echo $row['name'] ?></h3>
+                        </a>
+                        <div class="price-box">
+                            <?php if($row['sale'] > 0) :?>
+
+                                <p class="old-price">
+                                    <span class="price"><?php echo(number_format($row['price'])); ?>₫</span>
+                                </p>
+                                <p class="special-price">
+                                    <span class="price"><?php echo(number_format($row['price_sale'])); ?>₫</span>
+                                </p>
+                                <?php else: ?>
+                                 <p class="old-price">
+                                    <span class="price" style="color: #fff"><?php echo(number_format($row['price'])); ?>₫</span>
+                                </p>
+                                <p class="special-price">
+                                    <span class="price"><?php echo(number_format($row['price'])); ?>₫</span>
+                                </p>
+                            <?php endif;?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<?php endif;?>
+
+
 <div class="container" style="margin-top: 20px;">
     <div class="sale-title">
         <span>SẢN PHẨM BÁN CHẠY</span>

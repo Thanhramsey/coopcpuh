@@ -125,12 +125,31 @@ class Muser extends CI_Model {
             return $query->row_array();
         }else{
             return FALSE;
-        }   
+        }
     }
 
     public function user_update_fg($data,$id){
         $this->db->where('id',$id);
         $this->db->update($this->table, $data);
+    }
+
+
+	// Trang tìm kiếm
+    public function doanhnghiep_search($name,$limit,$first){
+        $this->db->like('fullname', $name);
+        $this->db->where('trash', 1);
+        $this->db->order_by('created', 'desc');
+        $query = $this->db->get($this->table,$limit,$first);
+        return $query->result_array();
+    }
+
+	public function doanhnghiep_search_count($name){
+        $this->db->like('fullname', $name);
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $this->db->order_by('created', 'desc');
+        $query = $this->db->get($this->table);
+        return count($query->result_array());
     }
 
 }

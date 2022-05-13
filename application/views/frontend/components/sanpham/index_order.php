@@ -5,7 +5,7 @@
                 <p>Không có sản phẩm !</p>
                 <?php else : ?>
                     <?php foreach ($list as $sp) :?>
-                        <div class="col-md-3 col-lg-3 col-xs-6 col-6">
+                        <div class="col-md-4 col-lg-4 col-xs-6 col-6 detail-box">
                             <div class="product-lt">
                                 <div class="lt-product-group-image">
                                     <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" >

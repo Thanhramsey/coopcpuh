@@ -39,7 +39,7 @@ class Dangnhap extends CI_Controller {
                 $this->load->view('frontend/layout',$this->data);
             }
         }else{
-            $this->data['title']='Smart store - Đăng nhập tài khoản';
+            $this->data['title']='OCOP - Đăng nhập tài khoản';
             $this->data['view']='dangnhap';
             $this->load->view('frontend/layout',$this->data);
         }

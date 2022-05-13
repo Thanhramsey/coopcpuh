@@ -2,7 +2,7 @@
 	<section class="content-header">
 		<h1><i class="glyphicon glyphicon-text-background"></i> Danh sách Liên hệ khách hàng</h1>
 		<div class="breadcrumb">
-			
+
 			<a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/contact/recyclebin" role="button">
 				<span class="glyphicon glyphicon-trash"></span> Thùng rác(<?php $total=$this->Mcontact->contact_trash_count(); echo $total; ?>)
 			</a>
@@ -39,9 +39,9 @@
 											<th class="text-center">Tên</th>
 											<th class="text-center">Ngày gửi</th>
 											<th class="text-center">Địa chỉ mail</th>
-											<th class="text-center">Tiêu đề</th>											
+											<th class="text-center">Tiêu đề</th>
 											<th class="text-center" style="width:90px">Trạng thái</th>
-											
+
 											<th class="text-center" colspan="2">Thao tác</th>
 										</tr>
 									</thead>
@@ -57,15 +57,15 @@
 												<td class="text-center">
 													<a href="<?php echo base_url() ?>admin/contact/status/<?php echo $row['id'] ?>">
 														<?php if($row['status']==0):?>
-															<span class="fa fa-eye-slash maudo"  data-toggle="tooltip" data-placement="top" title="Chưa xem"></span>
+															<span class="glyphicon glyphicon-ok-circle maudo"  data-toggle="tooltip" data-placement="top" title="Chưa xem"></span>
 															<?php else: ?>
-																<span class="fa fa-eye mauxanh18"  data-toggle="tooltip" data-placement="top" title="Đã xem"></span>		
+																<span class="glyphicon glyphicon-remove-circle mauxanh18"  data-toggle="tooltip" data-placement="top" title="Đã xem"></span>
 															<?php endif; ?>
 														</a>
 													</td>
 													<td class="text-center">
 														<a class="btn btn-info btn-xs" href="<?php echo base_url() ?>admin/contact/detail/<?php echo $row['id'] ?>" role = "button">
-															<span class="glyphicon glyphicon-trash"></span>Xem
+															<span class="glyphicon glyphicon-eye-open"></span>Xem
 														</a>
 													</td>
 													<td class="text-center">

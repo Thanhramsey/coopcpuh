@@ -115,6 +115,18 @@ class Mproduct extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result_array();
     }
+
+	// Left- sản phẩm tiềm năng
+    public function product_tiemnang($limit)
+    {
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+		$this->db->where('is_hot', 1);
+        $this->db->limit($limit);
+        $this->db->order_by('modified', 'desc');
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
     // sản phẩm bán chạy
     public function product_selling($limit)
     {

@@ -48,7 +48,7 @@
 										<tr>
 											<td class="text-center"><?php echo $row['id'] ?></td>
 											<td><?php echo $row['fullname'] ?></td>
-											<td><?php 
+											<td><?php
 											if($row['email']){
 												echo $row['email'];
 											}else{
@@ -57,8 +57,8 @@
 											 ?></td>
 											<td><?php echo $row['phone'] ?></td>
 											<td class="text-center">
-												<a class="btn btn-info btn-xs" href="<?php echo base_url() ?>admin/customer/update/<?php echo $row['id'] ?>" role = "button">
-													<span class="glyphicon glyphicon-edit"></span>Xem
+												<a class="btn btn-info btn-xs" href="<?php echo base_url() ?>admin/customer/detail/<?php echo $row['id'] ?>" role = "button">
+													<span class="glyphicon glyphicon-eye-open"></span>Xem
 												</a>
 											</td>
 											<td class="text-center">

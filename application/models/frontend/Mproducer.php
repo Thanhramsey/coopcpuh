@@ -109,4 +109,23 @@ class Mproducer extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result_array();
     }
+
+	// Trang tìm kiếm
+    public function xa_search($name,$limit,$first){
+        $this->db->like('name', $name);
+        $this->db->where('trash', 1);
+        $this->db->order_by('name', 'desc');
+        $query = $this->db->get($this->table,$limit,$first);
+        return $query->result_array();
+    }
+
+	public function xa_search_count($name){
+        $this->db->like('name', $name);
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $this->db->order_by('name', 'desc');
+        $query = $this->db->get($this->table);
+        return count($query->result_array());
+    }
+
 }

@@ -14,15 +14,39 @@ class Search extends CI_Controller {
 	public function index(){
 		$this->load->library('phantrang');
 		$key = $_GET['search'];
+		if (!empty($_GET['option'])) {
+			$option = $_GET['option'];
+		  }
+		else{
+			$option = 0;
+		}
+
 		$aurl= explode('/',uri_string());
+		echo "<pre>---In ra---\n".print_r($key)."</pre>";
 		$url = $aurl[0].'?search='.str_replace(' ', '+', $key);
 		$limit=10;
 		$current=$this->phantrang->PageCurrent();
 		$first=$this->phantrang->PageFirst($limit, $current);
-		$total = $this->Mproduct->product_search_count($key);
-		$this->data['list'] = $this->Mproduct->product_search($key,$limit,$first);;
-		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url= $url);
+		//tìm theo sp
+		if($option == 0){
+			$total = $this->Mproduct->product_search_count($key);
+			$this->data['list'] = $this->Mproduct->product_search($key,$limit,$first);
+			$this->data['search_name']='sản phẩm';
+		}else if ($option == 1){
+			// timm doanh nghiep
+			$total = $this->Muser->doanhnghiep_search_count($key);
+			$this->data['list'] = $this->Muser->doanhnghiep_search($key,$limit,$first);
+			$this->data['search_name']='doanh nghiệp';
+		}else if($option == 2){
+			// timm dia phuong
+			$total = $this->Mproducer->xa_search_count($key);
+			$this->data['list'] = $this->Mproducer->xa_search($key,$limit,$first);
+			$this->data['search_name']='địa phương';
+		}
+
 		$this->data['title']='OCOP CHƯPƯH - Bạn muốn tìm gì ?';
+		$this->data['option'] =$option;
+		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url= $url);
 		$this->data['view']='index';
 		$this->data['count'] = $total;
 		$this->data['key'] =$key;

@@ -17,13 +17,14 @@ $('.owl-carousel-product').owlCarousel({
     autoplayTimeout: 2500,
     responsive: {
         0: {
-            items: 2
+            items: 2,
         },
         600: {
-            items: 3
+            items: 3,
         },
         1000: {
-            items: 5
+            items: 5,
+			loop:( $('.owl-carousel-product').length > 5 )
         }
     }
 })

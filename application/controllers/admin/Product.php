@@ -252,6 +252,16 @@ class Product extends CI_Controller
 		redirect('admin/product/', 'refresh');
 	}
 
+	public function tiemnang($id)
+	{
+		$row = $this->Mproduct->product_detail($id);
+		$is_hot = ($row['is_hot'] == 1) ? 0 : 1;
+		$mydata = array('is_hot' => $is_hot, 'modified_by' => $this->session->userdata('id'),);
+		$this->Mproduct->product_update($mydata, $id);
+		$this->session->set_flashdata('success', 'Cập nhật sản phẩm thành công');
+		redirect('admin/product/', 'refresh');
+	}
+
 	public function recyclebin()
 	{
 		$this->load->library('phantrang');

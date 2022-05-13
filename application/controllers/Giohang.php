@@ -19,7 +19,7 @@ class Giohang extends CI_Controller {
     }
 
     public function index(){
-        $this->data['title']='Smart store - Giỏ hàng của bạn';
+        $this->data['title']='OCOP - Giỏ hàng của bạn';
         $this->data['view']='index';
         $this->load->view('frontend/layout',$this->data);
     }
@@ -165,7 +165,7 @@ class Giohang extends CI_Controller {
             redirect('/thankyou','refresh');
 
         }else{
-            $this->data['title']='Smart store - Thông tin đơn hàng';
+            $this->data['title']='OCOP - Thông tin đơn hàng';
             $this->data['view']='info-order';
             $this->load->view('frontend/layout',$this->data);
         }

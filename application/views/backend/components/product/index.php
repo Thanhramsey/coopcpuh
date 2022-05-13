@@ -56,6 +56,7 @@
 												<th>Loại sản phẩm</th>
 												<?php if ($user['role'] == 1) : ?>
 													<th class="text-center">Trạng thái</th>
+													<th class="text-center">Sản phẩm tiềm năng</th>
 												<?php else : ?>
 												<?php endif; ?>
 												<th class="text-center">Nhập hàng</th>
@@ -66,19 +67,28 @@
 											<?php foreach ($list as $row) : ?>
 												<tr>
 													<td class="text-center"><?php echo $row['id'] ?></td>
-													<td style="width:70px">
+													<td style="width:100px">
 														<img src="public/images/products/<?php echo $row['avatar'] ?>" alt="<?php echo $row['name'] ?>" class="img-responsive">
 													</td>
-													<td style="font-size: 16px;"><?php echo $row['name'] ?></td>
-													<td class="text-center"> <?php echo $row['number'] - $row['number_buy'] ?></td>
+													<td style="font-size: 16px; width:200px"><?php echo $row['name'] ?></td>
+													<td style="width:80px" class="text-center"> <?php echo $row['number'] - $row['number_buy'] ?></td>
 													<?php
 													$namecat = $this->Mcategory->category_name($row['catid']);
 													?>
 													<td><?php echo $namecat ?></td>
 													<?php if ($user['role'] == 1) : ?>
-														<td class="text-center">
+														<td  style="width:80px"  class="text-center">
 															<a href="<?php echo base_url() ?>admin/product/status/<?php echo $row['id'] ?>">
 																<?php if ($row['status'] == 1) : ?>
+																	<span class="glyphicon glyphicon-ok-circle mauxanh18"></span>
+																<?php else : ?>
+																	<span class="glyphicon glyphicon-remove-circle maudo"></span>
+																<?php endif; ?>
+															</a>
+														</td>
+														<td  style="width:80px"  class="text-center">
+															<a href="<?php echo base_url() ?>admin/product/tiemnang/<?php echo $row['id'] ?>">
+																<?php if ($row['is_hot'] == 1) : ?>
 																	<span class="glyphicon glyphicon-ok-circle mauxanh18"></span>
 																<?php else : ?>
 																	<span class="glyphicon glyphicon-remove-circle maudo"></span>
