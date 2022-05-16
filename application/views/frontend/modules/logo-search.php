@@ -15,7 +15,7 @@
 			<form action="search" method="get" role="form">
 				<div class="input-search">
 					<input style="width: 60%;" type="text" class="form-control" id="search_text" name="search" placeholder="Nhập từ khóa để tìm kiếm...">
-					<select style="width: 28%;display: inline-block; margin-left:5px;height:45px" class="form-control" name="option">
+					<select id ="search_by" style="width: 28%;display: inline-block; margin-left:5px;height:45px" class="form-control" name="option">
 						<option value="0"> Sản phẩm</option>
 						<option value="1" >Doanh nghiệp</option>
 						<option value="2" >Địa phương</option>

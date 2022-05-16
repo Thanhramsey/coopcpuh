@@ -12,7 +12,8 @@ class Search extends CI_Controller {
 		$this->data['com']='search';
 	}
 	public function index(){
-		$this->load->library('phantrang');
+		// $this->load->library('phantrang');
+		$this->load->library('phantrangsearch');
 		$key = $_GET['search'];
 		if (!empty($_GET['option'])) {
 			$option = $_GET['option'];
@@ -22,11 +23,10 @@ class Search extends CI_Controller {
 		}
 
 		$aurl= explode('/',uri_string());
-		echo "<pre>---In ra---\n".print_r($key)."</pre>";
-		$url = $aurl[0].'?search='.str_replace(' ', '+', $key);
-		$limit=10;
-		$current=$this->phantrang->PageCurrent();
-		$first=$this->phantrang->PageFirst($limit, $current);
+		$sufix = '?search='.str_replace(' ', '+', $key).'&option='.str_replace(' ', '+', $option);
+		$limit=12;
+		$current=$this->phantrangsearch->PageCurrent();
+		$first=$this->phantrangsearch->PageFirst($limit, $current);
 		//tìm theo sp
 		if($option == 0){
 			$total = $this->Mproduct->product_search_count($key);
@@ -46,7 +46,7 @@ class Search extends CI_Controller {
 
 		$this->data['title']='OCOP CHƯPƯH - Bạn muốn tìm gì ?';
 		$this->data['option'] =$option;
-		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url= $url);
+		$this->data['strphantrang']=$this->phantrangsearch->PagePer($total, $current, $limit, $url= 'search',$sufix= $sufix );
 		$this->data['view']='index';
 		$this->data['count'] = $total;
 		$this->data['key'] =$key;

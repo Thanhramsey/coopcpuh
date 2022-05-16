@@ -58,6 +58,7 @@ class Useradmin extends CI_Controller {
 				'status' =>$_POST['status'],
 				'created' =>$today,
 				'detail'=>$_POST['detail'],
+				'star'=>$_POST['star'],
 				'trash'=>1
 			);
 			$config['upload_path']          = './public/images/admin/';
@@ -104,6 +105,7 @@ class Useradmin extends CI_Controller {
 				'password' =>sha1($_POST['password']),
 				'gender'=>$_POST['gender'],
 				'detail'=>$_POST['detail'],
+				'star'=>$_POST['star'],
 			);
          	$config = array();
 	         $config['upload_path']   = './public/images/admin/';

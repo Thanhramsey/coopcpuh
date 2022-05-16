@@ -18,4 +18,15 @@ class Mevaluate extends CI_Model {
                 $this->db->insert($this->table,$mydata);
         }
 
+		public function comment_productid_count($id)
+        {
+				$this->db->select('star, COUNT(id) as total');
+                $this->db->where('product_id', $id);
+				$this->db->group_by('star');
+				$this->db->order_by('total', 'desc');
+                $query = $this->db->get($this->table);
+                return $query->result_array();
+
+        }
+
 }

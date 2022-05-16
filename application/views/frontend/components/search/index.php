@@ -18,7 +18,7 @@
 				<div class="product-wrap">
 					<div class="collection__title">
 						<?php
-						echo '<h3>Tìm được ' . $count .' '. $search_name . ' với từ khóa : <span style="color: red;">' . $key . '</span></h3>';
+						echo '<h3>Tìm được ' . $count . ' ' . $search_name . ' với từ khóa : <span style="color: red;">' . $key . '</span></h3>';
 						?>
 						<div class="collection-filter" id="list-product">
 							<div class="category-products clearfix">
@@ -32,7 +32,7 @@
 													<div class="product-lt">
 														<div class="lt-product-group-image">
 															<a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
-																<img class="img-p" src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
+																<img class="img-sp" src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
 															</a>
 															<?php if ($sp['sale'] > 0) : ?>
 																<div class="giam-percent">
@@ -41,7 +41,7 @@
 															<?php endif; ?>
 														</div>
 
-														<div class="lt-product-group-info"   style="text-align:center">
+														<div class="lt-product-group-info" style="text-align:center">
 															<a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
 																<h3><?php echo $sp['name'] ?></h3>
 															</a>
@@ -69,18 +69,41 @@
 												</div>
 											<?php endforeach; ?>
 										<?php elseif ($option == 1) : ?>
-											<!--Doanh nghie  -->
+											<!--Doanh nghieps  -->
 											<?php foreach ($list as $sp) : ?>
 												<div class="col-md-4 col-lg-4 col-xs-6 col-6 detail-box">
 													<div class="product-lt">
 														<div class="lt-product-group-image">
 															<a href="doanhngiep/detail/<?php echo $sp['id'] ?>" title="<?php echo $sp['fullname'] ?>">
-																<img class="img-p" src="public/images/admin/<?php echo $sp['img'] ?>" alt="">
+																<img class="img-sp" src="public/images/admin/<?php echo $sp['img'] ?>" alt="">
 															</a>
 														</div>
+														<div class="lt-product-star">
+															<?php if ($sp['star'] == 1) : ?>
+																<span class="fa fa-star"></span>
+															<?php elseif ($sp['star'] == 2) : ?>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+															<?php elseif ($sp['star'] == 3) : ?>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+															<?php elseif ($sp['star'] == 4) : ?>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+															<?php elseif ($sp['star'] == 5) : ?>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+																<span class="fa fa-star"></span>
+															<?php endif; ?>
+														</div>
 
-														<div class="lt-product-group-info"   style="text-align:center">
-															<a  href="doanhngiep/detail/<?php echo $sp['id'] ?>" title="<?php echo $sp['fullname'] ?>">
+														<div class="lt-product-group-info" style="text-align:center">
+															<a href="doanhngiep/detail/<?php echo $sp['id'] ?>" title="<?php echo $sp['fullname'] ?>">
 																<h3><?php echo $sp['fullname'] ?></h3>
 															</a>
 															<div class="clear"></div>
@@ -96,12 +119,12 @@
 													<div class="product-lt">
 														<div class="lt-product-group-image">
 															<a href="san-pham/db/<?php echo $sp['code'] ?>" title="<?php echo $sp['name'] ?>">
-																<img class="img-p" src="public/images/xa/<?php echo $sp['img'] ?>" alt="">
+																<img class="img-sp" src="public/images/xa/<?php echo $sp['img'] ?>" alt="">
 															</a>
 														</div>
 
-														<div class="lt-product-group-info"   style="text-align:center">
-															<a  href="san-pham/db/<?php echo $sp['code'] ?>" title="<?php echo $sp['name'] ?>">
+														<div class="lt-product-group-info" style="text-align:center">
+															<a href="san-pham/db/<?php echo $sp['code'] ?>" title="<?php echo $sp['name'] ?>">
 																<h3><?php echo $sp['name'] ?></h3>
 															</a>
 															<div class="clear"></div>
@@ -127,6 +150,12 @@
 	</div>
 </section>
 <script>
+	$(document).ready(function() {
+		$('#search_by').val(<?php echo $option ?>);
+		$('#search_text').val('<?php echo $key ?>');
+		console.log($('#search_by').val());
+	});
+
 	function onAddCart(id) {
 		var strurl = "<?php echo base_url(); ?>" + '/sanpham/addcart';
 		jQuery.ajax({

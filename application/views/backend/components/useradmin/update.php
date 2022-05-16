@@ -73,6 +73,10 @@
                                         <option value="0" <?php if($row['status'] == 0) {echo 'selected';}?>>Chưa kích hoạt</option>
                                     </select>
                                 </div>
+								<div class="form-group">
+                                    <label>Sao đánh giá</label>
+									<input class="form-control" type="number" min="1" max="5"  id="star" name="star"  value="<?php echo $row['star'] ?>">
+                                </div>
                             </div>
                         </div>
                     </div><!-- /.box -->

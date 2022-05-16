@@ -111,7 +111,7 @@ foreach ($listUser as $r) {
 							<div class="col-md-3">
 								<div class="form-group">
 									<label>Giá gốc</label>
-									<input name="price_root" class="form-control" type="number" value="<?php echo $row['price'] ?>" min="0" step="10000" max="1000000000">
+									<input name="price_root" class="form-control" type="number" value="<?php echo $row['price'] ?>" min="0" step="1000" max="1000000000">
 								</div>
 								<div class="form-group">
 									<label>Khuyến mãi (%)</label>
@@ -119,7 +119,7 @@ foreach ($listUser as $r) {
 								</div>
 								<div class="form-group">
 									<label>Giá bán</label>
-									<input name="price_buy" class="form-control" type="number" value="<?php echo $row['price_sale'] ?>" min="0" step="10000" max="1000000000">
+									<input name="price_buy" class="form-control" type="number" value="<?php echo $row['price_sale'] ?>" min="0" step="1000" max="1000000000">
 									<div class="error" id="password_error"><?php echo form_error('price_buy')?></div>
 								</div>
 								<div class="form-group">
@@ -132,11 +132,11 @@ foreach ($listUser as $r) {
 								</div>
 								<div class="form-group">
 									<label>Hình ảnh sản phẩm</label>
-									<input type="file" id="image_list" name="image" required style="width: 100%">
+									<input type="file" id="image_list" name="image" style="width: 100%">
 								</div>
 								<div class="form-group">
 									<label>Hình ảnh sản phẩm</label>
-									<input type="file"  id="image_list" name="image_list[]" multiple="multiple" required>
+									<input type="file"  id="image_list" name="image_list[]" multiple="multiple">
 								</div>
 								<div class="form-group">
 									<label>Trạng thái</label>

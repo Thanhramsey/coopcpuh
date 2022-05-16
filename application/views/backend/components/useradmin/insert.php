@@ -85,6 +85,10 @@
                                         <option value = "0">Chưa kích hoạt</option>
                                     </select>
                                 </div>
+								<div class="form-group">
+                                    <label>Sao đánh giá</label>
+									<input class="form-control" type="number" min="1" max="5"  id="star" name="star">
+                                </div>
                             </div>
                         </div>
                     </div><!-- /.box -->

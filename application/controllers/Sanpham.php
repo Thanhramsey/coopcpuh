@@ -140,10 +140,61 @@ class Sanpham extends CI_Controller {
     public function detail($link){
         $row = $this->Mproduct->product_detail($link);
         $this->data['row']=$row;
-        $this->data['title']='OCOP CHƯPƯH - '.$row['name'];
-        $this->data['view']='detail';
+
+
+		$datastar = $this->Mevaluate->comment_productid_count($row['id']);
+		$star1 = 0;
+		$total1 = 0;
+		$star2 = 0;
+		$total2 = 0;
+		$star3 = 0;
+		$total3 = 0;
+		$star4 = 0;
+		$total4 = 0;
+		$star5 = 0;
+		$total5 = 0;
+		foreach ($datastar as $st) {
+			if($st['star'] == 1){
+				$star1 = 1;
+				$total1 =  $st['total'];
+			}else if($st['star'] == 2){
+				$star2 = 1;
+				$total2 = $st['total'];
+			}else if($st['star'] == 3){
+				$star3 = 1;
+				$total3 = $st['total'];
+			}else if($st['star'] == 4){
+				$star4 = 1;
+				$total4 = $st['total'];
+			}else if($st['star'] == 5){
+				$star5 = 1;
+				$total5 = $st['total'];
+			}
+		}
+		$sum = ($total1 + $total2 + $total3 + $total4 + $total5);
+		if($sum >0){
+			$AverageRating = (((1*$total1)+(2*$total2)+(3*$total3)+(4*$total4)+(5*$total5))/ $sum);
+
+		}else{
+			$AverageRating = 4;
+		}
+		$this->data['title']='OCOP CHƯPƯH - '.$row['name'];
+		$this->data['view']='detail';
+		$this->data['star1']=$star1;
+		$this->data['star2']=$star2;
+		$this->data['star3']=$star3;
+		$this->data['star4']=$star4;
+		$this->data['star5']=$star5;
+		$this->data['total1']=$total1;
+		$this->data['total2']=$total2;
+		$this->data['total3']=$total3;
+		$this->data['total4']=$total4;
+		$this->data['total5']=$total5;
+		$this->data['avg']=$AverageRating;
+
         $this->load->view('frontend/layout',$this->data);
     }
+
     public function addcart(){
         $this->load->library('session');
         $id=$_POST['id'];
