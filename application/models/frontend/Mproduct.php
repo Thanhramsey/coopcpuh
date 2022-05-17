@@ -234,4 +234,21 @@ class Mproduct extends CI_Model {
 		  return count($query->result_array());
 	  }
 
+	  public function product_sanpham_xaid_count($producer)
+	  {
+		  $this->db->where('status', 1);
+		  $this->db->where('producer', $producer);
+		  $this->db->where('trash', 1);
+		  $query = $this->db->get($this->table);
+		  return count($query->result_array());
+	  }
+	  public function product_sanpham_xaid($producer)
+	  {
+		  $this->db->where('status', 1);
+		  $this->db->where('producer', $producer);
+		  $this->db->where('trash', 1);
+		  $query = $this->db->get($this->table);
+		  return $query->result_array();
+	  }
+
 }

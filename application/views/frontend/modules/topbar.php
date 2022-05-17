@@ -28,7 +28,7 @@
                 		<li><a href="#">Trang chủ</a></li>
                 		<li><a href="san-pham/1">Sản phẩm</a></li>
                 		<li><a href="tin-tuc/1">Tin tức</a></li>
-                		<li><a href="gioi-thieu">Giới thiệu</a></li>
+                		<li><a href="chinh-sach">Chính sách</a></li>
                 		<li><a href="lien-he">Liên hệ</a></li>
                 		<!-- <li><a href="thong-tin-tai-khoan">Tài khoản</a></li> -->
                 		<?php

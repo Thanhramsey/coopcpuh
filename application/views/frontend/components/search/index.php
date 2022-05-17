@@ -118,13 +118,13 @@
 												<div class="col-md-4 col-lg-4 col-xs-6 col-6 detail-box">
 													<div class="product-lt">
 														<div class="lt-product-search-image">
-															<a href="san-pham/db/<?php echo $sp['code'] ?>" title="<?php echo $sp['name'] ?>">
+															<a href="diaphuong/detail/<?php echo $sp['id'] ?>" title="<?php echo $sp['name'] ?>">
 																<img class="img-sp" src="public/images/xa/<?php echo $sp['img'] ?>" alt="">
 															</a>
 														</div>
 
 														<div class="lt-product-group-info" style="text-align:center">
-															<a href="san-pham/db/<?php echo $sp['code'] ?>" title="<?php echo $sp['name'] ?>">
+															<a href="diaphuong/detail/<?php echo $sp['id'] ?>" title="<?php echo $sp['name'] ?>">
 																<h3><?php echo $sp['name'] ?></h3>
 															</a>
 															<div class="clear"></div>
@@ -132,7 +132,7 @@
 													</div>
 												</div>
 											<?php endforeach; ?>
-											<!-- Doanh nghiep end -->
+											<!-- Dia phương end -->
 										<?php endif; ?>
 								</div>
 								<div class="text-center pull-right">

@@ -28,7 +28,7 @@ $route['thankyou'] = 'giohang/thankyou';
 $route['thong-tin-khach-hang'] = 'thongtin/index';
 $route['search?(:any)'] = 'search/index/$1';
 $route['search?(:any)/(:num)'] = 'search/index/$1';
-$route['gioi-thieu'] = 'gioithieu/index';
+$route['chinh-sach'] = 'chinhsach/index';
 $route['account/orders/(:num)'] = 'thongtin/order';
 $route['account/orders/update/(:num)'] = 'thongtin/update/(:num)';
 $route['reset_password'] = 'thongtin/reset_password';
@@ -134,3 +134,5 @@ $route['404_override'] = 'Error404';
 $route['(:any)'] = 'sanpham/detail/$1';
 $route['doanhngiep/detail/(:any)'] = 'doanhngiep/detail/$1';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['diaphuong/detail/(:any)'] = 'diaphuong/detail/$1';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2022 at 06:02 AM
+-- Generation Time: May 17, 2022 at 10:23 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -53,6 +53,29 @@ INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, 
 (4, 'Vải may mặc', 'vaimaymac', 1, 0, '0', '2022-04-23 21:33:25', '1', '2022-04-23 21:33:25', '1', 1, 1),
 (5, 'Thủ công mỹ nghệ', 'ttmynghe', 1, 0, '0', '2022-04-23 21:33:41', '1', '2022-04-23 21:33:41', '1', 1, 1),
 (6, 'Du lịch', 'dulich', 1, 0, '0', '2022-04-03 21:38:28', '1', '2022-04-03 21:38:28', '1', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `db_chinhsach`
+--
+
+CREATE TABLE `db_chinhsach` (
+  `id` int(11) NOT NULL,
+  `sohieu` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `loaivanban` int(11) NOT NULL,
+  `coquanbanhanh` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `linhvuc` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `trichyeu` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `file` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `ngaybanhanh` datetime NOT NULL,
+  `created_at` datetime NOT NULL,
+  `created_by` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `updated_by` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `trash` tinyint(1) NOT NULL DEFAULT 1,
+  `status` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1061,23 +1084,25 @@ CREATE TABLE `db_producer` (
   `modified` datetime NOT NULL,
   `modified_by` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
-  `trash` int(11) NOT NULL DEFAULT 1
+  `trash` int(11) NOT NULL DEFAULT 1,
+  `detail` varchar(2000) CHARACTER SET utf8 DEFAULT NULL,
+  `iframe` varchar(2000) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `db_producer`
 --
 
-INSERT INTO `db_producer` (`id`, `name`, `code`, `img`, `created_at`, `created_by`, `modified`, `modified_by`, `status`, `trash`) VALUES
-(1, 'TT Nhơn Hòa', 'TTNH', '1.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1),
-(2, 'Chư Don', 'CD', '2.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1),
-(3, 'Ia Dreng', 'IAD', '3.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1),
-(4, 'Ia Hla', 'IAH', '4.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1),
-(5, 'Ia Hrú', 'IAHR', '5.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1),
-(6, 'Ia Le', 'IAL', '1.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1),
-(7, 'Ia Phang', 'IAP', '2.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1),
-(8, 'Ia Rong', 'IAR', '3.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1),
-(9, 'Ia Blứ', 'IAB', '4.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1);
+INSERT INTO `db_producer` (`id`, `name`, `code`, `img`, `created_at`, `created_by`, `modified`, `modified_by`, `status`, `trash`, `detail`, `iframe`) VALUES
+(1, 'TT Nhơn Hòa', 'TTNH', '1.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Nhơn Hòa là một thị trấn thuộc. huyện Chư Pưh, tỉnh Gia Lai, Việt Nam.\nThị trấn Nhơn Hòa có vị trí địa lý:\n\nPhía đông giáp xã Ia Hrú\nPhía tây giáp xã Chư Don\nPhía nam giáp xã Ia Phang\nPhía bắc giáp xã Ia Hrú.\nThị trấn Nhơn Hòa có diện tích 21 km², dân số năm 2008 là 10.500 người,[2] mật độ dân số đạt 500 người/km².', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124125.99329901286!2d108.01171741537772!3d13.53943835605775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316e7ee3efa9a14f%3A0x7c4aa5937bd75168!2zTmjGoW4gSMOyYSwgaC4gQ2jGsCBTw6osIEdpYSBMYWk!5e0!3m2!1svi!2s!4v1652773679453!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(2, 'Chư Don', 'CD', '2.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Chư Don là một xã thuộc huyện Chư Pưh, tỉnh Gia Lai, Việt Nam.\n\nXã Chư Don có diện tích 38,90 km², dân số năm 2008 là 1.840 người,mật độ dân số đạt 47 người/km².', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62062.996086594045!2d108.01981290774307!3d13.539440514109055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316e7f5c31acd279%3A0xf19887a8d522f3c2!2zQ2jGsCBEb24sIENoxrAgUMawaCwgR2lhIExhaQ!5e0!3m2!1svi!2s!4v1652773919303!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(3, 'Ia Dreng', 'IAD', '3.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Xã Ia Dreng có vị trí địa lý:\n\nPhía Đông giáp xã Ia Hrú\nPhía Tây giáp xã Ia HLốp và xã Ia Ko\nPhía Nam giáp thị trấn Nhơn Hòa\nPhía Bắc giáp xã Ia Blang và xã Ia HLốp.\nXã Ia Dreng có diện tích 23,52 km², dân số năm 2000 là 2.486 người,mật độ dân số đạt 106 người/km².', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62047.64012781074!2d108.03864518194037!3d13.598185981068074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316e7fdd3c387103%3A0xe08f16cdbe575100!2zSWEgRHJlbmcsIENoxrAgUMawaCwgR2lhIExhaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1652774014862!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(4, 'Ia Hla', 'IAH', '4.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Ia Hla là một xã thuộc huyện Chư Pưh, tỉnh Gia Lai, Việt Nam.\n\nXã Ia Hla có diện tích 124,47 km², dân số năm 2005 là 2.283 người, mật độ dân số đạt 18 người/km²', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124122.67837580746!2d107.91307426154799!3d13.54579114608469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316dd438d3f6817f%3A0xd2ab814d43541333!2zSWEgSGxhLCBDaMawIFDGsGgsIEdpYSBMYWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1652774064449!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(5, 'Ia Hrú', 'IAHR', '5.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Ia Hrú là một xã thuộc huyện Chư Pưh, tỉnh Gia Lai, Việt Nam.\n\nXã Ia Hrú có diện tích 39,51 km², dân số năm 1999 là 7.199 người, mật độ dân số đạt 182 người/km².', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124097.79923402368!2d108.06338686206651!3d13.593377080990042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316e7e2e12abc327%3A0xfc69c4d8fdd3f498!2zSWEgSHLDuiwgQ2jGsCBQxrBoLCBHaWEgTGFpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1652774114129!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(6, 'Ia Le', 'IAL', '1.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Ia Le là một xã thuộc huyện Chư Pưh, tỉnh Gia Lai, Việt Nam.\n\nXã Ia Le có diện tích 124,57 km², dân số năm 2006 là 7.195 người, mật độ dân số đạt 58 người/km².', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248353.20351929936!2d107.93340751550471!3d13.442085379598138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316e784bee46f5db%3A0x9a12d80d2d59d100!2zSWEgTGUsIGguIENoxrAgU8OqLCBHaWEgTGFpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1652774154781!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(7, 'Ia Phang', 'IAP', '2.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Ia Phang là một xã thuộc huyện Chư Pưh, tỉnh Gia Lai, Việt Nam.\n\nXã Ia Phang có diện tích 127,11 km², dân số năm 2000 là 5.214 người,mật độ dân số đạt 41 người/km².', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124144.75575540008!2d108.07812826108834!3d13.503426303962975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316e7bfca516a9f9%3A0xae02bbf9d8311a8f!2zSWEgUGhhbmcsIGguIENoxrAgU8OqLCBHaWEgTGFpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1652774196597!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(8, 'Ia Rong', 'IAR', '3.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Ia Rong là một xã thuộc huyện Chư Pưh, tỉnh Gia Lai, Việt Nam.\n\nXã Ia Rong có diện tích 23,11 km², dân số năm 1999 là 4.518 người, mật độ dân số đạt 195 người/km².', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7755.312880263414!2d108.10740537442625!3d13.617782811736904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316e809095534abd%3A0x247ba1ae497e629c!2zSWEgUm9uZywgSWEgSHLDuiwgQ2jGsCBQxrBoLCBHaWEgTGFp!5e0!3m2!1svi!2s!4v1652772954399!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
+(9, 'Ia Blứ', 'IAB', '4.png', '2022-04-22 16:08:31', 4, '2022-04-22 16:08:31', 1, 1, 1, 'Ia BLứ là một xã thuộc huyện Chư Pưh, tỉnh Gia Lai, Việt Nam.\n\nXã Ia Blứ có diện tích 191,15 km², dân số năm 2006 là 4.688 người,mật độ dân số đạt 25 người/km².', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124170.66848639994!2d107.98653855820312!3d13.453534700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316e780cd487fb61%3A0x3b76a5074e67c882!2zVeG7tyBCYW4gTmjDom4gRMOibiBJYSBCIEzhu6k!5e0!3m2!1svi!2s!4v1652774243964!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>');
 
 -- --------------------------------------------------------
 
