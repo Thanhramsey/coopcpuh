@@ -21,6 +21,11 @@
 			<?php
 			if ($user['role'] == 1) {
 				echo '<li class="header">QUẢN LÝ BÁN HÀNG</li>
+				<li>
+					<a href="admin/useradmin">
+						<i class="glyphicon glyphicon-briefcase"></i><span> Cơ sở kinh doanh</span>
+					</a>
+				 </li>
 				<li class="treeview">
 					<a href="admin/coupon">
 						<i class="glyphicon glyphicon-piggy-bank"></i> <span>Mã giảm giá</span>
@@ -29,6 +34,11 @@
 				<li class="treeview">
 					<a href="admin/contact">
 						<i class="glyphicon glyphicon-earphone"></i> <span>Liên hệ</span>
+					</a>
+				</li>
+				<li class="treeview">
+					<a href="admin/chinhsach">
+						<i class="glyphicon glyphicon-book"></i> <span>Chính Sách</span>
 					</a>
 				</li>
 				<li class="treeview">
@@ -55,14 +65,6 @@
                     <i class="glyphicon glyphicon-globe"></i><span>Địa bàn</span>
                 </a>
             </li>';
-			}
-			?>
-			<?php
-			if ($user['role'] == 1) {
-				echo '	<li>
-				<a href="admin/useradmin">
-					<i class="glyphicon glyphicon-briefcase"></i><span> Cơ sở kinh doanh</span>
-				 </a></li>';
 			}
 			?>
 

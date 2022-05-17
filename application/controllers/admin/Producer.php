@@ -42,9 +42,9 @@ class Producer extends CI_Controller {
 		$this->form_validation->set_rules('keyword', 'Từ khóa', 'required');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
-				'name' =>$_POST['name'], 
-				'code'=>$_POST['code'], 
-				'keyword'=>$_POST['keyword'], 
+				'name' =>$_POST['name'],
+				'code'=>$_POST['code'],
+				// 'keyword'=>$_POST['keyword'],
 				'created_at'=>$today,
 				'created_by'=>$this->session->userdata('id'),
 				'modified'=>$today,
@@ -77,9 +77,9 @@ class Producer extends CI_Controller {
 		$this->form_validation->set_rules('keyword', 'Từ khóa', 'required');
 		if ($this->form_validation->run() == TRUE) {
 			$mydata= array(
-				'name' =>$_POST['name'], 
+				'name' =>$_POST['name'],
 				'modified'=>$today,
-				'keyword'=>$_POST['keyword'], 
+				// 'keyword'=>$_POST['keyword'],
 				'modified_by'=>$this->session->userdata('id'),
 				'trash'=>1,
 				'status'=>$_POST['status']
@@ -87,7 +87,7 @@ class Producer extends CI_Controller {
 			$this->Mproducer->producer_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật nhà cung cấp thành công');
 			redirect('admin/producer/','refresh');
-		} 
+		}
 		$this->data['view']='update';
 		$this->data['title']='Cập nhật nhà cung cấp';
 		$this->load->view('backend/layout', $this->data);

@@ -28,7 +28,6 @@ $route['thankyou'] = 'giohang/thankyou';
 $route['thong-tin-khach-hang'] = 'thongtin/index';
 $route['search?(:any)'] = 'search/index/$1';
 $route['search?(:any)/(:num)'] = 'search/index/$1';
-$route['chinh-sach'] = 'chinhsach/index';
 $route['account/orders/(:num)'] = 'thongtin/order';
 $route['account/orders/update/(:num)'] = 'thongtin/update/(:num)';
 $route['reset_password'] = 'thongtin/reset_password';
@@ -66,6 +65,17 @@ $route['producer/update/(:num)'] ='producer/update/$1';
 $route['producer/recyclebin'] ='producer/recyclebin';
 $route['producer/trash/(:num)'] ='producer/trash/$1';
 $route['producer/recyclebin/(:num)'] ='producer/recyclebin/$1';
+
+
+$route['admin/chinhsach'] ='admin/chinhsach';
+$route['admin/chinhsach/(:num)'] ='admin/chinhsach/index/$1';
+$route['chinhsach/insert'] ='chinhsach/insert';
+$route['chinhsach/status/(:num)'] ='chinhsach/status/$1';
+$route['chinhsach/update/(:num)'] ='chinhsach/update/$1';
+$route['chinhsach/recyclebin'] ='chinhsach/recyclebin';
+$route['chinhsach/trash/(:num)'] ='chinhsach/trash/$1';
+$route['chinhsach/recyclebin/(:num)'] ='chinhsach/recyclebin/$1';
+
 
 $route['admin/category'] ='admin/category';
 $route['admin/category/(:num)'] ='admin/category/index/$1';
