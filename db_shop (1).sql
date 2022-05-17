@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2022 at 10:23 AM
+-- Generation Time: May 17, 2022 at 12:08 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -76,6 +76,13 @@ CREATE TABLE `db_chinhsach` (
   `trash` tinyint(1) NOT NULL DEFAULT 1,
   `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `db_chinhsach`
+--
+
+INSERT INTO `db_chinhsach` (`id`, `sohieu`, `loaivanban`, `coquanbanhanh`, `linhvuc`, `trichyeu`, `file`, `ngaybanhanh`, `created_at`, `created_by`, `updated_at`, `updated_by`, `trash`, `status`) VALUES
+(1, '01/QD-BCDTW', 2, 'BCĐ Trung ương	', 'OCOP', 'Ban Chỉ đạo Trung ương các Chương trình Mục tiêu quốc gia ban hành Quyết định số 01/QĐ-BCĐTW ngày 22/8/2018 về Kế hoạch triển khai Chương trình Mỗi xã một sản phẩm giai đoạn 2018 - 2020.', '_FilesUpload_01-QD-BCDTW432159552316.pdf', '2022-05-17 11:42:04', '2022-05-17 11:42:04', 'mtp', '2022-05-17 11:42:04', 'mtp', 1, 1);
 
 -- --------------------------------------------------------
 
