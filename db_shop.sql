@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 12:11 PM
+-- Generation Time: May 17, 2022 at 06:02 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -965,7 +965,8 @@ INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `c
 (8, 'Đỉnh thế nhờ', 30, 'Thành', '09691234469', '2022-05-06 10:29:12', NULL, 4, 1),
 (9, 'sản phẩm 10 điểm', 31, 'lê ca', '0969123456', '2022-05-16 16:18:13', NULL, 5, 1),
 (10, 'ồ dé', 32, 'tipi', 'tippi@gmail.cpm', '2022-05-16 16:22:11', NULL, 5, 1),
-(11, 'gà', 35, 'Chương', '012939123', '2022-05-16 17:05:20', NULL, 1, 1);
+(11, 'gà', 35, 'Chương', '012939123', '2022-05-16 17:05:20', NULL, 1, 1),
+(12, 'xài rất sướng', 45, 'tuấn', '01223123', '2022-05-17 08:25:36', NULL, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -1008,7 +1009,9 @@ INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`
 (125, 'QTGwYmEW', 70, '2022-05-05 15:13:06', 'Thiệu', '0349303368', 9000000, 0, 0, 64, 622, '112 Phan Đình Phùng , Pleiku, Gia Lai', 1, 2, '7020225515136', 40, 1, NULL),
 (126, 'fZpSij98', 71, '2022-05-05 15:16:54', 'tempo111', '122312312312', 9000000, 0, 0, 96, 970, 'aaaaaaaaaa', 1, 0, '71202255151654', 40, 1, NULL),
 (127, 'G4Egytba', 70, '2022-05-05 15:22:22', 'Thiệu', '0349303368', 9000000, 0, 0, 64, 622, '112 PHAN ĐÌNH PHÙNG', 1, 0, '70202255152222', 40, 1, 9000000),
-(128, 'bweHqu2D', 72, '2022-05-05 15:39:30', 'Chường', '012391239', 35000, 0, 0, 64, 624, 'aaaaaaaaaaa', 1, 0, '72202255153930', 37, 1, 35000);
+(128, 'bweHqu2D', 72, '2022-05-05 15:39:30', 'Chường', '012391239', 35000, 0, 0, 64, 624, 'aaaaaaaaaaa', 1, 0, '72202255153930', 37, 1, 35000),
+(129, 'YJlauU2z', 1, '2022-05-17 09:50:22', 'Thành', '0969124469', 100000, 0, 0, 64, 622, '38 vox vawn meesn', 1, 2, '1202251795022', 47, 10, 10000),
+(130, 'ElNGzXPj', 1, '2022-05-17 09:50:22', 'Thành', '0969124469', 200000, 0, 0, 64, 622, '38 vox vawn meesn', 1, 0, '1202251795022', 34, 10, 20000);
 
 -- --------------------------------------------------------
 
@@ -1038,7 +1041,9 @@ INSERT INTO `db_orderdetail` (`id`, `orderid`, `productid`, `count`, `price`, `t
 (168, 123, 34, 1, 20000, 1, 1),
 (169, 124, 35, 2, 475000, 1, 1),
 (170, 127, 40, 1, 9000000, 1, 1),
-(171, 128, 37, 1, 35000, 1, 1);
+(171, 128, 37, 1, 35000, 1, 1),
+(172, 129, 47, 10, 10000, 1, 1),
+(173, 130, 34, 10, 20000, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1123,7 +1128,10 @@ INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sort
 (38, 3, 'Sữa chua ba vì ', 'sua-chua-ba-vi', '853cd42897e1d8dc8c3595f0274e4c7a.jpg', '78bee9ac32a4b2d1a0dc0a9033e33191.jpg', '', '', 8, 11, 2, 0, 30000, 30000, '2022-04-27 13:47:46', '1', '2022-04-28 13:42:55', '1', 1, 1, 10, NULL, NULL, NULL, 0),
 (40, 5, 'Tượng Quan Vũ', 'tuong-quan-vu', '840e6961bb5f8eee261816c3de22425d.jpg', 'f304c3873875d4945706123e18a65a56.jpg', '', '', 1, 4, 1, 0, 9000000, 9000000, '2022-04-27 13:52:26', '10', '2022-04-28 13:43:32', '1', 1, 1, 10, NULL, NULL, NULL, 1),
 (43, 5, 'Trái tim bên lề', 'trai-tim-ben-le', '1e02ca35d2f2c681dd65832a3aabbe48.jpg', 'a00147927a53d7304472e9a4c95cf7b9.jpg', 'Trái tim bên lề', '<p>Tr&aacute;i tim b&ecirc;n lề</p>\r\n', 1, 1010, 10, 0, 10000, 10000, '2022-04-28 13:46:44', '1', '2022-05-12 14:06:14', '1', 1, 1, 10, '', NULL, NULL, 0),
-(44, 2, 'hehehe', 'hehehe', '17ae35b60ecf7bec8eee6fbeedcddc79.jpg', '', 'addasdasd', '<p>10000</p>\r\n', 1, 1, 0, 0, 11000, 11000, '2022-05-10 16:50:24', '1', '2022-05-16 14:57:34', '1', 1, 1, 11, '62970a61cab086aa6aa42d3ab53f3c38.jpg', '45c577a40287a03a1d6fd25c324d79c7.jpg', NULL, 1);
+(44, 2, 'hehehe', 'hehehe', '17ae35b60ecf7bec8eee6fbeedcddc79.jpg', '', 'addasdasd', '<p>10000</p>\r\n', 1, 1, 0, 0, 11000, 11000, '2022-05-10 16:50:24', '1', '2022-05-16 14:57:34', '1', 1, 1, 11, '62970a61cab086aa6aa42d3ab53f3c38.jpg', '45c577a40287a03a1d6fd25c324d79c7.jpg', NULL, 1),
+(45, 1, 'Cao dán con heo ', 'cao-dan-con-heo', 'dbad9cf63d3b844538c94f6d8fac3d69.jpg', '', 'Cao dán con heo', '<p>Cao d&aacute;n con heo&nbsp;</p>\r\n\r\n<p>si&ecirc;u đỉnh&nbsp;</p>\r\n\r\n<p>si&ecirc;u chất</p>\r\n\r\n<p><span style=\"color:#e74c3c\"><strong>0989744</strong></span></p>\r\n', 1, 1000, 0, 0, 150000, 150000, '2022-05-17 08:24:38', '13', '2022-05-17 08:36:02', '13', 1, 1, 13, 'e0edb91840a2e3715e2b1f77c5ac9b2c.jpg', '1af0d8db32bbf120de9554bf4585af2a.jpg', NULL, 0),
+(46, 3, 'bánh mì mtp', 'banh-mi-mtp', '27c53ed0d8525c8ce4c9ee18b61633a8.jpg', '33577c122229a88342cd58f6a56b8474.jpg', 'bánh mì mtp', '<p><strong>b&aacute;nh m&igrave; mtp</strong></p>\r\n', 2, 100, 0, 0, 3000, 3000, '2022-05-17 08:36:55', '13', '2022-05-17 08:36:55', '13', 1, 1, 13, '', NULL, NULL, 0),
+(47, 3, 'bánh bao soobin', 'banh-bao-soobin', '3906cf856636585397f68c9a72a596e6.jpg', '22411a847473b651b9629d92d61b747b.jpg', 'bánh bao soobin', '<p>b&aacute;nh bao soobin</p>\r\n', 6, 199, 10, 0, 10000, 10000, '2022-05-17 08:38:02', '13', '2022-05-17 08:38:02', '13', 1, 1, 13, '', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -1456,19 +1464,19 @@ ALTER TABLE `db_discount`
 -- AUTO_INCREMENT for table `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `db_order`
 --
 ALTER TABLE `db_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT for table `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT for table `db_producer`
@@ -1480,7 +1488,7 @@ ALTER TABLE `db_producer`
 -- AUTO_INCREMENT for table `db_product`
 --
 ALTER TABLE `db_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `db_slider`

@@ -107,6 +107,9 @@
                                             <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
                                                 <h3><?php echo $sp['name'] ?></h3>
                                             </a>
+											<div>
+												<span class="sell_num">Đã bán <?php echo(number_format($sp['number_buy'])); ?></span>
+											</div>
                                             <div class="price-box">
                                                 <?php if($sp['sale'] > 0) :?>
 
@@ -125,6 +128,11 @@
                                                     </p>
                                                 <?php endif;?>
                                             </div>
+											<div class="lienhe">
+													<a href="<?php echo base_url() ?>doanhngiep/detail/<?php $producer = $this->Muser->user_detail_id_fg($sp['userId']);echo $producer['id'] ?>" title="">
+														<h3>Liên hệ</h3>
+													</a>
+												</div>
                                             <div class="clear"></div>
                                         </div>
                                     </div>

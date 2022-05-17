@@ -27,18 +27,18 @@
 				</div>
 				<div class="container">
 					<ul style="margin-bottom:15px" class="nav nav-pills mb-3 dn-detail" id="pills-tab" role="tablist">
-						<li class="nav-item active ">
+						<li class="nav-item ">
 							<a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Thông tin</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Sản Phẩm</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item active">
 							<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Liên hệ</a>
 						</li>
 					</ul>
 					<div class="tab-content" id="pills-tabContent">
-						<div class="tab-pane detail-dn active products-grid clearfix" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><span><?php echo $row['detail'] ?></span></div>
+						<div class="tab-pane detail-dn products-grid clearfix" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><span><?php echo $row['detail'] ?></span></div>
 						<div class="tab-pane detail-dn products-grid clearfix" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
 										<?php if (count($list) == 0) : ?>
@@ -96,7 +96,7 @@
 									</div>
 								<?php endif; ?>
 						</div>
-						<div class="tab-pane detail-dn products-grid clearfix" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+						<div class="tab-pane active detail-dn products-grid clearfix" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 						<table class="table table-hover">
 							<thead>
 							<tr>

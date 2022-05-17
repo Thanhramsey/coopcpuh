@@ -24,6 +24,10 @@ class Dashboard extends CI_Controller {
 	{
 		$user_role = $this->session->userdata('sessionadmin');
 		$userId = $this->session->userdata('id');
+		$this->data['total1'] = 0;
+		$this->data['total2'] = 0;
+		$this->data['total3'] = 0;
+		$this->data['total4'] = 0;
 		if ($user_role['role'] == 1) {
 			$this->data['total1']=$this->Mproduct->product_sanpham_count();
 			$this->data['total2']=$this->Mcontent->content_count();

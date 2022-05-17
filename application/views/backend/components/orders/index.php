@@ -47,6 +47,7 @@
 											</tr>
 										</thead>
 										<tbody>
+											<?php if (is_iterable($list) ) : ?>
 											<?php foreach ($list as $val):
 												$name = $this->Mcustomer->customer_detail($val['customerid']);
 												?>
@@ -109,6 +110,7 @@
 													</td>
 												</tr>
 											<?php endforeach; ?>
+											<?php endif; ?>
 										</tbody>
 									</table>
 								</div>

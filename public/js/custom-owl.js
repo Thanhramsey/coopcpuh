@@ -28,3 +28,24 @@ $('.owl-carousel-product').owlCarousel({
         }
     }
 })
+$('.owl-carousel-product-cl').owlCarousel({
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    nav: false,
+    navigation: false,
+    autoplayTimeout: 2500,
+    responsive: {
+        0: {
+            items: 2,
+        },
+        600: {
+            items: 3,
+        },
+        1000: {
+            items: 5,
+			loop:( $('.owl-carousel-product-cl').length > 5 )
+        }
+    }
+})
+

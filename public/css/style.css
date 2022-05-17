@@ -873,7 +873,7 @@ span.small-text {font-size: 14px;color: #888;}
 .product-container {
 	display: flex;
 	flex-wrap: wrap;
-	border: 1px solid #e8e6e2;
+	/* border: 1px solid #e8e6e2; */
 	padding: 0;
 }
 .p-box-5 {
@@ -961,7 +961,7 @@ span.small-text {font-size: 14px;color: #888;}
 	border-top: none; */
 	height:310px;
 	max-height: 330px;
-	padding: 10px;
+	padding: 10px 0px;
 	box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
 	border-radius: 6px;
 	width: 90%;
@@ -971,6 +971,7 @@ span.small-text {font-size: 14px;color: #888;}
 	box-shadow: 0 0 50px rgba(0,0,0,.1); */
 	box-sizing: border-box;
 	z-index: 1;
+	border: 1px solid #0f9ed8;
 }
 #sale-content .product-sale{
 	margin-top: 20px;
@@ -1031,7 +1032,7 @@ a {
 	margin: 0;
 }
 .price-box {
-	margin: 5px 0;
+	margin: 0px 0px 5px 0px;
 	float: left;
 }
 .old-price {
@@ -1664,9 +1665,10 @@ select {
 	border-top: none;
 }
 .products-grid{
-	border-top: 1px solid #e8e6e2;
+	/* border-top: 1px solid #e8e6e2; */
 	min-height: 550px;
-	border-left: 1px solid #e8e6e2;
+	padding: 10px;
+	/* border-left: 1px solid #e8e6e2; */
 }
 .collection .category-products .pagination > .active > a{
 	background: #0f9ed8 !important;
@@ -2695,4 +2697,50 @@ a.fright {
   .lt-product-star-2{
 	  text-align:left;
 	  margin-top: 10px
+  }
+
+  .owl-carousel-product.owl-carousel.owl-drag .owl-item:hover{
+	  border:1px solid #0f9ed8;
+	  border-radius: 4px;
+  }
+
+  .owl-carousel-product.owl-carousel.owl-drag .owl-item{
+	  max-height: 300px;
+  }
+
+  .owl-carousel-product.owl-carousel.owl-drag .owl-item .lt-product-group-image{
+	height: 200px;
+  }
+  .lt-product-group-info a:hover{
+	  text-decoration: none;
+  }
+  .lt-product-group-info a h3:hover{
+	color: #226a15;
+  }
+  .sell_num{
+	font-size: 11px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #0f9ed8;
+  }
+  .lienhe{
+	display: inline-block;
+    padding: 5px 16px;
+    background-color: #0f9ed8;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0px 0px 0px 20px;
+    cursor: pointer;
+	position: absolute;
+	bottom:5px;
+	right:0px
+  }
+  .lienhe h3{
+	color : #fff;
+  }
+  .lt-product-group-image{
+	  height:200px
+  }
+  .lt-product-search-image{
+	height:220px
   }

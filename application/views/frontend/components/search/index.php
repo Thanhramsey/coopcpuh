@@ -30,7 +30,7 @@
 											<?php foreach ($list as $sp) : ?>
 												<div class="col-md-4 col-lg-4 col-xs-6 col-6 detail-box">
 													<div class="product-lt">
-														<div class="lt-product-group-image">
+														<div class="lt-product-search-image">
 															<a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
 																<img class="img-sp" src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
 															</a>
@@ -41,7 +41,7 @@
 															<?php endif; ?>
 														</div>
 
-														<div class="lt-product-group-info" style="text-align:center">
+														<div class="lt-product-group-info" style="text-align:left">
 															<a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
 																<h3><?php echo $sp['name'] ?></h3>
 															</a>
@@ -73,7 +73,7 @@
 											<?php foreach ($list as $sp) : ?>
 												<div class="col-md-4 col-lg-4 col-xs-6 col-6 detail-box">
 													<div class="product-lt">
-														<div class="lt-product-group-image">
+														<div class="lt-product-search-image">
 															<a href="doanhngiep/detail/<?php echo $sp['id'] ?>" title="<?php echo $sp['fullname'] ?>">
 																<img class="img-sp" src="public/images/admin/<?php echo $sp['img'] ?>" alt="">
 															</a>
@@ -117,7 +117,7 @@
 											<?php foreach ($list as $sp) : ?>
 												<div class="col-md-4 col-lg-4 col-xs-6 col-6 detail-box">
 													<div class="product-lt">
-														<div class="lt-product-group-image">
+														<div class="lt-product-search-image">
 															<a href="san-pham/db/<?php echo $sp['code'] ?>" title="<?php echo $sp['name'] ?>">
 																<img class="img-sp" src="public/images/xa/<?php echo $sp['img'] ?>" alt="">
 															</a>

@@ -63,8 +63,7 @@ class Product extends CI_Controller
 		// $this->form_validation->set_rules('userId', 'Nhà cung cấp', 'required');
 		$this->form_validation->set_rules('price_buy', 'Giá bán', 'required|callback_check');
 		if ($this->form_validation->run() == TRUE) {
-			$userId = $_POST['userId'];
-			if (empty($userId)) {
+			if (empty($_POST['userId'])) {
 				$userId = $this->session->userdata('id');
 			} else {
 				$userId = $_POST['userId'];
@@ -170,8 +169,7 @@ class Product extends CI_Controller
 		//  $this->form_validation->set_rules('userId', 'Nhà cung cấp', 'required');
 		$this->form_validation->set_rules('price_buy', 'Giá bán', 'required|callback_check');
 		if ($this->form_validation->run() == TRUE) {
-			$userId = $_POST['userId'];
-			if (empty($userId)) {
+			if (empty($_POST['userId'])) {
 				$userId = $this->session->userdata('id');
 			} else {
 				$userId = $_POST['userId'];

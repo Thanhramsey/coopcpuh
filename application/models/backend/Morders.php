@@ -36,7 +36,7 @@ class Morders extends CI_Model {
 		}
 		else
 		{
-			return false;
+			return 0;
 		}
 	}
 	public function orders_listorders_byId_count($producerId)
@@ -55,7 +55,7 @@ class Morders extends CI_Model {
 		}
 		else
 		{
-			return false;
+			return 0;
 		}
     }
 
@@ -164,7 +164,7 @@ class Morders extends CI_Model {
 		}
 		else
 		{
-			return false;
+			return 0;
 		}
 	}
 
@@ -215,7 +215,7 @@ class Morders extends CI_Model {
 		}
 		else
 		{
-			return false;
+			return 0;
 		}
     }
 
@@ -236,7 +236,7 @@ class Morders extends CI_Model {
 		}
 		else
 		{
-			return false;
+			return 0;
 		}
     }
 

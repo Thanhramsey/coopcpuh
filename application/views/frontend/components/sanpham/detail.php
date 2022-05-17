@@ -380,7 +380,7 @@
 			<?php
 					if (count($list_spcungloai) > 0) : ?>
 				<div class="product-container">
-					<div class="owl-carousel-product owl-carousel owl-theme">
+					<div class="owl-carousel-product-cl owl-carousel owl-theme">
 						<?php foreach ($list_spcungloai as $sp) : ?>
 							<div class="item">
 								<div class="product-lt">

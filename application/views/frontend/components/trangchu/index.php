@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class="container" style="margin-bottom: 20px;">
-    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 0px 10px">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 10px 10px">
         <?php
         $product_sale = $this->Mproduct->product_sale(10);
         foreach ($product_sale as $row) :?>
@@ -75,7 +75,7 @@
     </div>
 </div>
 <div class="container" style="margin-bottom: 20px;">
-    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 0px 10px">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 10px 10px">
         <?php
         $product_tiemnang = $this->Mproduct->product_tiemnang(10);
         foreach ($product_tiemnang as $row) :?>
@@ -130,7 +130,7 @@
     </div>
 </div>
 <div class="container" style="margin-bottom: 20px;">
-    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 0px 10px">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 10px 10px">
         <?php
         $product_sale = $this->Mproduct->product_selling(10);
         foreach ($product_sale as $row) :?>
@@ -230,6 +230,9 @@
                                         <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" style="text-align: left;">
                                             <h3><?php echo $sp['name'] ?></h3>
                                         </a>
+										<div style='text-align:left'>
+											<span class="sell_num">Đã bán <?php echo(number_format($sp['number_buy'])); ?></span>
+										</div>
                                         <div class="price-box">
                                             <?php if($sp['sale'] > 0) :?>
 
@@ -248,6 +251,11 @@
                                                 </p>
                                             <?php endif;?>
                                         </div>
+										<div class="lienhe">
+													<a href="<?php echo base_url() ?>doanhngiep/detail/<?php $producer = $this->Muser->user_detail_id_fg($sp['userId']);echo $producer['id'] ?>" title="">
+														<h3>Liên hệ</h3>
+													</a>
+												</div>
                                         <div class="clear"></div>
                                     </div>
                                 </div>
