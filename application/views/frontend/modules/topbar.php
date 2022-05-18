@@ -28,7 +28,7 @@
                 		<li><a href="#">Trang chủ</a></li>
                 		<li><a href="san-pham/1">Sản phẩm</a></li>
                 		<li><a href="tin-tuc/1">Tin tức</a></li>
-                		<li><a href="chinh-sach">Chính sách</a></li>
+                		<li><a href="van-ban">Chính sách</a></li>
                 		<li><a href="lien-he">Liên hệ</a></li>
                 		<!-- <li><a href="thong-tin-tai-khoan">Tài khoản</a></li> -->
                 		<?php
@@ -55,9 +55,9 @@
                 	</ul>
 					<ul class="nav navbar navbar-nav pull-left" id="nav2">
 					<li><div style="padding:10px 0px; color:#fff"><i class="glyphicon glyphicon-calendar"></i></div></li>
-					<li><div style="padding:10px 10px 10px 5px; color:#fff" id="runningDay"></div></li>
+					<li><div style="padding:10px 10px 10px 5px; color:#fff" id="runningDay">Ngày</div></li>
 					<li><div style="padding:10px 0px; color:#fff; margin-left:5px"><i class="glyphicon glyphicon-time"></i></div></li>
-					<li><div style="padding:10px 10px 10px 5px; color:#fff" id="runningTime"></div></li>
+					<li><div style="padding:10px 10px 10px 5px; color:#fff" id="runningTime">Giờ</div></li>
 					</ul>
                 </div>
             </div>
@@ -70,7 +70,6 @@
 	$(document).ready(function() {
 		setInterval(function() {
 			var dateObj = new Date();
-			console.log(dateObj);
 			$('#runningDay').html(new Intl.DateTimeFormat(['ban', 'id']).format(dateObj));
 			$('#runningTime').html(dateObj.toLocaleTimeString());
 		}, 1000);

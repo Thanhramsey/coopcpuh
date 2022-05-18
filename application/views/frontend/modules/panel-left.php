@@ -86,7 +86,7 @@
 		</li>
 		<li class="pull-left"><a href="san-pham">Sản phẩm</a></li>
 		<li class="pull-left"><a href="tin-tuc/1">Tin tức</a></li>
-		<li class="pull-left"><a href="chinh-sach">Chính Sách</a></li>
+		<li class="pull-left"><a href="van-ban">Chính Sách</a></li>
 		<li class="pull-left"><a href="lien-he">Liên hệ</a></li>
 	</ul>
 </div>

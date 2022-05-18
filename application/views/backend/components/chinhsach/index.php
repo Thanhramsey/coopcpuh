@@ -1,17 +1,17 @@
 <div class="content-wrapper">
 	<section class="content-header">
-		<h1><i class="glyphicon glyphicon-book"></i> Danh sách chính sách</h1>
+		<h1><i class="glyphicon glyphicon-book"></i> Danh sách văn bản</h1>
 		<div class="breadcrumb">
 
 			<?php
 			if($user['role']==1){
-				echo '<a class="btn btn-primary btn-sm" href="'.base_url().'admin/producer/insert" role="button">
+				echo '<a class="btn btn-primary btn-sm" href="'.base_url().'admin/chinhsach/insert" role="button">
 				<span class="glyphicon glyphicon-plus"></span> Thêm mới
 				</a>';
 			}
 			?>
-			<a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/producer/recyclebin" role="button">
-				<span class="glyphicon glyphicon-trash"></span> Thùng rác(<?php $total=$this->Mproducer->producer_trash_count(); echo $total; ?>)
+			<a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/chinhsach/recyclebin" role="button">
+				<span class="glyphicon glyphicon-trash"></span> Thùng rác(<?php $total=$this->Mchinhsach->chinhsach_trash_count(); echo $total; ?>)
 			</a>
 		</div>
 	</section>
@@ -44,21 +44,22 @@
 										<thead>
 											<tr>
 											<th class="text-center">id</th>
+											<th class="text-center">Tên văn bản</th>
 											<th class="text-center">Số hiệu</th>
-												<th class="text-center">Loại văn bản</th>
-												<!-- <th class="text-center">Keyword</th> -->
-												<th class="text-center">Cơ quan ban hành</th>
-												<th class="text-center">Lĩnh vực</th>
-												<th class="text-center">Download</th>
-												<th class="text-center" colspan="2">Thao tác</th>
+											<th class="text-center">Loại văn bản</th>
+											<th class="text-center">Cơ quan ban hành</th>
+											<th class="text-center">Lĩnh vực</th>
+											<th class="text-center">Download</th>
+											<th class="text-center" colspan="2">Thao tác</th>
 											</tr>
 										</thead>
 										<tbody>
 											<?php foreach ($list as $row):?>
 												<tr>
 													<td class="text-center"><?php echo $row['id'] ?></td>
+													<td><?php echo $row['name'] ?></td>
 													<td><?php echo $row['sohieu'] ?></td>
-													<td><?php echo $row['loaivanban'] ?></td>
+													<td><?php echo $row['loaivanban_name'] ?></td>
 													<td><?php echo $row['coquanbanhanh'] ?></td>
 													<td><?php echo $row['linhvuc'] ?></td>
 													<td class="text-center">
@@ -69,7 +70,7 @@
 														<?php
 														if($user['role']==1){
 															echo '<td class="text-center">
-															<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/producer/update/'.$row['id'].'" role = "button">
+															<a class="btn btn-success btn-xs" href="admin/chinhsach/update/'.$row['id'].'" role = "button">
 															<span class="glyphicon glyphicon-edit"></span>Sửa
 															</a>
 															</td>';
@@ -77,7 +78,7 @@
 														?>
 
 														<td class="text-center">
-															<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/producer/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa Nhà cung cấp này ?')" role = "button">
+															<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/chinhsach/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa văn bản này ?')" role = "button">
 																<span class="glyphicon glyphicon-trash"></span>Xóa
 															</a>
 														</td>

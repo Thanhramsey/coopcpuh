@@ -1,8 +1,8 @@
 <div class="content-wrapper">
 	<section class="content-header">
-		<h1><i class="glyphicon glyphicon-text-background"></i> Thùng rác địa bàn</h1>
+		<h1><i class="glyphicon glyphicon-text-background"></i> Thùng rác văn bản</h1>
 		<div class="breadcrumb">
-			<a class="btn btn-primary btn-sm" href="admin/producer" role="button">
+			<a class="btn btn-primary btn-sm" href="admin/chinhsach" role="button">
 				<span class="glyphicon glyphicon-remove do_nos"></span> Thoát
 			</a>
 		</div>
@@ -29,25 +29,20 @@
 								<table class="table table-hover table-bordered">
 									<thead>
 										<tr>
-											<th class="text-center">ID</th>
-											<th>Tên địa bàn</th>
-											<th>Ngày đăng</th>
-											<th>Người đăng</th>
-											<th class="text-center">Khôi phục</th>
-											<th class="text-center">Xóa VV</th>
+										<th class="text-center">id</th>
+										<th class="text-center">Tên văn bản</th>
+										<th class="text-center">Cơ quan ban hành</th>
+										<th class="text-center" colspan="2">Thao tác</th>
 										</tr>
 									</thead>
 									<tbody>
 										<?php foreach ($list as $val): ?>
 										<tr>
-											<td class="text-center"><?php echo $val['id'] ?></td>
-											<td>
-												<a href="<?php echo base_url() ?>admin/producer/update/<?php echo $val['id'] ?>"><?php echo $val['name'] ?></a>
-											</td>
-											<td><?php echo $val['created_at'] ?></td>
-											<td><?php $name=$this->Muser->user_name($val['created_by']); echo $name; ?></td>
+											<td><?php echo $val['id'] ?></td>
+											<td><?php echo $val['name'] ?></td>
+											<td><?php echo $val['coquanbanhanh'] ?></td>
 											<td class="text-center">
-												<a class="btn btn-success btn-xs" href="admin/producer/restore/<?php echo $val['id'] ?>" role = "button">
+												<a class="btn btn-success btn-xs" href="admin/chinhsach/restore/<?php echo $val['id'] ?>" role = "button">
 													<span class="glyphicon glyphicon-edit"></span>Khôi phục
 												</a>
 											</td>
@@ -56,7 +51,7 @@
 												if($user['role']==1){
 													$cpnDel.='
 														<td class="text-center">
-															<a class="btn btn-danger btn-xs" href="admin/producer/delete/'.$val['id'].'" role = "button">
+															<a class="btn btn-danger btn-xs" href="admin/chinhsach/delete/'.$val['id'].'" role = "button">
 																<span class="glyphicon glyphicon-trash"></span>Xóa VV
 															</a>
 														</td>

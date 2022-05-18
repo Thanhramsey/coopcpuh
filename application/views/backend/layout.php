@@ -58,5 +58,13 @@
   <script src="public/js/bootstrap.js"></script>
   <!-- AdminLTE App -->
   <script src="public/js/app.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $("#loaivanban").change(function(){
+		// var data =
+      $("#loaivanban_name").val($("#loaivanban").find(":selected").text());
+    });
+  });
+</script>
 </body>
 </html>

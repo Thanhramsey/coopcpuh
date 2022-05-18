@@ -31,6 +31,7 @@ $route['search?(:any)/(:num)'] = 'search/index/$1';
 $route['account/orders/(:num)'] = 'thongtin/order';
 $route['account/orders/update/(:num)'] = 'thongtin/update/(:num)';
 $route['reset_password'] = 'thongtin/reset_password';
+$route['van-ban'] = 'vanban/index';
 
 $route['admin'] = 'admin/dashboard';
 

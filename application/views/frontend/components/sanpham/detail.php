@@ -278,29 +278,29 @@
 					</div>
 					<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 rating">
 						<label>
-							<input type="radio" name="stars" value="1" />
+							<input type="radio" name="starsrt" value="1" />
 							<span class="icon">★</span>
 						</label>
 						<label>
-							<input type="radio" name="stars" value="2" />
-							<span class="icon">★</span>
-							<span class="icon">★</span>
-						</label>
-						<label>
-							<input type="radio" name="stars" value="3" />
-							<span class="icon">★</span>
+							<input type="radio" name="starsrt" value="2" />
 							<span class="icon">★</span>
 							<span class="icon">★</span>
 						</label>
 						<label>
-							<input type="radio" name="stars" value="4" />
-							<span class="icon">★</span>
+							<input type="radio" name="starsrt" value="3" />
 							<span class="icon">★</span>
 							<span class="icon">★</span>
 							<span class="icon">★</span>
 						</label>
 						<label>
-							<input type="radio" name="stars" value="5" />
+							<input type="radio" name="starsrt" value="4" />
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+							<span class="icon">★</span>
+						</label>
+						<label>
+							<input type="radio" name="starsrt" value="5" />
 							<span class="icon">★</span>
 							<span class="icon">★</span>
 							<span class="icon">★</span>
@@ -456,7 +456,7 @@
 		var comment = $("#commentContent").val();
 		var userComment = $("#nguoi_gui").val();
 		var sdt = $("#sdt").val();
-		var star = $("input[name='stars']:checked").val();
+		var star = $("input[name='starsrt']:checked").val();
 		var validate = false;
 		if (comment === "" || userComment == "") {
 			if (comment == "") {
@@ -468,9 +468,6 @@
 			validate = true;
 		}
 		if (validate) {
-			if (star != "1" && star != "5") {
-				star = 4;
-			}
 			jQuery.ajax({
 				url: strurl,
 				type: 'POST',

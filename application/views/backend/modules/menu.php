@@ -38,7 +38,7 @@
 				</li>
 				<li class="treeview">
 					<a href="admin/chinhsach">
-						<i class="glyphicon glyphicon-book"></i> <span>Chính Sách</span>
+						<i class="glyphicon glyphicon-book"></i> <span>Văn bản, chính Sách</span>
 					</a>
 				</li>
 				<li class="treeview">
