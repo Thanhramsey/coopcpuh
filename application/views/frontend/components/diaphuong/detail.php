@@ -1,11 +1,11 @@
 <section id="product-all" class="collection">
-	<div class="banner-product">
+	<!-- <div class="banner-product">
 		<div class="container">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<img src="public/images/sp.png">
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="slider">
 		<div class="container">
 			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -15,7 +15,7 @@
 				<?php $this->load->view('frontend/modules/product-sale'); ?>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 product-content">
-				<div class="container" style="color:#0f9ed8">
+				<div class="container" style="color:#3a8701">
 					<h3 style="margin-top:10px"><?php echo $row['name'] ?><i style="font-size:20px; margin-left:5px" class="glyphicon glyphicon-ok-circle"></i></h3>
 				</div>
 				<div class="container">

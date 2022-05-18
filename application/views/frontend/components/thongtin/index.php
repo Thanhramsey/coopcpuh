@@ -52,7 +52,7 @@
                                     ?>
                                 </td>
                                 <td width="70">
-                                    <span> <a style="color: #0f9ed8;" href="account/orders/<?php echo $value['id'] ?>">Xem chi tiết</a></span>
+                                    <span> <a style="color: #3a8701;" href="account/orders/<?php echo $value['id'] ?>">Xem chi tiết</a></span>
                                 </td>
                                 <td width="70">
                                     <a style="color: red;" href="thongtin/update/<?php echo $value['id'];?>" onclick="return confirm('Xác nhận hủy đơn hàng này ?')">Hủy đơn hàng</a>
@@ -111,7 +111,7 @@
                                 ?>
                             </td>
                             <td width="70">
-                                <span> <a style="color: #0f9ed8;" href="account/orders/<?php echo $value['id'] ?>">Xem chi tiết</a></span>
+                                <span> <a style="color: #3a8701;" href="account/orders/<?php echo $value['id'] ?>">Xem chi tiết</a></span>
                             </td>
                         </tr>
                     <?php endforeach; ?>

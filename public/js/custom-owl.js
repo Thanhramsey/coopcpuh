@@ -4,9 +4,12 @@ $('.owl-carousel-slider').owlCarousel({
     autoplay: true,
     nav: false,
     navigation: false,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 2000,
+    smartSpeed: 1500,
+	animateIn: 'fadeIn',
+	animateOut:'fadeOut',
     items: 1,
-    dots: true
+    dots: false
 })
 $('.owl-carousel-product').owlCarousel({
     loop: true,

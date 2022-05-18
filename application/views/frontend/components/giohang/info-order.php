@@ -103,7 +103,7 @@ if (!$this->session->userdata('cart')) {
 											<tr>
 												<td class="width30 text-right td-right-order">Mã giảm giá (nếu có):</td>
 												<td>
-													<input id="coupon" style="border-radius: 5px; border-color: #0f9ed8;" type="text" class="form-control" placeholder="Mã giảm giá" name="coupon">
+													<input id="coupon" style="border-radius: 5px; border-color: #3a8701;" type="text" class="form-control" placeholder="Mã giảm giá" name="coupon">
 													<div class="error" id="result_coupon"></div>
 												</td>
 												<td colspan="1">

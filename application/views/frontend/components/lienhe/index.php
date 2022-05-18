@@ -55,15 +55,15 @@
 			<h1 style="color: black">Thông tin liên hệ</h1>
 			<ul class="list-unstyled">
 				<li class="clearfix">
-					<i class="fa fa-map-marker fa-1x" style="color:#0f9ed8; padding: 20px; "></i>
+					<i class="fa fa-map-marker fa-1x" style="color:#3a8701; padding: 20px; "></i>
 					<span style="color: black"> Thị trấn Nhơn Hoà, Huyện Chư Pưh , Tỉnh Gia Lai</span><br>
 				</li>
 				<li class="clearfix">
-					<i class="fa fa-phone fa-1x" style="color:#0f9ed8;padding: 20px;  "></i>
+					<i class="fa fa-phone fa-1x" style="color:#3a8701;padding: 20px;  "></i>
 					<span style="color: black">(0269) 3 850 009</span>
 				</li>
 				<li class="clearfix">
-					<i class="fa fa-envelope fa-1x " style="color:#0f9ed8; padding: 20px; "></i>
+					<i class="fa fa-envelope fa-1x " style="color:#3a8701; padding: 20px; "></i>
 					<span style="color: black"><a href="mailto:ocopchupuhgl@gmail.com">ocopchupuhgl@gmail.com</a></span>
 				</li>
 			</ul>

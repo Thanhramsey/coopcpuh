@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class="container" style="margin-bottom: 20px;">
-    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 10px 10px">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #3a8701; padding: 10px 10px">
         <?php
         $product_sale = $this->Mproduct->product_sale(10);
         foreach ($product_sale as $row) :?>
@@ -75,7 +75,7 @@
     </div>
 </div>
 <div class="container" style="margin-bottom: 20px;">
-    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 10px 10px">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #3a8701; padding: 10px 10px">
         <?php
         $product_tiemnang = $this->Mproduct->product_tiemnang(10);
         foreach ($product_tiemnang as $row) :?>
@@ -130,7 +130,7 @@
     </div>
 </div>
 <div class="container" style="margin-bottom: 20px;">
-    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #0f9ed8; padding: 10px 10px">
+    <div class="owl-carousel owl-carousel-product owl-theme" style="border: 1px solid #3a8701; padding: 10px 10px">
         <?php
         $product_sale = $this->Mproduct->product_selling(10);
         foreach ($product_sale as $row) :?>

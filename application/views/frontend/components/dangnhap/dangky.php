@@ -50,7 +50,7 @@
 								<div class="col_full nobottommargin">
 									<button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" type="submit" style="margin-bottom: 20px">Đăng ký</button>
 									<ul>
-										<li class="right" style="font-size: 18px;">Nếu đã có tài khoản, hãy <a href="<?php echo base_url()?>dang-nhap" style="font-size: 19px; color: #0f9ed8;">Đăng nhập</a></li>
+										<li class="right" style="font-size: 18px;">Nếu đã có tài khoản, hãy <a href="<?php echo base_url()?>dang-nhap" style="font-size: 19px; color: #3a8701;">Đăng nhập</a></li>
 									</ul>
 								</div>
 							</form>

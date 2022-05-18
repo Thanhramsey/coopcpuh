@@ -1,6 +1,6 @@
 
 <section id="header">
-	<nav class="navbar" style="z-index: 9999; background:#0f9ed8">
+	<nav class="navbar" style="z-index: 9999; background:#3a8701">
 		<div class="container">
 			<div class="col-md-12 col-lg-12">
 				<div class="navbar-header">
@@ -53,8 +53,26 @@
                 		}
                 		?>
                 	</ul>
+					<ul class="nav navbar navbar-nav pull-left" id="nav2">
+					<li><div style="padding:10px 0px; color:#fff"><i class="glyphicon glyphicon-calendar"></i></div></li>
+					<li><div style="padding:10px 10px 10px 5px; color:#fff" id="runningDay"></div></li>
+					<li><div style="padding:10px 0px; color:#fff; margin-left:5px"><i class="glyphicon glyphicon-time"></i></div></li>
+					<li><div style="padding:10px 10px 10px 5px; color:#fff" id="runningTime"></div></li>
+					</ul>
                 </div>
             </div>
         </div>
     </nav>
 </section>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		setInterval(function() {
+			var dateObj = new Date();
+			console.log(dateObj);
+			$('#runningDay').html(new Intl.DateTimeFormat(['ban', 'id']).format(dateObj));
+			$('#runningTime').html(dateObj.toLocaleTimeString());
+		}, 1000);
+	});
+</script>
