@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2022 at 12:08 PM
+-- Generation Time: May 18, 2022 at 12:13 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -74,15 +74,17 @@ CREATE TABLE `db_chinhsach` (
   `updated_at` datetime NOT NULL,
   `updated_by` varchar(255) CHARACTER SET utf8 NOT NULL,
   `trash` tinyint(1) NOT NULL DEFAULT 1,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `loaivanban_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `db_chinhsach`
 --
 
-INSERT INTO `db_chinhsach` (`id`, `sohieu`, `loaivanban`, `coquanbanhanh`, `linhvuc`, `trichyeu`, `file`, `ngaybanhanh`, `created_at`, `created_by`, `updated_at`, `updated_by`, `trash`, `status`) VALUES
-(1, '01/QD-BCDTW', 2, 'BCĐ Trung ương	', 'OCOP', 'Ban Chỉ đạo Trung ương các Chương trình Mục tiêu quốc gia ban hành Quyết định số 01/QĐ-BCĐTW ngày 22/8/2018 về Kế hoạch triển khai Chương trình Mỗi xã một sản phẩm giai đoạn 2018 - 2020.', '_FilesUpload_01-QD-BCDTW432159552316.pdf', '2022-05-17 11:42:04', '2022-05-17 11:42:04', 'mtp', '2022-05-17 11:42:04', 'mtp', 1, 1);
+INSERT INTO `db_chinhsach` (`id`, `sohieu`, `loaivanban`, `coquanbanhanh`, `linhvuc`, `trichyeu`, `file`, `ngaybanhanh`, `created_at`, `created_by`, `updated_at`, `updated_by`, `trash`, `status`, `name`, `loaivanban_name`) VALUES
+(1, '01/QD-BCDTW', 3, 'BCĐ Trung ương	', 'OCOP', 'Ban Chỉ đạo Trung ương các Chương trình Mục tiêu quốc gia ban hành Quyết định số 01/QĐ-BCĐTW ngày 22/8/2018 về Kế hoạch triển khai Chương trình Mỗi xã một sản phẩm giai đoạn 2018 - 2020.', '_FilesUpload_01-QD-BCDTW432159552316.pdf', '2022-05-17 11:42:04', '2022-05-17 11:42:04', 'mtp', '2022-05-18 17:05:52', '1', 1, 1, 'Văn bản chỉ đạo 001', 'Nghị quyết');
 
 -- --------------------------------------------------------
 
@@ -996,7 +998,12 @@ INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `c
 (9, 'sản phẩm 10 điểm', 31, 'lê ca', '0969123456', '2022-05-16 16:18:13', NULL, 5, 1),
 (10, 'ồ dé', 32, 'tipi', 'tippi@gmail.cpm', '2022-05-16 16:22:11', NULL, 5, 1),
 (11, 'gà', 35, 'Chương', '012939123', '2022-05-16 17:05:20', NULL, 1, 1),
-(12, 'xài rất sướng', 45, 'tuấn', '01223123', '2022-05-17 08:25:36', NULL, 5, 1);
+(12, 'xài rất sướng', 45, 'tuấn', '01223123', '2022-05-17 08:25:36', NULL, 5, 1),
+(13, 'cùi', 33, 'chương', '0123123', '2022-05-18 14:27:17', NULL, 4, 1),
+(14, 'gà', 33, 'tuấn', '123123', '2022-05-18 14:27:33', NULL, 4, 1),
+(15, 'quắt', 33, 'aa', '12123', '2022-05-18 14:27:42', NULL, 4, 1),
+(16, 'ghê ta', 33, 'thang', '123123', '2022-05-18 14:28:49', NULL, 4, 1),
+(17, 'khó hiểu', 33, 'tttt', '123123321', '2022-05-18 14:29:17', NULL, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -1163,7 +1170,7 @@ INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sort
 (44, 2, 'hehehe', 'hehehe', '17ae35b60ecf7bec8eee6fbeedcddc79.jpg', '', 'addasdasd', '<p>10000</p>\r\n', 1, 1, 0, 0, 11000, 11000, '2022-05-10 16:50:24', '1', '2022-05-16 14:57:34', '1', 1, 1, 11, '62970a61cab086aa6aa42d3ab53f3c38.jpg', '45c577a40287a03a1d6fd25c324d79c7.jpg', NULL, 1),
 (45, 1, 'Cao dán con heo ', 'cao-dan-con-heo', 'dbad9cf63d3b844538c94f6d8fac3d69.jpg', '', 'Cao dán con heo', '<p>Cao d&aacute;n con heo&nbsp;</p>\r\n\r\n<p>si&ecirc;u đỉnh&nbsp;</p>\r\n\r\n<p>si&ecirc;u chất</p>\r\n\r\n<p><span style=\"color:#e74c3c\"><strong>0989744</strong></span></p>\r\n', 1, 1000, 0, 0, 150000, 150000, '2022-05-17 08:24:38', '13', '2022-05-17 08:36:02', '13', 1, 1, 13, 'e0edb91840a2e3715e2b1f77c5ac9b2c.jpg', '1af0d8db32bbf120de9554bf4585af2a.jpg', NULL, 0),
 (46, 3, 'bánh mì mtp', 'banh-mi-mtp', '27c53ed0d8525c8ce4c9ee18b61633a8.jpg', '33577c122229a88342cd58f6a56b8474.jpg', 'bánh mì mtp', '<p><strong>b&aacute;nh m&igrave; mtp</strong></p>\r\n', 2, 100, 0, 0, 3000, 3000, '2022-05-17 08:36:55', '13', '2022-05-17 08:36:55', '13', 1, 1, 13, '', NULL, NULL, 0),
-(47, 3, 'bánh bao soobin', 'banh-bao-soobin', '3906cf856636585397f68c9a72a596e6.jpg', '22411a847473b651b9629d92d61b747b.jpg', 'bánh bao soobin', '<p>b&aacute;nh bao soobin</p>\r\n', 6, 199, 10, 0, 10000, 10000, '2022-05-17 08:38:02', '13', '2022-05-17 08:38:02', '13', 1, 1, 13, '', NULL, NULL, 0);
+(47, 3, 'bánh bao soobin', 'banh-bao-soobin', '3906cf856636585397f68c9a72a596e6.jpg', '22411a847473b651b9629d92d61b747b.jpg', 'bánh bao soobin', '<p>b&aacute;nh bao soobin</p>\r\n', 6, 199, 10, 0, 10000, 10000, '2022-05-17 08:38:02', '13', '2022-05-17 08:38:02', '1', 0, 1, 13, '', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -1350,6 +1357,12 @@ ALTER TABLE `db_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `db_chinhsach`
+--
+ALTER TABLE `db_chinhsach`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `db_config`
 --
 ALTER TABLE `db_config`
@@ -1463,6 +1476,12 @@ ALTER TABLE `db_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `db_chinhsach`
+--
+ALTER TABLE `db_chinhsach`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `db_config`
 --
 ALTER TABLE `db_config`
@@ -1496,7 +1515,7 @@ ALTER TABLE `db_discount`
 -- AUTO_INCREMENT for table `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `db_order`

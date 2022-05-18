@@ -119,8 +119,6 @@ class Chinhsach extends CI_Controller {
             if ( $this->upload->do_upload('file_pdf')){
                 $data = $this->upload->data();
                 $mydata['file']=$data['file_name'];
-            }else{
-                $mydata['file']='';
             }
 			$this->Mchinhsach->chinhsach_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật văn bản thành công');

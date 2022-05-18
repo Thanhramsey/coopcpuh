@@ -27,7 +27,7 @@
 									<td><?php echo $row['coquanbanhanh'] ?></td>
 									<td><?php echo $row['linhvuc'] ?></td>
 									<td class="text-center">
-										<a href="<?php echo base_url() ?>public/images/chinhsach/<?php echo $row['file'] ?>" download>
+										<a href="<?php echo base_url() ?>public/images/chinhsach/<?php echo $row['file'] ?>">
 											Download
 										</a>
 									</td>
