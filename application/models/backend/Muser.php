@@ -55,6 +55,12 @@ class Muser extends CI_Model {
         $query = $this->db->get($this->table, $limit, $first);
         return $query->result_array();
     }
+	public function user_trash_id($id){
+        $this->db->where('trash', 0);
+        $this->db->where('id', $id);
+        $query = $this->db->get($this->table);
+        return $query->row_array();
+    }
     public function user_trash_count(){
         $this->db->where('trash', 0);
         $query = $this->db->get($this->table);
@@ -152,4 +158,15 @@ class Muser extends CI_Model {
         return count($query->result_array());
     }
 
+	//Xóa
+    public function user_delete_im($id,$name){
+		$filename = $name;
+		if (unlink("public/images/admin/$filename")) {
+			echo 'The file ' . $filename . ' was deleted successfully!';
+		} else {
+			echo 'There was a error deleting the file ' . $filename;
+		}
+        $this->db->where('id',$id);
+        $this->db->delete($this->table);
+	}
 }

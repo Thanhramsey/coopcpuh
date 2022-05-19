@@ -109,4 +109,12 @@ class Mproduct extends CI_Model {
             return $this->db->get();
     }
 
+
+	//Xóa
+	public function product_delete_user($userId)
+	{
+		$this->db->where('userId',$userId);
+		$this->db->delete($this->table);
+	}
+
 }

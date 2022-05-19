@@ -299,7 +299,22 @@ class Product extends CI_Controller
 	{
 		$this->load->helper('file');
 		$row = $this->Mproduct->product_detail($id);
-		delete_files(base_url("public/images/products" . $row['img']));
+		if (!empty($row['avatar'])) {
+			delete_files(base_url("public/images/products" . $row['avatar']));
+		}
+		else if (!empty($row['img'])) {
+			delete_files(base_url("public/images/products" . $row['img']));
+		}
+		else if (!empty($row['img2'])) {
+			delete_files(base_url("public/images/products" . $row['img2']));
+		}
+		else if (!empty($row['img3'])) {
+			delete_files(base_url("public/images/products" . $row['img3']));
+		}
+		else if (!empty($row['img4'])) {
+			delete_files(base_url("public/images/products" . $row['img4']));
+		}
+
 		$this->Mproduct->product_delete($id);
 		$this->session->set_flashdata('success', 'Xóa sản phẩm thành công');
 		redirect('admin/product/recyclebin', 'refresh');

@@ -90,7 +90,7 @@
                                             <div class="lt-product-group-image">
                                                 <a id = "zoomOut" href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" >
 												<figure>
-                                                    <img class="img-p"src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
+                                                    <img  width="225" height="210" class="img-sp"src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
 												</figure>
                                                 </a>
 
@@ -101,38 +101,33 @@
                                                 <?php endif; ?>
                                             </div>
 
-                                            <div class="lt-product-group-info">
-                                                <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
+                                            <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
                                                     <h3><?php echo $sp['name'] ?></h3>
                                                 </a>
 												<div>
 												<span class="sell_num">Đã bán <?php echo(number_format($sp['number_buy'])); ?></span>
 												</div>
-                                                <div class="price-box">
-                                                    <?php if($sp['sale'] > 0) :?>
-
-                                                        <p class="old-price">
-                                                            <span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
-                                                        </p>
-                                                        <p class="special-price">
-                                                            <span class="price"><?php echo(number_format($sp['price_sale'])); ?>₫</span>
-                                                        </p>
-                                                        <?php else: ?>
-                                                           <p class="old-price">
-                                                            <span class="price" style="color: #fff"><?php echo(number_format($sp['price'])); ?>₫</span>
-                                                        </p>
-                                                        <p class="special-price">
-                                                            <span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
-                                                        </p>
-                                                    <?php endif;?>
-                                                </div>
+												<?php if($sp['sale'] > 0) :?>
+												<p class="old-price">
+													<span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
+												</p>
+												<p class="special-price">
+													<span class="price"><?php echo(number_format($sp['price_sale'])); ?>₫</span>
+												</p>
+												<?php else: ?>
+												<p class="old-price">
+													<span class="price" style="color: #fff"><?php echo(number_format($sp['price'])); ?>₫</span>
+												</p>
+												<p class="special-price">
+													<span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
+												</p>
+												<?php endif;?>
 												<div class="lienhe">
 													<a href="<?php echo base_url() ?>doanhngiep/detail/<?php $producer = $this->Muser->user_detail_id_fg($sp['userId']);echo $producer['id'] ?>" title="">
 														<h3>Liên hệ</h3>
 													</a>
 												</div>
                                                 <div class="clear"></div>
-                                            </div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>

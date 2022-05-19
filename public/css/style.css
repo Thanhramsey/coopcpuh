@@ -925,7 +925,7 @@ span.small-text {font-size: 14px;color: #888;}
 	margin:6px auto 24px;
 }
 .lt-product-group-image a {
-	padding: 10px;
+	padding: 0px;
 	/* display: inline-block; */
 }
 .img-p{
@@ -943,10 +943,10 @@ span.small-text {font-size: 14px;color: #888;}
 }
 .img-sp{
 	display: block;
-	margin: 17px auto;
+	/* margin: 17px auto;
 	width: 100% !important;
 	height:100% !important;
-	max-height: 190px;
+	max-height: 190px; */
 	transition: all ease 200ms;
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
@@ -959,9 +959,9 @@ span.small-text {font-size: 14px;color: #888;}
 	position: relative;
 	/* border-left: none;
 	border-top: none; */
-	height:310px;
-	max-height: 330px;
-	padding: 10px 0px;
+	height:340px;
+	max-height: 341px;
+	padding: 10px 10px 20px 10px;
 	box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
 	border-radius: 6px;
 	width: 90%;
@@ -1023,6 +1023,13 @@ span.text-giam-percent {
 a {
 	color: #000;
 	text-decoration: none;
+}
+.product-lt h3 {
+	font-size: 13px;
+	color: #3a8701;
+	font-weight: 700;
+	height: auto;
+	margin: 0;
 }
 .lt-product-group-info h3 {
 	font-size: 13px;
@@ -2714,10 +2721,10 @@ a.fright {
   .owl-carousel-product.owl-carousel.owl-drag .owl-item .lt-product-group-image{
 	height: 200px;
   }
-  .lt-product-group-info a:hover{
+  .product-lt a:hover{
 	  text-decoration: none;
   }
-  .lt-product-group-info a h3:hover{
+  .product-lt a h3:hover{
 	color: #ff6300;
   }
   .sell_num{
@@ -2742,10 +2749,11 @@ a.fright {
 	color : #fff;
   }
   .lt-product-group-image{
-	  height:200px
+	  height:210px;
+	  margin-bottom:10px
   }
   .lt-product-search-image{
-	height:220px
+	height:230px
   }
 
   .tb-vanban th{

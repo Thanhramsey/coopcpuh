@@ -44,7 +44,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											<?php 
+											<?php
 											$stt = 0; $total = 0;
 											foreach ($data as $row) :
 												$product = $this->Mproduct->product_detail($row['productid']);												?>
@@ -54,7 +54,7 @@
 													<td class="text-center"><?php echo $row['count']; ?></td>
 													<td><?php echo number_format($row['price']); ?>₫</td>
 													<td class="text-right">
-														<?php 
+														<?php
 														$price = $row['price'] * $row['count'];
 														echo number_format($price);
 														$total += $price;
@@ -67,23 +67,23 @@
 											<tr>
 												<td colspan="6" class="text-right" style="border: none; font-size: 1.1em;">Tổng cộng: <?php echo number_format($total); ?>₫</td>
 											</tr>
-											<?php 
+											<!-- <?php
 											if($coupon != 0)
 											{
 												echo '<tr>
 												<td colspan="6" class="text-right" style="border: none; font-size: 1.1em;">Voucher giảm giá : '.number_format($coupon).'₫</td>
 											</tr>';
 											}
-											?>
-											<tr>
+											?> -->
+											<!-- <tr>
 												<td colspan="6" class="text-right" style="border: none; font-size: 0.9em;"><i>Phí vận chuyển: </i>
 													<?php echo number_format($price_ship); ?>₫
 												</td>
-											</tr>
+											</tr> -->
 											<tr>
-												<td colspan="6" class="text-right" style="border: none; color: red; font-size: 1.3em;">Thành tiền: <?php echo number_format($total+$price_ship-$coupon);?>₫</td>
+												<td colspan="6" class="text-right" style="border: none; color: red; font-size: 1.3em;">Thành tiền: <?php echo number_format($total);?>₫</td>
 											</tr>
-											
+
 											<tr>
 												<td class="text-right" colspan="6">
 													<a class="btn btn-primary btn-md" role="button" onclick="window.print()">
@@ -100,12 +100,12 @@
 										</ul>
 									</div>
 								</div>
-							</form>                    
+							</form>
 						</div>
 						<!--/.ND-->
 					</div>
 				</div><!-- /.box -->
 			</div><!-- /.col -->
 		</div><!-- /.row -->
-	</section><!-- /.content -->	      	
+	</section><!-- /.content -->
 </div>

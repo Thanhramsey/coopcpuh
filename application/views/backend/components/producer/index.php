@@ -46,7 +46,7 @@
 												<th class="text-center" style="width:20px">ID</th>
 												<th class="text-center">Code</th>
 												<th class="text-center">Name</th>
-												<th class="text-center">Keyword</th>
+												<!-- <th class="text-center">Keyword</th> -->
 												<th class="text-center">Trạng thái</th>
 												<th class="text-center" colspan="2">Thao tác</th>
 											</tr>
@@ -57,7 +57,7 @@
 													<td class="text-center"><?php echo $row['id'] ?></td>
 													<td><?php echo $row['code'] ?></td>
 													<td><?php echo $row['name'] ?></td>
-													<td><?php echo $row['keyword'] ?></td>
+													<!-- <td><?php echo $row['keyword'] ?></td> -->
 													<td class="text-center">
 														<a href="<?php echo base_url() ?>admin/producer/status/<?php echo $row['id'] ?>">
 															<?php if($row['status']==1):?>

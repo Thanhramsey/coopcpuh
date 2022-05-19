@@ -32,7 +32,7 @@
 													<div class="product-lt">
 														<div class="lt-product-search-image">
 															<a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
-																<img class="img-sp" src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
+																<img width="225" height="210" class="img-t" src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
 															</a>
 															<?php if ($sp['sale'] > 0) : ?>
 																<div class="giam-percent">
@@ -62,6 +62,11 @@
 																		<span class="price"><?php echo (number_format($sp['price'])); ?>₫</span>
 																	</p>
 																<?php endif; ?>
+																<div class="lienhe">
+																	<a href="<?php echo base_url() ?>doanhngiep/detail/<?php $producer = $this->Muser->user_detail_id_fg($sp['userId']);echo $producer['id'] ?>" title="">
+																		<h3>Liên hệ</h3>
+																	</a>
+																</div>
 															</div>
 															<div class="clear"></div>
 														</div>
@@ -75,7 +80,7 @@
 													<div class="product-lt">
 														<div class="lt-product-search-image">
 															<a href="doanhngiep/detail/<?php echo $sp['id'] ?>" title="<?php echo $sp['fullname'] ?>">
-																<img class="img-sp" src="public/images/admin/<?php echo $sp['img'] ?>" alt="">
+																<img width="225" height="210" class="img-t" src="public/images/admin/<?php echo $sp['img'] ?>" alt="">
 															</a>
 														</div>
 														<div class="lt-product-star">
@@ -119,7 +124,7 @@
 													<div class="product-lt">
 														<div class="lt-product-search-image">
 															<a href="diaphuong/detail/<?php echo $sp['id'] ?>" title="<?php echo $sp['name'] ?>">
-																<img class="img-sp" src="public/images/xa/<?php echo $sp['img'] ?>" alt="">
+																<img  width="225" height="210" class="img-t" src="public/images/xa/<?php echo $sp['img'] ?>" alt="">
 															</a>
 														</div>
 
