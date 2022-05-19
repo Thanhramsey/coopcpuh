@@ -36,7 +36,7 @@
 											</td>
 											<td>
 												<span class="amount">
-													<?php 
+													<?php
 													if($row['price_sale'] > 0){
 														echo (number_format($row['price_sale'])).' VNĐ';
 													}else{
@@ -52,7 +52,7 @@
 											</td>
 											<td>
 												<span class="amount">
-													<?php 
+													<?php
 													if($row['price_sale'] > 0){
 														echo (number_format($row['price_sale']*$value)).' VNĐ';
 													}else{
@@ -71,7 +71,7 @@
 							<button class="btn" onclick="window.location.href='san-pham'"> <a href="<?php echo base_url() ?>san-pham">Tiếp tục mua hàng</a></button>
 						</div>
 						<?php $total = 0; ?>
-						<?php foreach ($cart as $key => $value) : 
+						<?php foreach ($cart as $key => $value) :
 							$row = $this->Mproduct->product_detail_id($key);?>
 							<?php
 							if($row['price_sale'] > 0)
@@ -79,7 +79,7 @@
 							else
 								$sum = $row['price'] * $value;
 							$total += $sum;
-							?>	
+							?>
 						<?php endforeach; ?>
 						<div class="col-xs-12 col-sm-12 col-md-4">
 							<div class="clearfix btn-submit" style="padding-left: 10px;margin-top: 20px;">
@@ -95,7 +95,7 @@
 										<tr>
 											<td colspan="2"><h5>Nếu đặt online Bạn hãy đồng ý với điều khoản sử dụng & hướng dẫn hoàn trả.</h5></td>
 										</tr>
-										 
+
 										<tr>
 
 											<td colspan="2">
@@ -115,7 +115,7 @@
 			<?php else: ?>
 				<div class="cart-info">
 					Chưa có sản phẩm nào trong giỏ hàng !
-					<br>	
+					<br>
 					<button class="btn" onclick="window.location.href='san-pham'"> Tiếp tục mua hàng</button>
 				</div>
 

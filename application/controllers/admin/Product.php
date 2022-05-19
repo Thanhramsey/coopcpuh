@@ -89,7 +89,7 @@ class Product extends CI_Controller
 			);
 			$config = array();
 			$config['upload_path']   = './public/images/products/';
-			$config['allowed_types'] = 'jpg|png|gif';
+			$config['allowed_types'] = 'jpg|png|gif|jpeg';
 			$config['max_size'] = 2000;
 			$config['encrypt_name'] = TRUE;
 			$name_array = array();
@@ -113,7 +113,7 @@ class Product extends CI_Controller
 				$mydata['img']=$name_array[0];
 				$mydata['img2']=$name_array[1];
 				$mydata['img3']=$name_array[2];
-				$mydata['img4']=$name_array[4];
+				$mydata['img4']=$name_array[3];
 			}else if(count($name_array)==3){
 				$mydata['img']=$name_array[0];
 				$mydata['img2']=$name_array[1];
@@ -191,7 +191,7 @@ class Product extends CI_Controller
 			);
 			$config = array();
 			$config['upload_path']   = './public/images/products/';
-			$config['allowed_types'] = 'jpg|png|gif';
+			$config['allowed_types'] = 'jpg|png|gif|jpeg';
 			$config['max_size'] = 2000;
 			$config['encrypt_name'] = TRUE;
 			$name_array = array();
