@@ -8,7 +8,7 @@
 						<ul class="list-unstyled">
 							<li class="clearfix">
 								<i class="fa fa-map-marker"></i>
-								<span>Thị trấn Nhơn Hoà, Huyện Chư Pưh , Tỉnh Gia Lai</span>
+								<span>Thị trấn Nhơn Hoà, Huyện Chư Pưh, Tỉnh Gia Lai</span>
 							</li>
 							<li class="clearfix">
 								<i class="fa fa-phone"></i>
@@ -25,10 +25,10 @@
 				<div class="col-xs-12 col-sm-4">
 					<div class="f-contact" style="padding-top:20px; padding-left: 20px">
 						<h3 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h3>
-						<ul class="list-unstyled linklists">
-							<li><a href="#">Hướng dẫn thanh toán</a></li>
-							<li><a href="#">Hướng dẫn đặt hàng</a></li>
-							<li><a href="#">Điều khoản</a></li>
+						<ul >
+							<li><a href="chinhsachbaomat">Chính sách bảo mật</a></li>
+							<li><a href="dieukhoanthamgia">Điều khoản tham gia</a></li>
+							<li><a href="questions">Câu hỏi thường gặp</a></li>
 						</ul>
 					</div>
 				</div>

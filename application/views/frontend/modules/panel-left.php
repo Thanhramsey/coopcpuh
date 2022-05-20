@@ -87,7 +87,15 @@
 		<li class="pull-left"><a href="san-pham">Sản phẩm</a></li>
 		<li class="pull-left"><a href="tin-tuc/1">Tin tức</a></li>
 		<li class="pull-left"><a href="van-ban">Chính Sách</a></li>
-		<li class="pull-left"><a href="lien-he">Liên hệ</a></li>
+		<li class="dropdown pull-left">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Liên hệ, thông tin <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li class="sub-link"><a href="lien-he">Liên hệ</a></li>
+				<li class="sub-link"><a href="chinhsachbaomat">Chính sách bảo mật</a></li>
+				<li class="sub-link"><a href="dieukhoanthamgia">Điều khoản tham gia</a></li>
+				<li class="sub-link"><a href="questions">Câu hỏi thường gặp</a></li>
+			</ul>
+		</li>
 	</ul>
 </div>
 </div>

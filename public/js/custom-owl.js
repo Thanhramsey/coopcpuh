@@ -9,7 +9,7 @@ $('.owl-carousel-slider').owlCarousel({
 	animateIn: 'fadeIn',
 	animateOut:'fadeOut',
     items: 1,
-    dots: false
+    dots: true
 })
 $('.owl-carousel-product').owlCarousel({
     loop: true,
@@ -18,6 +18,7 @@ $('.owl-carousel-product').owlCarousel({
     nav: false,
     navigation: false,
     autoplayTimeout: 2500,
+	dots:true,
     responsive: {
         0: {
             items: 2,

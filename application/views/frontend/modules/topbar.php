@@ -68,10 +68,12 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		setInterval(function() {
-			var dateObj = new Date();
-			$('#runningDay').html(new Intl.DateTimeFormat(['ban', 'id']).format(dateObj));
-			$('#runningTime').html(dateObj.toLocaleTimeString());
-		}, 1000);
+		var dateObj = new Date();
+		$('#runningDay').html(new Intl.DateTimeFormat(['ban', 'id']).format(dateObj));
+		$('#runningTime').html(dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+		// setInterval(function() {
+		// 	$('#runningDay').html(new Intl.DateTimeFormat(['ban', 'id']).format(dateObj));
+		// 	$('#runningTime').html(dateObj.toLocaleTimeString());
+		// }, 60000);
 	});
 </script>

@@ -132,6 +132,7 @@
 				dataType: 'json',
 				data: {id: id, sl:sl},
 				success: function(data) {
+					console.log(data);
 					document.location.reload(true);
 				}
 			});

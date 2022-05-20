@@ -43,5 +43,23 @@ class Lienhe extends CI_Controller {
 	}
 
 
+	public function questions()
+	{
+		$this->data['title']="OCOP CHƯPƯH - Liên hệ";
+		$this->data['view']='questions';
+		$this->load->view('frontend/layout',$this->data);
+	}
+	public function dieukhoanthamgia()
+	{
+		$this->data['title']="OCOP CHƯPƯH - Liên hệ";
+		$this->data['view']='dieukhoanthamgia';
+		$this->load->view('frontend/layout',$this->data);
+	}
+	public function chinhsachbaomat()
+	{
+		$this->data['title']="OCOP CHƯPƯH - Liên hệ";
+		$this->data['view']='chinhsachbaomat';
+		$this->load->view('frontend/layout',$this->data);
+	}
 }
 
