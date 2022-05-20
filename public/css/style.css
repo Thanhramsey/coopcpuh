@@ -1376,7 +1376,7 @@ a {
 }
 .sectin-title {
 	text-align: center;
-	color: #000;
+	color: #3a8701;
 	font-size: 30px;
 }
 .title {
@@ -1389,7 +1389,7 @@ a {
 	bottom: -10px;
 	right: 44%;
 	width: 131px;
-	border: 2px solid rgba(119, 208, 228, 0.96);
+	border: 2px solid #ff6300;
 }
 .latest{
 	overflow: hidden;
@@ -2529,12 +2529,12 @@ a.fright {
 .tintuc-sp {
 	font-size: 18px;
     font-weight: bold;
-    color: #252525;
+    color: #3a8701;
     display: inline-block;
     text-transform: uppercase;
     line-height: normal;
     padding: 14px 0px;
-    border-bottom: 3px solid #3a8701;
+    border-bottom: 3px solid #ff6300;
     margin-bottom: -2px;
     position: relative;
     margin: 0px;
@@ -2801,3 +2801,55 @@ a.fright {
 .owl-dots{
 	text-align: center;
 }
+
+.facebook{
+	position: absolute;
+    right: 20px;
+    top: 220px;
+    background: #246faf;
+    padding: 12px 20px;
+    text-align: center;
+    margin: 0 0 0 0;
+    cursor: pointer;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    border-radius: 8px;
+}
+.dangky {
+    background: url(../images/br-dangky.png) no-repeat center right;
+    background-size: cover;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    margin-top: 20px;
+}
+.dangky .btn-dk {
+    background-color: #ffdc00;
+    display: inline-block;
+    padding: 5px 10px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+.dangky .btn-dk:hover {
+    text-decoration: none;
+    background-color: #ffe757;
+}
+.btn-dk:hover {
+    color: #fff;
+    background-color: #ff9700;
+}
+.content-dk p {
+    margin-bottom: 0px;
+    font-size: 13px;
+    line-height: 22px;
+}
+.content-dk {
+    margin-top: 15px;
+	padding: 0px 15px;
+}
+

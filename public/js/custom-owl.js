@@ -39,6 +39,7 @@ $('.owl-carousel-product-cl').owlCarousel({
     nav: false,
     navigation: false,
     autoplayTimeout: 2500,
+	dots:true,
     responsive: {
         0: {
             items: 2,

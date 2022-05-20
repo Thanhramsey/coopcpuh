@@ -15,7 +15,7 @@
                 echo "OCOP-Chư Pưh Chương trình mỗi xã một sản phẩm";
         ?>
     </title>
-    <link rel="icon" type="image/x-icon" href="public/images/cart2.png">
+    <link rel="icon" type="image/x-icon" href="public/images/favicon.png">
     <link href="public/css/bootstrap.css" rel="stylesheet">
     <link href="public/css/fontawesome.css" rel="stylesheet">
     <link href="public/css/lte.css" rel="stylesheet">
@@ -98,7 +98,8 @@
 		<script src="public/js/jquery.zoom.js"></script>
 		<script src="public/js/jquery.zoom.min.js"></script>
 		<div class='scrolltop'>
-        <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+        	<div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
         </div>
+		<div class='facebook icon'><a target="_blank"	 href="https://www.facebook.com/ChuPuhDistrict"><i style="color:#fff" class="fab fa-2x fa-facebook-f"></i></a></div>
     </body>
 </html>
