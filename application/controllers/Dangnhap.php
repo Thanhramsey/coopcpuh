@@ -10,6 +10,7 @@ class Dangnhap extends CI_Controller {
         $this->load->model('frontend/Mcoupon');
         $this->load->model("frontend/Mproduct");
 		$this->load->model('frontend/Mproducer');
+		$this->load->model('frontend/Mconfig');
 		$this->load->model('backend/Muser');
         $this->data['com']='dangnhap';
     }
@@ -83,11 +84,11 @@ class Dangnhap extends CI_Controller {
 
             $newcoupon=array(
                 'code' => strtoupper(random_string('alnum', 12)),
-                'discount' => '100000',
+                'discount' => '30000',
                 'limit_number' => '1',
                 'number_used' => '0',
                 'expiration_date' => $todaylimit,
-                'description' => 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công',
+                'description' => 'Mã giảm giá 30.000 đ tự động khi đăng ký thành công',
                 'created' => $today,
                 'orders' => 0,
                 'trash' => 1,
@@ -100,6 +101,7 @@ class Dangnhap extends CI_Controller {
             // tao mã giảm giá random
             $this->Mcoupon->coupon_insert($newcoupon);
             $this->Mcustomer->customer_insert($data);
+			$config_data = $this->Mconfig->get_config();
             // gui mail ma giam gia
             $email = $this->input->post('email');
             $this->load->library('email');
@@ -109,18 +111,18 @@ class Dangnhap extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'ocopchupuhgl@gmail.com';
-            $config['smtp_pass']    = 'chupuh123456';
+			$config['smtp_user']    = $config_data['mail_smtp'];
+            $config['smtp_pass']    = $config_data['mail_smtp_password'];
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('ocopchupuhgl@gmail.com', 'Hệ thống COOP UBND Chư pưh');
+            $this->email->from($config_data['mail_smtp'], 'Hệ thống COOP UBND Chư pưh');
             $this->email->to($email);
             $this->email->subject('Hệ thống Hệ thống COOP UBND Chư pưh - Quà thành viên mới');
-            $this->email->message('Bạn đã trở thành thành viên mới của cửa hàng Hệ thống COOP UBND Chư pưh, Cửa hàng tặng bạn 1 mã giảm giá giảm 100.000 đ : '.$tempcoupon.' , Mã này có giá trị tới ngày '.$tempdatelimit.'
+            $this->email->message('Bạn đã trở thành thành viên mới của cửa hàng Hệ thống COOP UBND Chư pưh, Cửa hàng tặng bạn 1 mã giảm giá giảm 30.000 đ : '.$tempcoupon.' , Mã này có giá trị tới ngày '.$tempdatelimit.'
                 Hãy sử dụng tài khoản để mua hàng để tích lũy nhận thêm nhiều ưu đãi !!!!');
             $this->email->send();
             $this->data['success']='Đăng ký thành công! Bạn đã nhận được 1 mã giảm giá cho thành viên mới, vui lòng kiểm tra email !!';
@@ -159,19 +161,21 @@ class Dangnhap extends CI_Controller {
             $this->load->library('email');
             $this->load->library('parser');
             $this->email->clear();
+
+			$config_data = $this->Mconfig->get_config();
             $config['protocol']    = 'smtp';
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'ocopchupuhgl@gmail.com';
-            $config['smtp_pass']    = 'chupuh123456';
+            $config['smtp_user']    = $config_data['mail_smtp'];
+            $config['smtp_pass']    = $config_data['mail_smtp_password'];
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('ocopchupuhgl@gmail.com', 'Hệ thống COOP UBND Chư pưh');
+            $this->email->from($config_data['mail_smtp'], 'Hệ thống COOP UBND Chư pưh');
             $this->email->to($list['email']);
             $this->email->subject('Hệ thống COOP UBND Chư pưh - Lấy lại mật khẩu');
             $this->email->message('Vui lòng truy cập đường dẫn để lấy lại mật khẩu <button class="btn"><a href="'.base_url().'dangnhap/reset_password_new/'.$list['id'].'">Lấy lại mật khẩu</a></button>');

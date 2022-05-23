@@ -17,7 +17,7 @@ class Mconfiguration extends CI_Model {
        $id=1;
         //$this->db->where('id', $id=1);
         $query = $this->db->get($this->table);
-        return $query->row_array();   
+        return $query->row_array();
     }
 
     //Cập nhật
@@ -27,7 +27,15 @@ class Mconfiguration extends CI_Model {
         $id=1;
         $this->db->update($this->table, $mydata);
     }
-   
+
+	public function get_config()
+	{
+		$this->db->where('id', 1);
+		$query = $this->db->get($this->table);
+        return $query->row_array();
+	}
+
+
 }
 
 /* End of file mconfiguration.php */

@@ -21,7 +21,7 @@
                     <div class="row form-row">
                         <div class="input-group">
                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                           <input type="text" name="username" class="form-control" placeholder="Tên đăng nhập">
+                           <input type="text" name="username" class="form-control" placeholder="Tên đăng nhập (email)">
 
                         </div>
                         <div class="error" id="password_error"><?php echo form_error('username')?></div>

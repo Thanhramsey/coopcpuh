@@ -9,14 +9,14 @@
 					<div class="acc_content clearfix" style="display: block;">
 						<form accept-charset="UTF-8" action="" id="customer_login" method="post">
 							<div class="col_full">
-								<label for="login-form-username">Tài khoản:<span class="require_symbol">* </span></label>
+								<label for="login-form-username">Tài khoản(email):<span class="require_symbol">* </span></label>
 								<input type="text" id="login-form-username" name="username" value="" class="form-control">
 								<div class="error" id="password_error"><?php echo form_error('username')?></div>
 							</div>
 							<div class="col_full">
 								<label for="login-form-password">Mật khẩu:<span class="require_symbol">* </span></label>
 								<input type="password" id="login-form-password" name="password" value="" class="form-control">
-								<div class="error" id="password_error"><?php echo form_error('password')?></div>	
+								<div class="error" id="password_error"><?php echo form_error('password')?></div>
 							</div>
 							<?php  if(isset($error)):?>
 								<div class="row">

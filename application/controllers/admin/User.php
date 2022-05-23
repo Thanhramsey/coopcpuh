@@ -6,6 +6,7 @@ class User extends CI_Controller {
 		parent::__construct();
 		$this->load->model('backend/Muser');
 		$this->load->model('backend/Morders');
+		$this->load->model('backend/Mconfiguration');
 	}
 
 	public function login()
@@ -100,6 +101,7 @@ class User extends CI_Controller {
 
 	public function forgotpassword(){
 	$this->form_validation->set_rules('email', 'Email', 'required|callback_check_mail_forget');
+	$config_data = $this->Mconfiguration->get_config();
         if($this->form_validation->run() ==TRUE){
 
             $email = $this->input->post('email');
@@ -112,15 +114,15 @@ class User extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'ocopchupuhgl@gmail.com';
-            $config['smtp_pass']    = 'chupuh123456';
+			$config['smtp_user']    = $config_data['mail_smtp'];
+            $config['smtp_pass']    = $config_data['mail_smtp_password'];
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('ocopchupuhgl@gmail.com', 'Hệ thống COOP UBND Chư pưh');
+            $this->email->from($config_data['mail_smtp'], 'Hệ thống COOP UBND Chư pưh');
             $this->email->to($list['email']);
             $this->email->subject('Hệ thống COOP UBND Chư pưh - Lấy lại mật khẩu');
             $this->email->message('Vui lòng truy cập đường dẫn để lấy lại mật khẩu <button class="btn"><a href="'.base_url().'admin/user/reset_password_new/'.$list['id'].'">Lấy lại mật khẩu</a></button>');

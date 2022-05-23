@@ -16,7 +16,7 @@ class Mconfig extends CI_Model {
 		$this->db->limit(1);
 		$query = $this->db->get('db_discount');
 		$row=$query->row_array();
-		return $row['number_used']; 
+		return $row['number_used'];
 	}
 	public function get_config_coupon_discount($code){
 		$this->db->where('code', $code);
@@ -32,5 +32,12 @@ class Mconfig extends CI_Model {
 		$this->db->where('id',$id);
 		$this->db->update('db_discount', $mydata);
 	}
-	
+
+	public function get_config()
+	{
+		$this->db->where('id', 1);
+		$query = $this->db->get($this->table);
+        return $query->row_array();
+	}
+
 }

@@ -193,6 +193,7 @@ class Giohang extends CI_Controller {
                 'priceShip' => $this->Mconfig->config_price_ship(),
                 'coupon' => $list['coupon'],
             );
+			$config_data = $this->Mconfig->get_config();
             $this->data['customer']=$val;
             $this->data['get']=$list;
             $this->load->library('email');
@@ -202,8 +203,8 @@ class Giohang extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'ocopchupuhgl@gmail.com';
-            $config['smtp_pass']    = 'chupuh123456';
+			$config['smtp_user']    = $config_data['mail_smtp'];
+            $config['smtp_pass']    = $config_data['mail_smtp_password'];
             // mk trên la mat khau dung dung cua gmail, có thể dùng gmail hoac mat khau. Tao mat khau ung dung de bao mat tai khoan
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
@@ -211,7 +212,7 @@ class Giohang extends CI_Controller {
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('ocopchupuhgl@gmail.com', 'OCOP CHƯPƯH');
+            $this->email->from($config_data['mail_smtp'], 'OCOP CHƯPƯH');
             $list = array($val['email']);
             $this->email->to($list);
             $this->email->subject('Hệ thống OCOP CHƯPƯH');
