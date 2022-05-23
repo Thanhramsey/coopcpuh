@@ -2853,3 +2853,18 @@ a.fright {
 	padding: 0px 15px;
 }
 
+.custom-modal .modal-header{
+ background: #3a8701;
+ color: #fff;
+}
+.custom-modal .modal-body{
+	padding: 15px;
+}
+.custom-modal .modal-footer{
+	border-top: 1px solid #ff9700;
+	padding: 7px;
+}
+.custom-modal .btn-default{
+	background: #3a8701;
+ 	color: #fff;
+}

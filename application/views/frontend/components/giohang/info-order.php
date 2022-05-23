@@ -272,7 +272,7 @@ if (!$this->session->userdata('cart')) {
 			dataType: 'json',
 			success: function(data) {
 				$('#result_coupon').html(data);
-				document.location.reload(true);
+				window.location.reload();
 			}
 		});
 	}

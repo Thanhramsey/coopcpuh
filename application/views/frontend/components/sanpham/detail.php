@@ -432,9 +432,29 @@
 			</form>
 
 		</div>
+		<div class="modal fade custom-modal" id="myModal">
+		<div class="modal-dialog modal-sm" style="top:100px">
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Thông báo</h4>
+			</div>
+			<div class="modal-body">
+				<strong><p>Sản phẩm đã được thêm thành công&hellip;</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" onclick="reLoad()">Ok</button>
+			</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 	</div>
 </section>
 <script>
+	function reLoad(){
+		$('#myModal').modal('hide');
+		window.location.reload();
+	}
 	function onAddCart(id) {
 		var strurl = "<?php echo base_url(); ?>" + '/sanpham/addcart';
 		jQuery.ajax({
@@ -445,8 +465,7 @@
 				id: id
 			},
 			success: function(data) {
-				document.location.reload(true);
-				alert('Thêm sản phẩm vào giỏ hàng thành công !');
+				$('#myModal').modal('show');
 			}
 		});
 	}
@@ -480,7 +499,7 @@
 					star: star
 				},
 				success: function(data) {
-					document.location.reload(true);
+					window.location.reload(true);
 				}
 			});
 		}

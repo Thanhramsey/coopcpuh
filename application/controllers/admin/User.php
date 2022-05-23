@@ -59,6 +59,7 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('address', 'Địa chỉ', 'required');
 		$this->form_validation->set_rules('username', 'Tên đăng nhập', 'required|is_unique[db_user.username]');
 		$this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[5]|max_length[32]');
+		$this->form_validation->set_rules('detail', 'Thông tin', 'required');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
 				'fullname' =>$_POST['fullname'],
@@ -70,6 +71,9 @@ class User extends CI_Controller {
 				'role' => 2,
 				'status' => 1,  // 1 : active , 2: chua active
 				'created' =>$today,
+				'detail' =>$_POST['detail'],
+				'username' =>$_POST['username'],
+				'star'=> 4,
 				'trash'=>1
 			);
 			$config['upload_path']          = './public/images/admin/';

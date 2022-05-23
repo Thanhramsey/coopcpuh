@@ -78,12 +78,12 @@
 												<td colspan="6" class="text-right" style="border: none; font-size: 1.1em;">Tổng cộng: <?php echo number_format($total); ?>₫</td>
 											</tr>
 											<?php
-											// if($coupon != 0)
-											// {
-											// 	echo '<tr>
-											// 	<td colspan="6" class="text-right" style="border: none; font-size: 1.1em;">Voucher giảm giá : '.number_format($coupon).'₫</td>
-											// </tr>';
-											// }
+											if($coupon != 0)
+											{
+												echo '<tr>
+												<td colspan="6" class="text-right" style="border: none; font-size: 1.1em;">Voucher giảm giá : '.number_format($coupon).'₫</td>
+											</tr>';
+											}
 											?>
 											<!-- <tr>
 												<td colspan="6" class="text-right" style="border: none; font-size: 0.9em;"><i>Phí vận chuyển: </i>
@@ -91,8 +91,8 @@
 												</td>
 											</tr> -->
 											<tr>
-												<!-- <td colspan="6" class="text-right" style="border: none; color: red; font-size: 1.3em;">Thành tiền: <?php echo number_format($total + $price_ship - $coupon); ?>₫</td> -->
-												<td colspan="6" class="text-right" style="border: none; color: red; font-size: 1.3em;">Thành tiền: <?php echo number_format($total); ?>₫</td>
+												<td colspan="6" class="text-right" style="border: none; color: red; font-size: 1.3em;">Thành tiền: <?php echo number_format($total - $coupon); ?>₫</td>
+												<!-- <td colspan="6" class="text-right" style="border: none; color: red; font-size: 1.3em;">Thành tiền: <?php echo number_format($total); ?>₫</td> -->
 											</tr>
 
 											<tr>

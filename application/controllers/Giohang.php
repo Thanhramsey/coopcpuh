@@ -285,7 +285,7 @@ class Giohang extends CI_Controller {
                 }else if($value['payment_limit'] >= $money ){
                     $html.='<p> Mã giảm giá này chỉ áp dụng cho đơn hàng từ '.number_format($value['payment_limit']).' đ trở lên !</p>';
                 }else{
-                    $html.='<script>document.location.reload(true);</script> <p>Mã giảm giá '.$value['code'].' đã được kích hoạt !</p>';
+                    $html.='<script>window.location.reload();</script> <p>Mã giảm giá '.$value['code'].' đã được kích hoạt !</p>';
                     $this->session->set_userdata('coupon_price',$value['discount']);
                     $this->session->set_userdata('id_coupon_price',$value['id']);
                 }
@@ -297,7 +297,7 @@ class Giohang extends CI_Controller {
 echo json_encode($html);
 }
 public function removecoupon(){
-    $html='<script>document.location.reload(true);</script>';
+    $html='<script>window.location.reload();</script>';
     $this->session->unset_userdata('coupon_price');
     $this->session->unset_userdata('id_coupon_price');
     echo json_encode($html);

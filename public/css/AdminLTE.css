@@ -1124,6 +1124,7 @@ a:focus {
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer {
   background-color: #f9f9f9;
   padding: 10px;
+  border: 1px solid #cfcfcf;
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer:before,
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer:after {
@@ -5011,3 +5012,11 @@ hr {
 	color:#fff
 }
 
+.anh{
+	height: 180px;
+	width: 180px;
+    padding: 10px;
+    border: 1px dashed black;
+	border-radius: 4px;
+	margin-bottom:5px
+}

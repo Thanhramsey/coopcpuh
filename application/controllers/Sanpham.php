@@ -85,7 +85,7 @@ class Sanpham extends CI_Controller {
         if(isset($_POST['sapxep-category'])){
 			$result=$this->load->view('frontend/components/sanpham/index_order',$this->data,true);
             echo json_encode($result);
-            // $html='<script>document.location.reload(true);</script>';
+            // $html='<script>window.location.reload();</script>';
             // echo json_encode($html);
 
         }else{
@@ -130,7 +130,7 @@ class Sanpham extends CI_Controller {
 
             // $result=$this->load->view('frontend/components/sanpham/index_order2',$this->data,true);
             // echo json_encode($result);
-            $html='<script>document.location.reload(true);</script>';
+            $html='<script>window.location.reload();</script>';
             echo json_encode($html);
 
         }else{

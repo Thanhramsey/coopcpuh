@@ -64,7 +64,7 @@ class Useradmin extends CI_Controller {
 			);
 			$config['upload_path']          = './public/images/admin/';
 			$config['encrypt_name'] = TRUE;
-            $config['allowed_types']        = 'gif|jpg|png';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
             $config['max_size']             = 2000;
             $this->load->library('upload', $config);
             if ( $this->upload->do_upload('img')){
@@ -86,9 +86,6 @@ class Useradmin extends CI_Controller {
 
 	public function update($id){
 		$user_role=$this->session->userdata('sessionadmin');
-		if($user_role['role']==2){
-			redirect('admin/E403/index','refresh');
-		}
 		$row=$this->Muser->user_detail_id($id);
 		$this->data['row']=$row;
 		$d=getdate();
@@ -98,6 +95,14 @@ class Useradmin extends CI_Controller {
 		$this->form_validation->set_rules('fullname', 'Họ và tên', 'required');
 		$this->form_validation->set_rules('address', 'Địa chỉ', 'required');
 		$this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[5]|max_length[32]');
+		$star = $row['star'];
+		if (!empty($_POST['star'])) {
+			$star = $_POST['star'];
+		}
+		$status = $row['status'];
+		if (!empty($_POST['status'])) {
+			$status = $_POST['star'];
+		}
 		if ($this->form_validation->run() == TRUE)
 		{
 			$mydata= array(
@@ -106,11 +111,12 @@ class Useradmin extends CI_Controller {
 				'password' =>sha1($_POST['password']),
 				'gender'=>$_POST['gender'],
 				'detail'=>$_POST['detail'],
-				'star'=>$_POST['star'],
+				'star'=>$star,
+				'status'=>$status,
 			);
          	$config = array();
 	         $config['upload_path']   = './public/images/admin/';
-	         $config['allowed_types'] = 'jpg|png';
+	         $config['allowed_types'] = 'jpg|png|jpeg|gif';
 	         $config['encrypt_name'] = TRUE;
 	         $config['max_size']      = '500';
 	         $config['max_width']     = '1028';
@@ -121,8 +127,13 @@ class Useradmin extends CI_Controller {
 	             $mydata['img']=$data['file_name'];
 	         }
 			$this->Muser->user_update($mydata, $id);
-			$this->session->set_flashdata('success', 'Cập nhật tài khoản thành công');
-			redirect('admin/useradmin/','refresh');
+			if($user_role['role']==2){
+				$this->session->set_flashdata('success', 'Cập nhật tài khoản thành công');
+				redirect('admin/','refresh');
+			}else{
+				$this->session->set_flashdata('success', 'Cập nhật tài khoản thành công');
+				redirect('admin/useradmin/','refresh');
+			}
 		}
 		$this->data['view']='update';
 		$this->data['title']='Cập nhật tài khoản';

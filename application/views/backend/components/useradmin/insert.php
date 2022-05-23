@@ -75,8 +75,12 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+									<div class="anh">
+										<!-- Chứa ảnh ở đây -->
+										<img style ="width:100%; height:100%" id="output"/>
+									</div>
                                     <label>Ảnh đại diện</label>
-                                    <input type="file"  id="image_list" name="img">
+                                    <input type="file"  id="image_list" name="img" onchange="loadFile(event)">
                                 </div>
                                 <div class="form-group">
                                     <label>Trạng thái</label>
@@ -100,3 +104,14 @@
     </form>
 <!-- /.content -->
 </div><!-- /.content-wrapper -->
+
+
+<script>
+	var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>

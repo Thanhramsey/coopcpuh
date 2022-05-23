@@ -171,8 +171,8 @@
 				id: id
 			},
 			success: function(data) {
-				document.location.reload(true);
 				alert('Thêm sản phẩm vào giỏ hàng thành công !');
+				window.location.reload();
 			}
 		});
 	}

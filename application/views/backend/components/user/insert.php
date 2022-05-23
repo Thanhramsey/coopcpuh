@@ -1,4 +1,4 @@
-<?php echo form_open('admin/user/insert'); ?>
+<?php echo form_open_multipart('admin/user/insert'); ?>
 <html lang="">
 
 <head>
@@ -75,10 +75,11 @@
 									<div class="col-md-6">
 										<div class="anh">
 											<!-- Chứa ảnh ở đây -->
+											<img style ="width:100%; height:100%" id="output"/>
 										</div>
 										<div class="form-group">
 											<label>Ảnh đại diện</label>
-											<input type="file" id="image_list" name="img">
+											<input type="file"  id="image_list" name="img" onchange="loadFile(event)">
 										</div>
 									</div>
 									<div class="col-md-12">
@@ -100,10 +101,10 @@
 				<div class="breadcrumb">
 					<button type="submit" class="btn btn-primary btn-sm">
 						<span class="glyphicon glyphicon-floppy-save"></span>
-						Lưu[Thêm]
+						Lưu
 					</button>
 					<a class="btn btn-primary btn-sm" href="admin/useradmin" role="button">
-						<span class="glyphicon glyphicon-remove do_nos"></span> Đăng nhập
+						<span class="glyphicon glyphicon-user"></span> Đăng nhập
 					</a>
 					<a class="btn btn-primary btn-sm" href="#" role="button">
 						<span class="	glyphicon glyphicon-home"></span> Về trang web
@@ -124,3 +125,13 @@
 </body>
 
 </html>
+
+<script>
+	var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>

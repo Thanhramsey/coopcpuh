@@ -49,6 +49,7 @@
 						<ul class="pull-left" style="padding-left:15px">
 							<li><a href="gianhang/forgotpassword" class="fright">Quên mật khẩu?</a></li>
 							<li><a href="gianhang/insert" class="fright">Người dùng mới? Đăng ký tài khoản</a></li>
+							<li><a href="#" class="fright">Về trang web OCOP</a></li>
 						</ul>
 					</div>
                 </form>

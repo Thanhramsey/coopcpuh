@@ -98,7 +98,8 @@ button.close {
 }
 
 .anh{
-	height: 120px;
+	height: 180px;
+	width: 180px;
     padding: 10px;
     border: 1px dashed black;
 	border-radius: 4px;

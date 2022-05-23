@@ -8,9 +8,17 @@
                     <span class="glyphicon glyphicon-floppy-save"></span>
                     Lưu[Sửa]
                 </button>
-                <a class="btn btn-primary btn-sm" href="admin/useradmin" role="button">
-                    <span class="glyphicon glyphicon-remove do_nos"></span> Thoát
-                </a>
+				<?php 	$user_role = $this->session->userdata('sessionadmin');
+									if ($user_role['role'] == 1) : ?>
+					<a class="btn btn-primary btn-sm" href="admin/useradmin" role="button">
+                   		 <span class="glyphicon glyphicon-remove do_nos"></span> Thoát
+               		 </a>
+				<?php else : ?>
+					<a class="btn btn-primary btn-sm" href="admin" role="button">
+                   		 <span class="glyphicon glyphicon-remove do_nos"></span> Thoát
+               		 </a>
+				<?php endif; ?>
+
             </div>
         </section>
         <!-- Main content -->
@@ -63,20 +71,28 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+									<div class="anh">
+										<!-- Chứa ảnh ở đây -->
+										<img src="public/images/admin/<?php echo $row['img'] ?>" style ="width:100%; height:100%" id="output"/>
+									</div>
                                     <label>Ảnh đại diện</label>
-                                    <input type="file"  id="image_list" name="image" style="width: 100%">
+                                    <input type="file"  id="image_list" name="image" style="width: 100%" onchange="loadFile(event)">
                                 </div>
-                                <div class="form-group">
-                                    <label>Trạng thái</label>
-                                    <select name="status" class="form-control">
-                                        <option value="1" <?php if($row['status'] == 1) {echo 'selected';}?> >Kích hoạt</option>
-                                        <option value="0" <?php if($row['status'] == 0) {echo 'selected';}?>>Chưa kích hoạt</option>
-                                    </select>
-                                </div>
-								<div class="form-group">
-                                    <label>Sao đánh giá</label>
-									<input class="form-control" type="number" min="1" max="5"  id="star" name="star"  value="<?php echo $row['star'] ?>">
-                                </div>
+								<?php
+									$user_role = $this->session->userdata('sessionadmin');
+									if ($user_role['role'] == 1) : ?>
+										<div class="form-group">
+											<label>Trạng thái</label>
+											<select name="status" class="form-control">
+												<option value="1" <?php if($row['status'] == 1) {echo 'selected';}?> >Kích hoạt</option>
+												<option value="0" <?php if($row['status'] == 0) {echo 'selected';}?>>Chưa kích hoạt</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label>Sao đánh giá</label>
+											<input class="form-control" type="number" min="1" max="5"  id="star" name="star"  value="<?php echo $row['star'] ?>">
+										</div>
+								<?php endif; ?>
                             </div>
                         </div>
                     </div><!-- /.box -->
@@ -88,3 +104,13 @@
     </form>
 <!-- /.content -->
 </div><!-- /.content-wrapper -->
+
+<script>
+	var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
