@@ -53,6 +53,17 @@ class Mproducer extends CI_Model {
         return $row['name'];
     }
 
+	public function diaban_link($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $this->db->limit(1);
+        $query = $this->db->get($this->table);
+        $row=$query->row_array();
+        return $row['code'];
+    }
+
     public function producer_count(){
         $this->db->where('status', 1);
         $this->db->where('trash', 1);

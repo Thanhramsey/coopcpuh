@@ -155,7 +155,7 @@
 </section>
 <script type="text/javascript">
     function sortby(option){
-        var strurl="<?php echo base_url();?>"+'sanpham/category';
+        var strurl="<?php echo base_url();?>"+'sanpham/diaban';
         jQuery.ajax({
             url: strurl,
             type: 'POST',

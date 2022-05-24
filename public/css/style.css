@@ -2805,9 +2805,9 @@ a.fright {
 .facebook{
 	position: absolute;
     right: 20px;
-    top: 220px;
+    bottom: 150px;
     background: #246faf;
-    padding: 12px 20px;
+    padding: 14px 20px;
     text-align: center;
     margin: 0 0 0 0;
     cursor: pointer;

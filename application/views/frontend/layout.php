@@ -100,6 +100,10 @@
 		<div class='scrolltop'>
         	<div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
         </div>
-		<div class='facebook icon'><a target="_blank"	 href="https://www.facebook.com/ChuPuhDistrict"><i style="color:#fff" class="fab fa-2x fa-facebook-f"></i></a></div>
+		<div class='scrolltop icon'>
+			<a class='facebook' target="_blank"	 href="https://www.facebook.com/ChuPuhDistrict">
+				<i style="color:#fff" class="fab fa-2x fa-facebook-f"></i>
+			</a>
+		</div>
     </body>
 </html>

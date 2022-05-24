@@ -67,11 +67,15 @@ class Sanpham extends CI_Controller {
                 $od='desc';
             }
         }
-        $aurl= explode('/',uri_string());
+		$aurl= explode('/',uri_string());
         $link=$aurl[1];
+		if (!empty($_POST['link'])) {
+			$link=$_POST['link'];
+		}
         $catid=$this->Mcategory->category_id($link);
         $listcat=$this->Mcategory->category_listcat($catid);
         $this->data['categoryname']=$this->Mcategory->category_name($catid);
+		$this->data['link']=$this->Mcategory->category_link($catid);
 
         $this->load->library('phantrang');
         $limit=12;
@@ -94,16 +98,16 @@ class Sanpham extends CI_Controller {
     }
 
 	public function diaban(){
-        if(isset($_POST['sapxep-diaban'])){
-            $dksx=$_POST['sapxep-diaban'];
+        if(isset($_POST['sapxep-category'])){
+            $dksx=$_POST['sapxep-category'];
             $char = explode('-', $dksx);
             $f=$char[0];
             $od=$char[1];
             $data = array('0' => $f, '1' =>$od);
-            $this->session->set_userdata('sortby-diaban', $data);
+            $this->session->set_userdata('sortby-category', $data);
         }else{
-            if($this->session->userdata('sortby-diaban')){
-                $data = $this->session->userdata('sortby-diaban');
+            if($this->session->userdata('sortby-category')){
+                $data = $this->session->userdata('sortby-category');
                 $f=$data[0];
                 $od=$data[1];
             }else{
@@ -111,11 +115,16 @@ class Sanpham extends CI_Controller {
                 $od='desc';
             }
         }
-        $aurl= explode('/',uri_string());
-        $link=$aurl[2];
+		if (!empty($_POST['link'])) {
+			$link=$_POST['link'];
+		}else{
+			$aurl= explode('/',uri_string());
+			$link=$aurl[2];
+		}
         $catid=$this->Mproducer->diaban_id($link);
         $listcat=$this->Mproducer->diaban_listcat($catid);
         $this->data['categoryname']=$this->Mproducer->diaban_name($catid);
+		$this->data['link']=$this->Mproducer->diaban_link($catid);
 
         $this->load->library('phantrang');
         $limit=12;
@@ -125,13 +134,13 @@ class Sanpham extends CI_Controller {
         $this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='san-pham/db/'.$link);
         $this->data['list']=$this->Mproduct->product_list_diaban_limit($listcat, $limit,$first,$f,$od);
         $this->data['title']='OCOP CHƯPƯH - Sản phẩm theo từng danh mục';
-        $this->data['view']='category';
-        if(isset($_POST['sapxep-diaban'])){
+        $this->data['view']='diaban';
+        if(isset($_POST['sapxep-category'])){
 
-            // $result=$this->load->view('frontend/components/sanpham/index_order2',$this->data,true);
-            // echo json_encode($result);
-            $html='<script>window.location.reload();</script>';
-            echo json_encode($html);
+            $result=$this->load->view('frontend/components/sanpham/index_order',$this->data,true);
+            echo json_encode($result);
+            // $html='<script>window.location.reload();</script>';
+            // echo json_encode($html);
 
         }else{
             $this->load->view('frontend/layout',$this->data);
