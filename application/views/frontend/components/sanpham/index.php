@@ -90,7 +90,7 @@
                                             <div class="lt-product-group-image">
                                                 <a id = "zoomOut" href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" >
 												<figure>
-                                                    <img  width="225" height="210" class="img-sp"src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
+                                                    <img class="img-sp"src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
 												</figure>
                                                 </a>
 

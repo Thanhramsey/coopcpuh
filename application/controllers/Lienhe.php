@@ -6,7 +6,7 @@ class Lienhe extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->data['com']='Lienhe';
+		$this->data['com']='lienhe';
 		$this->load->model('frontend/Mcategory');
 		$this->load->model('frontend/Mproduct');
 		$this->load->model('frontend/Mcontact');
@@ -35,7 +35,6 @@ class Lienhe extends CI_Controller {
 				'created_at'=> $today
 			);
 			$this->Mcontact->contact_insert($mydata);
-			echo '<script>alert("Tin nhắn của bạn đã gửi đi thành công !")</script>';
 		}
 		$this->data['title']="OCOP CHƯPƯH - Liên hệ";
 		$this->data['view']='index';

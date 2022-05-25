@@ -1,3 +1,4 @@
+<?php echo form_open('admin/user/login'); ?>
 <html lang="">
 	<head>
         <base href="<?php echo base_url(); ?>"></base>

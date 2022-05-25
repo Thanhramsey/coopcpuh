@@ -43,10 +43,10 @@ class Category extends CI_Controller {
 		$this->load->library('form_validation');
 		$today=$d['year']."/".$d['mon']."/".$d['mday']." ".$d['hours'].":".$d['minutes'].":".$d['seconds'];
 		$this->form_validation->set_rules('name', 'Loại sản phẩm', 'required|is_unique[db_category.name]|max_length[25]');
-		if ($this->form_validation->run() == TRUE) 
+		if ($this->form_validation->run() == TRUE)
 		{
 			$mydata= array(
-				'name' =>$_POST['name'], 
+				'name' =>$_POST['name'],
 				'link' =>$string=$this->alias->str_alias($_POST['name']),
 				'orders' =>$_POST['orders'],
 				'status' =>$_POST['status'],
@@ -67,13 +67,13 @@ class Category extends CI_Controller {
 			{
 				$row=$this->Mcategory->category_detail($id);//Lấy thông tin loại đó
 				$mydata['level']=$row['level']+1;
-				$mydata['parentid']=$id;	
+				$mydata['parentid']=$id;
 			}
 			$this->Mcategory->category_insert($mydata);
 			$this->session->set_flashdata('success', 'Thêm danh mục thành công');
 			redirect('admin/category','refresh');
-		} 
-		else 
+		}
+		else
 		{
 			$this->data['view']='insert';
 			$this->data['title']='Thêm danh mục mới';
@@ -93,10 +93,10 @@ class Category extends CI_Controller {
 		$this->load->library('alias');
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('name', 'Tên danh mục', 'required|max_length[25]');
-		if ($this->form_validation->run() == TRUE) 
+		if ($this->form_validation->run() == TRUE)
 		{
 			$mydata= array(
-				'name' =>$_POST['name'], 
+				'name' =>$_POST['name'],
 				'link' =>$string=$this->alias->str_alias($_POST['name']),
 				'status' =>$_POST['status'],
 				'orders' =>$_POST['orders'],
@@ -114,13 +114,13 @@ class Category extends CI_Controller {
 			{
 				$row=$this->Mcategory->category_detail($idtmp);//Lấy thông tin loại đó
 				$mydata['level']=$row['level']+1;
-				$mydata['parentid']=$idtmp;	
+				$mydata['parentid']=$idtmp;
 			}
-        
+
 			$this->Mcategory->category_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật danh mục thành công');
 			redirect('admin/category','refresh');
-		} 
+		}
 		$this->data['view']='update';
 		$this->data['title']='Cập nhật danh mục';
 		$this->load->view('backend/layout', $this->data);

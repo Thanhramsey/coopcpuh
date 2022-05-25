@@ -4,6 +4,9 @@
 		<div class="container">
 			<div class="col-md-12 col-lg-12">
 				<div class="navbar-header">
+					<div class="icon-img-logo hidden-md hidden-lg">
+						<strong><p style="color:#fff">OCOP CHƯPƯH</p></strong>
+                    </div>
 					<button style="padding-top:17px" type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
