@@ -25,7 +25,7 @@
 								<input type="text" class="form-control" name="name" style="width:50%" placeholder="Tên danh mục">
 								<div class="error" id="password_error"><?php echo form_error('name')?></div>
 							</div>
-							<?php  
+							<?php
 							$list=$this->Mcategory->category_list();
 							$option_parentid="";
 							$option_orders="";
@@ -34,19 +34,19 @@
 								$option_orders.="<option value='".($row['orders']+1)."'>Sau - ".$row['name']."</option>";
 							}
 							?>
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label>Danh mục cha</label>
 								<select name="parentid" class="form-control" style="width:50%">
 									<option value = "0">[--Chọn danh mục--]</option>
 									<?php echo $option_parentid;?>
 								</select>
-							</div>
+							</div> -->
 							<div class="form-group">
 								<label>Sắp xếp</label>
 								<select name="orders" class="form-control" style="width:50%">
 									<option value = "">[--Chọn vị trí--]</option>
 									<option value="0">Đứng đầu</option>
-									<?php  
+									<?php
 									echo $option_orders;
 									?>
 								</select>

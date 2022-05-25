@@ -45,14 +45,14 @@
 										</div>
 										<div class="col-md-4" style="padding-right: 0px;">
 											<div class="form-group">
-												<label>Số hiệu<span class="maudo">(*)</span></label>
+												<label>Số hiệu</label>
 												<input type="text" class="form-control" name="sohieu" style="width:100%" placeholder="Số hiệu">
 												<div class="error" id="password_error"><?php echo form_error('sohieu') ?></div>
 											</div>
 										</div>
 										<div class="col-md-4" style="padding-right: 0px;">
 											<div class="form-group">
-												<label>Lĩnh vực<span class="maudo">(*)</span></label>
+												<label>Lĩnh vực</label>
 												<input type="text" class="form-control" name="linhvuc" style="width:100%" placeholder="Lĩnh vực">
 												<div class="error" id="password_error"><?php echo form_error('linhvuc') ?></div>
 											</div>
@@ -60,12 +60,12 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label>Trích yếu<span class="maudo">(*)</span></label>
+									<label>Trích yếu</label>
 									<input type="text" class="form-control" name="trichyeu" style="width:100%" placeholder="Trích yếu">
 									<div class="error" id="password_error"><?php echo form_error('trichyeu') ?></div>
 								</div>
 								<div class="form-group">
-									<label>Ngày ban hành<span class="maudo">(*)</span></label>
+									<label>Ngày ban hành</label>
 									<input type="text" class="form-control" name="ngaybanhanh" style="width:100%" placeholder="Ngày ban hành">
 									<div class="error" id="password_error"><?php echo form_error('ngaybanhanh') ?></div>
 								</div>

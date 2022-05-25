@@ -18,6 +18,7 @@ class Mproduct extends CI_Model {
     public function product_sanpham($limit,$first)
     {
         $this->db->where('trash', 1);
+		$this->db->where('status', 1);
         $this->db->order_by('id', 'desc');
         $query = $this->db->get($this->table, $limit,$first);
         return $query->result_array();

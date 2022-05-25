@@ -39,20 +39,16 @@ class Chinhsach extends CI_Controller {
 		$this->load->library('session');
 		$this->load->library('alias');
 		$this->form_validation->set_rules('name', 'Tên văn bản', 'required|is_unique[db_chinhsach.name]');
-		$this->form_validation->set_rules('sohieu', 'Số hiệu', 'required|is_unique[db_chinhsach.sohieu]');
-		$this->form_validation->set_rules('loaivanban', 'Loại văn bản', 'required');
-		$this->form_validation->set_rules('linhvuc', 'Lĩnh vực', 'required');
-		$this->form_validation->set_rules('trichyeu', 'Trích yếu', 'required');
-		$this->form_validation->set_rules('ngaybanhanh', 'Ngày ban hành', 'required');
+		// $this->form_validation->set_rules('sohieu', 'Số hiệu', 'required|is_unique[db_chinhsach.sohieu]');
+		// $this->form_validation->set_rules('loaivanban', 'Loại văn bản', 'required');
+		// $this->form_validation->set_rules('linhvuc', 'Lĩnh vực', 'required');
+		// $this->form_validation->set_rules('trichyeu', 'Trích yếu', 'required');
+		// $this->form_validation->set_rules('ngaybanhanh', 'Ngày ban hành', 'required');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
 				'name' =>$_POST['name'],
-				'sohieu'=>$_POST['sohieu'],
 				'loaivanban'=>$_POST['loaivanban'],
-				'linhvuc'=>$_POST['loaivanban'],
 				'loaivanban_name'=>$_POST['loaivanban_name'],
-				'trichyeu'=>$_POST['trichyeu'],
-				'ngaybanhanh'=>$_POST['ngaybanhanh'],
 				'created_at'=>$today,
 				'created_by'=>$this->session->userdata('id'),
 				'updated_at'=>$today,
@@ -60,6 +56,18 @@ class Chinhsach extends CI_Controller {
 				'trash'=>1,
 				'status'=>1,
 			);
+			if (!empty($_POST['linhvuc'])) {
+				$mydata['linhvuc']=$_POST['linhvuc'];
+			}
+			if (!empty($_POST['sohieu'])) {
+				$mydata['sohieu']=$_POST['sohieu'];
+			}
+			if (!empty($_POST['trichyeu'])) {
+				$mydata['trichyeu']=$_POST['trichyeu'];
+			}
+			if (!empty($_POST['ngaybanhanh'])) {
+				$mydata['ngaybanhanh']=$_POST['ngaybanhanh'];
+			}
 			$config['upload_path']          = './public/images/chinhsach/';
 			$config['encrypt_name'] = TRUE;
             $config['allowed_types']        = 'pdf|doc|docx';
@@ -93,24 +101,33 @@ class Chinhsach extends CI_Controller {
 		$this->load->library('session');
 		$this->load->library('alias');
 		$this->form_validation->set_rules('name', 'Tên văn bản', 'required');
-		$this->form_validation->set_rules('sohieu', 'Số hiệu', 'required');
+		// $this->form_validation->set_rules('sohieu', 'Số hiệu', 'required');
 		$this->form_validation->set_rules('loaivanban', 'Loại văn bản', 'required');
-		$this->form_validation->set_rules('linhvuc', 'Lĩnh vực', 'required');
-		$this->form_validation->set_rules('trichyeu', 'Trích yếu', 'required');
-		$this->form_validation->set_rules('ngaybanhanh', 'Ngày ban hành', 'required');
+		// $this->form_validation->set_rules('linhvuc', 'Lĩnh vực', 'required');
+		// $this->form_validation->set_rules('trichyeu', 'Trích yếu', 'required');
+		// $this->form_validation->set_rules('ngaybanhanh', 'Ngày ban hành', 'required');
 		if ($this->form_validation->run() == TRUE) {
 			$mydata= array(
 				'name' =>$_POST['name'],
-				'sohieu'=>$_POST['sohieu'],
 				'loaivanban'=>$_POST['loaivanban'],
 				'loaivanban_name'=>$_POST['loaivanban_name'],
-				'linhvuc'=>$_POST['loaivanban'],
-				'trichyeu'=>$_POST['trichyeu'],
 				'updated_at'=>$today,
 				'updated_by'=>$this->session->userdata('id'),
 				'trash'=>1,
 				'status'=>$_POST['status']
 			);
+			if (!empty($_POST['linhvuc'])) {
+				$mydata['linhvuc']=$_POST['linhvuc'];
+			}
+			if (!empty($_POST['sohieu'])) {
+				$mydata['sohieu']=$_POST['sohieu'];
+			}
+			if (!empty($_POST['trichyeu'])) {
+				$mydata['trichyeu']=$_POST['trichyeu'];
+			}
+			if (!empty($_POST['ngaybanhanh'])) {
+				$mydata['ngaybanhanh']=$_POST['ngaybanhanh'];
+			}
 			$config['upload_path']          = './public/images/chinhsach/';
 			$config['encrypt_name'] = TRUE;
             $config['allowed_types']        = 'pdf|doc|docx';

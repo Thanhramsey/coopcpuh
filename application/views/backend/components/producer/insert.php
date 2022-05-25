@@ -22,25 +22,34 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label>Tên địa bàn <span class = "maudo">(*)</span></label>
-									<input type="text" class="form-control" name="name" placeholder="Tên nhà cung cấp">
+									<input type="text" class="form-control" name="name" placeholder="Tên địa bàn">
 									<div class="error" id="password_error" style="color: red"><?php echo form_error('name')?></div>
 								</div>
 								<div class="form-group">
-									<label>Mã code <span class = "maudo">(*)</span></label>
-									<input type="text" class="form-control" name="code" placeholder="Mã code">
-									<div class="error" id="password_error" style="color: red"><?php echo form_error('code')?></div>
+									<label>Maps</label>
+									<input type="text" class="form-control" name="iframe" placeholder="maps">
+									<span style="font-style: italic; line-height: 32px;">Chú ý: bỏ iframe địa bàn lấy trên google maps</span>
+									<a target="_blank" href="https://themevi.com/cach-lay-iframe-google-maps-de-chen-vao-website/#gsc.tab=0">click</a>
+									<div class="error" id="password_error" style="color: red"><?php echo form_error('keyword')?></div>
 								</div>
 								<div class="form-group">
-									<label>Từ khóa <span class = "maudo">(*)</span></label>
-									<input type="text" class="form-control" name="keyword" placeholder="Từ khóa">
-									<span style="font-style: italic; line-height: 32px;">Chú ý: Mỗi từ khóa phân cách bởi một dấu ",". Ví dụ: dienthoai, maytinhbang</span>
-									<div class="error" id="password_error" style="color: red"><?php echo form_error('keyword')?></div>
+									<div class="form-group">
+										<label>Ảnh đại diện</label>
+										<input type="file"  id="image_xa" name="img">
+									</div>
+								</div>
+								<div class="form-group">
+									<label>Chi tiết địa bàn</label>
+									<textarea name="detail" id="detail" class="form-control"></textarea>
+									<script>
+										CKEDITOR.replace('detail');
+									</script>
 								</div>
 								<div class="form-group">
 									<label>Trạng thái</label>
 									<select name="status" class="form-control">
-										<option value="1">Xuất bản</option>
-										<option value="0">Chưa xuất bản</option>
+										<option value="1">Hoạt động</option>
+										<option value="0">Ân</option>
 									</select>
 								</div>
 							</div>

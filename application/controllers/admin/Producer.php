@@ -38,13 +38,12 @@ class Producer extends CI_Controller {
 		$this->load->library('session');
 		$this->load->library('alias');
 		$this->form_validation->set_rules('name', 'Tên nhà cung cấp', 'required|is_unique[db_producer.name]');
-		$this->form_validation->set_rules('code', 'Mã code', 'required|is_unique[db_producer.code]');
-		$this->form_validation->set_rules('keyword', 'Từ khóa', 'required');
+		// $this->form_validation->set_rules('code', 'Mã code', 'required|is_unique[db_producer.code]');
+		// $this->form_validation->set_rules('keyword', 'Từ khóa', 'required');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
 				'name' =>$_POST['name'],
-				'code'=>$_POST['code'],
-				// 'keyword'=>$_POST['keyword'],
+				'code' =>$string=$this->alias->str_alias($_POST['name']),
 				'created_at'=>$today,
 				'created_by'=>$this->session->userdata('id'),
 				'modified'=>$today,
@@ -52,6 +51,24 @@ class Producer extends CI_Controller {
 				'trash'=>1,
 				'status'=>$_POST['status']
 			);
+			if (!empty($_POST['detail'])) {
+				$mydata['detail']=$_POST['detail'];
+			}
+			if (!empty($iframe)) {
+				$mydata['iframe']=$_POST['iframe'];
+			}
+
+			$config['upload_path']          = './public/images/xa/';
+			$config['encrypt_name'] = TRUE;
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 2000;
+            $this->load->library('upload', $config);
+            if ( $this->upload->do_upload('img')){
+                $data = $this->upload->data();
+                $mydata['img']=$data['file_name'];
+            }else{
+                $mydata['img']='1.png';
+            }
 			$this->Mproducer->producer_insert($mydata);
 			$this->session->set_flashdata('success', 'Thêm nhà cung cấp thành công');
 			redirect('admin/producer','refresh');
@@ -74,16 +91,35 @@ class Producer extends CI_Controller {
 		$this->load->library('session');
 		$this->load->library('alias');
 		$this->form_validation->set_rules('name', 'Tên nhà cung cấp', 'required');
-		$this->form_validation->set_rules('keyword', 'Từ khóa', 'required');
+		// $this->form_validation->set_rules('keyword', 'Từ khóa', 'required');
 		if ($this->form_validation->run() == TRUE) {
 			$mydata= array(
 				'name' =>$_POST['name'],
+				'code' =>$string=$this->alias->str_alias($_POST['name']),
 				'modified'=>$today,
 				// 'keyword'=>$_POST['keyword'],
 				'modified_by'=>$this->session->userdata('id'),
 				'trash'=>1,
 				'status'=>$_POST['status']
 			);
+			if (!empty($_POST['detail'])) {
+				$mydata['detail']=$_POST['detail'];
+			}
+			if (!empty($iframe)) {
+				$mydata['iframe']=$_POST['iframe'];
+			}
+
+			$config['upload_path']          = './public/images/xa/';
+			$config['encrypt_name'] = TRUE;
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 2000;
+            $this->load->library('upload', $config);
+            if ( $this->upload->do_upload('img')){
+                $data = $this->upload->data();
+                $mydata['img']=$data['file_name'];
+            }else{
+                $mydata['img']='1.png';
+            }
 			$this->Mproducer->producer_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật nhà cung cấp thành công');
 			redirect('admin/producer/','refresh');

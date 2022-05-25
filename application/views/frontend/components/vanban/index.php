@@ -1,4 +1,4 @@
-<?php echo form_open(base_url() . "van-ban"); ?>
+<?php echo form_open(base_url()."van-ban"); ?>
 <section>
 	<div class="container">
 		<div class="col-md-12 col-12">

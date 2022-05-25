@@ -56,19 +56,21 @@ class Category extends CI_Controller {
 				'updated_by' =>$this->session->userdata('id'),
 				'trash'=>1
 			);
+			$mydata['level']=1;
+			$mydata['parentid']= 0;
 
-			$id=$_POST['parentid'];
-			if($id==0)
-			{
-				$mydata['level']=1;
-				$mydata['parentid']=$id;
-			}
-			else
-			{
-				$row=$this->Mcategory->category_detail($id);//Lấy thông tin loại đó
-				$mydata['level']=$row['level']+1;
-				$mydata['parentid']=$id;
-			}
+			// $id=$_POST['parentid'];
+			// if($id==0)
+			// {
+			// 	$mydata['level']=1;
+			// 	$mydata['parentid']=$id;
+			// }
+			// else
+			// {
+			// 	$row=$this->Mcategory->category_detail($id);//Lấy thông tin loại đó
+			// 	$mydata['level']=$row['level']+1;
+			// 	$mydata['parentid']=$id;
+			// }
 			$this->Mcategory->category_insert($mydata);
 			$this->session->set_flashdata('success', 'Thêm danh mục thành công');
 			redirect('admin/category','refresh');
@@ -104,18 +106,20 @@ class Category extends CI_Controller {
 				'updated_by' =>$this->session->userdata('id'),
 				'trash'=>1
 			);
-			$idtmp=$_POST['parentid'];
-			if($idtmp==0)
-			{
-				$mydata['level']=1;
-				$mydata['parentid']=$idtmp;
-			}
-			else
-			{
-				$row=$this->Mcategory->category_detail($idtmp);//Lấy thông tin loại đó
-				$mydata['level']=$row['level']+1;
-				$mydata['parentid']=$idtmp;
-			}
+			$mydata['level']=1;
+			$mydata['parentid']= 0;
+			// $idtmp=$_POST['parentid'];
+			// if($idtmp==0)
+			// {
+			// 	$mydata['level']=1;
+			// 	$mydata['parentid']=$idtmp;
+			// }
+			// else
+			// {
+			// 	$row=$this->Mcategory->category_detail($idtmp);//Lấy thông tin loại đó
+			// 	$mydata['level']=$row['level']+1;
+			// 	$mydata['parentid']=$idtmp;
+			// }
 
 			$this->Mcategory->category_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật danh mục thành công');

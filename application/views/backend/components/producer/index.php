@@ -70,7 +70,7 @@
 														<?php
 														if($user['role']==1){
 															echo '<td class="text-center">
-															<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/producer/update/'.$row['id'].'" role = "button">
+															<a class="btn btn-success btn-xs" href="admin/producer/update/'.$row['id'].'" role = "button">
 															<span class="glyphicon glyphicon-edit"></span>Sửa
 															</a>
 															</td>';
@@ -78,7 +78,7 @@
 														?>
 
 														<td class="text-center">
-															<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/producer/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa Nhà cung cấp này ?')" role = "button">
+															<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/producer/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa địa phương này ?')" role = "button">
 																<span class="glyphicon glyphicon-trash"></span>Xóa
 															</a>
 														</td>
