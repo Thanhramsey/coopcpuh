@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2022 at 11:33 AM
+-- Generation Time: May 25, 2022 at 12:09 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -52,7 +52,8 @@ INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, 
 (3, 'Thực phẩm', 'thucpham', 1, 0, '0', '2022-04-22 16:09:41', '4', '2022-04-22 16:09:41', '1', 1, 1),
 (4, 'Vải may mặc', 'vaimaymac', 1, 0, '0', '2022-04-23 21:33:25', '1', '2022-04-23 21:33:25', '1', 1, 1),
 (5, 'Thủ công mỹ nghệ', 'ttmynghe', 1, 0, '0', '2022-04-23 21:33:41', '1', '2022-04-23 21:33:41', '1', 1, 1),
-(6, 'Du lịch', 'dulich', 1, 0, '0', '2022-04-03 21:38:28', '1', '2022-04-03 21:38:28', '1', 1, 1);
+(6, 'Du lịch', 'dulich', 1, 0, '0', '2022-04-03 21:38:28', '1', '2022-04-03 21:38:28', '1', 1, 1),
+(13, 'Thuốc', 'thuoc', 1, 0, '1', '2022-05-25 14:25:02', '1', '2022-05-25 14:25:02', '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -62,13 +63,13 @@ INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, 
 
 CREATE TABLE `db_chinhsach` (
   `id` int(11) NOT NULL,
-  `sohieu` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `sohieu` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `loaivanban` int(11) NOT NULL,
-  `coquanbanhanh` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `linhvuc` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `trichyeu` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `coquanbanhanh` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `linhvuc` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `trichyeu` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `file` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `ngaybanhanh` datetime NOT NULL,
+  `ngaybanhanh` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `created_by` varchar(255) CHARACTER SET utf8 NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -84,7 +85,8 @@ CREATE TABLE `db_chinhsach` (
 --
 
 INSERT INTO `db_chinhsach` (`id`, `sohieu`, `loaivanban`, `coquanbanhanh`, `linhvuc`, `trichyeu`, `file`, `ngaybanhanh`, `created_at`, `created_by`, `updated_at`, `updated_by`, `trash`, `status`, `name`, `loaivanban_name`) VALUES
-(1, '01/QD-BCDTW', 3, 'BCĐ Trung ương	', 'OCOP', 'Ban Chỉ đạo Trung ương các Chương trình Mục tiêu quốc gia ban hành Quyết định số 01/QĐ-BCĐTW ngày 22/8/2018 về Kế hoạch triển khai Chương trình Mỗi xã một sản phẩm giai đoạn 2018 - 2020.', '_FilesUpload_01-QD-BCDTW432159552316.pdf', '2022-05-17 11:42:04', '2022-05-17 11:42:04', 'mtp', '2022-05-18 17:05:52', '1', 1, 1, 'Văn bản chỉ đạo 001', 'Nghị quyết');
+(1, '01/QD-BCDTW', 3, 'BCĐ Trung ương	', 'OCOP', 'Ban Chỉ đạo Trung ương các Chương trình Mục tiêu quốc gia ban hành Quyết định số 01/QĐ-BCĐTW ngày 22/8/2018 về Kế hoạch triển khai Chương trình Mỗi xã một sản phẩm giai đoạn 2018 - 2020.', '_FilesUpload_01-QD-BCDTW432159552316.pdf', '2022-05-17 11:42:04', '2022-05-17 11:42:04', 'mtp', '2022-05-18 17:05:52', '1', 1, 1, 'Văn bản chỉ đạo 001', 'Nghị quyết'),
+(4, 'xxxx', 1, '', 'bán muối', '', '46aeea23a7125dcec0e8e210867bba69.pdf', '0000-00-00 00:00:00', '2022-05-25 15:51:25', '1', '2022-05-25 15:52:37', '1', 1, 1, 'văn bản 2', '');
 
 -- --------------------------------------------------------
 
@@ -1438,13 +1440,13 @@ ALTER TABLE `db_usergroup`
 -- AUTO_INCREMENT for table `db_category`
 --
 ALTER TABLE `db_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `db_chinhsach`
 --
 ALTER TABLE `db_chinhsach`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `db_config`
@@ -1498,7 +1500,7 @@ ALTER TABLE `db_orderdetail`
 -- AUTO_INCREMENT for table `db_producer`
 --
 ALTER TABLE `db_producer`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `db_product`

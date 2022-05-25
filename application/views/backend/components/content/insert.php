@@ -1,4 +1,4 @@
-<?php echo 	('admin/content/insert'); ?>
+<?php echo form_open_multipart('admin/content/insert'); ?>
 <div class="content-wrapper">
 	<form action="<?php echo base_url() ?>admin/content/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
 		<section class="content-header">
