@@ -54,6 +54,7 @@
 												<th>Tên sản phẩm</th>
 												<th>Số lượng trong kho</th>
 												<th>Loại sản phẩm</th>
+												<th>Bình luận sp</th>
 												<?php if ($user['role'] == 1) : ?>
 													<th class="text-center">Trạng thái</th>
 													<th class="text-center">Sản phẩm tiềm năng</th>
@@ -76,6 +77,7 @@
 													$namecat = $this->Mcategory->category_name($row['catid']);
 													?>
 													<td><?php echo $namecat ?></td>
+													<td class="text-center"><a target="_blank" href="admin/product/danhgia/<?php echo $row['id'] ?>">GO!</a></td>
 													<?php if ($user['role'] == 1) : ?>
 														<td  style="width:80px"  class="text-center">
 															<a href="<?php echo base_url() ?>admin/product/status/<?php echo $row['id'] ?>">

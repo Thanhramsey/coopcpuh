@@ -257,7 +257,9 @@ class Sanpham extends CI_Controller {
 		$comment=$_POST['comment'];
 		$userComment=$_POST['userComment'];
 		$sdt=$_POST['sdt'];
-		$star=$_POST['star'];
+		if(!empty($_POST['star'])){
+			$star=$_POST['star'];
+		}
 		$mydata= array(
 					'product_id' =>$id,
 					'content' =>$comment,

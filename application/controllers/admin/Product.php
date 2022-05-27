@@ -12,6 +12,7 @@ class Product extends CI_Controller
 		$this->load->model('backend/Mproducer');
 		$this->load->model('backend/Morderdetail');
 		$this->load->model('backend/Morders');
+		$this->load->model('backend/Mevaluate');
 		if (!$this->session->userdata('sessionadmin')) {
 			redirect('admin/user/login', 'refresh');
 		}
@@ -364,4 +365,26 @@ class Product extends CI_Controller
 
 
 	// }
+	public function danhgia($id){
+		$this->load->library('phantrang');
+		$limit=10;
+		$current=$this->phantrang->PageCurrent();
+		$first=$this->phantrang->PageFirst($limit, $current);
+		$total=$this->Mevaluate->comment_productid_count_2($id);
+		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/product/danhgia');
+		$this->data['list']=$this->Mevaluate->comment_productid($id,$limit, $first);
+		$this->data['total']=$total;
+		$this->data['view']='danhgia';
+		$this->data['title']='Bình luận sản phẩm';
+		$this->load->view('backend/layout', $this->data);
+	}
+	public function deleteComment($id){
+
+		$product_id = $this->Mevaluate->get_comment($id);
+		$this->Mevaluate->comment_delete($id);
+		$this->session->set_flashdata('success', 'Xóa comment thành công');
+		redirect('admin/product/danhgia/'.$product_id,'refresh');
+	}
+
+
 }

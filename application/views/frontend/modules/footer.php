@@ -2,7 +2,7 @@
 	<div class="dangky">
 		<div class="container">
 			<div class="col-md-6 col-md-offset-6">
-				<h4>Đăng ký doanh nghiệp tỉnh Gia Lai - <span>Hotline:</span> <strong>0335 12 12 69</strong> </h4>
+				<h4>Đăng ký doanh nghiệp huyện ChưPưh - <span>Hotline:</span> <strong>(0269) 3 850 009</strong> </h4>
 				<div class="row">
 					<div class="col-md-6" style="border-right: 2px  solid #cac8c8; padding:15px 15px 0 15px;">
 						<a href="gianhang/insert" class="btn-dk">Đăng ký miễn phí</a>
@@ -88,7 +88,7 @@
 		<div class="container">
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 				<ul class="list-unstyled social pull-left" style="margin-bottom:0px">
-					<li><span style="line-height:40px; font-size:13px; color:#fff">© 2022 CHƯƠNG TRÌNH MỖI XÃ MỘT SẢN PHẨM - HUYỆN CHƯPƯH | <i style="font-size:12px" class="fa fa-phone"></i> (0269) 3 850 009 | <i style="font-size:12px" class="fa fa-envelope"></i>
+					<li><span style="line-height:40px; font-size:13px; color:#fff">© 2022 OCOP - HUYỆN CHƯPƯH | <i style="font-size:12px" class="glyphicon glyphicon-earphone"></i> (0269) 3 850 009 | <i style="font-size:12px" class="glyphicon glyphicon-envelope"></i>
 							ubndchupuh@gialai.gov.vn</span></li>
 				</ul>
 			</div>

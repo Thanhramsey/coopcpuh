@@ -60,6 +60,7 @@ $route['product/import/(:num)'] ='product/import/$1';
 $route['product/recyclebin'] ='product/recyclebin';
 $route['product/trash/(:num)'] ='product/trash/$1';
 $route['product/recyclebin/(:num)'] ='product/recyclebin/$1';
+$route['admin/product/danhgia'] ='admin/product/danhgia';
 
 $route['admin/producer'] ='admin/producer';
 $route['admin/producer/(:num)'] ='admin/producer/index/$1';
