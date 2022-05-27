@@ -33,9 +33,9 @@
                                                 <span class="price"><?php echo(number_format($sp['price_sale'])); ?>₫</span>
                                             </p>
                                             <?php else: ?>
-                                             <p class="old-price">
+                                             <!-- <p class="old-price">
                                                 <span class="price" style="color: #fff"><?php echo(number_format($sp['price'])); ?>₫</span>
-                                            </p>
+                                            </p> -->
                                             <p class="special-price">
                                                 <span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
                                             </p>

@@ -130,21 +130,23 @@
 														<span class="sell_num">| Đã bán <?php echo(number_format($sp['number_buy'])); ?></span>
 													</div>
 												</div>
-												<?php if($sp['sale'] > 0) :?>
-												<p class="old-price">
-													<span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
-												</p>
-												<p class="special-price">
-													<span class="price"><?php echo(number_format($sp['price_sale'])); ?>₫</span>
-												</p>
-												<?php else: ?>
-												<p class="old-price">
-													<span class="price" style="color: #fff"><?php echo(number_format($sp['price'])); ?>₫</span>
-												</p>
-												<p class="special-price">
-													<span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
-												</p>
-												<?php endif;?>
+												<div class="price-box">
+													<?php if($sp['sale'] > 0) :?>
+													<p class="old-price">
+														<span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
+													</p>
+													<p class="special-price">
+														<span class="price"><?php echo(number_format($sp['price_sale'])); ?>₫</span>
+													</p>
+													<?php else: ?>
+													<!-- <p class="old-price">
+														<span class="price" style="color: #fff"><?php echo(number_format($sp['price'])); ?>₫</span>
+													</p> -->
+													<p class="special-price">
+														<span class="price"><?php echo(number_format($sp['price'])); ?>₫</span>
+													</p>
+													<?php endif;?>
+												</div>
 												<div class="lienhe">
 													<a href="<?php echo base_url() ?>doanhngiep/detail/<?php $producer = $this->Muser->user_detail_id_fg($sp['userId']);echo $producer['id'] ?>" title="">
 														<h3>Liên hệ</h3>
