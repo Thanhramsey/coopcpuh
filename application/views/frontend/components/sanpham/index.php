@@ -105,7 +105,30 @@
                                                     <h3><?php echo $sp['name'] ?></h3>
                                                 </a>
 												<div>
-												<span class="sell_num">Đã bán <?php echo(number_format($sp['number_buy'])); ?></span>
+													<div class="lt-product-star-3" >
+														<?php if ($sp["star"] <= 1 ) : ?>
+															<span class="fa fa-star"></span>
+														<?php elseif ($sp["star"] > 1 && $sp["star"] <= 2) : ?>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+														<?php elseif ($sp["star"] > 2 && $sp["star"] <= 3) : ?>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+														<?php elseif ($sp["star"] > 3 && $sp["star"] <= 4) : ?>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+														<?php elseif ($sp["star"] > 4 && $sp["star"] <= 5) : ?>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+															<span class="fa fa-star"></span>
+														<?php endif; ?>
+														<span class="sell_num">| Đã bán <?php echo(number_format($sp['number_buy'])); ?></span>
+													</div>
 												</div>
 												<?php if($sp['sale'] > 0) :?>
 												<p class="old-price">

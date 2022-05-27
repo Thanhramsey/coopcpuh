@@ -149,8 +149,6 @@ class Sanpham extends CI_Controller {
     public function detail($link){
         $row = $this->Mproduct->product_detail($link);
         $this->data['row']=$row;
-
-
 		$datastar = $this->Mevaluate->comment_productid_count($row['id']);
 		$star1 = 0;
 		$total1 = 0;
@@ -201,6 +199,8 @@ class Sanpham extends CI_Controller {
 		$this->data['total5']=$total5;
 		$this->data['avg']=$AverageRating;
 
+		$starData = array('star' => $AverageRating);
+		$this->Mproduct->product_update($starData, $row['id']);
         $this->load->view('frontend/layout',$this->data);
     }
 

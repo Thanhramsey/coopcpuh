@@ -251,4 +251,11 @@ class Mproduct extends CI_Model {
 		  return $query->result_array();
 	  }
 
+	  //Sửa
+	public function product_update($mydata,$id)
+	{
+		$this->db->where('id',$id);
+		$this->db->update($this->table, $mydata);
+	}
+
 }

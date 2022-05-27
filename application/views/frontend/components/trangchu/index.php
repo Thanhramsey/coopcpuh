@@ -28,7 +28,6 @@
                         <a href="<?php echo $row['alias'] ?>" title="<?php echo $row['name'] ?>" >
                             <img class="img-p"src="public/images/products/<?php echo $row['avatar'] ?>" alt="">
                         </a>
-
                         <?php if($row['sale'] > 0) :?>
                             <div class="giam-percent">
                                 <span class="text-giam-percent">Giảm <?php echo $row['sale'] ?>%</span>
@@ -39,6 +38,32 @@
                         <a href="<?php echo $row['alias'] ?>" title="<?php echo $row['name'] ?>" style="text-align: left;">
                             <h3><?php echo $row['name'] ?></h3>
                         </a>
+						<div>
+							<div class="lt-product-star-3" >
+								<?php if ($row["star"] <= 1 ) : ?>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 1 && $row["star"] <= 2) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 2 && $row["star"] <= 3) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 3 && $row["star"] <= 4) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 4 && $row["star"] <= 5) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php endif; ?>
+								<span class="sell_num">| Đã bán <?php echo(number_format($row['number_buy'])); ?></span>
+							</div>
+						</div>
                         <div class="price-box">
                             <?php if($row['sale'] > 0) :?>
 
@@ -96,6 +121,32 @@
                         <a href="<?php echo $row['alias'] ?>" title="<?php echo $row['name'] ?>" style="text-align: left;">
                             <h3><?php echo $row['name'] ?></h3>
                         </a>
+						<div>
+							<div class="lt-product-star-3" >
+								<?php if ($row["star"] <= 1 ) : ?>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 1 && $row["star"] <= 2) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 2 && $row["star"] <= 3) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 3 && $row["star"] <= 4) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 4 && $row["star"] <= 5) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php endif; ?>
+								<span class="sell_num">| Đã bán <?php echo(number_format($row['number_buy'])); ?></span>
+							</div>
+						</div>
                         <div class="price-box">
                             <?php if($row['sale'] > 0) :?>
 
@@ -150,6 +201,32 @@
                         <a href="<?php echo $row['alias'] ?>" title="<?php echo $row['name'] ?>" style="text-align: left;">
                             <h3><?php echo $row['name'] ?></h3>
                         </a>
+						<div>
+							<div class="lt-product-star-3" >
+								<?php if ($row["star"] <= 1 ) : ?>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 1 && $row["star"] <= 2) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 2 && $row["star"] <= 3) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 3 && $row["star"] <= 4) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php elseif ($row["star"] > 4 && $row["star"] <= 5) : ?>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								<?php endif; ?>
+								<span class="sell_num">| Đã bán <?php echo(number_format($row['number_buy'])); ?></span>
+							</div>
+						</div>
                         <div class="price-box">
                             <?php if($row['sale'] > 0) :?>
 
@@ -230,8 +307,31 @@
                                         <a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>" style="text-align: left;">
                                             <h3><?php echo $sp['name'] ?></h3>
                                         </a>
-										<div style='text-align:left'>
-											<span class="sell_num">Đã bán <?php echo(number_format($sp['number_buy'])); ?></span>
+										<div>
+											<div class="lt-product-star-3" >
+												<?php if ($row["star"] <= 1 ) : ?>
+													<span class="fa fa-star"></span>
+												<?php elseif ($row["star"] > 1 && $row["star"] <= 2) : ?>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+												<?php elseif ($row["star"] > 2 && $row["star"] <= 3) : ?>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+												<?php elseif ($row["star"] > 3 && $row["star"] <= 4) : ?>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+												<?php elseif ($row["star"] > 4 && $row["star"] <= 5) : ?>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+													<span class="fa fa-star"></span>
+												<?php endif; ?>
+												<span class="sell_num">| Đã bán <?php echo(number_format($row['number_buy'])); ?></span>
+											</div>
 										</div>
                                         <div class="price-box">
                                             <?php if($sp['sale'] > 0) :?>
@@ -270,23 +370,26 @@
 
 <div class="home-blog">
     <div class="container">
-        <div class="row-p">
-            <div class="text-center">
+        <div class="blog-content">
+		<!-- <div class="row-p">
+
+        </div> -->
+		<div class="text-center">
                 <h2 class="sectin-title title title-blue">Tin tức</h2>
             </div>
-        </div>
-        <div class="blog-content">
             <?php
             $listBaiViet=$this->Mcontent->content_list_home(6, 'all');
             foreach ($listBaiViet as $rowPost) :?>
-                <div class="col-xs-12 col-12 col-sm-6 col-md-4 col-lg-4" style="margin: 5px;">
-                    <div class="latest">
+                <div class="col-xs-12 col-12 col-sm-6 col-md-4 col-lg-4" style="padding: 10px !important;">
+                    <div class="latest tintuc">
+
                         <a href="tin-tuc/<?php echo $rowPost['alias'] ?>">
-                            <div class="tempvideo">
-                                <img width="98%" src="public/images/posts/<?php echo $rowPost['img'] ?>">
-                            </div>
-                            <h4 style="color: cornflowerblue;"><?php echo $rowPost['title'] ?></h4>
+						<div class="tempvideo" style="margin-bottom:5px;">
+                            <img width="98%" src="public/images/posts/<?php echo $rowPost['img'] ?>">
+                        </div>
+							<?php echo $rowPost['title'] ?>
                         </a>
+						<!-- <h4 style="color: cornflowerblue;"><?php echo $rowPost['title'] ?></h4> -->
                     </div>
                 </div>
             <?php endforeach; ?>

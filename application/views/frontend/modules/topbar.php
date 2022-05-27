@@ -4,10 +4,10 @@
 		<div class="container">
 			<div class="col-md-12 col-lg-12">
 				<div class="navbar-header">
-					<div class="icon-img-logo hidden-md hidden-lg">
+					<!-- <div class="icon-img-logo hidden-md hidden-lg">
 						<strong><p style="color:#fff">OCOP CHƯPƯH</p></strong>
-                    </div>
-					<button style="padding-top:17px" type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    </div> -->
+					<button style="padding-left:10px !important" type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -28,18 +28,18 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                 	<ul class="nav navbar navbar-nav" id="nav1">
-                		<li><a href="#">Trang chủ</a></li>
-                		<li><a href="san-pham/1">Sản phẩm</a></li>
-                		<li><a href="tin-tuc/1">Tin tức</a></li>
-                		<li><a href="van-ban">Chính sách</a></li>
-                		<li><a href="lien-he">Liên hệ</a></li>
+                		<li><a style='color:#fff' href="#">Trang chủ</a></li>
+                		<li><a style='color:#fff' href="san-pham/1">Sản phẩm</a></li>
+                		<li><a style='color:#fff' href="tin-tuc/1">Tin tức</a></li>
+                		<li><a style='color:#fff' href="van-ban">Chính sách</a></li>
+                		<li><a style='color:#fff' href="lien-he">Liên hệ</a></li>
                 		<!-- <li><a href="thong-tin-tai-khoan">Tài khoản</a></li> -->
                 		<?php
                 		if($this->session->userdata('sessionKhachHang')){
-                			echo "<li><a href='dang-xuat'>Thoát</a></li>";
+                			echo "<li><a style='color:#fff' href='dang-xuat'>Thoát</a></li>";
                 		}else{
-                			echo "<li><a href='dang-ky'>Đăng ký</a></li>";
-                			echo "<li><a href='dang-nhap'>Đăng nhập</a></li>";
+                			echo "<li><a style='color:#fff' href='dang-ky'>Đăng ký</a></li>";
+                			echo "<li><a style='color:#fff' href='dang-nhap'>Đăng nhập</a></li>";
                 		}
                 		?>
                 	</ul>

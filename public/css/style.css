@@ -2729,6 +2729,13 @@ a.fright {
 	  text-align:left;
 	  margin-top: 10px
   }
+  .lt-product-star-3{
+	text-align:left;
+	margin-top: 5px
+  }
+  .lt-product-star-3 .fa{
+	font-size: 12px;
+  }
 
   .owl-carousel-product.owl-carousel.owl-drag .owl-item:hover{
 	  border:1px solid #3a8701;
@@ -2760,11 +2767,11 @@ a.fright {
     background-color: #3a8701;
     color: #fff;
     font-weight: 600;
-    border-radius: 0px 0px 0px 20px;
+    border-radius: 0px 20px 20px 0px;
     cursor: pointer;
 	position: absolute;
 	bottom:5px;
-	right:0px
+	left:0px
   }
   .lienhe h3{
 	color : #fff;
@@ -2889,3 +2896,32 @@ a.fright {
 	background: #3a8701;
  	color: #fff;
 }
+
+  .tintuc a {
+	color: cornflowerblue;
+	text-decoration: none;
+  }
+
+  .tintuc a {
+	background:
+	  linear-gradient(
+		to right,
+		rgba(100, 200, 200, 0),
+		rgba(100, 200, 200, 0)
+	  ),
+	  linear-gradient(
+		to right,
+		#b02907,
+		rgb(240, 192, 226),
+		#e3e310
+	);
+	background-size: 100% 2px, 0 2px;
+	background-position: 100% 100%, 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 400ms;
+	font-size: 17px;
+  }
+
+  .tintuc a:hover {
+	background-size: 0 2px, 100% 2px;
+  }

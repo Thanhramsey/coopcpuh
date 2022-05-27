@@ -34,6 +34,7 @@
 															<a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
 																<img width="225" height="210" class="img-t" src="public/images/products/<?php echo $sp['avatar'] ?>" alt="">
 															</a>
+															<div>
 															<?php if ($sp['sale'] > 0) : ?>
 																<div class="giam-percent">
 																	<span class="text-giam-percent">Giảm <?php echo $sp['sale'] ?>%</span>
@@ -41,10 +42,35 @@
 															<?php endif; ?>
 														</div>
 
-														<div class="lt-product-group-info" style="text-align:left">
+														<div style="text-align:left; margin-top:10px">
 															<a href="<?php echo $sp['alias'] ?>" title="<?php echo $sp['name'] ?>">
 																<h3><?php echo $sp['name'] ?></h3>
 															</a>
+															<div class="lt-product-star-3" >
+																	<?php if ($sp["star"] <= 1 ) : ?>
+																		<span class="fa fa-star"></span>
+																	<?php elseif ($sp["star"] > 1 && $sp["star"] <= 2) : ?>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																	<?php elseif ($sp["star"] > 2 && $sp["star"] <= 3) : ?>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																	<?php elseif ($sp["star"] > 3 && $sp["star"] <= 4) : ?>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																	<?php elseif ($sp["star"] > 4 && $sp["star"] <= 5) : ?>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																	<?php endif; ?>
+																	<span class="sell_num">| Đã bán <?php echo(number_format($sp['number_buy'])); ?></span>
+																</div>
+															</div>
 															<div class="price-box">
 																<?php if ($sp['sale'] > 0) : ?>
 
