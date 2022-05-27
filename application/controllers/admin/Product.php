@@ -43,6 +43,29 @@ class Product extends CI_Controller
 		$this->load->view('backend/layout', $this->data);
 	}
 
+	public function search()
+	{
+		$this->load->library('phantrang');
+		$this->load->library('session');
+		$limit = 10;
+		$current = $this->phantrang->PageCurrent();
+		$user_role = $this->session->userdata('sessionadmin');
+		$first = $this->phantrang->PageFirst($limit, $current);
+		if ($user_role['role'] == 1) {
+			$total = $this->Mproduct->product_sanpham_count();
+			$this->data['strphantrang'] = $this->phantrang->PagePer($total, $current, $limit, $url = 'admin/product');
+			$this->data['list'] = $this->Mproduct->product_sanpham($limit, $first);
+		} else {
+			$userId = $this->session->userdata('id');
+			$total = $this->Mproduct->product_sanpham_byId_count($userId);
+			$this->data['strphantrang'] = $this->phantrang->PagePer($total, $current, $limit, $url = 'admin/product');
+			$this->data['list'] = $this->Mproduct->product_sanpham_id($limit, $first, $userId);
+		}
+		$this->data['view'] = 'index';
+		$this->data['title'] = 'Danh mục sản phẩm';
+		$this->load->view('backend/layout', $this->data);
+	}
+
 	public function insert()
 	{
 		// $user_role=$this->session->userdata('sessionadmin');

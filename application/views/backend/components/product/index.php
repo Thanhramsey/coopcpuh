@@ -23,6 +23,34 @@
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Loại sản phẩm<span class="maudo">(*)</span></label>
+						<select name="loaisp" class="form-control">
+							<option value="">[--Chọn loại sản phẩm--]</option>
+						</select>
+						<div class="error" id="password_error"><?php echo form_error('loaisp') ?></div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Doanh Nghiệp<span class="maudo">(*)</span></label>
+						<select name="doanhnghiep" class="form-control">
+							<option value="">[--Chọn doanh nghiệp--]</option>
+						</select>
+						<div class="error" id="password_error"><?php echo form_error('doanhnghiep') ?></div>
+					</div>
+				</div>
+				<div class="col-md-4" style="padding-top: 25px;">
+					<a class="btn btn-primary btn-sm" href="<?php echo base_url() ?>admin/product/search" role="button">
+						<span class="glyphicon glyphicon-search"></span> Tìm kiếm
+					</a>
+				</div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
 				<div class="box" id="view">
 					<div class="box-header with-border">
 						<!-- /.box-header -->
