@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2022 at 12:09 PM
+-- Generation Time: May 27, 2022 at 12:03 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -974,9 +974,18 @@ CREATE TABLE `db_evaluate` (
   `sdt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `comment_time` datetime NOT NULL,
   `comment_by` int(11) DEFAULT NULL,
-  `star` int(11) NOT NULL DEFAULT 1,
+  `star` int(11) NOT NULL DEFAULT 4,
   `trash` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `db_evaluate`
+--
+
+INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `comment_time`, `comment_by`, `star`, `trash`) VALUES
+(21, 'hết nước chấm', 60, 'tiến', '09897869435', '2022-05-27 10:39:17', NULL, 5, 1),
+(23, 'ăn ngon đó', 62, 'hi', '123123', '2022-05-27 14:38:48', NULL, 2, 1),
+(25, 'Rất là ngon !!', 55, 'Rất là ngon !!', '123123', '2022-05-27 15:47:58', NULL, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -1118,26 +1127,27 @@ CREATE TABLE `db_product` (
   `img2` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `img3` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `img4` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `is_hot` int(11) NOT NULL DEFAULT 0
+  `is_hot` int(11) NOT NULL DEFAULT 0,
+  `star` double NOT NULL DEFAULT 4
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `db_product`
 --
 
-INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sortDesc`, `detail`, `producer`, `number`, `number_buy`, `sale`, `price`, `price_sale`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`, `userId`, `img2`, `img3`, `img4`, `is_hot`) VALUES
-(51, 5, 'Sản phẩm 1', 'san-pham-1', 'bc926045aab0fc91074d0c87b58df46b.jpg', '2ae45fb26b459012a87b42e838e002ac.jpg', 'Sản phẩm 1', '<p><strong>Sản phẩm 1</strong></p>\r\n', 1, 100, 2, 10, 100000, 90000, '2022-05-19 14:57:10', '10', '2022-05-19 14:57:10', '10', 1, 1, 10, 'a98f6cc1444ad47c7f083545d3d15049.jpg', '', NULL, 0),
-(52, 3, 'Sản phẩm 2', 'san-pham-2', '27a7cb8f15d8d3f047c529784db9e66a.jpg', '1eb6b28c97f2eef64641eddc28f25ac2.jpg', 'Sản phẩm 2', '<p>Sản phẩm 2</p>\r\n', 2, 100, 0, 0, 90000, 90000, '2022-05-19 14:57:44', '10', '2022-05-19 14:57:44', '10', 1, 1, 10, '', NULL, NULL, 0),
-(53, 2, 'Sản phẩm 3', 'san-pham-3', '8d717e0c21e253e8c1a93817533aa03d.jpg', 'b3dc11f0bccf33373c0fcf82d9195727.jpeg', 'Sản phẩm 3', '<p>Sản phẩm 3</p>\r\n', 3, 12, 0, 0, 150000, 150000, '2022-05-19 14:58:18', '10', '2022-05-19 14:58:18', '10', 1, 1, 10, '', NULL, NULL, 0),
-(54, 2, 'Sản phẩm 4', 'san-pham-4', '4debc0822586dd82cc9c010b0e07be3e.jpg', '0e4f2d2dffda41dfedc4cca9b24fc612.jpg', 'Sản phẩm 4', '<p>Sản phẩm 4</p>\r\n', 2, 134, 0, 0, 10000, 10000, '2022-05-19 14:58:48', '10', '2022-05-19 14:58:48', '10', 1, 1, 10, '', NULL, NULL, 0),
-(55, 3, 'Sản phẩm 5', 'san-pham-5', '6f3a604689031039e370d803bbd1b75d.jpg', 'bdf4cf04170a919156138513d16997b5.jpeg', 'Sản phẩm 5', '<p>Sản phẩm 5</p>\r\n', 2, 100, 0, 0, 150000, 150000, '2022-05-19 15:00:10', '10', '2022-05-19 15:00:10', '10', 1, 1, 10, '', NULL, NULL, 0),
-(56, 3, 'Sản phảm 6', 'san-pham-6', 'c803aea5b15c71c8eea49b8277d30b5e.jpg', 'ca9dd35fa81bf66bf72000b94a379900.jpg', 'thanh19961', '<ul>\r\n	<li>Phần thịt được sử dụng chỉ l&agrave; thịt thăn v&agrave; đ&ugrave;i v&igrave; ở v&ugrave;ng đ&oacute; mới c&oacute; được những miếng thịt to v&agrave; chắc. Sau đ&oacute; l&agrave; tới c&ocirc;ng đoạn l&agrave;m sạch, b&ograve; phải được rửa bằng rượu v&agrave; cắt l&aacute;t ra th&agrave;nh từng miếng nhỏ c&oacute; độ d&agrave;y từ 1 &ndash; 1,5cm. Thịt được tẩm ướp c&ugrave;ng với sả, ớt, rượu vang v&agrave; gia vị đặc trưng ri&ecirc;ng của v&ugrave;ng. Kế đến l&agrave; mang thịt ra phơi nắng từ 1 &ndash; 2g, sau đ&oacute; cho v&agrave;o l&ograve; sấy kh&ocirc; để loại bỏ lượng nước trong thịt. -C&oacute; đầy đủ Giấy tờ bảo đảm ATVSTP - Hạn sử dụng: 06 th&aacute;ng kể từ ng&agrave;y sản xuất (ng&agrave;y sản xuất c&oacute; in tr&ecirc;n bao b&igrave;) - Xuất xứ: Gia Lai Gi&aacute; sản phẩm: 600.000 VND/Kg Bảo quản: Ngăn đ&ocirc;ng của tủ lạnh C&aacute;ch chế biến: -&gt; Cho thịt l&ecirc;n vỉ v&agrave; nướng tr&ecirc;n bếp than hồng (hoặc d&ugrave;ng l&ograve; nướng). Thịt nướng ch&iacute;n r&aacute;m v&agrave;ng hai cạnh c&ugrave;ng m&ugrave;i thơm tỏa ra rất quyến rũ. Khi nướng nhớ trở đều tay để thịt ch&iacute;n đều v&agrave; kh&ocirc;ng bị ch&aacute;y, thịt vẫn giữ được độ ngọt, dai v&agrave; kh&ocirc;ng bị kh&ocirc;. -&gt; Sau khi nướng ch&iacute;n, x&eacute; hoặc cắt th&agrave;nh từng miếng nhỏ. B&ograve; một nắng được ăn k&egrave;m với dưa leo, chuối ch&aacute;t, c&aacute;c loại rau thơm v&agrave; đặc biệt l&agrave; muối ớt kiến v&agrave;ng - loại thức chấm rất lạ miệng, c&oacute; vị chua chua của con kiến v&agrave;ng.</li>\r\n	<li>Ph&ugrave; hợp: L&agrave;m m&oacute;n nhậu, qu&agrave; tặng người th&acirc;n, bạn b&egrave;.</li>\r\n</ul>\r\n', 9, 90, 0, 0, 50000, 50000, '2022-05-19 15:02:05', '2', '2022-05-19 15:02:05', '2', 1, 1, 2, 'f45b9b67e287dba54b9dfac9f263aaaf.jpg', '', NULL, 0),
-(57, 4, 'Sản phẩm 7', 'san-pham-7', 'cc81b54d240b12bed2319b6412bcb593.jpg', '05dd1be9219dfe3bff7cb523658a3fd3.jpg', 'Sản phẩm 7', '<ul dir=\"ltr\">\r\n	<li>Sản phẩm B&ograve; Kh&ocirc; Huy Vũ được kh&aacute;ch h&agrave;ng biết đến với hương vị thơm ngon, đặc trưng mang đậm n&eacute;t truyền thống, với nghề gia truyền từ năm 1995 sử dụng nguy&ecirc;n liệu b&ograve; tươi l&agrave; b&ograve; đồng b&agrave;o thả r&ocirc;ng l&agrave; giống b&ograve; địa phương của người đồng b&agrave;o ở Gia Lai. Sản phẩm đạt chứng nhận OCOP 4 sao, đạt chứng nhận sản phẩm C&ocirc;ng Nghiệp N&ocirc;ng Th&ocirc;n Ti&ecirc;u Biểu Cấp Khu Vực Miền Trung</li>\r\n</ul>\r\n', 2, 100, 0, 10, 90000, 81000, '2022-05-19 15:02:57', '2', '2022-05-19 15:02:57', '2', 1, 1, 2, '186b0d80da3c2bc9f6cc0be32dbcfb32.jpg', '', NULL, 0),
-(58, 3, 'Sản phẩm 8', 'san-pham-8', '238a187c11f6dd71c5b0a0d921e0ffcd.jpg', 'f9576fa3277b30aa487e3058a70ff3c0.jpg', 'Sản phẩm 8', '<p>Sản phẩm 8</p>\r\n', 2, 1, 0, 0, 900000, 900000, '2022-05-19 15:04:07', '2', '2022-05-19 15:04:07', '2', 1, 1, 2, '2c08e004dd3bf6b97d7c0b98591cb325.jpg', '', NULL, 0),
-(59, 5, 'Sản phẩm 9', 'san-pham-9', '755e15d68385b7db4a9c73455a0aea4f.jpg', '892b4d723de04e5f87c10b0d0bdec27a.png', 'Sản phẩm 9', '<p>Sản phẩm 9</p>\r\n', 1, 50, 0, 0, 890012, 890012, '2022-05-19 15:04:52', '2', '2022-05-19 15:04:52', '2', 1, 1, 2, '617781a407dee3ae6ac065e4517d6daa.jpg', 'ff1511b4cf9bf133ea8d3c4934b20d55.jpg', NULL, 0),
-(60, 3, 'Sản phẩm 10', 'san-pham-10', '5aa6b402d55ebc8ef3b560d2f6bb5b87.jpeg', '91aa8dada65ec53bc89df10182923120.jpg', 'Sản phẩm 10', '<ul dir=\"ltr\">\r\n	<li>Sản phẩm thịt B&ograve; Kh&ocirc; Huy Vũ l&agrave; sản phẩm đặc trưng của Huyện Đak Đoa;</li>\r\n	<li>Tất cả sản phẩm b&ograve; kh&ocirc; đều kh&ocirc;ng sử dụng chất bảo quản cũng như phẩm m&agrave;u;</li>\r\n	<li>Bạn sẽ thấy m&agrave;u sắc kh&ocirc;ng được bắt mắt nhưng khi ăn mới cảm nhận được vị ngọt đậm đ&agrave; của thịt b&ograve;, thịt dai mềm;</li>\r\n	<li>Ch&uacute;ng t&ocirc;i lu&ocirc;n lắng nghe v&agrave; thay đổi kh&ocirc;ng ngừng qua từng ng&agrave;y, để mang đến cho kh&aacute;ch h&agrave;ng một sản phẩm tốt nhất, chất lượng nhất.</li>\r\n</ul>\r\n', 3, 10, 0, 10, 90000, 81000, '2022-05-19 15:11:35', '2', '2022-05-19 15:11:35', '2', 1, 1, 2, '316ef7a90ab34a72a6794255a9e6759e.jpg', 'd89f94b5e10b2ac04774c6cf436a376a.jpg', NULL, 0),
-(61, 1, 'Sản phẩm 11', 'san-pham-11', 'bf6ac842ee40b8e9992e91f5821e2f4a.jpg', '7da203395d194b736f2ce815dfbab626.jpg', 'Sản phẩm 11', '<p>Sản phẩm 11</p>\r\n', 2, 19, 0, 0, 90090, 90090, '2022-05-19 15:12:35', '2', '2022-05-19 15:12:35', '2', 1, 1, 2, 'd2659003e9d40d68c6506e92d57c68df.jpg', 'f20fb23421685fbab94cd62a294daeef.jpeg', NULL, 0),
-(62, 3, 'Bò khô huy vũ', 'bo-kho-huy-vu', '3f2b44c010eaaaeeea813bbe3af89622.jpg', 'a7ac437599173939c4059392508f58d3.jpg', 'Bò khô Huy Vũ', '<p><span style=\"color:#e74c3c\"><strong>B&Ograve; HUY VŨ</strong></span> được lựa chọn từ những miếng thịt nhiều đạm, ướp đẫm gia vị thơm ngon, sấy kh&ocirc; bằng than c&ugrave;ng vị sả thơm phức &amp; ớt tươi . Ăn v&agrave;o sẽ c&oacute; vị mằn mặn, ngọt thanh quyện với cay nồng, rất th&iacute;ch hợp cho những ph&uacute;t gi&acirc;y b&ecirc;n gia đ&igrave;nh trong những ng&agrave;y khủng hoảng v&igrave; dịch bệnh l&uacute;c n&agrave;y <strong>H&Atilde;Y THỬ NGAY, BẠN C&Ograve;N CHẦN CHỪ G&Igrave; NỮA!</strong></p>\r\n', 3, 100, 3, 0, 200000, 200000, '2022-05-23 14:45:14', '18', '2022-05-23 14:45:14', '18', 1, 1, 18, '', NULL, NULL, 0);
+INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sortDesc`, `detail`, `producer`, `number`, `number_buy`, `sale`, `price`, `price_sale`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`, `userId`, `img2`, `img3`, `img4`, `is_hot`, `star`) VALUES
+(51, 5, 'Sản phẩm 1', 'san-pham-1', 'bc926045aab0fc91074d0c87b58df46b.jpg', '2ae45fb26b459012a87b42e838e002ac.jpg', 'Sản phẩm 1', '<p><strong>Sản phẩm 1</strong></p>\r\n', 1, 100, 2, 10, 100000, 90000, '2022-05-19 14:57:10', '10', '2022-05-19 14:57:10', '10', 1, 1, 10, 'a98f6cc1444ad47c7f083545d3d15049.jpg', '', NULL, 0, 4),
+(52, 3, 'Sản phẩm 2', 'san-pham-2', '27a7cb8f15d8d3f047c529784db9e66a.jpg', '1eb6b28c97f2eef64641eddc28f25ac2.jpg', 'Sản phẩm 2', '<p>Sản phẩm 2</p>\r\n', 2, 100, 0, 0, 90000, 90000, '2022-05-19 14:57:44', '10', '2022-05-19 14:57:44', '10', 1, 1, 10, '', NULL, NULL, 0, 4),
+(53, 2, 'Sản phẩm 3', 'san-pham-3', '8d717e0c21e253e8c1a93817533aa03d.jpg', 'b3dc11f0bccf33373c0fcf82d9195727.jpeg', 'Sản phẩm 3', '<p>Sản phẩm 3</p>\r\n', 3, 12, 0, 0, 150000, 150000, '2022-05-19 14:58:18', '10', '2022-05-19 14:58:18', '10', 1, 1, 10, '', NULL, NULL, 0, 4),
+(54, 2, 'Sản phẩm 4', 'san-pham-4', '4debc0822586dd82cc9c010b0e07be3e.jpg', '0e4f2d2dffda41dfedc4cca9b24fc612.jpg', 'Sản phẩm 4', '<p>Sản phẩm 4</p>\r\n', 2, 134, 0, 0, 10000, 10000, '2022-05-19 14:58:48', '10', '2022-05-19 14:58:48', '10', 1, 1, 10, '', NULL, NULL, 0, 3),
+(55, 3, 'Sản phẩm 5', 'san-pham-5', '6f3a604689031039e370d803bbd1b75d.jpg', 'bdf4cf04170a919156138513d16997b5.jpeg', 'Sản phẩm 5', '<p>Sản phẩm 5</p>\r\n', 2, 100, 0, 0, 150000, 150000, '2022-05-19 15:00:10', '10', '2022-05-19 15:00:10', '10', 1, 1, 10, '', NULL, NULL, 0, 4),
+(56, 3, 'Sản phảm 6', 'san-pham-6', 'c803aea5b15c71c8eea49b8277d30b5e.jpg', 'ca9dd35fa81bf66bf72000b94a379900.jpg', 'thanh19961', '<ul>\r\n	<li>Phần thịt được sử dụng chỉ l&agrave; thịt thăn v&agrave; đ&ugrave;i v&igrave; ở v&ugrave;ng đ&oacute; mới c&oacute; được những miếng thịt to v&agrave; chắc. Sau đ&oacute; l&agrave; tới c&ocirc;ng đoạn l&agrave;m sạch, b&ograve; phải được rửa bằng rượu v&agrave; cắt l&aacute;t ra th&agrave;nh từng miếng nhỏ c&oacute; độ d&agrave;y từ 1 &ndash; 1,5cm. Thịt được tẩm ướp c&ugrave;ng với sả, ớt, rượu vang v&agrave; gia vị đặc trưng ri&ecirc;ng của v&ugrave;ng. Kế đến l&agrave; mang thịt ra phơi nắng từ 1 &ndash; 2g, sau đ&oacute; cho v&agrave;o l&ograve; sấy kh&ocirc; để loại bỏ lượng nước trong thịt. -C&oacute; đầy đủ Giấy tờ bảo đảm ATVSTP - Hạn sử dụng: 06 th&aacute;ng kể từ ng&agrave;y sản xuất (ng&agrave;y sản xuất c&oacute; in tr&ecirc;n bao b&igrave;) - Xuất xứ: Gia Lai Gi&aacute; sản phẩm: 600.000 VND/Kg Bảo quản: Ngăn đ&ocirc;ng của tủ lạnh C&aacute;ch chế biến: -&gt; Cho thịt l&ecirc;n vỉ v&agrave; nướng tr&ecirc;n bếp than hồng (hoặc d&ugrave;ng l&ograve; nướng). Thịt nướng ch&iacute;n r&aacute;m v&agrave;ng hai cạnh c&ugrave;ng m&ugrave;i thơm tỏa ra rất quyến rũ. Khi nướng nhớ trở đều tay để thịt ch&iacute;n đều v&agrave; kh&ocirc;ng bị ch&aacute;y, thịt vẫn giữ được độ ngọt, dai v&agrave; kh&ocirc;ng bị kh&ocirc;. -&gt; Sau khi nướng ch&iacute;n, x&eacute; hoặc cắt th&agrave;nh từng miếng nhỏ. B&ograve; một nắng được ăn k&egrave;m với dưa leo, chuối ch&aacute;t, c&aacute;c loại rau thơm v&agrave; đặc biệt l&agrave; muối ớt kiến v&agrave;ng - loại thức chấm rất lạ miệng, c&oacute; vị chua chua của con kiến v&agrave;ng.</li>\r\n	<li>Ph&ugrave; hợp: L&agrave;m m&oacute;n nhậu, qu&agrave; tặng người th&acirc;n, bạn b&egrave;.</li>\r\n</ul>\r\n', 9, 90, 0, 0, 50000, 50000, '2022-05-19 15:02:05', '2', '2022-05-19 15:02:05', '2', 1, 1, 2, 'f45b9b67e287dba54b9dfac9f263aaaf.jpg', '', NULL, 0, 4),
+(57, 4, 'Sản phẩm 7', 'san-pham-7', 'cc81b54d240b12bed2319b6412bcb593.jpg', '05dd1be9219dfe3bff7cb523658a3fd3.jpg', 'Sản phẩm 7', '<ul dir=\"ltr\">\r\n	<li>Sản phẩm B&ograve; Kh&ocirc; Huy Vũ được kh&aacute;ch h&agrave;ng biết đến với hương vị thơm ngon, đặc trưng mang đậm n&eacute;t truyền thống, với nghề gia truyền từ năm 1995 sử dụng nguy&ecirc;n liệu b&ograve; tươi l&agrave; b&ograve; đồng b&agrave;o thả r&ocirc;ng l&agrave; giống b&ograve; địa phương của người đồng b&agrave;o ở Gia Lai. Sản phẩm đạt chứng nhận OCOP 4 sao, đạt chứng nhận sản phẩm C&ocirc;ng Nghiệp N&ocirc;ng Th&ocirc;n Ti&ecirc;u Biểu Cấp Khu Vực Miền Trung</li>\r\n</ul>\r\n', 2, 100, 0, 10, 90000, 81000, '2022-05-19 15:02:57', '2', '2022-05-19 15:02:57', '2', 1, 1, 2, '186b0d80da3c2bc9f6cc0be32dbcfb32.jpg', '', NULL, 0, 4),
+(58, 3, 'Sản phẩm 8', 'san-pham-8', '238a187c11f6dd71c5b0a0d921e0ffcd.jpg', 'f9576fa3277b30aa487e3058a70ff3c0.jpg', 'Sản phẩm 8', '<p>Sản phẩm 8</p>\r\n', 2, 1, 0, 0, 900000, 900000, '2022-05-19 15:04:07', '2', '2022-05-19 15:04:07', '2', 1, 1, 2, '2c08e004dd3bf6b97d7c0b98591cb325.jpg', '', NULL, 0, 4),
+(59, 5, 'Sản phẩm 9', 'san-pham-9', '755e15d68385b7db4a9c73455a0aea4f.jpg', '892b4d723de04e5f87c10b0d0bdec27a.png', 'Sản phẩm 9', '<p>Sản phẩm 9</p>\r\n', 1, 50, 0, 0, 890012, 890012, '2022-05-19 15:04:52', '2', '2022-05-19 15:04:52', '2', 1, 1, 2, '617781a407dee3ae6ac065e4517d6daa.jpg', 'ff1511b4cf9bf133ea8d3c4934b20d55.jpg', NULL, 0, 4),
+(60, 3, 'Sản phẩm 10', 'san-pham-10', '5aa6b402d55ebc8ef3b560d2f6bb5b87.jpeg', '', 'Sản phẩm 10', '<ul dir=\"ltr\">\r\n	<li>Sản phẩm thịt B&ograve; Kh&ocirc; Huy Vũ l&agrave; sản phẩm đặc trưng của Huyện Đak Đoa;</li>\r\n	<li>Tất cả sản phẩm b&ograve; kh&ocirc; đều kh&ocirc;ng sử dụng chất bảo quản cũng như phẩm m&agrave;u;</li>\r\n	<li>Bạn sẽ thấy m&agrave;u sắc kh&ocirc;ng được bắt mắt nhưng khi ăn mới cảm nhận được vị ngọt đậm đ&agrave; của thịt b&ograve;, thịt dai mềm;</li>\r\n	<li>Ch&uacute;ng t&ocirc;i lu&ocirc;n lắng nghe v&agrave; thay đổi kh&ocirc;ng ngừng qua từng ng&agrave;y, để mang đến cho kh&aacute;ch h&agrave;ng một sản phẩm tốt nhất, chất lượng nhất.</li>\r\n</ul>\r\n', 3, 10, 0, 10, 90000, 81000, '2022-05-19 15:11:35', '2', '2022-05-27 14:19:59', '1', 1, 1, 2, '316ef7a90ab34a72a6794255a9e6759e.jpg', 'd89f94b5e10b2ac04774c6cf436a376a.jpg', NULL, 0, 5),
+(61, 1, 'Sản phẩm 11', 'san-pham-11', 'bf6ac842ee40b8e9992e91f5821e2f4a.jpg', '7da203395d194b736f2ce815dfbab626.jpg', 'Sản phẩm 11', '<p>Sản phẩm 11</p>\r\n', 2, 19, 0, 0, 90090, 90090, '2022-05-19 15:12:35', '2', '2022-05-19 15:12:35', '2', 1, 1, 2, 'd2659003e9d40d68c6506e92d57c68df.jpg', 'f20fb23421685fbab94cd62a294daeef.jpeg', NULL, 0, 4),
+(62, 3, 'Bò khô huy vũ', 'bo-kho-huy-vu', '3f2b44c010eaaaeeea813bbe3af89622.jpg', '', 'Bò khô Huy Vũ', '<p><span style=\"color:#e74c3c\"><strong>B&Ograve; HUY VŨ</strong></span> được lựa chọn từ những miếng thịt nhiều đạm, ướp đẫm gia vị thơm ngon, sấy kh&ocirc; bằng than c&ugrave;ng vị sả thơm phức &amp; ớt tươi . Ăn v&agrave;o sẽ c&oacute; vị mằn mặn, ngọt thanh quyện với cay nồng, rất th&iacute;ch hợp cho những ph&uacute;t gi&acirc;y b&ecirc;n gia đ&igrave;nh trong những ng&agrave;y khủng hoảng v&igrave; dịch bệnh l&uacute;c n&agrave;y <strong>H&Atilde;Y THỬ NGAY, BẠN C&Ograve;N CHẦN CHỪ G&Igrave; NỮA!</strong></p>\r\n', 3, 100, 3, 0, 200000, 200000, '2022-05-23 14:45:14', '18', '2022-05-27 14:25:02', '1', 1, 1, 18, '', NULL, NULL, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -1313,6 +1323,20 @@ INSERT INTO `db_usergroup` (`id`, `name`, `created`, `created_by`, `modified`, `
 (1, 'Toàn quyền', '2021-05-14 23:29:15', 1, '2021-05-14 23:29:15', 4, 1, 1, 1),
 (2, 'Người bán hàng', '2021-05-14 23:29:21', 1, '2021-05-14 23:29:21', 4, 1, 1, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `google_users`
+--
+
+CREATE TABLE `google_users` (
+  `google_id` decimal(21,0) NOT NULL,
+  `google_name` varchar(60) NOT NULL,
+  `google_email` varchar(60) NOT NULL,
+  `google_link` varchar(60) NOT NULL,
+  `google_picture_link` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -1433,6 +1457,12 @@ ALTER TABLE `db_usergroup`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `google_users`
+--
+ALTER TABLE `google_users`
+  ADD PRIMARY KEY (`google_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1482,7 +1512,7 @@ ALTER TABLE `db_discount`
 -- AUTO_INCREMENT for table `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `db_order`
