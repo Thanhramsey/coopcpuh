@@ -36,7 +36,7 @@ class Sanpham extends CI_Controller {
         $limit=12;
         $current=$this->phantrang->PageCurrent();
         $first=$this->phantrang->PageFirst($limit, $current);
-        $total=$this->Mproduct->product_sanpham_count();
+        $total=$this->Mproduct->product_sanpham_count("","");
         $this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='san-pham');
         $this->data['list']=$this->Mproduct->product_sanpham($limit,$first,$f,$od);
         $this->data['title']='OCOP CHƯPƯH - Tất cả sản phẩm';

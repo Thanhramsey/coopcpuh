@@ -161,7 +161,7 @@ class Useradmin extends CI_Controller {
 			$this->session->set_flashdata('error', 'Không có quyền thao tác');
 			redirect('admin/useradmin','refresh');
 		}else{
-			$count_product = $this->Mproduct->product_sanpham_byId_count($id);
+			$count_product = $this->Mproduct->product_sanpham_byId_count($id,"","");
 			if($count_product > 0)
 			{
 				$this->session->set_flashdata('error', 'Doanh nghiệp này còn sản phẩm bên trong! Hãy xóa sản phẩm trước !');

@@ -13,6 +13,12 @@
 		height:170px !important;
 		margin-bottom:5px !important;
 	}
+	.carousel-inner{
+		height:300px !important;
+	}
+	#productModal .modal-dialog{
+		width:93% !important
+	}
 }
 
 @media (max-width: 767px) {
@@ -2928,4 +2934,13 @@ a.fright {
 
   .tintuc a:hover {
 	background-size: 0 2px, 100% 2px;
+  }
+
+  .img-product-dt{
+	display: block;
+    height: auto;
+    max-width: 100%;
+    line-height: 1;
+    margin: auto;
+    width: 100%;
   }

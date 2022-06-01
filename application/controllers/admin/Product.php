@@ -28,39 +28,31 @@ class Product extends CI_Controller
 		$current = $this->phantrang->PageCurrent();
 		$user_role = $this->session->userdata('sessionadmin');
 		$first = $this->phantrang->PageFirst($limit, $current);
-		if ($user_role['role'] == 1) {
-			$total = $this->Mproduct->product_sanpham_count();
-			$this->data['strphantrang'] = $this->phantrang->PagePer($total, $current, $limit, $url = 'admin/product');
-			$this->data['list'] = $this->Mproduct->product_sanpham($limit, $first);
-		} else {
-			$userId = $this->session->userdata('id');
-			$total = $this->Mproduct->product_sanpham_byId_count($userId);
-			$this->data['strphantrang'] = $this->phantrang->PagePer($total, $current, $limit, $url = 'admin/product');
-			$this->data['list'] = $this->Mproduct->product_sanpham_id($limit, $first, $userId);
-		}
-		$this->data['view'] = 'index';
-		$this->data['title'] = 'Danh mục sản phẩm';
-		$this->load->view('backend/layout', $this->data);
-	}
 
-	public function search()
-	{
-		$this->load->library('phantrang');
-		$this->load->library('session');
-		$limit = 10;
-		$current = $this->phantrang->PageCurrent();
-		$user_role = $this->session->userdata('sessionadmin');
-		$first = $this->phantrang->PageFirst($limit, $current);
+		$doanhnghiep = "";
+		$loaisp = "";
+
+		if(!empty($_POST['doanhnghiep'])){
+			$doanhnghiep = $_POST['doanhnghiep'];
+		}
+
+		if(!empty($_POST['loaisp'])){
+			$loaisp = $_POST['loaisp'];
+		}
+
 		if ($user_role['role'] == 1) {
-			$total = $this->Mproduct->product_sanpham_count();
+			$total = $this->Mproduct->product_sanpham_count($doanhnghiep,$loaisp);
 			$this->data['strphantrang'] = $this->phantrang->PagePer($total, $current, $limit, $url = 'admin/product');
-			$this->data['list'] = $this->Mproduct->product_sanpham($limit, $first);
+			$this->data['list'] = $this->Mproduct->product_sanpham($limit, $first,$doanhnghiep,$loaisp);
 		} else {
 			$userId = $this->session->userdata('id');
-			$total = $this->Mproduct->product_sanpham_byId_count($userId);
+			$total = $this->Mproduct->product_sanpham_byId_count($userId,$doanhnghiep,$loaisp);
 			$this->data['strphantrang'] = $this->phantrang->PagePer($total, $current, $limit, $url = 'admin/product');
-			$this->data['list'] = $this->Mproduct->product_sanpham_id($limit, $first, $userId);
+			$this->data['list'] = $this->Mproduct->product_sanpham_id($limit, $first, $userId,$doanhnghiep,$loaisp);
+
 		}
+		$this->data['doanhnghiep'] = $doanhnghiep;
+		$this->data['loaisp'] = $loaisp;
 		$this->data['view'] = 'index';
 		$this->data['title'] = 'Danh mục sản phẩm';
 		$this->load->view('backend/layout', $this->data);

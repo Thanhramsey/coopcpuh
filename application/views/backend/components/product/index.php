@@ -1,4 +1,6 @@
+<?php echo form_open_multipart('admin/product/index'); ?>
 <div class="content-wrapper">
+<form action="<?php echo base_url() ?>admin/product/index.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
 	<section class="content-header">
 		<h1><i class="glyphicon glyphicon-cd"></i> Danh sách sản phẩm</h1>
 		<div class="breadcrumb">
@@ -25,26 +27,48 @@
 			<div class="col-md-12">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Loại sản phẩm<span class="maudo">(*)</span></label>
-						<select name="loaisp" class="form-control">
-							<option value="">[--Chọn loại sản phẩm--]</option>
+						<label>Loại sản phẩm</label>
+						<select name="loaisp" id="loaisp" class="form-control">
+							<option value="">[--Chọn loại sản phẩm--]
+								<?php
+								$category_list = $this->Mcategory->category_list();
+								$option_parentid = "";
+								foreach ($category_list as $r) {
+									$option_parentid .= "<option value='" . $r['id'] . "'>" . $r['name'] . "</option>";
+								}
+								echo $option_parentid;
+								?>
+							</option>
 						</select>
-						<div class="error" id="password_error"><?php echo form_error('loaisp') ?></div>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<?php $user_role = $this->session->userdata('sessionadmin'); if ($user_role['role'] == 1) : ?>
+					<div class="col-md-4">
 					<div class="form-group">
-						<label>Doanh Nghiệp<span class="maudo">(*)</span></label>
-						<select name="doanhnghiep" class="form-control">
-							<option value="">[--Chọn doanh nghiệp--]</option>
+						<label>Doanh Nghiệp</label>
+						<select name="doanhnghiep" id ="doanhnghiep" class="form-control">
+							<option value="">[--Chọn doanh nghiệp--]
+							<?php
+								$users_banhang = $this->Muser->users_banhang();
+								$option_parentid = "";
+								foreach ($users_banhang as $r) {
+									$option_parentid .= "<option value='" . $r['id'] . "'>" . $r['fullname'] . "</option>";
+								}
+								echo $option_parentid;
+								?>
+							</option>
 						</select>
-						<div class="error" id="password_error"><?php echo form_error('doanhnghiep') ?></div>
 					</div>
-				</div>
+					</div>
+				<?php endif; ?>
 				<div class="col-md-4" style="padding-top: 25px;">
-					<a class="btn btn-primary btn-sm" href="<?php echo base_url() ?>admin/product/search" role="button">
+					<!-- <a class="btn btn-primary btn-sm" href="admin/product/search" role="button" type="submit">
 						<span class="glyphicon glyphicon-search"></span> Tìm kiếm
-					</a>
+					</a> -->
+					<button type="submit" class="btn btn-primary btn-sm">
+						<span class="glyphicon glyphicon-search"></span>
+							Tìm kiếm
+					</button>
 				</div>
 
 			</div>
@@ -191,5 +215,6 @@
 			</div>
 			<!-- /.row -->
 	</section>
+	</form>
 	<!-- /.content -->
 </div><!-- /.content-wrapper -->

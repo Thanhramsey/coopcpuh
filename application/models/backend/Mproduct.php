@@ -8,35 +8,53 @@ class Mproduct extends CI_Model {
 		$this->table = $this->db->dbprefix('product');
 	}
     //index
-	public function product_sanpham_count()
+	public function product_sanpham_count($doanhnghiep,$loaisp)
     {
         $this->db->where('status', 1);
         $this->db->where('trash', 1);
+		if($doanhnghiep !=""){
+			$this->db->where('userId', $doanhnghiep);
+		}
+		if($loaisp != ""){
+			$this->db->where('catid', $loaisp);
+		}
         $query = $this->db->get($this->table);
         return count($query->result_array());
     }
-    public function product_sanpham($limit,$first)
+    public function product_sanpham($limit,$first,$doanhnghiep,$loaisp)
     {
         $this->db->where('trash', 1);
 		$this->db->where('status', 1);
+		if($doanhnghiep !=""){
+			$this->db->where('userId', $doanhnghiep);
+		}
+		if($loaisp != ""){
+			$this->db->where('catid', $loaisp);
+		}
         $this->db->order_by('id', 'desc');
         $query = $this->db->get($this->table, $limit,$first);
         return $query->result_array();
     }
 
-	public function product_sanpham_id($limit,$first,$userId)
+	public function product_sanpham_id($limit,$first,$userId,$doanhnghiep,$loaisp)
     {
         $this->db->where('trash', 1);
 		$this->db->where('userId', $userId);
+		if($loaisp != ""){
+			$this->db->where('catid', $loaisp);
+		}
         $this->db->order_by('id', 'desc');
         $query = $this->db->get($this->table, $limit,$first);
         return $query->result_array();
     }
-	public function product_sanpham_byId_count($userId)
+	public function product_sanpham_byId_count($userId,$doanhnghiep,$loaisp)
     {
         $this->db->where('status', 1);
         $this->db->where('trash', 1);
 		$this->db->where('userId', $userId);
+		if($loaisp != ""){
+			$this->db->where('catid', $loaisp);
+		}
         $query = $this->db->get($this->table);
         return count($query->result_array());
     }

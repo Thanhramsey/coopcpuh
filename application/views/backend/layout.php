@@ -64,6 +64,8 @@
 		// var data =
       $("#loaivanban_name").val($("#loaivanban").find(":selected").text());
     });
+	$('#doanhnghiep').val(<?php echo $doanhnghiep ?>);
+	$('#loaisp').val(<?php echo $loaisp ?>);
   });
 </script>
 </body>
