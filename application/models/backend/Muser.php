@@ -172,4 +172,15 @@ class Muser extends CI_Model {
         $this->db->where('id',$id);
         $this->db->delete($this->table);
 	}
+
+	//5
+	public function users_banhang_five(){
+        $this->db->where('trash', 1);
+        $this->db->where('id !=', 1);
+		$this->db->where('role !=', 1);
+		$this->db->limit(5);
+        $this->db->order_by('id', 'desc');
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
 }

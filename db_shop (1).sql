@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2022 at 12:03 PM
+-- Generation Time: Jun 02, 2022 at 11:48 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -990,6 +990,39 @@ INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `c
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `db_ketnoicungcau`
+--
+
+CREATE TABLE `db_ketnoicungcau` (
+  `id` int(11) NOT NULL,
+  `nguoidang` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `phone` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `tieude` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `detail` text CHARACTER SET utf8 NOT NULL,
+  `catid` int(11) NOT NULL,
+  `ngaydang` datetime NOT NULL,
+  `luotxem` int(11) NOT NULL,
+  `trash` int(1) NOT NULL DEFAULT 1,
+  `status` int(1) NOT NULL DEFAULT 1,
+  `price` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `hinhanh` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `type` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `db_ketnoicungcau`
+--
+
+INSERT INTO `db_ketnoicungcau` (`id`, `nguoidang`, `phone`, `address`, `tieude`, `detail`, `catid`, `ngaydang`, `luotxem`, `trash`, `status`, `price`, `hinhanh`, `type`) VALUES
+(1, 'Chương', '0969123456', '39 Trần Hưng Đạo,Chư pưh', 'Cần mua dầu gió', 'Cần mua dầu gió', 1, '2022-06-02 11:04:48', 9, 1, 1, 'dưới 25000', '1.jpeg', 1),
+(2, 'Chương', '0969123456', '39 Trần Hưng Đạo,Chư pưh', 'Cần mua dưa hấu', 'Cần mua dưa hấu', 1, '2022-06-02 11:04:48', 7, 1, 1, 'dưới 25000', '1.jpeg', 1),
+(3, 'Thành', '0969123452', '39 Võ Văn Mến,Chư pưh', 'Cần mua dầu dưa gang', 'Cần mua dưa gang', 1, '2022-06-02 11:04:48', 9, 1, 1, 'dưới 25000', '2.jpeg', 2),
+(4, 'Thành', '0969123459', '39 Trần Bá Đạo,Chư pưh', 'Cần mua cafe', 'Cần mua cafe', 1, '2022-06-02 11:04:48', 6, 1, 1, 'dưới 50000', '2.jpeg', 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `db_order`
 --
 
@@ -1397,6 +1430,12 @@ ALTER TABLE `db_evaluate`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `db_ketnoicungcau`
+--
+ALTER TABLE `db_ketnoicungcau`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `db_order`
 --
 ALTER TABLE `db_order`
@@ -1513,6 +1552,12 @@ ALTER TABLE `db_discount`
 --
 ALTER TABLE `db_evaluate`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `db_ketnoicungcau`
+--
+ALTER TABLE `db_ketnoicungcau`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `db_order`

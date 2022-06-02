@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="public/css/style-jc.css">
     <link href="public/css/menu-tab.css" rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">
+	<link href="public/css/ketnoi.css" rel="stylesheet">
+	<link href="public/css/ketquatimkiem.css" rel="stylesheet">
     <!-- <link href="public/css/jquery.bxslider.css" rel="stylesheet"> -->
     <link href="public/css/flexslider.css" rel="stylesheet">
 	<script src="public/js/jquery-2.2.3.min.js"></script>

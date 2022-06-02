@@ -35,6 +35,7 @@ $route['van-ban'] = 'vanban/index';
 $route['questions'] = 'lienhe/questions';
 $route['dieukhoanthamgia'] = 'lienhe/dieukhoanthamgia';
 $route['chinhsachbaomat'] = 'lienhe/chinhsachbaomat';
+$route['ketnoicungcau'] = 'ketnoicungcau/index';
 
 $route['admin'] = 'admin/dashboard';
 
