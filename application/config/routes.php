@@ -36,6 +36,7 @@ $route['questions'] = 'lienhe/questions';
 $route['dieukhoanthamgia'] = 'lienhe/dieukhoanthamgia';
 $route['chinhsachbaomat'] = 'lienhe/chinhsachbaomat';
 $route['ketnoicungcau'] = 'ketnoicungcau/index';
+$route['ketnoicungcau/timkiem'] = 'ketnoicungcau/timkiem';
 
 $route['admin'] = 'admin/dashboard';
 

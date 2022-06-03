@@ -348,8 +348,11 @@
     border-right: none;
     border-radius: 0;
 }
-.input-group .form-control{
+/* .input-group .form-control{
     border-left: none;
+} */
+.tooltip{
+	font-size:16px;
 }
 @media (min-width: 360px){
     .Grid-search {
@@ -514,5 +517,5 @@ button.btn-grid-search, button.btn-grid-search:active{
 }
 
 .cungcau-row{
-	padding: 15px !important;
+	padding: 7px 15px !important;
 }

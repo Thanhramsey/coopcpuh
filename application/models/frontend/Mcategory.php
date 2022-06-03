@@ -48,6 +48,14 @@ class Mcategory extends CI_Model {
         return $query->result_array();
     }
 
+	public function category_all()
+    {
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
+
     public function category_listcat($parentid)
     {
         $this->db->where('parentid', $parentid);
@@ -74,5 +82,5 @@ class Mcategory extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result_array();
     }
-    
+
 }

@@ -56,6 +56,42 @@ class Mketnoicungcau extends CI_Model {
         $this->db->update($this->table, $mydata);
     }
 
+	public function cungcau_insert($mydata)
+	{
+		$this->db->insert($this->table,$mydata);
+	}
 
 
+	public function cungcau_timkiem_count($loaicungcau,$loaisp,$keyword){
+			if($keyword !=""){
+				$this->db->like('tieude', $keyword);
+			}
+			if($loaicungcau !=""){
+				$this->db->like('type', $loaicungcau);
+			}
+			if($loaisp !=""){
+				$this->db->like('catid', $loaisp);
+			}
+			$this->db->where('trash', 1);
+			$this->db->where('status', 1);
+			$query = $this->db->get($this->table);
+			return count($query->result_array());
+	}
+
+	public function cungcau_timkiem($limit, $first,$loaicungcau,$loaisp,$keyword){
+		if($keyword !=""){
+			$this->db->like('tieude', $keyword);
+		}
+		if($loaicungcau !=""){
+			$this->db->like('type', $loaicungcau);
+		}
+		if($loaisp !=""){
+			$this->db->like('catid', $loaisp);
+		}
+		$this->db->where('trash', 1);
+		$this->db->where('status', 1);
+		$this->db->order_by('ngaydang', 'desc');
+		$query = $this->db->get($this->table,$limit, $first);
+		return $query->result_array();
+	}
 }
