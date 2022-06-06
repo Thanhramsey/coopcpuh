@@ -133,7 +133,13 @@ class Ketnoicungcau extends CI_Controller {
                 $data = $this->upload->data();
                 $mydata['hinhanh']=$data['file_name'];
             }else{
-                $mydata['hinhanh']='default.png';
+				if($_POST['type']==1){
+					$mydata['hinhanh']='buy.png';
+				}elseif($_POST['type']==2){
+					$mydata['hinhanh']='sell.png';
+				}else{
+					$mydata['hinhanh']='coop.png';
+				}
             }
 			$this->Mketnoicungcau->cungcau_insert($mydata);
 			$this->session->set_flashdata('success', 'Đã thêm cung cầu!');

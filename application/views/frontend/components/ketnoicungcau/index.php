@@ -11,7 +11,7 @@ $user = $this->session->userdata('sessionKhachHang');
 						<div class="col-md-4 col-xs-4">
 							<div class="col-mark">
 								<a href="ketnoicungcau/cung">
-									<img src="public/images/ketnoicungcau/mua.png" class="cursorsHover">
+									<img src="public/images/ketnoicungcau/mua.png" class="cursorsHover" style="width:100%;height:100%">
 									<div class="headingmark cursorsHover">Cần mua</div>
 								</a>
 							</div>
@@ -19,7 +19,7 @@ $user = $this->session->userdata('sessionKhachHang');
 						<div class="col-md-4 col-xs-4">
 							<div class="col-mark">
 								<a href="ketnoicungcau/cau">
-									<img src="public/images/ketnoicungcau/ban.png" class="cursorsHover">
+									<img src="public/images/ketnoicungcau/ban.png" class="cursorsHover" style="width:100%;height:100%">
 									<div class="headingmark cursorsHover">Cần bán</div>
 								</a>
 							</div>
@@ -27,7 +27,7 @@ $user = $this->session->userdata('sessionKhachHang');
 						<div class="col-md-4 col-xs-4">
 							<div class="col-mark">
 								<a href="ketnoicungcau/doitac">
-									<img src="public/images/ketnoicungcau/lienket.png">
+									<img src="public/images/ketnoicungcau/lienket.png" style="width:100%;height:100%">
 									<div class="headingmark">Tìm đối tác</div>
 								</a>
 							</div>
@@ -304,14 +304,15 @@ $user = $this->session->userdata('sessionKhachHang');
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					<h4 id="detail_title" class="modal-title">Modal header</h4>
 				</div>
+				<form action="<?php echo base_url() ?>ketnoicungcau/dangtincungcau" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
 				<div class="modal-body">
-					<form action="<?php echo base_url() ?>ketnoicungcau/dangtincungcau" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
+
 						<div class="cungcau-row  row">
 							<div class="col-lg-2">
 								<label style="height:29px;padding-top:5px">Chọn loại<span style="color:red;font-size:10px"> (*)</span></label>
 							</div>
 							<div class="col-lg-5" style="padding-left:50px">
-								<select name="type" id="type" class="form-control">
+								<select name="type" id="type" class="form-control" required autofocus>
 									<option value="">[--Chọn loại--]</option>
 									<option value="1">Cần mua</option>
 									<option value="2">Cần bán</option>
@@ -319,7 +320,7 @@ $user = $this->session->userdata('sessionKhachHang');
 								</select>
 							</div>
 							<div class="col-lg-5" style="padding-left:10px !important">
-								<select name="catid" id="catid" class="form-control">
+								<select name="catid" id="catid" class="form-control" required autofocus>
 									<option value="">[--Chọn loại sản phẩm--]</option>
 									<?php
 									 $listCat=$this->Mcategory->category_all();
@@ -338,7 +339,11 @@ $user = $this->session->userdata('sessionKhachHang');
 								<label style="height:29px;padding-top:5px">Người đăng<span style="color:red;font-size:10px"> (*)</span></label>
 							</div>
 							<div class="col-lg-10" style="padding-left:50px">
-								<input type="text" class="form-control" placeholder="Người đăng" name="name" id="name" >
+								<input type="text" class="form-control" placeholder="Người đăng" name="name" id="name" required autofocus  value="<?php if (empty($user['fullname'])) {
+																																			echo "";
+																																		} else {
+																																			echo $user['fullname'];
+																																		} ?>" <?php if ($this->session->userdata('sessionKhachHang')) echo 'readonly' ?> >
 							</div>
 						</div>
 
@@ -347,7 +352,7 @@ $user = $this->session->userdata('sessionKhachHang');
 								<label style="height:29px;padding-top:5px">Tiêu đề<span style="color:red;font-size:10px"> (*)</span></label>
 							</div>
 							<div class="col-lg-10" style="padding-left:50px">
-								<input type="text" class="form-control" placeholder="Tiêu đề" name="title" id="title" >
+								<input type="text" class="form-control" placeholder="Tiêu đề" name="title" id="title" required autofocus >
 							</div>
 						</div>
 
@@ -356,7 +361,11 @@ $user = $this->session->userdata('sessionKhachHang');
 								<label style="height:29px;padding-top:5px">SĐT<span style="color:red;font-size:10px"> (*)</span></label>
 							</div>
 							<div class="col-lg-10" style="padding-left:50px">
-								<input type="text" class="form-control" placeholder="Số điện thoại" name="phone" id="phone" >
+								<input type="text" class="form-control" placeholder="Số điện thoại" name="phone" id="phone" required autofocus value="<?php if (empty($user['phone'])) {
+																																			echo "";
+																																		} else {
+																																			echo $user['phone'];
+																																		} ?>">
 							</div>
 						</div>
 
@@ -365,7 +374,11 @@ $user = $this->session->userdata('sessionKhachHang');
 								<label style="height:29px;padding-top:5px">Địa chỉ<span style="color:red;font-size:10px"> (*)</span></label>
 							</div>
 							<div class="col-lg-10" style="padding-left:50px">
-								<input type="text" class="form-control" placeholder="Địa chỉ" name="address" id="address" >
+								<input type="text" class="form-control" placeholder="Địa chỉ" name="address" id="address" required autofocus value="<?php if (empty($user['address'])) {
+																																			echo "";
+																																		} else {
+																																			echo $user['address'];
+																																		} ?>">
 							</div>
 						</div>
 
@@ -400,8 +413,9 @@ $user = $this->session->userdata('sessionKhachHang');
 					<button type="submit" class="btn btn-primary">Lên</button>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 				</div>
-				</form>
+
 			</div>
+			</form>
 		</div>
 	</div>
 
@@ -449,26 +463,6 @@ $user = $this->session->userdata('sessionKhachHang');
 		});
 	});
 
-
-	// function searchCungcau(){
-	// 	var loaicungcau = $("select[name='loaicungcau']").val();
-	// 	var loaisp = $("select[name='loaisp']").val();
-	// 	var keyword = $("input[name='keyword']").val();
-	// 	var strurl = "<?php echo base_url(); ?>" + 'ketnoicungcau/timkiem';
-	// 	jQuery.ajax({
-	// 		url: strurl,
-	// 		type: 'POST',
-	// 		data: {
-	// 			loaicungcau: loaicungcau,
-	// 			loaisp: loaisp,
-	// 			keyword: keyword
-	// 		},
-	// 		dataType: 'json',
-	// 		success: function(data) {
-	// 			window.location.reload(true);
-	// 		}
-	// 	});
-	// }
 
 
 </script>

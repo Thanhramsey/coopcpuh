@@ -45,7 +45,13 @@
 					<a href="admin/customer">
 						<i class="glyphicon glyphicon-user"></i><span>Khách hàng</span>
 					</a>
+				</li>
+				<li class="treeview">
+					<a href="admin/cungcau">
+						<i class="glyphicon glyphicon-grain"></i><span>Kết nối cung cầu</span>
+					</a>
 				</li>';
+
 			}
 			?>
 			<?php

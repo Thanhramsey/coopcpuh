@@ -423,6 +423,7 @@ button.btn-grid-search, button.btn-grid-search:active{
 .col-mark {
     position: relative;
     margin-top: 10px;
+	padding: 0px 10px 0px 10px;
 }
 .headingmark {
     position: absolute;

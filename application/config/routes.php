@@ -84,6 +84,17 @@ $route['chinhsach/trash/(:num)'] ='chinhsach/trash/$1';
 $route['chinhsach/recyclebin/(:num)'] ='chinhsach/recyclebin/$1';
 
 
+//cung cau
+$route['admin/cungcau'] ='admin/cungcau';
+$route['admin/cungcau/(:num)'] ='admin/cungcau/index/$1';
+$route['cungcau/status/(:num)'] ='cungcau/status/$1';
+$route['cungcau/update/(:num)'] ='cungcau/update/$1';
+$route['cungcau/recyclebin'] ='cungcau/recyclebin';
+$route['cungcau/trash/(:num)'] ='cungcau/trash/$1';
+$route['cungcau/recyclebin/(:num)'] ='cungcau/recyclebin/$1';
+
+
+
 $route['admin/category'] ='admin/category';
 $route['admin/category/(:num)'] ='admin/category/index/$1';
 $route['category/insert'] ='category/insert';

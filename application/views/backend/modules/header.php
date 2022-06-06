@@ -106,7 +106,7 @@ if($user['img']){
                 	<a href="<?php echo base_url()?>admin/useradmin/update/<?php echo $user['id'] ?>" class="btn btn-default btn-flat">Chi tiết</a>
             	</div>
             <div class="pull-right">
-                <a href="admin/user/logout.html" class="btn btn-default btn-flat">Thoát</a>
+                <a href="admin/user/logout" class="btn btn-default btn-flat">Thoát</a>
             </div>
         </li>
     </ul>
