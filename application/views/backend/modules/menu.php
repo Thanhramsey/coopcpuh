@@ -18,6 +18,11 @@
 					<i class="glyphicon glyphicon-shopping-cart"></i> <span>Đơn hàng</span>
 				</a>
 			</li>
+			<li class="treeview">
+				<a href="admin/hoidap">
+					<i class="glyphicon glyphicon-shopping-cart"></i> <span>Hỏi đáp</span>
+				</a>
+			</li>
 			<?php
 			if ($user['role'] == 1) {
 				echo '<li class="header">QUẢN LÝ BÁN HÀNG</li>

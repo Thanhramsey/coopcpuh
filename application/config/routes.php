@@ -94,6 +94,16 @@ $route['cungcau/trash/(:num)'] ='cungcau/trash/$1';
 $route['cungcau/recyclebin/(:num)'] ='cungcau/recyclebin/$1';
 
 
+//cung cau
+$route['admin/hoidap'] ='admin/hoidap';
+$route['admin/hoidap/(:num)'] ='admin/hoidap/index/$1';
+$route['hoidap/status/(:num)'] ='hoidap/status/$1';
+$route['hoidap/update/(:num)'] ='hoidap/update/$1';
+$route['hoidap/recyclebin'] ='hoidap/recyclebin';
+$route['hoidap/trash/(:num)'] ='hoidap/trash/$1';
+$route['hoidap/recyclebin/(:num)'] ='hoidap/recyclebin/$1';
+
+
 
 $route['admin/category'] ='admin/category';
 $route['admin/category/(:num)'] ='admin/category/index/$1';

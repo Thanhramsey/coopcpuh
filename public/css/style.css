@@ -1724,10 +1724,10 @@ select {
 	padding: 10px 30px;
 }
 
-.products-wrap{
+/* .products-wrap{
 	min-height: 200px;
 	overflow: hidden;
-}
+} */
 
 .product-view-content h1, .product-view-content h2, .product-view-content h3, .product-view-content h4, .product-view-content h5, .product-view-contenth6,
 .product-view-content p{

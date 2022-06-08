@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2022 at 11:48 AM
+-- Generation Time: Jun 08, 2022 at 11:46 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -53,7 +53,8 @@ INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, 
 (4, 'Vải may mặc', 'vaimaymac', 1, 0, '0', '2022-04-23 21:33:25', '1', '2022-04-23 21:33:25', '1', 1, 1),
 (5, 'Thủ công mỹ nghệ', 'ttmynghe', 1, 0, '0', '2022-04-23 21:33:41', '1', '2022-04-23 21:33:41', '1', 1, 1),
 (6, 'Du lịch', 'dulich', 1, 0, '0', '2022-04-03 21:38:28', '1', '2022-04-03 21:38:28', '1', 1, 1),
-(13, 'Thuốc', 'thuoc', 1, 0, '1', '2022-05-25 14:25:02', '1', '2022-05-25 14:25:02', '1', 1, 1);
+(13, 'Thuốc', 'thuoc', 1, 0, '1', '2022-05-25 14:25:02', '1', '2022-05-25 14:25:02', '1', 1, 1),
+(14, 'Khác', 'khac', 1, 0, '0', '2022-06-03 14:18:11', '1', '2022-06-03 14:18:11', '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -171,6 +172,22 @@ INSERT INTO `db_content` (`id`, `title`, `alias`, `introtext`, `fulltext`, `img`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `db_cosodanhgia`
+--
+
+CREATE TABLE `db_cosodanhgia` (
+  `id` int(10) NOT NULL,
+  `producer_id` int(11) NOT NULL,
+  `user_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `sdt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `comment_time` datetime NOT NULL,
+  `star` int(11) NOT NULL DEFAULT 4,
+  `trash` int(11) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `db_customer`
 --
 
@@ -225,8 +242,7 @@ INSERT INTO `db_discount` (`id`, `code`, `discount`, `limit_number`, `number_use
 (2, 'VANHIEP', 200000, 20, 3, '2019-06-12', 500000, 'Giam 200k', '2019-06-10', 1, 0, 1),
 (18, 'BQOGZJFUR1EM', 100000, 1, 0, '2022-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2022-05-10', 0, 1, 1),
 (19, '1VZWAFHN4WQF', 100000, 1, 0, '2022-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2022-05-10', 0, 1, 1),
-(20, 'IOICQXMTZDLR', 100000, 1, 0, '2022-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2022-05-10', 0, 1, 1),
-(21, 'MX3POO1EXKJC', 100000, 1, 1, '2022-06-23', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2022-05-23', 0, 1, 1);
+(20, 'IOICQXMTZDLR', 100000, 1, 0, '2022-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2022-05-10', 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -990,6 +1006,37 @@ INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `c
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `db_hoidapcoso`
+--
+
+CREATE TABLE `db_hoidapcoso` (
+  `id` int(10) NOT NULL,
+  `question` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `answer` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `producer_id` int(11) NOT NULL,
+  `question_by` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `question_time` datetime NOT NULL,
+  `answer_time` datetime DEFAULT NULL,
+  `answer_by` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `star` int(11) NOT NULL DEFAULT 4,
+  `trash` int(11) DEFAULT 1,
+  `status` int(11) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `db_hoidapcoso`
+--
+
+INSERT INTO `db_hoidapcoso` (`id`, `question`, `answer`, `producer_id`, `question_by`, `question_time`, `answer_time`, `answer_by`, `star`, `trash`, `status`) VALUES
+(1, 'Cơ sở có bán chanh dây ko ? ', NULL, 18, 'thanh1996', '2022-06-08 15:03:13', NULL, NULL, 4, 1, 1),
+(2, 'Cơ sở có bán bánh dây ko ?', 'Có ạ.', 18, 'thanh1996', '2022-06-08 15:22:46', '2022-06-08 16:25:34', 'Còn gì nữa đâu', 4, 1, 1),
+(3, 'Cơ sở có bán dầu gió không ?', 'tÔI CÓ BÁN', 18, 'thanh1996', '2022-06-08 15:23:54', '2022-06-08 16:25:22', 'Còn gì nữa đâu', 4, 1, 1),
+(4, 'Cơ sở có bán ăn gió không ?\n\nNhà sản xuất chưa trả lời', 'asdasdasdasd', 18, 'thanh1996', '2022-06-08 15:24:07', '2022-06-08 16:23:10', 'Còn gì nữa đâu', 4, 1, 1),
+(5, 'Cơ sở có bán dầu phật linh không ?', NULL, 18, 'thanh1996', '2022-06-08 15:24:34', NULL, NULL, 4, 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `db_ketnoicungcau`
 --
 
@@ -1000,7 +1047,7 @@ CREATE TABLE `db_ketnoicungcau` (
   `address` varchar(255) CHARACTER SET utf8 NOT NULL,
   `tieude` varchar(255) CHARACTER SET utf8 NOT NULL,
   `detail` text CHARACTER SET utf8 NOT NULL,
-  `catid` int(11) NOT NULL,
+  `catid` int(11) DEFAULT NULL,
   `ngaydang` datetime NOT NULL,
   `luotxem` int(11) NOT NULL,
   `trash` int(1) NOT NULL DEFAULT 1,
@@ -1015,10 +1062,12 @@ CREATE TABLE `db_ketnoicungcau` (
 --
 
 INSERT INTO `db_ketnoicungcau` (`id`, `nguoidang`, `phone`, `address`, `tieude`, `detail`, `catid`, `ngaydang`, `luotxem`, `trash`, `status`, `price`, `hinhanh`, `type`) VALUES
-(1, 'Chương', '0969123456', '39 Trần Hưng Đạo,Chư pưh', 'Cần mua dầu gió', 'Cần mua dầu gió', 1, '2022-06-02 11:04:48', 9, 1, 1, 'dưới 25000', '1.jpeg', 1),
-(2, 'Chương', '0969123456', '39 Trần Hưng Đạo,Chư pưh', 'Cần mua dưa hấu', 'Cần mua dưa hấu', 1, '2022-06-02 11:04:48', 7, 1, 1, 'dưới 25000', '1.jpeg', 1),
-(3, 'Thành', '0969123452', '39 Võ Văn Mến,Chư pưh', 'Cần mua dầu dưa gang', 'Cần mua dưa gang', 1, '2022-06-02 11:04:48', 9, 1, 1, 'dưới 25000', '2.jpeg', 2),
-(4, 'Thành', '0969123459', '39 Trần Bá Đạo,Chư pưh', 'Cần mua cafe', 'Cần mua cafe', 1, '2022-06-02 11:04:48', 6, 1, 1, 'dưới 50000', '2.jpeg', 3);
+(1, 'Chương', '0969123456', '39 Trần Hưng Đạo,Chư pưh', 'Cần mua dầu gió', 'Cần mua dầu gió', 1, '2022-06-02 11:04:48', 25, 1, 1, 'dưới 25000', '1.jpeg', 1),
+(2, 'Chương', '0969123456', '39 Trần Hưng Đạo,Chư pưh', 'Cần mua dưa hấu', 'Cần mua dưa hấu', 1, '2022-06-02 11:04:48', 11, 1, 1, 'dưới 25000', '1.jpeg', 1),
+(3, 'Thành', '0969123452', '39 Võ Văn Mến,Chư pưh', 'Cần mua dầu dưa gang', 'Cần mua dưa gang', 1, '2022-06-02 11:04:48', 10, 1, 1, 'dưới 25000', '2.jpeg', 2),
+(4, 'Thành', '0969123459', '39 Trần Bá Đạo,Chư pưh', 'Cần mua cafe', 'Cần mua cafe', 1, '2022-06-02 11:04:48', 6, 1, 1, 'dưới 50000', '2.jpeg', 3),
+(20, 'Thành', '0969124469', '39 Đào Duy Từ', 'Cần người hợp tác làm thuốc', 'Cần người hợp tác làm thuốc', 2, '2022-06-06 10:51:53', 1, 1, 1, '', 'default.png', 3),
+(21, 'Thành', '0969124469', '38 đào duy từ', 'Cần mua thịt số lượng lớn', 'Cần mua thịt số lượng lớn', 3, '2022-06-06 10:56:47', 8, 1, 1, '', 'buy.png', 1);
 
 -- --------------------------------------------------------
 
@@ -1405,6 +1454,12 @@ ALTER TABLE `db_content`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `db_cosodanhgia`
+--
+ALTER TABLE `db_cosodanhgia`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `db_customer`
 --
 ALTER TABLE `db_customer`
@@ -1427,6 +1482,12 @@ ALTER TABLE `db_district`
 -- Indexes for table `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `db_hoidapcoso`
+--
+ALTER TABLE `db_hoidapcoso`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1509,7 +1570,7 @@ ALTER TABLE `google_users`
 -- AUTO_INCREMENT for table `db_category`
 --
 ALTER TABLE `db_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `db_chinhsach`
@@ -1536,6 +1597,12 @@ ALTER TABLE `db_content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `db_cosodanhgia`
+--
+ALTER TABLE `db_cosodanhgia`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
 -- AUTO_INCREMENT for table `db_customer`
 --
 ALTER TABLE `db_customer`
@@ -1554,10 +1621,16 @@ ALTER TABLE `db_evaluate`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
+-- AUTO_INCREMENT for table `db_hoidapcoso`
+--
+ALTER TABLE `db_hoidapcoso`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `db_ketnoicungcau`
 --
 ALTER TABLE `db_ketnoicungcau`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `db_order`

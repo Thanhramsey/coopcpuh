@@ -139,13 +139,12 @@ for ($i = 1; $i <= 12; $i++) {
 								}
 							}
 
-							echo '<div class="col-sm-4 col-xs-6">
-                <div class="description-block border-right" style="display: inline-flex;">
-                  <span class="description-text">Doanh thu tháng ' . $i . ' :  </span>
-                  <h5 class="description-header" style="color: #e90000;padding-left: 10px;">' . number_format($total_month) . ' VNĐ</h5>
-                </div>
-                <!-- /.description-block -->
-              </div>';
+							echo '  <div class="col-sm-4 col-xs-6  description-col">
+										<div class="description-block border-right" style="display: inline-flex;">
+										<span class="description-text">Doanh thu tháng ' . $i . ' :  </span>
+										<h5 class="description-header" style="color: #e90000;padding-left: 10px;">' . number_format($total_month) . ' VNĐ</h5>
+										</div>
+									</div>';
 						}
 						?>
 						<!-- /.row -->
