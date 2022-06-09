@@ -57,7 +57,7 @@
 											 ?></td>
 											<td><?php echo $row['phone'] ?></td>
 											<td class="text-center">
-												<a class="btn btn-info btn-xs" href="<?php echo base_url() ?>admin/customer/detail/<?php echo $row['id'] ?>" role = "button">
+												<a class="btn btn-info btn-xs" href="<?php echo base_url() ?>admin/customer/update/<?php echo $row['id'] ?>" role = "button">
 													<span class="glyphicon glyphicon-eye-open"></span>Xem
 												</a>
 											</td>

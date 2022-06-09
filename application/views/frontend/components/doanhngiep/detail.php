@@ -163,7 +163,7 @@
 								<?php if ($this->session->userdata('sessionKhachHang')) : ?>
 									<button class="btn btn-primary" type="button" onclick="submitStar(<?php echo $row['id'] ?>)">Gửi</button>
 								<?php else : ?>
-									<button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Bạn cần đăng nhập để bình luận !">Gửi</button>
+									<button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Bạn cần đăng nhập để đánh giá !">Gửi</button>
 								<?php endif; ?>
 							</div>
 						</div>
@@ -242,10 +242,7 @@
 					star: star
 				},
 				success: function(data) {
-					setTimeout(function(){
-						window.location.reload(true);
-					},500);
-					$('[href="#pills-hoidap"]').tab('show');
+					window.location.reload(true);
 				}
 			});
 		}

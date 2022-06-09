@@ -53,6 +53,34 @@ class Doanhngiep extends CI_Controller {
 					'trash'=>1
 				);
 		$this->Mcosodanhgia->comment_insert($mydata);
+		$datastar = $this->Mcosodanhgia->comment_producerid_count($id);
+		$total1 = 0;
+		$total2 = 0;
+		$total3 = 0;
+		$total4 = 0;
+		$total5 = 0;
+		foreach ($datastar as $st) {
+			if($st['star'] == 1){
+				$total1 =  $st['total'];
+			}else if($st['star'] == 2){
+				$total2 = $st['total'];
+			}else if($st['star'] == 3){
+				$total3 = $st['total'];
+			}else if($st['star'] == 4){
+				$total4 = $st['total'];
+			}else if($st['star'] == 5){
+				$total5 = $st['total'];
+			}
+		}
+		$sum = ($total1 + $total2 + $total3 + $total4 + $total5);
+		if($sum >0){
+			$AverageRating = (((1*$total1)+(2*$total2)+(3*$total3)+(4*$total4)+(5*$total5))/ $sum);
+
+		}else{
+			$AverageRating = 4;
+		}
+		$starData = array('star' => $AverageRating);
+		$this->Muser->user_update($starData, $id);
 		echo json_encode( $mydata );
 	}
 
