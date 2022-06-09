@@ -43,7 +43,7 @@
 								<table class="table table-hover table-bordered">
 									<thead>
 										<tr>
-											<th class="text-center">ID</th>
+											<th class="text-center id-col">ID</th>
 											<th class="text-center">Tên loại sản phẩm</th>
 											<!-- <th>Danh mục cha</th> -->
 											<th class="text-center">Ngày tạo</th>
@@ -54,7 +54,7 @@
 									<tbody>
 										<?php foreach ($list as $row):?>
 											<tr>
-												<td class="text-center"><?php echo $row['id'] ?></td>
+												<td class="text-center id-col"><?php echo $row['id'] ?></td>
 												<td class="text-center"><?php echo $row['name'] ?></td>
 												<!-- <td>
 													<a href="<?php echo base_url() ?>admin/category/update/<?php echo $row['id'] ?>"><?php echo $row['name'] ?>

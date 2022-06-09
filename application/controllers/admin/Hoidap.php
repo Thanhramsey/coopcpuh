@@ -20,9 +20,18 @@ class Hoidap extends CI_Controller {
 		$limit=10;
 		$current=$this->phantrang->PageCurrent();
 		$first=$this->phantrang->PageFirst($limit, $current);
-		$total=$this->Mhoidapcoso->hoidap_count();
-		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/hoidap');
-		$this->data['list']=$this->Mhoidapcoso->hoidap_all($limit,$first);
+		$user_role = $this->session->userdata('sessionadmin');
+
+		if ($user_role['role'] == 1) {
+			$total=$this->Mhoidapcoso->hoidap_count();
+			$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/hoidap');
+			$this->data['list']=$this->Mhoidapcoso->hoidap_all($limit,$first);
+		} else {
+			$userId = $this->session->userdata('id');
+			$total=$this->Mhoidapcoso->hoidap_count_byId($userId);
+			$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/hoidap');
+			$this->data['list']=$this->Mhoidapcoso->hoidap_byId($userId,$limit,$first);
+		}
 		$this->data['view']='index';
 		$this->data['title']='Danh sách cung cầu ';
 		$this->load->view('backend/layout', $this->data);
@@ -32,7 +41,7 @@ class Hoidap extends CI_Controller {
 		$row=$this->Mhoidapcoso->hoidap_detail($id);
 		$status=($row['status']==1)?0:1;
 		$mydata= array('status' => $status);
-		$this->Mhoidapcoso->hoidap_detail($mydata, $id);
+		$this->Mhoidapcoso->hoidap_update($mydata, $id);
 		$this->session->set_flashdata('success', 'Cập nhật thành công');
 		redirect('admin/hoidap/','refresh');
 	}

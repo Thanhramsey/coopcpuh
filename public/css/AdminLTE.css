@@ -5024,3 +5024,8 @@ hr {
 .description-col{
 	border:1px solid #666;
 }
+
+
+.id-col{
+	display:none;
+}

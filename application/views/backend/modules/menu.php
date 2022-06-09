@@ -20,12 +20,12 @@
 			</li>
 			<li class="treeview">
 				<a href="admin/hoidap">
-					<i class="glyphicon glyphicon-shopping-cart"></i> <span>Hỏi đáp</span>
+					<i class="glyphicon glyphicon-question-sign"></i> <span>Hỏi đáp</span>
 				</a>
 			</li>
 			<?php
 			if ($user['role'] == 1) {
-				echo '<li class="header">QUẢN LÝ BÁN HÀNG</li>
+				echo '<li class="header">QUẢN LÝ DANH MỤC</li>
 				<li>
 					<a href="admin/useradmin">
 						<i class="glyphicon glyphicon-briefcase"></i><span> Cơ sở kinh doanh</span>

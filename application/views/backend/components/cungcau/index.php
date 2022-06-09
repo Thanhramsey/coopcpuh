@@ -35,7 +35,7 @@
 									<table class="table table-hover table-bordered">
 										<thead>
 											<tr>
-											<th class="text-center">id</th>
+											<th class="text-center id-col">id</th>
 											<th class="text-center">Tên người đăng</th>
 											<th class="text-center">Số điện thoại</th>
 											<th class="text-center">Địa chỉ</th>
@@ -49,7 +49,7 @@
 										<tbody>
 											<?php foreach ($list as $row):?>
 												<tr>
-													<td class="text-center"><?php echo $row['id'] ?></td>
+													<td class="text-center id-col"><?php echo $row['id'] ?></td>
 													<td><?php echo $row['nguoidang'] ?></td>
 													<td><?php echo $row['phone'] ?></td>
 													<td><?php echo $row['address'] ?></td>

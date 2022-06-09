@@ -47,7 +47,7 @@
 								<table class="table table-hover table-bordered">
 									<thead>
 										<tr>
-											<th class="text-center"">ID</th>
+											<th class="text-center id-col">ID</th>
 											<th>Hình ảnh</th>
 											<th>Họ và tên</th>
 											<th>Email</th>
@@ -60,7 +60,7 @@
 									<tbody>
 									<?php foreach ($list as $row):?>
 										<tr>
-											<td class="text-center"><?php echo $row['id'] ?></td>
+											<td class="text-center id-col"><?php echo $row['id'] ?></td>
 											<td style="width:100px">
 												<img src="public/images/admin/<?php echo $row['img'] ?>"class="img-responsive">
 											</td>

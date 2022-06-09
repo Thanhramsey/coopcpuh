@@ -43,7 +43,7 @@
 									<table class="table table-hover table-bordered">
 										<thead>
 											<tr>
-											<th class="text-center">id</th>
+											<th class="text-center id-col">id</th>
 											<th class="text-center">Tên văn bản</th>
 											<th class="text-center">Số hiệu</th>
 											<th class="text-center">Loại văn bản</th>
@@ -56,7 +56,7 @@
 										<tbody>
 											<?php foreach ($list as $row):?>
 												<tr>
-													<td class="text-center"><?php echo $row['id'] ?></td>
+													<td class="text-center id-col"><?php echo $row['id'] ?></td>
 													<td><?php echo $row['name'] ?></td>
 													<td><?php echo $row['sohieu'] ?></td>
 													<td><?php echo $row['loaivanban_name'] ?></td>

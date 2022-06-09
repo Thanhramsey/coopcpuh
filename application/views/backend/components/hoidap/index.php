@@ -1,6 +1,6 @@
 <div class="content-wrapper">
 	<section class="content-header">
-		<h1><i class="glyphicon glyphicon-grain"></i> Danh sách câu hỏi</h1>
+		<h1><i class="glyphicon glyphicon-question-sign"></i> Danh sách câu hỏi</h1>
 		<div class="breadcrumb">
 			<a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/hoidap/recyclebin" role="button">
 				<span class="glyphicon glyphicon-trash"></span> Thùng rác(<?php $total=$this->Mhoidapcoso->hoidap_trash_count(); echo $total; ?>)
@@ -35,7 +35,7 @@
 									<table class="table table-hover table-bordered">
 										<thead>
 											<tr>
-											<th class="text-center">id</th>
+											<th class="text-center id-col">id</th>
 											<th class="text-center">Tên người hỏi</th>
 											<th class="text-center">Nội dung câu hỏi</th>
 											<th class="text-center">Thời gian hỏi</th>
@@ -47,7 +47,7 @@
 										<tbody>
 											<?php foreach ($list as $row):?>
 												<tr>
-													<td class="text-center"><?php echo $row['id'] ?></td>
+													<td class="text-center id-col"><?php echo $row['id'] ?></td>
 													<td><?php echo $row['question_by'] ?></td>
 													<td><?php echo $row['question'] ?></td>
 													<td><?php echo $row['question_time'] ?></td>

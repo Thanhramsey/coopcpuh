@@ -38,17 +38,17 @@
 								<table class="table table-hover table-bordered">
 									<thead>
 										<tr>
-											<th class="text-center">ID</th>
+											<th class="text-center id-col">ID</th>
 											<th class="text-center"  style="width:100px;">Hình</th>
 											<th class="text-center">Tiêu đề bài viết</th>
-											<th class="text-center"">Trạng thái</th>
+											<th class="text-center">Trạng thái</th>
 											<th class="text-center" colspan="2">Thao tác</th>
 										</tr>
 									</thead>
 									<tbody>
 									<?php foreach ($list as $row):?>
 										<tr>
-											<td class="text-center"><?php echo $row['id'] ?></td>
+											<td class="text-center id-col"><?php echo $row['id'] ?></td>
 											<td>
 												<img src="public/images/posts/<?php echo $row['img'] ?>" alt="<?php echo $row['title'] ?>" class="img-responsive">
 											</td>

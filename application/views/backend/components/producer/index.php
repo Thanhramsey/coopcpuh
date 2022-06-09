@@ -43,7 +43,7 @@
 									<table class="table table-hover table-bordered">
 										<thead>
 											<tr>
-												<th class="text-center" style="width:20px">ID</th>
+												<th class="text-center id-col" style="width:20px">ID</th>
 												<th class="text-center">Code</th>
 												<th class="text-center">Name</th>
 												<!-- <th class="text-center">Keyword</th> -->
@@ -54,7 +54,7 @@
 										<tbody>
 											<?php foreach ($list as $row):?>
 												<tr>
-													<td class="text-center"><?php echo $row['id'] ?></td>
+													<td class="text-center id-col"><?php echo $row['id'] ?></td>
 													<td><?php echo $row['code'] ?></td>
 													<td><?php echo $row['name'] ?></td>
 													<!-- <td><?php echo $row['keyword'] ?></td> -->

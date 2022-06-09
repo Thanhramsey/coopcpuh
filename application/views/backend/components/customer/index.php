@@ -36,7 +36,7 @@
 								<table class="table table-hover table-bordered">
 									<thead>
 										<tr>
-											<th class="text-center">ID</th>
+											<th class="text-center id-col">ID</th>
 											<th>Tên khách hàng</th>
 											<th>Email</th>
 											<th>Điện thoại</th>
@@ -46,7 +46,7 @@
 									<tbody>
 									<?php foreach ($list as $row):?>
 										<tr>
-											<td class="text-center"><?php echo $row['id'] ?></td>
+											<td class="text-center id-col"><?php echo $row['id'] ?></td>
 											<td><?php echo $row['fullname'] ?></td>
 											<td><?php
 											if($row['email']){

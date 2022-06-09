@@ -26,6 +26,24 @@ class Mhoidapcoso extends CI_Model {
 			return count($query->result_array());
 		}
 
+		//ById
+
+		public function hoidap_byId($userId,$limit, $first){
+			$this->db->where('producer_id', $userId);
+			$this->db->where('trash', 1);
+			$this->db->order_by('question_time', 'desc');
+			$query = $this->db->get($this->table, $limit, $first);
+			return $query->result_array();
+		}
+
+		public function hoidap_count_byId($userId){
+			$this->db->where('producer_id', $userId);
+			$this->db->where('status', 1);
+			$this->db->where('trash', 1);
+			$query = $this->db->get($this->table);
+			return count($query->result_array());
+		}
+
 		public function hoidap_trash_count(){
 			$this->db->where('trash', 0);
 			$query = $this->db->get($this->table);

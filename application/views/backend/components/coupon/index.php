@@ -2,7 +2,7 @@
 	<section class="content-header">
 		<h1><i class="glyphicon glyphicon-text-background"></i> Danh sách mã giảm giá</h1>
 		<div class="breadcrumb">
-			
+
 			<?php
 			if($user['role']==1){
 				echo '<a class="btn btn-primary btn-sm" href="'.base_url().'admin/coupon/insert" role="button">
@@ -43,20 +43,20 @@
 								<table class="table table-hover table-bordered">
 									<thead>
 										<tr>
-											<th class="text-center">ID</th>
+											<th class="text-center id-col">ID</th>
 											<th class="text-center">Mã giảm giá</th>
 											<th class="text-center">Số tiền giảm</th>
-											<th class="text-center"">Số tiền đơn hàng áp dụng tối thiểu</th>
-											<th class="text-center"">Số lần giới hạn nhập</th>
-											<th class="text-center"">Hạn nhập</th>
-											<th class="text-center"">Trạng thái</th>
+											<th class="text-center">Số tiền đơn hàng áp dụng tối thiểu</th>
+											<th class="text-center">Số lần giới hạn nhập</th>
+											<th class="text-center">Hạn nhập</th>
+											<th class="text-center">Trạng thái</th>
 											<th class="text-center" colspan="2">Thao tác</th>
 										</tr>
 									</thead>
 									<tbody>
 									<?php foreach ($list as $row):?>
 										<tr>
-											<td class="text-center"><?php echo $row['id'] ?></td>
+											<td class="text-center id-col"><?php echo $row['id'] ?></td>
 											<td><?php echo $row['code']?></td>
 											<td><?php echo $row['discount']?></td>
 											<td><?php echo number_format($row['payment_limit'])?>đ</td>
@@ -65,7 +65,7 @@
 											else
 												echo'Mã giảm giá tự động';
 											?>
-												
+
 											</td>
 											<td><?php echo $row['expiration_date']?></td>
 											<td class="text-center">

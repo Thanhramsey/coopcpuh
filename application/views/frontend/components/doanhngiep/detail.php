@@ -182,17 +182,17 @@
 							</div>
 							<hr>
 
-							<span style="color:red">Trả lời của : <?php echo $row['fullname'] ?></span>
+							<span style="color:red">A&Q: <?php echo $row['fullname'] ?></span>
 							<?php if(count($listhd)==0): ?>
-                            	<p>Chưa có câu hỏi nào !</p>
+                            	<p  style="font-style:italic; color:darkgoldenrod">Chưa có câu hỏi nào !</p>
                             <?php else : ?>
                                 <?php foreach ($listhd as $sphd) :?>
 									<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 mg-sp" style="border-bottom:1px solid #bbb">
-										<p>Câu hỏi: <?php echo $sphd['question']; ?></p>
+										<p class="aq-text">Câu hỏi: <?php echo $sphd['question']; ?></p>
 										<?php if (empty($sphd['answer'])) : ?>
-											<p style="font-style:italic; color:darkgoldenrod">Nhà sản xuất chưa trả lời</p>
+											<p class="aq-text" style="font-style:italic; color:darkgoldenrod">Nhà sản xuất chưa trả lời</p>
 										<?php else : ?>
-											<p>Trả lời: <?php echo $sphd['answer']; ?></p>
+											<p class="aq-text">Trả lời: <?php echo $sphd['answer']; ?></p>
 										<?php endif; ?>
 									</div>
                                 <?php endforeach; ?>
@@ -242,7 +242,10 @@
 					star: star
 				},
 				success: function(data) {
-					window.location.reload(true);
+					setTimeout(function(){
+						window.location.reload(true);
+					},500);
+					$('[href="#pills-hoidap"]').tab('show');
 				}
 			});
 		}
