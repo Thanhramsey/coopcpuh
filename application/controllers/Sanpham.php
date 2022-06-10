@@ -8,6 +8,7 @@ class Sanpham extends CI_Controller {
 		$this->load->model('frontend/Mproducer');
         $this->load->model('frontend/Mcategory');
 		$this->load->model('frontend/Mevaluate');
+		$this->load->model('frontend/Mhoidapcoso');
 		$this->load->model('backend/Muser');
         $this->data['com']='sanpham';
         $this->load->library('session');
@@ -181,7 +182,6 @@ class Sanpham extends CI_Controller {
 		$sum = ($total1 + $total2 + $total3 + $total4 + $total5);
 		if($sum >0){
 			$AverageRating = (((1*$total1)+(2*$total2)+(3*$total3)+(4*$total4)+(5*$total5))/ $sum);
-
 		}else{
 			$AverageRating = 4;
 		}
@@ -198,7 +198,7 @@ class Sanpham extends CI_Controller {
 		$this->data['total4']=$total4;
 		$this->data['total5']=$total5;
 		$this->data['avg']=$AverageRating;
-
+		$this->data['listhd'] = $this->Mhoidapcoso->hoidap_byId($row['id'],2);
 		$starData = array('star' => $AverageRating);
 		$this->Mproduct->product_update($starData, $row['id']);
         $this->load->view('frontend/layout',$this->data);

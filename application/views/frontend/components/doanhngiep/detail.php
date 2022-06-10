@@ -170,22 +170,22 @@
 
 
 						<div class="tab-pane detail-dn products-grid clearfix" id="pills-hoidap" role="tabpanel" aria-labelledby="pills-home-tab" style="max-height:300px;overflow-y:auto">
-							<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 mg-sp">
-								<textarea class="textarea-sp" id="questionContent" placeholder="Mời bạn đặt câu hỏi..."></textarea>
-							</div>
-							<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 mg-sp" style="margin-bottom:15px">
-								<?php if ($this->session->userdata('sessionKhachHang')) : ?>
-									<button class="btn btn-primary" type="button" onclick="submitAnswer(<?php echo $row['id'] ?>)">Gửi</button>
-								<?php else : ?>
-									<button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Bạn cần đăng nhập để gửi câu hỏi !">Gửi</button>
-								<?php endif; ?>
-							</div>
-							<hr>
+								<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 mg-sp">
+									<textarea class="textarea-sp" id="questionContent" placeholder="Mời bạn đặt câu hỏi..."></textarea>
+								</div>
+								<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 mg-sp" style="margin-bottom:15px">
+									<?php if ($this->session->userdata('sessionKhachHang')) : ?>
+										<button class="btn btn-primary" type="button" onclick="submitAnswer(<?php echo $row['id'] ?>)">Gửi</button>
+									<?php else : ?>
+										<button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Bạn cần đăng nhập để gửi câu hỏi !">Gửi</button>
+									<?php endif; ?>
+								</div>
+								<hr>
 
-							<span style="color:red">A&Q: <?php echo $row['fullname'] ?></span>
-							<?php if(count($listhd)==0): ?>
-                            	<p  style="font-style:italic; color:darkgoldenrod">Chưa có câu hỏi nào !</p>
-                            <?php else : ?>
+								<span style="color:red">A&Q: <?php echo $row['fullname'] ?></span>
+								<?php if(count($listhd)==0): ?>
+									<p  style="font-style:italic; color:darkgoldenrod">Chưa có câu hỏi nào !</p>
+								<?php else : ?>
                                 <?php foreach ($listhd as $sphd) :?>
 									<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 mg-sp" style="border-bottom:1px solid #bbb">
 										<p class="aq-text">Câu hỏi: <?php echo $sphd['question']; ?></p>
@@ -268,6 +268,7 @@
 				data: {
 					id: id,
 					question: comment,
+					type:1,
 					question_by: '<?php $info = $this->session->userdata('sessionKhachHang');echo $info['username'] ?>',
 				},
 				success: function(data) {

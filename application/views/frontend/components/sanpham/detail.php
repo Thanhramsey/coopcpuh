@@ -313,16 +313,21 @@
 						<textarea class="textarea-sp" id="commentContent" placeholder="Mời bạn đánh giá về sản phẩm..."></textarea>
 					</div>
 
-					<div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 mg-sp">
+					<!-- <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 mg-sp">
 						<input type="text" id="nguoi_gui" class="form-control" placeholder="Nhập tên">
 					</div>
 
 					<div class="col-sm-12 col-xs-12 col-md-4 col-lg-4 mg-sp" style="margin-left:20px">
 						<input type="text" id="sdt" class="form-control" placeholder="Nhập Số điện thoại">
-					</div>
+					</div> -->
 
-					<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 mg-sp">
-						<button class="btn btn-primary" type="button" onclick="submitComment(<?php echo $row['id'] ?>)">Gửi</button>
+					<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+						<?php if ($this->session->userdata('sessionKhachHang')) : ?>
+							<button class="btn btn-primary" type="button" onclick="submitComment(<?php echo $row['id'] ?>)">Gửi</button>
+						<?php else : ?>
+							<a class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Bạn cần đăng nhập để gửi câu hỏi !">Gửi</a>
+						<?php endif; ?>
+
 					</div>
 
 					<!-- Hiện comment tại đây -->
@@ -373,12 +378,41 @@
 						</div>
 					</div>
 		</div>
+		<!-- Hỏi đáp -->
+		<div class="product-comment product-v-desc">
+			<h3>Hỏi đáp</h3>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+				<textarea class="textarea-sp" id="questionPContent" placeholder="Mời bạn đặt câu hỏi..."></textarea>
+			</div>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="margin-bottom:15px">
+				<?php if ($this->session->userdata('sessionKhachHang')) : ?>
+					<button class="btn btn-primary" type="button" onclick="submitAnswer(<?php echo $row['id'] ?>)">Gửi</button>
+				<?php else : ?>
+					<a class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Bạn cần đăng nhập để gửi câu hỏi !" >Gửi</a>
+				<?php endif; ?>
+			</div>
+			<?php if(count($listhd)==0): ?>
+				<p  style="font-style:italic; color:darkgoldenrod">Hiện chưa có câu hỏi nào !</p>
+			<?php else : ?>
+            <?php foreach ($listhd as $sphd) :?>
+				<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="border-bottom:1px solid #bbb;   margin-bottom: 10px;">
+					<p class="aq-text"><?php echo $sphd['question_by']; ?>: <?php echo $sphd['question']; ?></p>
+					<?php if (empty($sphd['answer'])) : ?>
+						<p class="aq-text" style="font-style:italic; color:darkgoldenrod">Nhà sản xuất chưa trả lời</p>
+					<?php else : ?>
+						<p class="aq-text"  style="padding-left:10px"><?php echo $sphd['answer_by']; ?>: <?php echo $sphd['answer']; ?></p>
+					<?php endif; ?>
+				</div>
+            <?php endforeach; ?>
+            <?php endif; ?>
+		</div>
+		<!-- Sản phẩm liên quan -->
 		<div class="product-comment product-v-desc product">
 			<h3>Sản phẩm liên quan</h3>
 			<?php
-					$list_spcungloai = $this->Mproduct->product_cungloai($row['catid'], $row['id'], 5); ?>
+				$list_spcungloai = $this->Mproduct->product_cungloai($row['catid'], $row['id'], 5); ?>
 			<?php
-					if (count($list_spcungloai) > 0) : ?>
+				if (count($list_spcungloai) > 0) : ?>
 				<div class="product-container">
 					<div class="owl-carousel-product-cl owl-carousel owl-theme">
 						<?php foreach ($list_spcungloai as $sp) : ?>
@@ -473,16 +507,12 @@
 	function submitComment(id) {
 		var strurl = "<?php echo base_url(); ?>" + 'sanpham/insertCmt';
 		var comment = $("#commentContent").val();
-		var userComment = $("#nguoi_gui").val();
-		var sdt = $("#sdt").val();
+		// var userComment = $("#nguoi_gui").val();
+		// var sdt = $("#sdt").val();
 		var star = $("input[name='starsrt']:checked").val();
 		var validate = false;
-		if (comment === "" || userComment == "") {
-			if (comment == "") {
-				$("#commentContent").focus();
-			} else if (userComment == "") {
-				$("#nguoi_gui").focus();
-			}
+		if (comment === "" ) {
+			$("#commentContent").focus();
 		} else {
 			validate = true;
 		}
@@ -494,8 +524,8 @@
 				data: {
 					id: id,
 					comment: comment,
-					userComment: userComment,
-					sdt: sdt,
+					userComment: '<?php $info = $this->session->userdata('sessionKhachHang');echo $info['username'] ?>',
+					sdt: '<?php $info = $this->session->userdata('sessionKhachHang');echo $info['phone'] ?>',
 					star: star
 				},
 				success: function(data) {
@@ -519,4 +549,32 @@
 		$(".bar-4").css({ width: (total4/tong)*100+'%'});
 		$(".bar-5").css({ width: (total5/tong)*100+'%'});
 	});
+
+	function submitAnswer(id) {
+
+	var strurl = "<?php echo base_url(); ?>" + 'doanhngiep/insertQuestion';
+	var comment = $("#questionPContent").val();
+	var validate = false;
+	if (comment === "") {
+		$("#questionPContent").focus();
+	} else {
+		validate = true;
+	}
+	if (validate) {
+		jQuery.ajax({
+			url: strurl,
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				id: id,
+				question: comment,
+				type:2,
+				question_by: '<?php $info = $this->session->userdata('sessionKhachHang');echo $info['username'] ?>',
+			},
+			success: function(data) {
+				window.location.reload(true);
+			}
+		});
+	}
+	};
 </script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 11:46 AM
+-- Generation Time: Jun 10, 2022 at 05:09 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -110,7 +110,7 @@ CREATE TABLE `db_config` (
 --
 
 INSERT INTO `db_config` (`id`, `mail_smtp`, `mail_smtp_password`, `mail_noreply`, `priceShip`, `title`, `description`) VALUES
-(1, 'ocopchupuhgl@gmail.com', 'chupuh123456', 'thanhwilshere96@gmail.com', '0', 'OCOP CHUPUH', '');
+(1, 'ocopchupuhgl@gmail.com', 'mmenxrhlgakrrugmmenxrhlgakrrugx', 'thanhwilshere96@gmail.com', '0', 'OCOP CHUPUH', '');
 
 -- --------------------------------------------------------
 
@@ -182,8 +182,22 @@ CREATE TABLE `db_cosodanhgia` (
   `sdt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `comment_time` datetime NOT NULL,
   `star` int(11) NOT NULL DEFAULT 4,
-  `trash` int(11) DEFAULT 1
+  `trash` int(11) DEFAULT 1,
+  `content` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `db_cosodanhgia`
+--
+
+INSERT INTO `db_cosodanhgia` (`id`, `producer_id`, `user_name`, `sdt`, `comment_time`, `star`, `trash`, `content`) VALUES
+(26, 18, 'thanh1996', '0969124469', '2022-06-09 10:00:11', 2, 1, 'xem lại cách hành xử !'),
+(27, 18, 'thanh1996', '0969124469', '2022-06-09 10:00:31', 2, 1, 'xem lại cách hành xử !'),
+(28, 18, 'thanh1996', '0969124469', '2022-06-09 10:01:19', 3, 1, 'quá chán'),
+(29, 18, 'thanh1996', '0969124469', '2022-06-09 10:02:51', 2, 1, 'xem lại cách hành xử'),
+(30, 18, 'thanh1996', '0969124469', '2022-06-09 10:02:58', 2, 1, 'xem lại cách hành xử'),
+(31, 18, 'thanh1996', '0969124469', '2022-06-09 10:07:33', 1, 1, 'Kém'),
+(32, 12, 'thanh1996', '0969124469', '2022-06-09 10:09:28', 1, 1, 'gà');
 
 -- --------------------------------------------------------
 
@@ -1001,7 +1015,8 @@ CREATE TABLE `db_evaluate` (
 INSERT INTO `db_evaluate` (`id`, `content`, `product_id`, `user_name`, `sdt`, `comment_time`, `comment_by`, `star`, `trash`) VALUES
 (21, 'hết nước chấm', 60, 'tiến', '09897869435', '2022-05-27 10:39:17', NULL, 5, 1),
 (23, 'ăn ngon đó', 62, 'hi', '123123', '2022-05-27 14:38:48', NULL, 2, 1),
-(25, 'Rất là ngon !!', 55, 'Rất là ngon !!', '123123', '2022-05-27 15:47:58', NULL, 4, 1);
+(25, 'Rất là ngon !!', 55, 'Rất là ngon !!', '123123', '2022-05-27 15:47:58', NULL, 4, 1),
+(26, 'tuyệt', 59, 'thanh1996', '0969124469', '2022-06-10 09:51:02', NULL, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -1020,19 +1035,27 @@ CREATE TABLE `db_hoidapcoso` (
   `answer_by` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `star` int(11) NOT NULL DEFAULT 4,
   `trash` int(11) DEFAULT 1,
-  `status` int(11) DEFAULT 1
+  `status` int(11) DEFAULT 1,
+  `type` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `db_hoidapcoso`
 --
 
-INSERT INTO `db_hoidapcoso` (`id`, `question`, `answer`, `producer_id`, `question_by`, `question_time`, `answer_time`, `answer_by`, `star`, `trash`, `status`) VALUES
-(1, 'Cơ sở có bán chanh dây ko ? ', NULL, 18, 'thanh1996', '2022-06-08 15:03:13', NULL, NULL, 4, 1, 1),
-(2, 'Cơ sở có bán bánh dây ko ?', 'Có ạ.', 18, 'thanh1996', '2022-06-08 15:22:46', '2022-06-08 16:25:34', 'Còn gì nữa đâu', 4, 1, 1),
-(3, 'Cơ sở có bán dầu gió không ?', 'tÔI CÓ BÁN', 18, 'thanh1996', '2022-06-08 15:23:54', '2022-06-08 16:25:22', 'Còn gì nữa đâu', 4, 1, 1),
-(4, 'Cơ sở có bán ăn gió không ?\n\nNhà sản xuất chưa trả lời', 'asdasdasdasd', 18, 'thanh1996', '2022-06-08 15:24:07', '2022-06-08 16:23:10', 'Còn gì nữa đâu', 4, 1, 1),
-(5, 'Cơ sở có bán dầu phật linh không ?', NULL, 18, 'thanh1996', '2022-06-08 15:24:34', NULL, NULL, 4, 1, 1);
+INSERT INTO `db_hoidapcoso` (`id`, `question`, `answer`, `producer_id`, `question_by`, `question_time`, `answer_time`, `answer_by`, `star`, `trash`, `status`, `type`) VALUES
+(1, 'Cơ sở có bán chanh dây ko ? ', NULL, 18, 'thanh1996', '2022-06-08 15:03:13', NULL, NULL, 4, 1, 1, 1),
+(2, 'Cơ sở có bán bánh dây ko ?', 'Có ạ.', 18, 'thanh1996', '2022-06-08 15:22:46', '2022-06-08 16:25:34', 'Còn gì nữa đâu', 4, 1, 1, 1),
+(3, 'Cơ sở có bán dầu gió không ?', 'tÔI CÓ BÁN', 18, 'thanh1996', '2022-06-08 15:23:54', '2022-06-08 16:25:22', 'Còn gì nữa đâu', 4, 1, 1, 1),
+(4, 'Cơ sở có bán ăn gió không ?\n\nNhà sản xuất chưa trả lời', 'asdasdasdasd', 18, 'thanh1996', '2022-06-08 15:24:07', '2022-06-08 16:23:10', 'Còn gì nữa đâu', 4, 1, 1, 1),
+(5, 'Cơ sở có bán dầu phật linh không ?', NULL, 18, 'thanh1996', '2022-06-08 15:24:34', NULL, NULL, 4, 1, 1, 1),
+(6, 'Cơ sở có cung cấp bánh bao không ? \n', NULL, 10, 'thanh1996', '2022-06-09 08:54:00', NULL, NULL, 4, 1, 1, 1),
+(7, 'Cho hỏi là ...', NULL, 10, 'thanh1996', '2022-06-09 09:20:02', NULL, NULL, 4, 1, 1, 1),
+(8, 'Sản phẩm có bán lẻ không ? \n', NULL, 61, 'thanh1996', '2022-06-09 14:26:00', NULL, NULL, 4, 1, 1, 2),
+(9, 'Tôi muốn mua số lượng lớn .', 'Bạn để lại sdt cho mình nhé !!! hì', 61, 'thanh1996', '2022-06-09 15:35:51', '2022-06-10 09:20:36', 'Trịnh Tấn Thành', 4, 1, 1, 2),
+(10, 'Sản phẩm có ship xa không ?', NULL, 62, 'thanh1996', '2022-06-10 09:42:24', NULL, NULL, 4, 1, 1, 2),
+(11, 'Sản phẩm có bán lẻ không nhỉ ?', 'Có nhé bạn.', 59, 'thanh1996', '2022-06-10 09:47:23', '2022-06-10 09:47:43', 'Công ty giải trí cây đa', 4, 1, 1, 2),
+(12, 'Gà', 'im mẹ mồm', 59, 'thanh1996', '2022-06-10 09:51:59', '2022-06-10 09:52:13', 'Công ty giải trí cây đa', 4, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -1067,7 +1090,7 @@ INSERT INTO `db_ketnoicungcau` (`id`, `nguoidang`, `phone`, `address`, `tieude`,
 (3, 'Thành', '0969123452', '39 Võ Văn Mến,Chư pưh', 'Cần mua dầu dưa gang', 'Cần mua dưa gang', 1, '2022-06-02 11:04:48', 10, 1, 1, 'dưới 25000', '2.jpeg', 2),
 (4, 'Thành', '0969123459', '39 Trần Bá Đạo,Chư pưh', 'Cần mua cafe', 'Cần mua cafe', 1, '2022-06-02 11:04:48', 6, 1, 1, 'dưới 50000', '2.jpeg', 3),
 (20, 'Thành', '0969124469', '39 Đào Duy Từ', 'Cần người hợp tác làm thuốc', 'Cần người hợp tác làm thuốc', 2, '2022-06-06 10:51:53', 1, 1, 1, '', 'default.png', 3),
-(21, 'Thành', '0969124469', '38 đào duy từ', 'Cần mua thịt số lượng lớn', 'Cần mua thịt số lượng lớn', 3, '2022-06-06 10:56:47', 8, 1, 1, '', 'buy.png', 1);
+(21, 'Thành', '0969124469', '38 đào duy từ', 'Cần mua thịt số lượng lớn', 'Cần mua thịt số lượng lớn', 3, '2022-06-06 10:56:47', 9, 1, 1, '', 'buy.png', 1);
 
 -- --------------------------------------------------------
 
@@ -1109,7 +1132,8 @@ INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`
 (136, 'ZnAEkvfK', 1, '2022-05-19 15:21:22', 'Thành', '0969124469', 180000, 0, 0, 64, 632, '90 tôn thất thuyết', 1, 3, '12022519152122', 51, 2, 90000),
 (137, 'NZgDoQlA', 1, '2022-05-23 09:31:45', 'Thành', '0969124469', 50000, 0, 0, 64, 622, '90 hùng vương', 1, 0, '1202252393145', 56, 1, 50000),
 (138, 'ZXMVDdCv', 76, '2022-05-23 14:47:16', 'Tuấn Anh', '092831231', 400000, 0, 0, 64, 639, '90 lê thánh tôn', 1, 2, '762022523144716', 62, 2, 200000),
-(139, 'Abq9Y2v0', 76, '2022-05-23 15:03:33', 'Tuấn Anh', '092831231', 100000, 0, 100000, 64, 622, '90 lý thai tổ', 1, 2, '76202252315333', 62, 1, 200000);
+(139, 'Abq9Y2v0', 76, '2022-05-23 15:03:33', 'Tuấn Anh', '092831231', 100000, 0, 100000, 64, 622, '90 lý thai tổ', 1, 2, '76202252315333', 62, 1, 200000),
+(140, 'FfrilSe5', 1, '2022-06-09 10:34:36', 'Thành', '0969124469', 200000, 0, 0, 64, 622, '39 đình chiến', 1, 0, '1202269103436', 62, 1, 200000);
 
 -- --------------------------------------------------------
 
@@ -1140,7 +1164,8 @@ INSERT INTO `db_orderdetail` (`id`, `orderid`, `productid`, `count`, `price`, `t
 (179, 136, 51, 2, 90000, 1, 1),
 (180, 137, 56, 1, 50000, 1, 1),
 (181, 138, 62, 2, 200000, 1, 1),
-(182, 139, 62, 1, 200000, 1, 1);
+(182, 139, 62, 1, 200000, 1, 1),
+(183, 140, 62, 1, 200000, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1375,8 +1400,8 @@ INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`
 (1, 'Trịnh Tấn Thành', 'thanh1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'thanhwilshere96@gmail.com', 0, '981643651', 'Gò vấp', '78f46c5088cfa63ed79beb403a3b1d99.png', '2022-04-13 22:30:03', 1, 1, '<p>Cơ sở sản xuất b&aacute;nh gai đạt chất lượng, ti&ecirc;u chuẩn, thơm ngon: ?Nem chua : - Loại 1 : 5000₫/c&aacute;i - Loại 2 : 3000₫/c&aacute;i - Loại 3 : 2500₫/c&aacute;i - Loại 4 : 2000₫/c&aacute;i ?? Ngo&agrave;i ra b&ecirc;n m&igrave;nh c&ograve;n chuy&ecirc;n sản xuất Gi&ograve; Hấp uy t&iacute;n , chất lượng. Với c&ocirc;ng nghệ chế biến Gi&ograve; Hấp h&agrave;ng trăm năm của cơ sở , k&egrave;m theo một ch&uacute;t đổi mới của c&aacute;c chuy&ecirc;n gia đ&atilde; tạo th&ecirc;m cho Gi&ograve; Hấp một hương vị đặc trưng thơm ngon hấp dẫn qu&yacute; kh&aacute;ch , với mẫu m&atilde; đẹp nhất , ch&uacute;ng t&ocirc;i đảm bảo mang đến cho người ti&ecirc;u d&ugrave;ng chất lượng gi&ograve; tốt nhất m&agrave; gi&aacute; cả lại hợp l&yacute;... ? Gi&ograve; B&ograve; ( Me ) : - Loại 1kg: 200.000₫ - Loại 0,5kg: 100.000₫ ?Gi&ograve; Đ&agrave; điểu : - Loại 1kg: 240.000₫ - Loại 0,5kg:120.000₫ ??C&ograve;n chần chờ g&igrave; nữa , h&atilde;y nhấc m&aacute;y l&ecirc;n v&agrave; đặt H&agrave;ng đi n&agrave;o.... ⛔️ ĐẶC BIỆT SI&Ecirc;U KHUYẾN M&Atilde;I CHO KH&Aacute;CH H&Agrave;NH NHANH TAY COMMENT V&Agrave; ĐẶT H&Agrave;NG VỚI SỐ LƯỢNG LỚN.... ??&zwj;♀️ Free ship to&agrave;n quốc. ☎️ Sỉ v&agrave; lẻ li&ecirc;n hệ: 0961415896 ☎️ Zalo, Viber: 01663403496</p>\r\n', 1),
 (2, 'Công ty giải trí cây đa', 'thanh19961', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'thanhwilshere96@gmail.com', 0, '0989555555', 'Lê đức thọ 2', '3f957d853517ae45fd7669746a386073.jpg', '2022-04-13 22:59:14', 1, 1, '<p>Cơ sở sản xuất b&aacute;nh gai đạt chất lượng, ti&ecirc;u chuẩn, thơm ngon: ?Nem chua : - Loại 1 : 5000₫/c&aacute;i - Loại 2 : 3000₫/c&aacute;i - Loại 3 : 2500₫/c&aacute;i - Loại 4 : 2000₫/c&aacute;i ?? Ngo&agrave;i ra b&ecirc;n m&igrave;nh c&ograve;n chuy&ecirc;n sản xuất Gi&ograve; Hấp uy t&iacute;n , chất lượng. Với c&ocirc;ng nghệ chế biến Gi&ograve; Hấp h&agrave;ng trăm năm của cơ sở , k&egrave;m theo một ch&uacute;t đổi mới của c&aacute;c chuy&ecirc;n gia đ&atilde; tạo th&ecirc;m cho Gi&ograve; Hấp một hương vị đặc trưng thơm ngon hấp dẫn qu&yacute; kh&aacute;ch , với mẫu m&atilde; đẹp nhất , ch&uacute;ng t&ocirc;i đảm bảo mang đến cho người ti&ecirc;u d&ugrave;ng chất lượng gi&ograve; tốt nhất m&agrave; gi&aacute; cả lại hợp l&yacute;... ? Gi&ograve; B&ograve; ( Me ) : - Loại 1kg: 200.000₫ - Loại 0,5kg: 100.000₫ ?Gi&ograve; Đ&agrave; điểu : - Loại 1kg: 240.000₫ - Loại 0,5kg:120.000₫ ??C&ograve;n chần chờ g&igrave; nữa , h&atilde;y nhấc m&aacute;y l&ecirc;n v&agrave; đặt H&agrave;ng đi n&agrave;o.... ⛔️ ĐẶC BIỆT SI&Ecirc;U KHUYẾN M&Atilde;I CHO KH&Aacute;CH H&Agrave;NH NHANH TAY COMMENT V&Agrave; ĐẶT H&Agrave;NG VỚI SỐ LƯỢNG LỚN.... ??&zwj;♀️ Free ship to&agrave;n quốc. ☎️ Sỉ v&agrave; lẻ li&ecirc;n hệ: 0961415896 ☎️ Zalo, Viber: 01663403496</p>\r\n', 1),
 (10, 'Công ty TNHH Tấn Thành MTP', 'mtp1996', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'mtp@gmail.com', 0, '0958569633', '876 Lý Thường Kiệt, Chupuh, Gia Lai', '07403ad8be5947f1e93fc6e6f9b086db.jpg', '2022-04-26 13:55:36', 1, 1, 'Cơ sở sản xuất bánh gai đạt chất lượng, tiêu chuẩn, thơm ngon:\n\n?Nem chua :\n- Loại 1 : 5000₫/cái\n- Loại 2 : 3000₫/cái\n- Loại 3 : 2500₫/cái\n- Loại 4 : 2000₫/cái\n\n?? Ngoài ra bên mình còn chuyên sản xuất Giò Hấp uy tín , chất lượng. Với công nghệ chế biến Giò Hấp hàng trăm năm của cơ sở , kèm theo một chút đổi mới của các chuyên gia đã tạo thêm cho Giò Hấp một hương vị đặc trưng thơm ngon hấp dẫn quý khách , với mẫu mã đẹp nhất , chúng tôi đảm bảo mang đến cho người tiêu dùng chất lượng giò tốt nhất mà giá cả lại hợp lý...\n\n? Giò Bò ( Me ) :\n- Loại 1kg: 200.000₫\n- Loại 0,5kg: 100.000₫\n\n?Giò Đà điểu :\n\n- Loại 1kg: 240.000₫\n- Loại 0,5kg:120.000₫\n\n??Còn chần chờ gì nữa , hãy nhấc máy lên và đặt Hàng đi nào....\n\n⛔️ ĐẶC BIỆT SIÊU KHUYẾN MÃI CHO KHÁCH HÀNH NHANH TAY COMMENT VÀ ĐẶT HÀNG VỚI SỐ LƯỢNG LỚN....\n\n??‍♀️ Free ship toàn quốc.\n\n☎️ Sỉ và lẻ liên hệ: 0961415896\n☎️ Zalo, Viber: 01663403496', 1),
-(12, 'Lê Văn Tiến', 'tien9x', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, '14520851@gm.uit.edu.vn', 0, '0969878909', '90 nguyễn văn trối ', '3d3eca0774297c335d48676e8fa04a58.jpg', '2022-05-04 08:02:15', 1, 1, '<p>Cơ sở sản xuất b&aacute;nh gai đạt chất lượng, ti&ecirc;u chuẩn, thơm ngon: ?Nem chua : - Loại 1 : 5000₫/c&aacute;i - Loại 2 : 3000₫/c&aacute;i - Loại 3 : 2500₫/c&aacute;i - Loại 4 : 2000₫/c&aacute;i ?? Ngo&agrave;i ra b&ecirc;n m&igrave;nh c&ograve;n chuy&ecirc;n sản xuất Gi&ograve; Hấp uy t&iacute;n , chất lượng. Với c&ocirc;ng nghệ chế biến Gi&ograve; Hấp h&agrave;ng trăm năm của cơ sở , k&egrave;m theo một ch&uacute;t đổi mới của c&aacute;c chuy&ecirc;n gia đ&atilde; tạo th&ecirc;m cho Gi&ograve; Hấp một hương vị đặc trưng thơm ngon hấp dẫn qu&yacute; kh&aacute;ch , với mẫu m&atilde; đẹp nhất , ch&uacute;ng t&ocirc;i đảm bảo mang đến cho người ti&ecirc;u d&ugrave;ng chất lượng gi&ograve; tốt nhất m&agrave; gi&aacute; cả lại hợp l&yacute;... ? Gi&ograve; B&ograve; ( Me ) : - Loại 1kg: 200.000₫ - Loại 0,5kg: 100.000₫ ?Gi&ograve; Đ&agrave; điểu : - Loại 1kg: 240.000₫ - Loại 0,5kg:120.000₫ ??C&ograve;n chần chờ g&igrave; nữa , h&atilde;y nhấc m&aacute;y l&ecirc;n v&agrave; đặt H&agrave;ng đi n&agrave;o.... ⛔️ ĐẶC BIỆT SI&Ecirc;U KHUYẾN M&Atilde;I CHO KH&Aacute;CH H&Agrave;NH NHANH TAY COMMENT V&Agrave; ĐẶT H&Agrave;NG VỚI SỐ LƯỢNG LỚN.... ??&zwj;♀️ Free ship to&agrave;n quốc. ☎️ Sỉ v&agrave; lẻ li&ecirc;n hệ: 0961415896 ☎️ Zalo, Viber: 01663403496</p>\r\n', 4),
-(18, 'Còn gì nữa đâu', 'shopmoi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'thanhwilshere98@gmail.com', 1, '0969124469', 'ở nhà tao', '5629e2c8e2a10b64be578c3dac0450f7.jpg', '2022-05-23 09:22:39', 1, 1, '<p>Chuy&ecirc;n b&aacute;n b&aacute;nh bao v&agrave; c&aacute;c sản phẩm l&agrave; từ chuối</p>\r\n\r\n<p>Cam kết h&agrave;ng ngon</p>\r\n\r\n<p>Kh&ocirc;ng sử dụng chất bảo quản</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"color:#c0392b\"><em><strong>Supper number 11111</strong></em></span></p>\r\n\r\n<ul>\r\n	<li>&agrave; h&aacute;</li>\r\n	<li>ờ hớ</li>\r\n</ul>\r\n', 4),
+(12, 'Lê Văn Tiến', 'tien9x', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, '14520851@gm.uit.edu.vn', 0, '0969878909', '90 nguyễn văn trối ', '3d3eca0774297c335d48676e8fa04a58.jpg', '2022-05-04 08:02:15', 1, 1, '<p>Cơ sở sản xuất b&aacute;nh gai đạt chất lượng, ti&ecirc;u chuẩn, thơm ngon: ?Nem chua : - Loại 1 : 5000₫/c&aacute;i - Loại 2 : 3000₫/c&aacute;i - Loại 3 : 2500₫/c&aacute;i - Loại 4 : 2000₫/c&aacute;i ?? Ngo&agrave;i ra b&ecirc;n m&igrave;nh c&ograve;n chuy&ecirc;n sản xuất Gi&ograve; Hấp uy t&iacute;n , chất lượng. Với c&ocirc;ng nghệ chế biến Gi&ograve; Hấp h&agrave;ng trăm năm của cơ sở , k&egrave;m theo một ch&uacute;t đổi mới của c&aacute;c chuy&ecirc;n gia đ&atilde; tạo th&ecirc;m cho Gi&ograve; Hấp một hương vị đặc trưng thơm ngon hấp dẫn qu&yacute; kh&aacute;ch , với mẫu m&atilde; đẹp nhất , ch&uacute;ng t&ocirc;i đảm bảo mang đến cho người ti&ecirc;u d&ugrave;ng chất lượng gi&ograve; tốt nhất m&agrave; gi&aacute; cả lại hợp l&yacute;... ? Gi&ograve; B&ograve; ( Me ) : - Loại 1kg: 200.000₫ - Loại 0,5kg: 100.000₫ ?Gi&ograve; Đ&agrave; điểu : - Loại 1kg: 240.000₫ - Loại 0,5kg:120.000₫ ??C&ograve;n chần chờ g&igrave; nữa , h&atilde;y nhấc m&aacute;y l&ecirc;n v&agrave; đặt H&agrave;ng đi n&agrave;o.... ⛔️ ĐẶC BIỆT SI&Ecirc;U KHUYẾN M&Atilde;I CHO KH&Aacute;CH H&Agrave;NH NHANH TAY COMMENT V&Agrave; ĐẶT H&Agrave;NG VỚI SỐ LƯỢNG LỚN.... ??&zwj;♀️ Free ship to&agrave;n quốc. ☎️ Sỉ v&agrave; lẻ li&ecirc;n hệ: 0961415896 ☎️ Zalo, Viber: 01663403496</p>\r\n', 1),
+(18, 'Còn gì nữa đâu', 'shopmoi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'thanhwilshere98@gmail.com', 1, '0969124469', 'ở nhà tao', '5629e2c8e2a10b64be578c3dac0450f7.jpg', '2022-05-23 09:22:39', 1, 1, '<p>Chuy&ecirc;n b&aacute;n b&aacute;nh bao v&agrave; c&aacute;c sản phẩm l&agrave; từ chuối</p>\r\n\r\n<p>Cam kết h&agrave;ng ngon</p>\r\n\r\n<p>Kh&ocirc;ng sử dụng chất bảo quản</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"color:#c0392b\"><em><strong>Supper number 11111</strong></em></span></p>\r\n\r\n<ul>\r\n	<li>&agrave; h&aacute;</li>\r\n	<li>ờ hớ</li>\r\n</ul>\r\n', 2),
 (19, 'shopmoi9x', 'shopmoi9x', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 'thanhwilshere99@gmail.com', 0, '098978998', '90 hùng vương', '624d690ceb28b7eea97d0910116e5dbc.png', '2022-05-23 09:33:14', 1, 1, '<p><strong>Shop test</strong></p>\r\n', 4);
 
 -- --------------------------------------------------------
@@ -1600,7 +1625,7 @@ ALTER TABLE `db_content`
 -- AUTO_INCREMENT for table `db_cosodanhgia`
 --
 ALTER TABLE `db_cosodanhgia`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `db_customer`
@@ -1618,13 +1643,13 @@ ALTER TABLE `db_discount`
 -- AUTO_INCREMENT for table `db_evaluate`
 --
 ALTER TABLE `db_evaluate`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `db_hoidapcoso`
 --
 ALTER TABLE `db_hoidapcoso`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `db_ketnoicungcau`
@@ -1636,13 +1661,13 @@ ALTER TABLE `db_ketnoicungcau`
 -- AUTO_INCREMENT for table `db_order`
 --
 ALTER TABLE `db_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT for table `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 
 --
 -- AUTO_INCREMENT for table `db_producer`

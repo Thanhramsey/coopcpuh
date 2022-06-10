@@ -21,8 +21,9 @@ class Mhoidapcoso extends CI_Model {
                 $query = $this->db->get($this->table);
                 return $query->result_array();
         }
-		public function hoidap_byId($userId){
+		public function hoidap_byId($userId,$type){
 			$this->db->where('producer_id', $userId);
+			$this->db->where('type', $type);
 			$this->db->where('trash', 1);
 			$this->db->where('status', 1);
 			$this->db->order_by('question_time', 'desc');

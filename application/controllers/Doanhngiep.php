@@ -25,7 +25,7 @@ class Doanhngiep extends CI_Controller {
         $total=$this->Mproduct->product_sanpham_id_count($row['id']);
 		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='doanhngiep');
 		$this->data['list'] = $this->Mproduct->product_sanpham_id($limit,$first,$row['id']);
-		$this->data['listhd'] = $this->Mhoidapcoso->hoidap_byId($row['id']);
+		$this->data['listhd'] = $this->Mhoidapcoso->hoidap_byId($row['id'],1);
 		$this->data['row']=$row;
         $this->data['title']='OCOP CHƯPƯH - Giới thiệu';
         $this->data['view']='detail';
@@ -94,6 +94,7 @@ class Doanhngiep extends CI_Controller {
 					'question' =>$question,
 					'question_by' =>$_POST['question_by'],
 					'question_time' =>$today,
+					'type' => $_POST['type'],
 					'trash'=>1
 				);
 		$this->Mhoidapcoso->question_insert($mydata);

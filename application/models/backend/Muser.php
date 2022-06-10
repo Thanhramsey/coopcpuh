@@ -145,6 +145,7 @@ class Muser extends CI_Model {
     public function doanhnghiep_search($name,$limit,$first){
         $this->db->like('fullname', $name);
         $this->db->where('trash', 1);
+		$this->db->where('status', 1);
 		$this->db->where('role !=', 1);
         $this->db->order_by('created', 'desc');
         $query = $this->db->get($this->table,$limit,$first);

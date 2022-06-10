@@ -13,6 +13,7 @@ class Product extends CI_Controller
 		$this->load->model('backend/Morderdetail');
 		$this->load->model('backend/Morders');
 		$this->load->model('backend/Mevaluate');
+		$this->load->model('backend/Mhoidapcoso');
 		if (!$this->session->userdata('sessionadmin')) {
 			redirect('admin/user/login', 'refresh');
 		}
@@ -385,9 +386,9 @@ class Product extends CI_Controller
 		$limit=10;
 		$current=$this->phantrang->PageCurrent();
 		$first=$this->phantrang->PageFirst($limit, $current);
-		$total=$this->Mevaluate->comment_productid_count_2($id);
+		$total=$this->Mhoidapcoso->hoidap_count_byId($id);
 		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/product/danhgia');
-		$this->data['list']=$this->Mevaluate->comment_productid($id,$limit, $first);
+		$this->data['list']=$this->Mhoidapcoso->hoidap_byId_2($id);
 		$this->data['total']=$total;
 		$this->data['view']='danhgia';
 		$this->data['title']='Bình luận sản phẩm';

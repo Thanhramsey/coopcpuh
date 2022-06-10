@@ -129,7 +129,7 @@
 													$namecat = $this->Mcategory->category_name($row['catid']);
 													?>
 													<td><?php echo $namecat ?></td>
-													<td class="text-center"><a target="_blank" href="admin/product/danhgia/<?php echo $row['id'] ?>">GO!</a></td>
+													<td class="text-center"><a target="_blank" href="admin/product/danhgia/<?php echo $row['id'] ?>">Xem!</a></td>
 													<?php if ($user['role'] == 1) : ?>
 														<td  style="width:80px"  class="text-center">
 															<a href="<?php echo base_url() ?>admin/product/status/<?php echo $row['id'] ?>">

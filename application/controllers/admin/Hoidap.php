@@ -105,4 +105,41 @@ class Hoidap extends CI_Controller {
 		$this->load->view('backend/layout', $this->data);
 	}
 
+
+	public function updatesp($id){
+		$this->data['row']=$this->Mhoidapcoso->hoidap_detail($id);
+		$d=getdate();
+		$today=$d['year']."/".$d['mon']."/".$d['mday']." ".$d['hours'].":".$d['minutes'].":".$d['seconds'];
+		$this->load->library('form_validation');
+		$this->load->library('session');
+		$this->load->library('alias');
+		$this->form_validation->set_rules('answer', 'Câu trả lời', 'required');
+		$info  = $this->session->userdata('sessionadmin');
+		if ($this->form_validation->run() == TRUE) {
+			$mydata= array(
+				'answer' =>$_POST['answer'],
+				'answer_by' =>$info['fullname'],
+				'answer_time' =>$today,
+			);
+			$this->Mhoidapcoso->hoidap_update($mydata, $id);
+			$this->session->set_flashdata('success', 'Đã cập nhật câu trả lời');
+		}
+		$this->data['view']='updatesp';
+		$this->data['title']='Cập nhật nhà cung cấp';
+		$this->load->view('backend/layout', $this->data);
+	}
+
+	public function recyclebinsp(){
+		$this->load->library('phantrang');
+		$limit=10;
+		$current=$this->phantrang->PageCurrent();
+		$first=$this->phantrang->PageFirst($limit, $current);
+		$total=$this->Mhoidapcoso->hoidap_trash_count();
+		$this->data['strphantrang']=$this->phantrang->PagePer($total, $current, $limit, $url='admin/hoidap/recyclebinsp');
+		$this->data['list']=$this->Mhoidapcoso->hoidap_trash($limit, $first);
+		$this->data['view']='recyclebinsp';
+		$this->data['title']='Thùng rác chính sách';
+		$this->load->view('backend/layout', $this->data);
+	}
+
 }

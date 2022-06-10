@@ -69,9 +69,9 @@
 													</td>
 													<td class="text-center">
 														<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/hoidap/update/<?php echo $row['id'] ?>" role = "button">
-															<span class="glyphicon glyphicon-comment"></span>Trả lời
+															<span class="glyphicon glyphicon-trash"></span>Trả lời
 														</a>
-														<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/hoidap/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa câu hỏi này ?')" role = "button">
+														<a class="btn btn-danger btn-xs" href="<?php echo base_url() ?>admin/hoidap/trash/<?php echo $row['id'] ?>" onclick="return confirm('Xác nhận xóa văn bản này ?')" role = "button">
 															<span class="glyphicon glyphicon-trash"></span>Xóa
 														</a>
 													</td>
