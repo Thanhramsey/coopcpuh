@@ -10,7 +10,7 @@ class Mproduct extends CI_Model {
     //index
 	public function product_sanpham_count($doanhnghiep,$loaisp)
     {
-        $this->db->where('status', 1);
+        // $this->db->where('status', 1);
         $this->db->where('trash', 1);
 		if($doanhnghiep !=""){
 			$this->db->where('userId', $doanhnghiep);
@@ -24,7 +24,7 @@ class Mproduct extends CI_Model {
     public function product_sanpham($limit,$first,$doanhnghiep,$loaisp)
     {
         $this->db->where('trash', 1);
-		$this->db->where('status', 1);
+		// $this->db->where('status', 1);
 		if($doanhnghiep !=""){
 			$this->db->where('userId', $doanhnghiep);
 		}
@@ -49,7 +49,7 @@ class Mproduct extends CI_Model {
     }
 	public function product_sanpham_byId_count($userId,$doanhnghiep,$loaisp)
     {
-        $this->db->where('status', 1);
+        // $this->db->where('status', 1);
         $this->db->where('trash', 1);
 		$this->db->where('userId', $userId);
 		if($loaisp != ""){

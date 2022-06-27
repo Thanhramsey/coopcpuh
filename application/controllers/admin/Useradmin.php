@@ -99,10 +99,6 @@ class Useradmin extends CI_Controller {
 		if (!empty($_POST['star'])) {
 			$star = $_POST['star'];
 		}
-		$status = $row['status'];
-		if (!empty($_POST['status'])) {
-			$status = $_POST['star'];
-		}
 		if ($this->form_validation->run() == TRUE)
 		{
 			$mydata= array(
@@ -112,7 +108,7 @@ class Useradmin extends CI_Controller {
 				'gender'=>$_POST['gender'],
 				'detail'=>$_POST['detail'],
 				'star'=>$star,
-				'status'=>$status,
+				'status' => $_POST['status']
 			);
          	$config = array();
 	         $config['upload_path']   = './public/images/admin/';

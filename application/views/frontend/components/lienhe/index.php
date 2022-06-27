@@ -48,7 +48,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="col-md-4 col-12">
+		<div class="col-md-5 col-12">
 			<div class="f-contact" style="
 			padding-left: 32px;
 			">
