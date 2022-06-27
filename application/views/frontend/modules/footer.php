@@ -60,6 +60,9 @@
 							<li><a href="chinhsachbaomat">Chính sách bảo mật</a></li>
 							<li><a href="dieukhoanthamgia">Điều khoản tham gia</a></li>
 							<li><a href="questions">Câu hỏi thường gặp</a></li>
+							<li><?php
+        					    $this->load->view('frontend/modules/onlineNow');
+        					?></li>
 						</ul>
 					</div>
 				</div>
