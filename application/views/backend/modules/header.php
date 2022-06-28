@@ -22,7 +22,7 @@
 						  } else {
 							$userId = $user_role['id'];
 							$approved =  $this->Morders->orders_count_header_count_not($userId);
-							$not_approved = $this->Morders->orders_listorders_byId_count($userId);
+							$not_approved = $this->Morders->orders_listorders_byId_count_2($userId);
 						  }
                           echo  $approved+$not_approved;
                           ?>
@@ -40,7 +40,7 @@
 									echo $this->Morders->orders_count_header_not();
 								} else {
 									$userId = $user_role['id'];
-									echo $this->Morders->orders_listorders_byId_count($userId);
+									echo $this->Morders->orders_listorders_byId_count_2($userId);
 								}
 							 ?>
                               Đơn hàng chưa duyệt

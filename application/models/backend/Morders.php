@@ -59,6 +59,27 @@ class Morders extends CI_Model {
 		}
     }
 
+	public function orders_listorders_byId_count_2($producerId)
+    {
+		$this->db->select('or.*');
+		$this->db->from('db_order or');
+		$this->db->join('db_product b', 'or.productid = b.id', 'left');
+		$this->db->join('db_user u', 'u.id=b.userId', 'left');
+		$this->db->where('u.id',$producerId);
+		$this->db->where('or.status',0);
+		$this->db->order_by('or.orderdate','desc');
+		$query = $this->db->get();
+		if($query->num_rows() != 0)
+		{
+
+			return count($query->result_array());
+		}
+		else
+		{
+			return 0;
+		}
+    }
+
     public function orders_count_byId($producerId)
     {
         $this->db->where('trash', 1);
