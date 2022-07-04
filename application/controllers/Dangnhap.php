@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Dangnhap extends CI_Controller {
 	// Hàm khởi tạo
     function __construct() {
@@ -51,6 +50,21 @@ class Dangnhap extends CI_Controller {
         $this->session->unset_userdata($array_items);
         redirect('trang-chu','refresh');
     }
+
+
+	public function dangnhapfb($id){
+		$row = $this->Mcustomer->customer_detail_id($id);
+		$this->session->set_userdata('sessionKhachHang',$row);
+		$this->session->set_userdata('id',$row['id']);
+		$this->session->set_userdata('email',$row['email']);
+		$this->session->set_userdata('sessionKhachHang_name',$row['fullname']);
+		if($this->session->userdata('cart')){
+			redirect('gio-hang','refresh');
+		}else{
+			redirect('thong-tin-khach-hang','refresh');
+		}
+    }
+
 
     public function dangky(){
         $this->load->helper('string');

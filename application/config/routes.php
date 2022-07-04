@@ -21,6 +21,7 @@ $route['dang-nhap'] = 'dangnhap/dangnhap';
 $route['quen-mat-khau'] = 'dangnhap/forget_password';
 $route['dang-ky'] = 'dangnhap/dangky';
 $route['dang-xuat'] = 'dangnhap/dangxuat';
+$route['dang-nhap-fb/(:any)'] = 'dangnhap/dangnhapfb';
 $route['gio-hang'] = 'giohang/index';
 $route['checkout'] = 'giohang/checkout';
 $route['info-order'] = 'giohang/info_order';
@@ -174,3 +175,11 @@ $route['doanhngiep/detail/(:any)'] = 'doanhngiep/detail/$1';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['diaphuong/detail/(:any)'] = 'diaphuong/detail/$1';
+
+
+
+//facebook
+
+$route['fb-callback'] = 'dangnhap/fbcallback';
+
+$route['fb-index'] = 'dangnhap/fbindex';

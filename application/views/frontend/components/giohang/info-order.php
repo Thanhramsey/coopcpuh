@@ -62,7 +62,7 @@ if (!$this->session->userdata('cart')) {
 																																				echo "";
 																																			} else {
 																																				echo $user['phone'];
-																																			} ?>" <?php if ($this->session->userdata('sessionKhachHang')) echo 'readonly' ?>>
+																																			} ?>">
 													<div class="error"><?php echo form_error('phone') ?></div>
 												</td>
 											</tr>
